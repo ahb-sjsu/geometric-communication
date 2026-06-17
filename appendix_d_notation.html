@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix D: Notation and Conventions &mdash; Geometric Communication</title>
+  <meta name="description" content="Appendix D: Notation and Conventions from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-communication">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric Communication</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric Communication</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Appendix D: Notation and Conventions</span>
+      </nav>
+
+      <div class="chapter-content">
+<h1 id="appendix-d-notation-and-conventions">Appendix D: Notation and Conventions</h1>
+<p>Consistent with the Geometric Series. Where domain-specific notation extends the parent conventions, the extension is marked with (GC).</p>
+<hr />
+<h2 id="manifolds-and-spaces">Manifolds and Spaces</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$M$</td>
+<td>Communication manifold $M = S \times P \times C$</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$S$</td>
+<td>Signal manifold (acoustic, written, gestural)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$P$</td>
+<td>Pragmatic manifold (intention, context, social relation)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$C$</td>
+<td>Content manifold (semantic meaning)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$\mathbb{B}^d_c$</td>
+<td>Poincare ball of dimension $d$, curvature $-c$</td>
+<td>Ch. 4, 5</td>
+</tr>
+<tr>
+<td>$\text{SPD}(n)$</td>
+<td>Manifold of $n \times n$ symmetric positive-definite matrices</td>
+<td>Ch. 4, 8</td>
+</tr>
+<tr>
+<td>$T_pM$</td>
+<td>Tangent space at $p \in M$</td>
+<td>App. A</td>
+</tr>
+<tr>
+<td>$\mathcal{E}$</td>
+<td>Total space of the communication fiber bundle</td>
+<td>Ch. 13</td>
+</tr>
+<tr>
+<td>$\mathcal{B}$</td>
+<td>Base space (content manifold) of the fiber bundle</td>
+<td>Ch. 13</td>
+</tr>
+<tr>
+<td>$F$</td>
+<td>Typical fiber (surface realisations)</td>
+<td>Ch. 13</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics-and-distances">Metrics and Distances</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$g$</td>
+<td>Riemannian metric on $M$</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$g_{ij}$</td>
+<td>Metric components in local coordinates</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d(p, q)$</td>
+<td>Geodesic distance between $p$ and $q$</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_{\mathbb{B}}(x, y)$</td>
+<td>Hyperbolic distance in the Poincare ball</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$d_{LE}(S_1, S_2)$</td>
+<td>Log-Euclidean distance on SPD$(n)$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$d_B$</td>
+<td>Bottleneck distance between persistence diagrams</td>
+<td>Ch. 6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="groups-and-symmetry">Groups and Symmetry</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$G$</td>
+<td>Communication gauge group $G = T \times R \times F$</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$T$</td>
+<td>Translation group (relabeling across languages)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$R$</td>
+<td>Re-description group (paraphrase within a language)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$F$</td>
+<td>Format group (spoken, written, signed)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$D_4$</td>
+<td>Dihedral group of order 8 (Hohfeldian symmetry)</td>
+<td>Ch. 13</td>
+</tr>
+<tr>
+<td>$r$</td>
+<td>Rotation generator of $D_4$ (normative state transition)</td>
+<td>Ch. 13</td>
+</tr>
+<tr>
+<td>$s$</td>
+<td>Reflection generator of $D_4$ (correlative symmetry)</td>
+<td>Ch. 13</td>
+</tr>
+<tr>
+<td>$U(1)_H$</td>
+<td>Harm conservation gauge group</td>
+<td>Ch. 13</td>
+</tr>
+</tbody>
+</table>
+<h2 id="maps-and-operations">Maps and Operations</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\exp^c_x(v)$</td>
+<td>Exponential map on $\mathbb{B}^d_c$</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\log^c_x(y)$</td>
+<td>Logarithmic map on $\mathbb{B}^d_c$</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\oplus_c$</td>
+<td>Mobius addition on $\mathbb{B}^d_c$</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\pi$</td>
+<td>Bundle projection $\pi: \mathcal{E} \to \mathcal{B}$</td>
+<td>Ch. 13</td>
+</tr>
+<tr>
+<td>$\lambda^c_x$</td>
+<td>Conformal factor $\frac{2}{1 - c\|x\|^2}$</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>$\Gamma^k_{ij}$</td>
+<td>Christoffel symbols</td>
+<td>App. A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="topological-invariants">Topological Invariants</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$H_k$</td>
+<td>$k$-th homology group</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$H_0$</td>
+<td>Connected components (harmonic hierarchy)</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$H_1$</td>
+<td>Loops (periodicity)</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$\text{VR}(X, \varepsilon)$</td>
+<td>Vietoris-Rips complex at scale $\varepsilon$</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$\tau$</td>
+<td>Time delay for Takens embedding</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$d$</td>
+<td>Embedding dimension for Takens embedding</td>
+<td>Ch. 6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="feature-vectors-gc">Feature Vectors (GC)</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Dimension</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPD features</td>
+<td>136</td>
+<td>Upper triangle of $\log(\Sigma)$, $\Sigma \in \text{SPD}(16)$</td>
+<td>Ch. 4, 8</td>
+</tr>
+<tr>
+<td>Trajectory features</td>
+<td>4</td>
+<td>Path length, geodesic distance, deviation, steps</td>
+<td>Ch. 4, 8</td>
+</tr>
+<tr>
+<td>TDA features</td>
+<td>16</td>
+<td>8 statistics per homology dimension ($H_0$, $H_1$)</td>
+<td>Ch. 4, 6</td>
+</tr>
+<tr>
+<td>Combined vector</td>
+<td>156</td>
+<td>SPD + trajectory + TDA</td>
+<td>Ch. 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="empirical-quantities-gc">Empirical Quantities (GC)</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DRI</td>
+<td>Decoder Robustness Index</td>
+<td>—</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>BIP</td>
+<td>Bond Invariance Principle</td>
+<td>—</td>
+<td>Ch. 3, 11</td>
+</tr>
+<tr>
+<td>ECE</td>
+<td>Expected Calibration Error</td>
+<td>—</td>
+<td>Ch. 14</td>
+</tr>
+<tr>
+<td>$\sigma$</td>
+<td>Fisher-combined significance</td>
+<td>Various</td>
+<td>Ch. 14</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conventions">Conventions</h2>
+<ul>
+<li><strong>Bold lowercase</strong> ($\mathbf{v}$): vectors in $\mathbb{R}^n$</li>
+<li><strong>Bold uppercase</strong> ($\mathbf{S}$): matrices</li>
+<li><strong>Calligraphic</strong> ($\mathcal{M}$): manifolds and abstract spaces</li>
+<li><strong>Blackboard bold</strong> ($\mathbb{B}$, $\mathbb{R}$): standard mathematical spaces</li>
+<li><strong>Greek lowercase</strong> ($\gamma$, $\sigma$): curves, parameters, permutations</li>
+<li><strong>Subscript indices</strong> ($g_{ij}$): tensor components</li>
+<li><strong>Superscript indices</strong> ($\gamma^k$): contravariant components</li>
+<li>Einstein summation convention is used throughout unless otherwise noted</li>
+<li>All logarithms are natural ($\ln$) unless specified as $\log_2$ or $\log_{10}$</li>
+<li>Statistical significance: * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$</li>
+</ul>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="index.html" class="nav-toc">&larr; Contents</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Communication: Language, Signal, and the Topology of Meaning.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
+</body>
+</html>
