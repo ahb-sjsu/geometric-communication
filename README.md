@@ -16,7 +16,7 @@ It inherits the heuristic field formalism, geodesic deviation measure, failure t
 
 ## Status
 
-Outline stage. See `OUTLINE.md` for the chapter plan.
+Draft. See `OUTLINE.md` for the chapter plan.
 
 ## Series map
 
@@ -65,11 +65,11 @@ flowchart TB
 | [Geometric Methods](https://github.com/ahb-sjsu/agi-hpc) | Published |
 | [Geometric Reasoning](https://github.com/ahb-sjsu/geometric-reasoning) | Draft complete |
 | [Geometric Ethics](https://github.com/ahb-sjsu/geometric-ethics) | Published (v1.23) |
-| **Geometric Communication: Language, Signal, and the Topology of Meaning** | **Outline** |
-| [Geometric Law](https://github.com/ahb-sjsu/geometric-law) | Outline |
-| [Geometric Cognition](https://github.com/ahb-sjsu/geometric-cognition) | Outline |
-| [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Outline |
-| [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Outline |
+| **Geometric Communication: Language, Signal, and the Topology of Meaning** | **Draft** |
+| [Geometric Law](https://github.com/ahb-sjsu/geometric-law) | Draft |
+| [Geometric Cognition](https://github.com/ahb-sjsu/geometric-cognition) | Draft |
+| [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Draft |
+| [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Draft |
 | [Geometric Aesthetics](https://github.com/ahb-sjsu/geometric-aesthetics) | Paper complete, book drafting |
 
 ## License
