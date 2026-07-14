@@ -304,10 +304,3 @@ The five communication systems examined in this book --- whale codas, birdsong, 
 
 The theorem is a negative result. It says what cannot be done. But every negative result in mathematics has a constructive shadow: it tells you what *must* be done instead. The Scalar Irrecoverability Theorem for communication says: to evaluate communication, you must preserve the manifold. The rest of this book has shown how.
 
----
-
-## Notes
-
-[^1]: Popovic, M. (2015). "chrF: character $n$-gram F-score for automatic MT evaluation." *Proceedings of WMT*, 392--395.
-
-[^2]: Russell, J. A. (1980). "A circumplex model of affect." *Journal of Personality and Social Psychology* 39(6), 1161--1178.

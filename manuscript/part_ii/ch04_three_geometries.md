@@ -543,7 +543,7 @@ Note the normalization steps: the input signal is standardized (zero mean, unit 
 
 The power of persistent homology lies in its robustness. Topological features are invariant to a wide class of transformations:
 
-**Proposition 4.2** (Stability of Persistence Diagrams). *For point clouds $\mathcal{P}$ and $\mathcal{Q}$ with bottleneck distance $d_B(\operatorname{Dgm}_k(\mathcal{P}), \operatorname{Dgm}_k(\mathcal{Q})) \leq d_H(\mathcal{P}, \mathcal{Q})$, where $d_H$ is the Hausdorff distance. That is, small perturbations of the point cloud produce small perturbations of the persistence diagram.*
+**Proposition 4.2** (Stability of Persistence Diagrams). *For point clouds $\mathcal{P}$ and $\mathcal{Q}$, the bottleneck distance satisfies $d_B(\operatorname{Dgm}_k(\mathcal{P}), \operatorname{Dgm}_k(\mathcal{Q})) \leq d_H(\mathcal{P}, \mathcal{Q})$, where $d_H$ is the Hausdorff distance. That is, small perturbations of the point cloud produce small perturbations of the persistence diagram.*
 
 This stability theorem (Cohen-Steiner, Edelsbrunner, and Harer, 2007) means that the topological features are robust to:
 

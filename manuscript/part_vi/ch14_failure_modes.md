@@ -397,14 +397,3 @@ This mapping is not a post-hoc analogy. The communication manifold was construct
 
 The next chapter completes the analysis by examining the most pervasive failure of all: the reduction of communication to scalar metrics. Where this chapter treated failures of interpretation --- the receiver gets the wrong answer --- Chapter 15 treats failures of evaluation --- the *measurer* loses the answer by compressing it to a number. The Scalar Irrecoverability Theorem, instantiated for communication, shows that this loss is not gradual, not approximate, and not recoverable. It is the final, and most fundamental, failure mode of communication science.
 
----
-
-## Notes
-
-[^1]: The Social Cognition results are drawn from Bond (2026), "Moral Geometry: Five Geometric Tests of Social Cognition," presented in detail in the Measuring AGI benchmark suite.
-
-[^2]: Tversky, A. and Kahneman, D. (1981). "The Framing of Decisions and the Psychology of Choice." *Science* 211(4481), 453--458.
-
-[^3]: The Learning results are drawn from Bond (2026), "Geometric Learning: Can Models Tell Valid Corrections from Invalid Ones?", presented in detail in the Measuring AGI benchmark suite.
-
-[^4]: The Attention results are drawn from Bond (2026), "Geometric Attention: Distractor Dose-Response in Moral Cognition," presented in detail in the Measuring AGI benchmark suite.
