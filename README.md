@@ -3,6 +3,12 @@
 **Andrew H. Bond**
 Senior Member, IEEE | San Jose State University
 
+> **Epistemic status (2026-07-14): posited framework — speculative theory awaiting instruments.**
+> The Geometric Series distinguishes *posited* structure from *measured* structure; this volume is
+> posited. No communication-domain instrument has been evaluated by the series' admission filter
+> ([xbse](https://github.com/ahb-sjsu/xbse)), and none currently passes its gate. Claims here
+> should be read as theory at licensed strength, not validated measurement.
+
 ---
 
 ## Part of the Geometric Series
