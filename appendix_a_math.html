@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appendix A: Mathematical Prerequisites &mdash; Geometric Communication</title>
   <meta name="description" content="Appendix A: Mathematical Prerequisites from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="appendix_a_math">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Appendix A: Mathematical Prerequisites</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch13_gauge_theory.html" class="nav-prev">&larr; Chapter 13: The Gauge Theory of Communicative Acts</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_b_eris_ketos.html" class="nav-next">Define the coda type taxonomy &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="appendix-a-mathematical-prerequisites">Appendix A: Mathematical Prerequisites</h1>
@@ -59,8 +65,8 @@
 <p><em>Communication interpretation</em>: The metric determines which communicative acts are &ldquo;close.&rdquo; Geodesics are the most efficient paths through meaning space. (See Chapter 3, Section 3.2.)</p>
 <hr />
 <h2 id="a3-the-poincare-ball-model">A.3 The Poincare Ball Model</h2>
-<p><strong>Definition A.7 (Poincare Ball).</strong> The <em>Poincare ball</em> of dimension $d$ and curvature $-c$ ($c > 0$) is</p>
-<p>$$\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 < 1\}$$</p>
+<p><strong>Definition A.7 (Poincare Ball).</strong> The <em>Poincare ball</em> of dimension $d$ and curvature $-c$ ($c &gt; 0$) is</p>
+<p>$$\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 &lt; 1\}$$</p>
 <p>equipped with the Riemannian metric</p>
 <p>$$g^{\mathbb{B}}_x = \left(\frac{2}{1 - c\|x\|^2}\right)^2 g^E$$</p>
 <p>where $g^E$ is the Euclidean metric.</p>
@@ -75,7 +81,7 @@
 <hr />
 <h2 id="a4-symmetric-positive-definite-matrices">A.4 Symmetric Positive-Definite Matrices</h2>
 <p><strong>Definition A.11 (SPD Manifold).</strong> The space of $n \times n$ symmetric positive-definite matrices,</p>
-<p>$$\text{SPD}(n) = \{S \in \mathbb{R}^{n \times n} : S = S^\top, \, v^\top S v > 0 \; \forall v \neq 0\}$$</p>
+<p>$$\text{SPD}(n) = \{S \in \mathbb{R}^{n \times n} : S = S^\top, \, v^\top S v &gt; 0 \; \forall v \neq 0\}$$</p>
 <p>is an open cone in the space of symmetric matrices, hence a smooth manifold of dimension $n(n+1)/2$.</p>
 <p><strong>Definition A.12 (Log-Euclidean Metric).</strong> The <em>log-Euclidean distance</em> between $S_1, S_2 \in \text{SPD}(n)$ is</p>
 <p>$$d_{LE}(S_1, S_2) = \|\log(S_1) - \log(S_2)\|_F$$</p>
@@ -84,7 +90,7 @@
 <hr />
 <h2 id="a5-persistent-homology">A.5 Persistent Homology</h2>
 <p><strong>Definition A.13 (Simplicial Complex).</strong> A <em>simplicial complex</em> $K$ is a collection of simplices (vertices, edges, triangles, tetrahedra, &hellip;) closed under taking faces.</p>
-<p><strong>Definition A.14 (Vietoris-Rips Complex).</strong> Given a point cloud $X \subset \mathbb{R}^d$ and a scale parameter $\varepsilon > 0$, the <em>Vietoris-Rips complex</em> $\text{VR}(X, \varepsilon)$ contains a simplex $\sigma = [x_0, \ldots, x_k]$ whenever $d(x_i, x_j) \leq \varepsilon$ for all $i, j$.</p>
+<p><strong>Definition A.14 (Vietoris-Rips Complex).</strong> Given a point cloud $X \subset \mathbb{R}^d$ and a scale parameter $\varepsilon &gt; 0$, the <em>Vietoris-Rips complex</em> $\text{VR}(X, \varepsilon)$ contains a simplex $\sigma = [x_0, \ldots, x_k]$ whenever $d(x_i, x_j) \leq \varepsilon$ for all $i, j$.</p>
 <p><strong>Definition A.15 (Filtration and Persistence).</strong> A <em>filtration</em> is a nested sequence $K_0 \subseteq K_1 \subseteq \cdots \subseteq K_N$ of simplicial complexes. A <em>persistence diagram</em> records the birth and death of homological features (connected components $H_0$, loops $H_1$, voids $H_2$, &hellip;) as the filtration parameter increases.</p>
 <p><strong>Theorem A.1 (Stability, Cohen-Steiner, Edelsbrunner, and Harer 2007).</strong> Let $f, g: X \to \mathbb{R}$ be tame functions with persistence diagrams $D_f, D_g$. Then</p>
 <p>$$d_B(D_f, D_g) \leq \|f - g\|_\infty$$</p>
@@ -115,7 +121,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch13_gauge_theory.html" class="nav-prev">&larr; Chapter 13: The Gauge Theory of Communicative Acts</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_b_eris_ketos.html" class="nav-next">Define the coda type taxonomy &rarr;</a>
       </div>
     </div>
   </article>
@@ -143,6 +151,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

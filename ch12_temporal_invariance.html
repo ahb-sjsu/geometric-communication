@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 12: Temporal Invariance and the Topology of Moral Language &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 12: Temporal Invariance and the Topology of Moral Language from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch12_temporal_invariance">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 12: Temporal Invariance and the Topology of Moral Language</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch11_cross_lingual.html" class="nav-prev">&larr; Chapter 11: Cross-Lingual Invariance: The Empirical Test</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch13_gauge_theory.html" class="nav-next">Chapter 13: The Gauge Theory of Communicative Acts &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-12-temporal-invariance-and-the-topology-of-moral-language">Chapter 12: Temporal Invariance and the Topology of Moral Language</h1>
@@ -71,7 +77,7 @@
 <p>The adversarial temporal head in the main architecture uses four coarser temporal periods (ancient, classical, medieval, modern) to maintain statistical power. The temporal probe analysis uses the finer seven-bin division for diagnostic purposes.</p>
 <h3 id="1213-results-temporal-invariance-confirmed">12.1.3 Results: Temporal Invariance Confirmed</h3>
 <p>The temporal adversary achieves 27.3% accuracy on four-period classification (chance = 25%). This is within 2.3 percentage points of chance&mdash;statistically indistinguishable at conventional significance levels. The bond space contains no recoverable temporal information.</p>
-<p>Meanwhile, Hohfeldian classification from the same bond space achieves 45.91% accuracy (chance = 25%, $p < 10^{-6}$). The model successfully encodes moral structure while discarding temporal markers.</p>
+<p>Meanwhile, Hohfeldian classification from the same bond space achieves 45.91% accuracy (chance = 25%, $p &lt; 10^{-6}$). The model successfully encodes moral structure while discarding temporal markers.</p>
 <p>The forward temporal transfer experiment (ancient $\to$ medieval) and the backward transfer (medieval $\to$ ancient) both achieve above-chance Hohfeldian accuracy, confirming that the invariance is bidirectional in time as it is bidirectional across languages.</p>
 <p>Cross-temporal validation against Hebrew legal texts from 200 BCE&ndash;500 CE provides the sharpest confirmation. The same Hohfeldian patterns emerge across the 2,000-year gap with no statistically significant differences:</p>
 <table>
@@ -88,19 +94,19 @@
 <td>Binding gates</td>
 <td>94% effectiveness</td>
 <td>98% effectiveness</td>
-<td>$p > 0.15$</td>
+<td>$p &gt; 0.15$</td>
 </tr>
 <tr>
 <td>Release gates</td>
 <td>89% effectiveness</td>
 <td>90% effectiveness</td>
-<td>$p > 0.15$</td>
+<td>$p &gt; 0.15$</td>
 </tr>
 <tr>
 <td>Nullifiers (duress, impossibility)</td>
 <td>89% effectiveness</td>
 <td>99% effectiveness</td>
-<td>$p > 0.15$</td>
+<td>$p &gt; 0.15$</td>
 </tr>
 </tbody>
 </table>
@@ -172,7 +178,7 @@ $$\text{OBLIGATION}: \text{يجب} \;|\; \text{واجب} \;|\; \text{فرض}$$
 $$\text{RIGHT}: \text{حق} \;|\; \text{يستحق}$$
 $$\text{LIBERTY}: \text{حلال} \;|\; \text{مباح} \;|\; \text{جائز}$$
 $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
-<p><strong>Stage 2: Multi-model validation.</strong> For a subset of passages, four independent large language models provide Hohfeldian classifications with chain-of-thought reasoning. Labels are accepted when $\geq 3$ models agree with mean confidence $> 0.7$. This stage serves as a quality check on the pattern-matching labels and provides higher-confidence labels for evaluation subsets.</p>
+<p><strong>Stage 2: Multi-model validation.</strong> For a subset of passages, four independent large language models provide Hohfeldian classifications with chain-of-thought reasoning. Labels are accepted when $\geq 3$ models agree with mean confidence $&gt; 0.7$. This stage serves as a quality check on the pattern-matching labels and provides higher-confidence labels for evaluation subsets.</p>
 <p>Passages matching no pattern receive the label NONE and are excluded from the classified training set. The label distribution is monitored to ensure no single class exceeds 70%, which would trivialize classification.</p>
 <p>[Figure 12.2] <em>The NLP extraction pipeline. Raw corpus text enters at left, passes through corpus-specific loaders, uniform preprocessing, and bond extraction (pattern matching + multi-model validation). The output is a set of passages with Hohfeldian labels, ready for input to the BIP architecture. The pipeline handles seven languages, four scripts, and 2,300 years of textual tradition.</em></p>
 <hr />
@@ -364,7 +370,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 <p>The 100% deontic transfer is corroborated by the <em>discrete semantic gate</em> experiments. These experiments test whether specific linguistic triggers produce deterministic Hohfeldian transitions&mdash;and whether those transitions are the same across languages.</p>
 <p>The most striking gate is the phrase <strong>&ldquo;only if convenient.&rdquo;</strong> When appended to an obligation scenario (&ldquo;You must help your neighbor&hellip; only if convenient&rdquo;), the classification flips from Obligation to Liberty with 100% reliability:</p>
 <p>$$P(\text{Liberty} \mid \text{Obligation context} + \text{"only if convenient"}) = 1.00$$</p>
-<p>This was tested on $N = 220$ passages (binomial test $p < 10^{-12}$). The confidence score distribution is bimodal: modes at 0.12 (low confidence in Obligation) and 0.91 (high confidence in Liberty), with a gap $> 0.4$ between modes. The transition is not gradual. It is a discrete switch&mdash;a step function, not a sigmoid.</p>
+<p>This was tested on $N = 220$ passages (binomial test $p &lt; 10^{-12}$). The confidence score distribution is bimodal: modes at 0.12 (low confidence in Obligation) and 0.91 (high confidence in Liberty), with a gap $&gt; 0.4$ between modes. The transition is not gradual. It is a discrete switch&mdash;a step function, not a sigmoid.</p>
 <p>Other gates show similar discrete behavior:</p>
 <table>
 <thead>
@@ -439,14 +445,14 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 </tr>
 </tbody>
 </table>
-<p>No difference reaches statistical significance (all Fisher exact $p > 0.15$). The gates are temporal invariants.</p>
+<p>No difference reaches statistical significance (all Fisher exact $p &gt; 0.15$). The gates are temporal invariants.</p>
 <h3 id="1243-geometric-interpretation-group-elements">12.4.3 Geometric Interpretation: Group Elements</h3>
 <p>The discrete semantic gates have a precise algebraic interpretation in terms of the $D_4$ group structure developed formally in Chapter 13.</p>
 <p>The Hohfeldian square:</p>
 <p>$$\begin{array}{ccc}
-\text{Right} & \xleftrightarrow{\text{correlative}} & \text{Duty} \\
-\updownarrow\text{opposite} & & \updownarrow\text{opposite} \\
-\text{No-Right} & \xleftrightarrow{\text{correlative}} & \text{Liberty}
+\text{Right} &amp; \xleftrightarrow{\text{correlative}} &amp; \text{Duty} \\
+\updownarrow\text{opposite} &amp; &amp; \updownarrow\text{opposite} \\
+\text{No-Right} &amp; \xleftrightarrow{\text{correlative}} &amp; \text{Liberty}
 \end{array}$$</p>
 <p>is acted upon by the dihedral group $D_4 = \langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$, where $r$ is a 90-degree rotation ($\text{Obligation} \to \text{Right} \to \text{No-Right} \to \text{Liberty} \to \text{Obligation}$) and $s$ is the correlative reflection ($\text{Obligation} \leftrightarrow \text{Right}$, $\text{Liberty} \leftrightarrow \text{No-Right}$).</p>
 <p>Each semantic gate corresponds to a specific group element:</p>
@@ -529,7 +535,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 - Genre introduces within-language coordinate variation (same content, different register)
 - The coordinates vary across languages and eras; the manifold they chart does not</p>
 <p><strong>The invariance</strong> (both chapters):
-- Cross-lingual: 44.5% F1, $p < 10^{-50}$, eleven languages tested
+- Cross-lingual: 44.5% F1, $p &lt; 10^{-50}$, eleven languages tested
 - Cross-temporal: no significant differences across 2,300 years within the Hebrew tradition
 - Cross-cultural: all ten transfer experiments exceed chance, including maximally distant pairs (Semitic to Chinese, Stoic to Confucian)
 - Structural vs. surface: 14.4:1 perturbation sensitivity ratio, confirming that the bond space encodes moral structure, not linguistic surface</p>
@@ -544,14 +550,29 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 <h3 id="1263-looking-ahead-the-gauge-theory-of-chapter-13">12.6.3 Looking Ahead: The Gauge Theory of Chapter 13</h3>
 <p>The BIP results are <em>measurements</em>. They tell us that the moral submanifold has certain empirical properties: flatness along the deontic axis, curvature along the correlative axis, $D_4$ symmetry, discrete semantic gates. Chapter 13 develops the <em>theory</em> that explains these measurements: the gauge theory of communicative acts, which identifies the $D_4$ group as the moral gauge group, the semantic gates as group elements, the holonomy as measurable path-dependence, and the Bond Index as a gauge-theoretic quantity.</p>
 <p>The progression from measurement to theory is deliberate. The BIP results were not derived from the gauge theory; the gauge theory was developed to explain the BIP results. The empirical fact came first. The geometry followed. This is the method of the entire book: measure the structure, then find the mathematics that explains why it was there all along.</p>
-<p>[^1]: The temporal adversary&rsquo;s 27.3% accuracy (versus 25% chance for four periods) is within the expected fluctuation range for a classifier operating at chance. A binomial test against 25% with the sample sizes involved yields $p > 0.05$&mdash;not significant. The temporal information in the bond space is, by all measurable standards, zero.</p>
-<p>[^2]: The term &ldquo;deontic&rdquo; derives from the Greek δέον (deon), &ldquo;that which is binding.&rdquo; Deontic logic, the study of obligation and permission, was formalized by von Wright (1951). The BIP experiment provides the first empirical evidence that the deontic distinction is a cross-linguistic and cross-temporal invariant of natural moral language, not merely a logical primitive.</p>
-<p>[^3]: The bimodal distribution of confidence scores under semantic gating is particularly informative. A model that was gradually shifting its classification would produce a unimodal distribution centered on 0.5 (uncertain). The bimodal distribution (modes at 0.12 and 0.91) indicates that the model &ldquo;jumps&rdquo; from one classification to another&mdash;there is no intermediate state. This is the signature of a discrete group action, not a continuous deformation.</p>
-<p>[^4]: The comparison between Hebrew patur and English &ldquo;you don&rsquo;t have to&rdquo; illustrates a general phenomenon that Wierzbicka (1996) documented extensively: different languages lexicalize different semantic distinctions. The geometric framework provides a formal account of this phenomenon: different languages chart the semantic manifold with different resolution, creating lexical gaps where one chart has a dedicated coordinate and another must use circumlocution.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The temporal adversary&rsquo;s 27.3% accuracy (versus 25% chance for four periods) is within the expected fluctuation range for a classifier operating at chance. A binomial test against 25% with the sample sizes involved yields $p &gt; 0.05$&mdash;not significant. The temporal information in the bond space is, by all measurable standards, zero.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The term &ldquo;deontic&rdquo; derives from the Greek δέον (deon), &ldquo;that which is binding.&rdquo; Deontic logic, the study of obligation and permission, was formalized by von Wright (1951). The BIP experiment provides the first empirical evidence that the deontic distinction is a cross-linguistic and cross-temporal invariant of natural moral language, not merely a logical primitive.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The bimodal distribution of confidence scores under semantic gating is particularly informative. A model that was gradually shifting its classification would produce a unimodal distribution centered on 0.5 (uncertain). The bimodal distribution (modes at 0.12 and 0.91) indicates that the model &ldquo;jumps&rdquo; from one classification to another&mdash;there is no intermediate state. This is the signature of a discrete group action, not a continuous deformation.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>The comparison between Hebrew patur and English &ldquo;you don&rsquo;t have to&rdquo; illustrates a general phenomenon that Wierzbicka (1996) documented extensively: different languages lexicalize different semantic distinctions. The geometric framework provides a formal account of this phenomenon: different languages chart the semantic manifold with different resolution, creating lexical gaps where one chart has a dedicated coordinate and another must use circumlocution.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch11_cross_lingual.html" class="nav-prev">&larr; Chapter 11: Cross-Lingual Invariance: The Empirical Test</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch13_gauge_theory.html" class="nav-next">Chapter 13: The Gauge Theory of Communicative Acts &rarr;</a>
       </div>
     </div>
   </article>
@@ -579,6 +600,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

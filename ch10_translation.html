@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 10: Translation as Parallel Transport &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 10: Translation as Parallel Transport from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch10_translation">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 10: Translation as Parallel Transport</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch09_cuneiform.html" class="nav-prev">&larr; Chapter 9: Hyperbolic Attention for Cuneiform</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch11_cross_lingual.html" class="nav-next">Chapter 11: Cross-Lingual Invariance: The Empirical Test &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-10-translation-as-parallel-transport">Chapter 10: Translation as Parallel Transport</h1>
@@ -71,8 +77,7 @@
 <p><em>In local coordinates $\{x^i\}$, the connection is specified by the Christoffel symbols</em></p>
 <p>$$\Gamma^k_{ij} = \frac{1}{2} g^{kl}\left(\frac{\partial g_{il}}{\partial x^j} + \frac{\partial g_{jl}}{\partial x^i} - \frac{\partial g_{ij}}{\partial x^l}\right)$$</p>
 <p>The Christoffel symbols encode how meaning vectors must be adjusted as they are carried from one point on $C$ to a neighbouring point. In a flat region (where $g$ is constant in some coordinate system), all $\Gamma^k_{ij}$ vanish: meaning vectors can be carried without adjustment, and translation is trivial. In a curved region, the $\Gamma^k_{ij}$ are nonzero: meaning vectors must be continuously rotated as they are transported, and the accumulated rotation is the translation loss.</p>
-<p>The Christoffel symbols are coordinate-dependent&mdash;they change when we switch languages, just as the components of a vector change under coordinate transformation. But the geometric content they encode&mdash;the curvature of the manifold&mdash;is coordinate-independent. Translation difficulty is not a property of the source or target language individually. It is a property of the region of $C$ through which the translation path passes.[^1]</p>
-<p>[^1]: This is the geometric content of the truism that &ldquo;some texts are harder to translate than others regardless of the language pair.&rdquo; The difficulty resides in the curvature of the semantic region, not in the coordinate system.</p>
+<p>The Christoffel symbols are coordinate-dependent&mdash;they change when we switch languages, just as the components of a vector change under coordinate transformation. But the geometric content they encode&mdash;the curvature of the manifold&mdash;is coordinate-independent. Translation difficulty is not a property of the source or target language individually. It is a property of the region of $C$ through which the translation path passes.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <hr />
 <h2 id="102-parallel-transport-and-holonomy">10.2 Parallel Transport and Holonomy</h2>
 <h3 id="1021-parallel-transport-of-meaning">10.2.1 Parallel Transport of Meaning</h3>
@@ -84,10 +89,8 @@
 <p><em>The parallel transport map $\Pi_\gamma: T_p C \to T_q C$ sends each initial vector $V(0)$ to its transported value $V(1)$.</em></p>
 <p>The parallel transport equation says: carry the meaning vector $V$ along the path $\gamma$ in the most &ldquo;constant&rdquo; way possible, adjusting only for the curvature of the manifold. If $C$ were flat, $V$ would not change at all: $dV^k/dt = 0$, and the meaning would arrive identical to how it departed. On a curved manifold, the Christoffel terms force continuous adjustment, and the result depends on the path.</p>
 <p>This is translation. The meaning vector $V(0)$ is the source-language representation of a concept. The path $\gamma$ is the translation process&mdash;the sequence of intermediate representations through which the meaning passes as it is converted from source to target. The transported vector $V(1)$ is the target-language representation. Parallel transport is the instruction to preserve as much of the meaning as the geometry permits.</p>
-<p><strong>Example 10.1</strong> (Flat transport). Consider the Old Assyrian phrase <em>1 ma-na kaspam</em>, &ldquo;1 mina of silver.&rdquo; The commercial-transaction region of $C$ is nearly flat: the concept of a quantity of precious metal, expressed in standard units, has essentially the same structure across all languages that participate in trade. The Christoffel symbols are approximately zero. Parallel transport yields: &ldquo;1 mina of silver&rdquo; (English), &ldquo;1 mine d&rsquo;argent&rdquo; (French), &ldquo;1 mana gumus&rdquo; (Modern Turkish). No meaning is lost. The path does not matter.[^2]</p>
-<p>[^2]: The near-flatness of the commercial region is not accidental. Trade requires interoperability. Over centuries, commercial concepts are shaped by cross-cultural contact into forms that transport cleanly&mdash;a kind of evolutionary pressure toward low curvature in the regions of $C$ that must be shared.</p>
-<p><strong>Example 10.2</strong> (Curved transport). Consider the Old Assyrian phrase <em>awat rubae&rsquo;im iktanassanniatim</em>, roughly &ldquo;the case of the governor continues to distress me.&rdquo; This sentence inhabits the personal-distress region of $C$, where the curvature is significant. The Akkadian morphology encodes aspect (iterative <em>-tan-</em> infix: the distress is recurring), voice (ventive <em>-am</em>: the effect is directed toward the speaker), and social register (the writer is a merchant addressing a business partner about a legal dispute with a government official). These semantic dimensions are entangled&mdash;the iterative aspect does not just mark repetition; it marks the kind of grinding, unresolved repetition characteristic of bureaucratic entanglement. Transporting this meaning to English requires navigating high-curvature terrain where aspect, voice, register, and pragmatic force are coupled. The result is inevitably approximate: &ldquo;the governor&rsquo;s case keeps troubling me&rdquo; captures the iteration but loses the ventive directionality and the social dynamics.[^3]</p>
-<p>[^3]: Kouwenberg (2010) provides the standard treatment of the Akkadian <em>-tan-</em> iterative and its semantic range. The personal letters from Kanesh (modern Kultepe) are the primary corpus for Old Assyrian epistolary style; see Larsen (2015).</p>
+<p><strong>Example 10.1</strong> (Flat transport). Consider the Old Assyrian phrase <em>1 ma-na kaspam</em>, &ldquo;1 mina of silver.&rdquo; The commercial-transaction region of $C$ is nearly flat: the concept of a quantity of precious metal, expressed in standard units, has essentially the same structure across all languages that participate in trade. The Christoffel symbols are approximately zero. Parallel transport yields: &ldquo;1 mina of silver&rdquo; (English), &ldquo;1 mine d&rsquo;argent&rdquo; (French), &ldquo;1 mana gumus&rdquo; (Modern Turkish). No meaning is lost. The path does not matter.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p><strong>Example 10.2</strong> (Curved transport). Consider the Old Assyrian phrase <em>awat rubae&rsquo;im iktanassanniatim</em>, roughly &ldquo;the case of the governor continues to distress me.&rdquo; This sentence inhabits the personal-distress region of $C$, where the curvature is significant. The Akkadian morphology encodes aspect (iterative <em>-tan-</em> infix: the distress is recurring), voice (ventive <em>-am</em>: the effect is directed toward the speaker), and social register (the writer is a merchant addressing a business partner about a legal dispute with a government official). These semantic dimensions are entangled&mdash;the iterative aspect does not just mark repetition; it marks the kind of grinding, unresolved repetition characteristic of bureaucratic entanglement. Transporting this meaning to English requires navigating high-curvature terrain where aspect, voice, register, and pragmatic force are coupled. The result is inevitably approximate: &ldquo;the governor&rsquo;s case keeps troubling me&rdquo; captures the iteration but loses the ventive directionality and the social dynamics.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <h3 id="1022-holonomy-the-measure-of-translation-loss">10.2.2 Holonomy: The Measure of Translation Loss</h3>
 <p>The path-dependence of parallel transport on a curved manifold has a striking consequence. If we transport a meaning vector around a closed loop&mdash;translating from language $A$ to language $B$, then from $B$ to language $C$, then back from $C$ to $A$&mdash;the vector may not return to its original orientation. The discrepancy is the holonomy.</p>
 <p><strong>Definition 10.5</strong> (Holonomy). <em>Let $\gamma: [0, 1] \to C$ be a closed loop, $\gamma(0) = \gamma(1) = p$. The holonomy of $\gamma$ is the linear map</em></p>
@@ -116,8 +119,7 @@
 <hr />
 <h2 id="103-the-cuneiform-case-study">10.3 The Cuneiform Case Study</h2>
 <h3 id="1031-the-old-assyrian-corpus">10.3.1 The Old Assyrian Corpus</h3>
-<p>The Old Assyrian texts from Kanesh (ancient Kanis, modern Kultepe in central Turkey) comprise approximately 23,000 clay tablets dating to the 19th and 18th centuries BCE. Written primarily by Assyrian merchants operating a long-distance trade network between Assur (northern Iraq) and Anatolia, the corpus spans a range of genres: commercial records, legal contracts, judicial proceedings, private letters, and administrative documents.[^4]</p>
-<p>[^4]: The standard reference is Veenhof and Eidem (2008). The texts are published in transliteration in the series <em>Anatolian Studies</em> and the <em>Altassyrische Texte und Untersuchungen</em> (ATTU). For the Deep Past project, we work with a digitised corpus of 1,561 aligned Akkadian-English pairs, described in Chapter 9.</p>
+<p>The Old Assyrian texts from Kanesh (ancient Kanis, modern Kultepe in central Turkey) comprise approximately 23,000 clay tablets dating to the 19th and 18th centuries BCE. Written primarily by Assyrian merchants operating a long-distance trade network between Assur (northern Iraq) and Anatolia, the corpus spans a range of genres: commercial records, legal contracts, judicial proceedings, private letters, and administrative documents.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <p>This corpus is ideal for testing the geometric theory of translation because it spans a curvature gradient. At one extreme, commercial records use rigid formulaic structures with standardised vocabulary. At the other, personal letters deploy the full expressive resources of Old Assyrian, including rare verbal forms, idiomatic expressions, and pragmatically loaded constructions that resist clean translation. The theory predicts that the commercial records occupy a low-curvature region of $C$ (yielding near-zero holonomy under translation), while the personal letters occupy a high-curvature region (yielding significant holonomy).</p>
 <h3 id="1032-low-curvature-the-commercial-formula">10.3.2 Low Curvature: The Commercial Formula</h3>
 <p>The prototypical Old Assyrian commercial record follows a rigid template:</p>
@@ -147,7 +149,7 @@
 <p><strong>Definition 10.7</strong> (Translation Loop Residual). <em>For a text $t$ in language $L_1$, and a chain of translations $L_1 \to L_2 \to \cdots \to L_k \to L_1$, the translation loop residual is</em></p>
 <p>$$\rho(t) = 1 - \text{sim}(t, \hat{t})$$</p>
 <p><em>where $\hat{t}$ is the result of the round-trip translation and $\text{sim}$ is a semantic similarity measure on $\mathcal{E}_{L_1}$ (e.g., sentence embedding cosine similarity).</em></p>
-<p>For a flat region, $\rho(t) \approx 0$: round-trip translation recovers the original. For a high-curvature region, $\rho(t) > 0$: round-trip translation produces a measurably different text. The translation loop residual is the empirical counterpart of holonomy.</p>
+<p>For a flat region, $\rho(t) \approx 0$: round-trip translation recovers the original. For a high-curvature region, $\rho(t) &gt; 0$: round-trip translation produces a measurably different text. The translation loop residual is the empirical counterpart of holonomy.</p>
 <p>In the Old Assyrian corpus, we computed $\rho$ for all 1,561 aligned pairs using the chain Akkadian $\to$ English $\to$ (backtranslation via the trained model) $\to$ Akkadian, with similarity measured by chrF++ on the Akkadian transliteration. The results stratified cleanly by genre:</p>
 <table>
 <thead>
@@ -185,7 +187,7 @@
 </tr>
 </tbody>
 </table>
-<p>The gradient is monotonic and statistically significant ($F(3, 1557) = 142.7$, $p < 10^{-80}$). Commercial records, with their formulaic structure and flat semantics, have residuals near zero. Private letters, with their entangled morphology and pragmatic complexity, have residuals three to four times larger. This is the curvature of the semantic manifold, measured empirically.</p>
+<p>The gradient is monotonic and statistically significant ($F(3, 1557) = 142.7$, $p &lt; 10^{-80}$). Commercial records, with their formulaic structure and flat semantics, have residuals near zero. Private letters, with their entangled morphology and pragmatic complexity, have residuals three to four times larger. This is the curvature of the semantic manifold, measured empirically.</p>
 <p>[Figure 10.4: Translation loop residual $\rho$ versus genre for the Old Assyrian corpus. Box plots showing median, interquartile range, and outliers. The monotonic increase from commercial records to private letters corresponds to increasing curvature of the content manifold $C$.]</p>
 <hr />
 <h2 id="104-hyperbolic-attention-as-holonomy-reduction">10.4 Hyperbolic Attention as Holonomy Reduction</h2>
@@ -321,7 +323,7 @@
 <p><strong>Saudade</strong> (Portuguese): a deep emotional state of nostalgic longing for something absent, with an acceptance that the object of longing may never return. The concept inhabits a region of $C$ where temporal orientation (longing for the past), emotional valence (bittersweet rather than purely negative), and epistemic state (acceptance of irrecoverability) are coupled. The English chart separates these dimensions (nostalgia, melancholy, resignation), but no single English word occupies the same point on $C$.</p>
 <p><strong>Giri</strong> (義理, Japanese): a complex web of social obligation, reciprocal duty, and moral indebtedness that structures interpersonal relationships. The concept entangles Hohfeldian relations (duty, right, and their correlatives) with social hierarchy, temporal persistence (giri obligations endure across years and generations), and emotional force (failure to meet giri produces not just social censure but deep personal shame). The English chart can approximate giri as &ldquo;social obligation&rdquo; or &ldquo;moral duty,&rdquo; but these approximations project the full concept onto a low-dimensional subspace, discarding the entangled structure that makes giri a distinct concept.</p>
 <p>In each case, the &ldquo;untranslatable&rdquo; concept occupies a point on $C$ where the sectional curvature is high&mdash;where multiple semantic dimensions are coupled by the metric tensor&rsquo;s off-diagonal terms. Translation requires parallel transport through this coupled region, and the holonomy is nonzero. The English approximations are not wrong; they are transported vectors that have been rotated by the curvature.</p>
-<p><strong>Proposition 10.4</strong> (Untranslatability Bound). <em>Let $m \in C$ be a concept with sectional curvature $K(m)$ bounded below by $K_{\min} > 0$ for all 2-planes at $m$. Let $d = \dim(C)$. Then for any translation loop $\gamma$ enclosing area $A$ around $m$, the holonomy satisfies</em></p>
+<p><strong>Proposition 10.4</strong> (Untranslatability Bound). <em>Let $m \in C$ be a concept with sectional curvature $K(m)$ bounded below by $K_{\min} &gt; 0$ for all 2-planes at $m$. Let $d = \dim(C)$. Then for any translation loop $\gamma$ enclosing area $A$ around $m$, the holonomy satisfies</em></p>
 <p>$$\|\text{Hol}(\gamma) - \text{Id}\| \geq K_{\min} \cdot A$$</p>
 <p><em>to leading order. In particular, if $K_{\min}$ is large, then no small translation loop can have zero holonomy, and the concept is irreducibly difficult to translate.</em></p>
 <p><em>Proof.</em> Immediate from Proposition 10.1 and the lower bound on curvature. The holonomy of a small loop enclosing area $\delta A$ is $\text{Id} + R(X,Y)\,\delta A + O(\delta A^2)$, and $\|R(X,Y)\| \geq K_{\min}$ for any unit 2-plane by the curvature bound. For a loop enclosing area $A$ decomposed into infinitesimal loops, the bound follows by composition, with higher-order corrections from the non-commutativity of the holonomy group. $\square$</p>
@@ -350,7 +352,7 @@
 <p><strong>Theorem 10.2</strong> (Geodesic Minimises Path Error). <em>Among all paths from $p$ to $q$ on $(C, g)$, the geodesic $\gamma^*$ minimises the path error $\epsilon_{\text{path}}$ in the translation error decomposition of Proposition 10.3. Specifically, for any other path $\gamma$ from $p$ to $q$:</em></p>
 <p>$$\epsilon_{\text{path}}(\gamma) \geq \epsilon_{\text{path}}(\gamma^*) = 0$$</p>
 <p><em>with equality if and only if $\gamma$ is homotopic to $\gamma^*$ through a flat region.</em></p>
-<p><em>Proof.</em> The path error is defined as $\epsilon_{\text{path}}(\gamma) = \|\Pi_\gamma - \Pi_{\gamma^*}\|$. By Proposition 10.2, this is bounded by $K_{\max} \cdot \text{Area}(\Sigma_{\gamma, \gamma^*})$, where $\Sigma_{\gamma, \gamma^*}$ is the surface enclosed between $\gamma$ and $\gamma^*$. For $\gamma = \gamma^*$, the enclosed area is zero and $\epsilon_{\text{path}} = 0$. For $\gamma \neq \gamma^*$, the enclosed area is positive (assuming $\gamma$ is not homotopic to $\gamma^*$ through a flat region), and $\epsilon_{\text{path}} > 0$ if the curvature is nonzero on $\Sigma$. If $\gamma$ and $\gamma^*$ are homotopic through a flat region, then $K_{\max} = 0$ on $\Sigma$ and $\epsilon_{\text{path}} = 0$ by Corollary 10.1. $\square$</p>
+<p><em>Proof.</em> The path error is defined as $\epsilon_{\text{path}}(\gamma) = \|\Pi_\gamma - \Pi_{\gamma^*}\|$. By Proposition 10.2, this is bounded by $K_{\max} \cdot \text{Area}(\Sigma_{\gamma, \gamma^*})$, where $\Sigma_{\gamma, \gamma^*}$ is the surface enclosed between $\gamma$ and $\gamma^*$. For $\gamma = \gamma^*$, the enclosed area is zero and $\epsilon_{\text{path}} = 0$. For $\gamma \neq \gamma^*$, the enclosed area is positive (assuming $\gamma$ is not homotopic to $\gamma^*$ through a flat region), and $\epsilon_{\text{path}} &gt; 0$ if the curvature is nonzero on $\Sigma$. If $\gamma$ and $\gamma^*$ are homotopic through a flat region, then $K_{\max} = 0$ on $\Sigma$ and $\epsilon_{\text{path}} = 0$ by Corollary 10.1. $\square$</p>
 <p>This theorem justifies the design principle behind the hyperbolic attention bias: any mechanism that constrains the translation path to lie closer to the geodesic reduces the path error. The hyperbolic bias provides structural information&mdash;the cuneiform sign hierarchy&mdash;that narrows the space of admissible paths, effectively reducing $\text{Area}(\Sigma_{\gamma, \gamma^*})$ and thereby reducing the holonomy.</p>
 <hr />
 <h2 id="108-connections">10.8 Connections</h2>
@@ -393,10 +395,29 @@
 <hr />
 <p><strong>Chapter 10 Notes</strong></p>
 <p>The interpretation of translation as parallel transport has precursors in the mathematical linguistics literature, though none develop the full Riemannian framework presented here. Nosofsky (1986) introduced geometric models of categorisation that implicitly involve transport of similarity judgments across stimulus dimensions. Gardenfors (2000, 2014) developed &ldquo;conceptual spaces&rdquo; as geometric models of meaning, with particular attention to how concepts in one domain map to concepts in another, though without the differential-geometric machinery of connections and curvature. Tversky (1977) demonstrated that human similarity judgments violate the symmetry and triangle inequality axioms of metric spaces, suggesting that the semantic manifold may have more exotic geometry than the Riemannian framework assumes; we note this as an open question (Chapter 18). The gauge-theoretic interpretation of language follows the programme outlined in Bronstein et al. (2021), who argue that geometric deep learning should exploit the symmetries (gauge invariances) of the domain. The application to cuneiform translation builds on the Deep Past project described in Chapter 9 and the Assyriological literature on Old Assyrian language and society, particularly Veenhof and Eidem (2008), Michel (2001), and Larsen (2015). The Ambrose-Singer theorem connecting holonomy to curvature is proved in Kobayashi and Nomizu (1963, Ch. II); for a modern exposition, see do Carmo (1992). The non-abelian Stokes theorem used in Theorem 10.1 is developed in Nakahara (2003, Ch. 11). The concept of &ldquo;untranslatability&rdquo; has a large philosophical literature; our contribution is to make it quantitative through the curvature bound of Proposition 10.4, replacing the binary translatable/untranslatable distinction with a continuous measure grounded in differential geometry.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This is the geometric content of the truism that &ldquo;some texts are harder to translate than others regardless of the language pair.&rdquo; The difficulty resides in the curvature of the semantic region, not in the coordinate system.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The near-flatness of the commercial region is not accidental. Trade requires interoperability. Over centuries, commercial concepts are shaped by cross-cultural contact into forms that transport cleanly&mdash;a kind of evolutionary pressure toward low curvature in the regions of $C$ that must be shared.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Kouwenberg (2010) provides the standard treatment of the Akkadian <em>-tan-</em> iterative and its semantic range. The personal letters from Kanesh (modern Kultepe) are the primary corpus for Old Assyrian epistolary style; see Larsen (2015).&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>The standard reference is Veenhof and Eidem (2008). The texts are published in transliteration in the series <em>Anatolian Studies</em> and the <em>Altassyrische Texte und Untersuchungen</em> (ATTU). For the Deep Past project, we work with a digitised corpus of 1,561 aligned Akkadian-English pairs, described in Chapter 9.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch09_cuneiform.html" class="nav-prev">&larr; Chapter 9: Hyperbolic Attention for Cuneiform</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch11_cross_lingual.html" class="nav-next">Chapter 11: Cross-Lingual Invariance: The Empirical Test &rarr;</a>
       </div>
     </div>
   </article>
@@ -424,6 +445,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

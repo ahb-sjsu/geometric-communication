@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 9: Hyperbolic Attention for Cuneiform &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 9: Hyperbolic Attention for Cuneiform from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch09_cuneiform">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 9: Hyperbolic Attention for Cuneiform</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch08_birdsong.html" class="nav-prev">&larr; Chapter 8: The Geometry of Birdsong</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch10_translation.html" class="nav-next">Chapter 10: Translation as Parallel Transport &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-9-hyperbolic-attention-for-cuneiform">Chapter 9: Hyperbolic Attention for Cuneiform</h1>
@@ -47,8 +53,7 @@
 <h2 id="91-the-deep-past">9.1 The Deep Past</h2>
 <p>Four thousand years ago, in the merchant colonies of Anatolia, Assyrian traders pressed cuneiform wedges into clay tablets to record their business. They wrote contracts for tin and textiles, tallied debts, filed complaints about dishonest partners, and occasionally sent personal letters home to the city of Assur. The tablets were dried, filed, and forgotten. Millennia later, archaeologists excavated them from the ruins of Kanesh (modern Kultepe, Turkey), producing a corpus of Old Assyrian commercial correspondence that is one of the richest archives of everyday life from the ancient Near East.</p>
 <p>The Deep Past Initiative Machine Translation Challenge asks a question both practical and profound: can we teach a machine to translate these texts? The training data is 1,561 parallel pairs&mdash;Akkadian transliterations and their English translations. By modern NLP standards, this is not merely low-resource; it is microscopically small. GPT-3 was trained on 300 billion tokens. We have 1,561 sentences.</p>
-<p>The challenge is the extreme case of a problem that recurs throughout computational linguistics: how do you build a translation system when the data is desperately insufficient to learn the structure from scratch? The standard answer&mdash;scale up the data&mdash;is unavailable. There are no more Old Assyrian parallel texts to discover. The physical corpus is finite, fragmentary, and will not grow.[^1]</p>
-<p>[^1]: New tablets are occasionally found, and existing tablets are re-edited as scholarly understanding evolves. But the pace of new parallel text is measured in dozens of pairs per decade, not thousands per year. The data scarcity is structural, not contingent.</p>
+<p>The challenge is the extreme case of a problem that recurs throughout computational linguistics: how do you build a translation system when the data is desperately insufficient to learn the structure from scratch? The standard answer&mdash;scale up the data&mdash;is unavailable. There are no more Old Assyrian parallel texts to discover. The physical corpus is finite, fragmentary, and will not grow.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p>The geometric answer, developed in this chapter, is different. When data is scarce, inject structural knowledge. The cuneiform writing system has a hierarchical taxonomy&mdash;sign form, reading, word&mdash;that is well-documented by two centuries of Assyriology. This taxonomy is a tree. Trees embed naturally in hyperbolic space (Chapter 5, Theorem 5.1). We encode this hyperbolic structure directly into the transformer&rsquo;s attention mechanism as an additive bias, giving the model a geometric prior that compensates for what the data cannot provide.</p>
 <p>This chapter presents the full Deep Past project: the linguistic challenge (Section 9.2), the cuneiform sign hierarchy and its geometric encoding (Sections 9.3&ndash;9.4), the cuneiform-aware augmentation strategies (Section 9.5), the ablation study (Section 9.6), and the analysis of where the geometric prior helps most (Section 9.7). The mathematical foundations&mdash;the Poincare ball, Mobius operations, the distortion theorem&mdash;were developed in Chapter 5. Here we put them to work.</p>
 <hr />
@@ -229,8 +234,7 @@ Augmented: a-na {DINGIR}UTU be-lí-ni
 <p>Configuration D combines all three components: supplementary data, online augmentation, and geometric bias. The question is whether the components are complementary.</p>
 <p>The question is whether augmentation and geometric bias are <em>redundant</em> (encoding the same structural information, so the combination offers little beyond Configuration B) or <em>complementary</em> (encoding orthogonal information, so the combination is superadditive). The theoretical argument favours complementarity. Augmentation operates on the data, creating new training examples that vary along the manifold&rsquo;s coordinate directions. The geometric bias operates on the architecture, constraining attention patterns to respect the cuneiform hierarchy. The augmentation says &ldquo;here are more examples to learn from.&rdquo; The geometric bias says &ldquo;here is how to pay attention to them.&rdquo;</p>
 <h3 id="966-results">9.6.6 Results</h3>
-<p>The ablation results, evaluated on the held-out 10% validation split, confirm the expected pattern.[^2]</p>
-<p>[^2]: The companion notebook (<code>deep_past_v2.ipynb</code>) produces the complete results table. Because the ablation was designed for a competition setting with late-binding results, we report the qualitative trends and relative relationships between configurations rather than final numbers, which depend on the specific random seed, hardware, and Colab session.</p>
+<p>The ablation results, evaluated on the held-out 10% validation split, confirm the expected pattern.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p>The progression is clear:</p>
 <ol>
 <li>
@@ -319,8 +323,6 @@ Augmented: a-na {DINGIR}UTU be-lí-ni
 <p>The tablets are four thousand years old. The mathematics is timeless. The geometry of the data outlives the data itself.</p>
 <hr />
 <p><strong>Chapter 9 Notes</strong></p>
-<p>[^1]: For a comprehensive introduction to the Old Assyrian corpus, see Larsen (2015) and Veenhof and Eidem (2008). The Deep Past Initiative provides a standardised benchmark drawn from Veenhof&rsquo;s published editions.</p>
-<p>[^2]: The ablation methodology follows the convention of reporting trends from a competition setting where final numbers are hardware- and seed-dependent. For reproducibility, see the companion notebook.</p>
 <p><strong>Key References</strong></p>
 <ul>
 <li>Xue, L., et al. (2022). ByT5: Towards a token-free future with pre-trained byte-to-byte models. <em>TACL</em>, 10, 291&ndash;306.</li>
@@ -332,10 +334,23 @@ Augmented: a-na {DINGIR}UTU be-lí-ni
 <li>Larsen, M.T. (2015). <em>Ancient Kanesh: A Merchant Colony in Bronze Age Anatolia</em>. Cambridge University Press.</li>
 <li>Veenhof, K.R. and Eidem, J. (2008). <em>Mesopotamia: The Old Assyrian Period</em>. Academic Press Fribourg.</li>
 </ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>For a comprehensive introduction to the Old Assyrian corpus, see Larsen (2015) and Veenhof and Eidem (2008). The Deep Past Initiative provides a standardised benchmark drawn from Veenhof&rsquo;s published editions.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The ablation methodology follows the convention of reporting trends from a competition setting where final numbers are hardware- and seed-dependent. For reproducibility, see the companion notebook.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch08_birdsong.html" class="nav-prev">&larr; Chapter 8: The Geometry of Birdsong</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch10_translation.html" class="nav-next">Chapter 10: Translation as Parallel Transport &rarr;</a>
       </div>
     </div>
   </article>
@@ -363,6 +378,7 @@ Augmented: a-na {DINGIR}UTU be-lí-ni
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

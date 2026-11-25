@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 11: Cross-Lingual Invariance: The Empirical Test &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 11: Cross-Lingual Invariance: The Empirical Test from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch11_cross_lingual">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 11: Cross-Lingual Invariance: The Empirical Test</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch10_translation.html" class="nav-prev">&larr; Chapter 10: Translation as Parallel Transport</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch12_temporal_invariance.html" class="nav-next">Chapter 12: Temporal Invariance and the Topology of Moral La… &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-11-cross-lingual-invariance-the-empirical-test">Chapter 11: Cross-Lingual Invariance: The Empirical Test</h1>
@@ -48,7 +54,7 @@
 <p>The answer, measured with statistical certainty that leaves no room for coincidence, is yes.</p>
 <p>The Bond Invariance Principle (BIP), introduced in Chapter 3 as a theoretical claim about the communication manifold, predicts that meaning&mdash;the gauge-invariant content of a communicative act&mdash;should be preserved under the action of the communication gauge group $G = T \times R \times F$. Translation is the action of the translation subgroup $T$. If the BIP holds, then a model trained to recognize moral relations in ancient Hebrew should transfer to modern English, because the relations are geometric objects on $C$ and the language is merely a coordinate chart.</p>
 <p>We test this prediction using the most adversarial experimental design we can construct: training on 3.9 million passages of Hebrew and Aramaic text spanning 500 BCE to 1800 CE, and testing&mdash;with no additional training&mdash;on 68,000 Dear Abby letters written in American English between 1956 and 2020. The training and test corpora share no language, no era, no genre, no cultural context. If anything transfers, it is structure.</p>
-<p>Something does. At 44.5% F1 on four-way moral classification (chance = 25%, $p < 10^{-50}$), the transfer is not merely statistically significant. It is, by the standards of cross-lingual NLP, remarkable. And the 100% transfer accuracy on the obligation-liberty axis&mdash;the fundamental deontic distinction&mdash;is, in the language of this book, exact gauge invariance.</p>
+<p>Something does. At 44.5% F1 on four-way moral classification (chance = 25%, $p &lt; 10^{-50}$), the transfer is not merely statistically significant. It is, by the standards of cross-lingual NLP, remarkable. And the 100% transfer accuracy on the obligation-liberty axis&mdash;the fundamental deontic distinction&mdash;is, in the language of this book, exact gauge invariance.</p>
 <p>This chapter presents the experiment in full: the corpora (Section 11.1), the architecture (Section 11.2), the results (Section 11.3), the geometric analysis (Section 11.4), and the implications for the communication manifold (Section 11.5).</p>
 <hr />
 <h2 id="111-the-corpora-maximizing-the-gauge-transformation">11.1 The Corpora: Maximizing the Gauge Transformation</h2>
@@ -277,7 +283,7 @@
 <tr>
 <td>$z$-statistic</td>
 <td>52.3</td>
-<td>$p < 10^{-50}$</td>
+<td>$p &lt; 10^{-50}$</td>
 </tr>
 <tr>
 <td>Cohen&rsquo;s $h$</td>
@@ -291,7 +297,7 @@
 </tr>
 </tbody>
 </table>
-<p>The model, trained exclusively on Hebrew and Aramaic moral texts, correctly classifies the Hohfeldian relation in modern English Dear Abby letters at nearly double the chance rate. The $z$-statistic of 52.3 corresponds to $p < 10^{-50}$&mdash;a probability so small that it exceeds the statistical thresholds used in particle physics ($5\sigma$, or $p \approx 3 \times 10^{-7}$) by more than 40 orders of magnitude.</p>
+<p>The model, trained exclusively on Hebrew and Aramaic moral texts, correctly classifies the Hohfeldian relation in modern English Dear Abby letters at nearly double the chance rate. The $z$-statistic of 52.3 corresponds to $p &lt; 10^{-50}$&mdash;a probability so small that it exceeds the statistical thresholds used in particle physics ($5\sigma$, or $p \approx 3 \times 10^{-7}$) by more than 40 orders of magnitude.</p>
 <p>The language probe result is equally striking. A fresh linear probe, trained post hoc on frozen $\mathbf{z}_{\text{bond}}$ representations, achieved 0.0% accuracy at predicting the source language&mdash;<em>below</em> the 25% chance baseline for four languages. The bond space contains no recoverable linguistic information. The adversarial training has succeeded completely: $\mathbf{z}_{\text{bond}}$ encodes moral structure and nothing else that a linear classifier can find.</p>
 <h3 id="1132-per-language-transfer">11.3.2 Per-Language Transfer</h3>
 <p>The supplementary corpora reveal that the invariance extends beyond the Hebrew-English boundary:</p>
@@ -557,7 +563,7 @@
 <h3 id="1156-implications-for-ai-alignment">11.5.6 Implications for AI Alignment</h3>
 <p>If moral structure is gauge-invariant, then AI alignment may be more tractable than commonly assumed. The challenge is not to instill arbitrary human values in artificial agents&mdash;values that might be culturally contingent or internally inconsistent. The challenge is to instantiate the invariant moral geometry that any sufficiently sophisticated agent will converge upon.</p>
 <p>The BIP architecture provides a prototype for how this might work. The adversarial disentanglement forces the model to attend to structural features (bonds) rather than surface features (language, genre, era). The Bond Index provides a quantitative test for whether a system&rsquo;s moral reasoning respects the correlative symmetry of the Hohfeldian structure. The perturbation ratio (structural/surface sensitivity) provides a test for gauge invariance: is the system responding to morally relevant features or to morally irrelevant ones?</p>
-<p>These tools convert the untestable claim &ldquo;this AI system is ethical&rdquo; into the testable claim &ldquo;this AI system achieves Bond Index $< \tau$ with structural/surface ratio $> 2.0$.&rdquo; The convergence from arbitrary initial representations toward low Bond Index under invariance training provides a principled optimization objective that is culture-independent&mdash;not because it ignores cultural variation, but because it targets the structural invariants that all cultures share.</p>
+<p>These tools convert the untestable claim &ldquo;this AI system is ethical&rdquo; into the testable claim &ldquo;this AI system achieves Bond Index $&lt; \tau$ with structural/surface ratio $&gt; 2.0$.&rdquo; The convergence from arbitrary initial representations toward low Bond Index under invariance training provides a principled optimization objective that is culture-independent&mdash;not because it ignores cultural variation, but because it targets the structural invariants that all cultures share.</p>
 <p>The expanded eleven-language study reinforces this point. The same structural invariants emerge from Confucian, Buddhist, Abrahamic, and Western secular traditions. An alignment system built on these invariants would not privilege any single tradition; it would encode the relational geometry that all traditions instantiate. This is not cultural imperialism disguised as universalism. It is the empirical finding that certain features of moral reasoning&mdash;the deontic axis, correlative symmetry, discrete semantic gating&mdash;are shared across every tradition tested, and the engineering proposal that these features can serve as the foundation for culturally robust alignment.</p>
 <hr />
 <h2 id="116-limitations-and-open-questions">11.6 Limitations and Open Questions</h2>
@@ -573,14 +579,29 @@
 <h3 id="1164-the-road-to-chapter-12">11.6.4 The Road to Chapter 12</h3>
 <p>The BIP experiment demonstrates cross-lingual invariance at a single level of analysis: the four Hohfeldian categories. Chapter 12 asks the complementary question: what <em>within</em> a language predicts Hohfeldian classification? What are the linguistic coordinates&mdash;the surface features on the signal manifold $S$&mdash;that different languages use to express the same gauge-invariant moral content? And does the invariance hold not just across languages but across <em>time within a single tradition</em>?</p>
 <p>The answers will reveal the relationship between the deep geometry and the surface coordinates&mdash;between the manifold and its charts&mdash;with an empirical precision that the cross-lingual experiment alone cannot provide.</p>
-<p>[^1]: The 52.3 $z$-statistic translates to a probability of approximately $10^{-600}$ under the normal distribution. The more conservative $p < 10^{-50}$ reflects our uncertainty about the tails of the distribution and the possibility of systematic biases that inflate the test statistic.</p>
-<p>[^2]: The Sefaria database is maintained as an open-source project. The data used in this experiment is available under a CC-BY-NC license. All experimental code is available at the repository listed in Appendix C.</p>
-<p>[^3]: The adversarial weight $\lambda$ was ramped from 0.1 to 1.0 over the first three epochs of training. This gradual ramp prevents the adversary from destabilizing training in early epochs when the bond representation has not yet formed. The schedule follows Ganin et al. (2016).</p>
-<p>[^4]: Classical Chinese is classified as a Sino-Tibetan language by most linguists. Its typological distance from Hebrew is extreme: it is isolating (no inflectional morphology), topic-prominent (not subject-prominent), and written in logographic script. The Confucian ethical tradition developed in the Spring and Autumn period (770&ndash;476 BCE) with no documented contact with Near Eastern legal traditions until the Silk Road era (circa 200 BCE), and the texts used in our corpus predate any plausible influence.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The 52.3 $z$-statistic translates to a probability of approximately $10^{-600}$ under the normal distribution. The more conservative $p &lt; 10^{-50}$ reflects our uncertainty about the tails of the distribution and the possibility of systematic biases that inflate the test statistic.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The Sefaria database is maintained as an open-source project. The data used in this experiment is available under a CC-BY-NC license. All experimental code is available at the repository listed in Appendix C.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The adversarial weight $\lambda$ was ramped from 0.1 to 1.0 over the first three epochs of training. This gradual ramp prevents the adversary from destabilizing training in early epochs when the bond representation has not yet formed. The schedule follows Ganin et al. (2016).&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Classical Chinese is classified as a Sino-Tibetan language by most linguists. Its typological distance from Hebrew is extreme: it is isolating (no inflectional morphology), topic-prominent (not subject-prominent), and written in logographic script. The Confucian ethical tradition developed in the Spring and Autumn period (770&ndash;476 BCE) with no documented contact with Near Eastern legal traditions until the Silk Road era (circa 200 BCE), and the texts used in our corpus predate any plausible influence.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch10_translation.html" class="nav-prev">&larr; Chapter 10: Translation as Parallel Transport</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch12_temporal_invariance.html" class="nav-next">Chapter 12: Temporal Invariance and the Topology of Moral La… &rarr;</a>
       </div>
     </div>
   </article>
@@ -608,6 +629,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

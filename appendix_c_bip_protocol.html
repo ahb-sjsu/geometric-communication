@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appendix C: The BIP Experimental Protocol &mdash; Geometric Communication</title>
   <meta name="description" content="Appendix C: The BIP Experimental Protocol from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="appendix_c_bip_protocol">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Appendix C: The BIP Experimental Protocol</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="appendix_b_eris_ketos.html" class="nav-prev">&larr; Define the coda type taxonomy</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_d_notation.html" class="nav-next">Appendix D: Notation and Conventions &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="appendix-c-the-bip-experimental-protocol">Appendix C: The BIP Experimental Protocol</h1>
@@ -627,7 +633,7 @@ h (768-dim)
 <h3 id="c61-comparison-to-chance">C.6.1 Comparison to Chance</h3>
 <p>All reported accuracies and F1 scores are tested against the chance baseline (25% for 4-class Hohfeldian classification) using a $z$-test:</p>
 <p>$$z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}$$</p>
-<p>The primary result ($z = 52.3$, $p < 10^{-50}$) is computed on the full test set of ~68,000 letters. Effect size is reported as Cohen&rsquo;s $h = 2 \arcsin(\sqrt{\hat{p}}) - 2 \arcsin(\sqrt{p_0})$.</p>
+<p>The primary result ($z = 52.3$, $p &lt; 10^{-50}$) is computed on the full test set of ~68,000 letters. Effect size is reported as Cohen&rsquo;s $h = 2 \arcsin(\sqrt{\hat{p}}) - 2 \arcsin(\sqrt{p_0})$.</p>
 <h3 id="c62-confidence-intervals">C.6.2 Confidence Intervals</h3>
 <p>All metrics are reported with 95% confidence intervals computed by one of:</p>
 <ul>
@@ -675,7 +681,7 @@ h (768-dim)
 </tr>
 </tbody>
 </table>
-<p>The bootstrap comparison of effect sizes ($n_\text{bootstrap} = 10{,}000$) tests the directional hypothesis $H_1: \eta^2(\text{Time}) < \eta^2(\text{Hohfeld})$.</p>
+<p>The bootstrap comparison of effect sizes ($n_\text{bootstrap} = 10{,}000$) tests the directional hypothesis $H_1: \eta^2(\text{Time}) &lt; \eta^2(\text{Hohfeld})$.</p>
 <hr />
 <h2 id="c7-temporal-invariance-protocol">C.7 Temporal Invariance Protocol</h2>
 <h3 id="c71-temporal-bin-definitions">C.7.1 Temporal Bin Definitions</h3>
@@ -909,7 +915,7 @@ pyyaml              &gt;= 6.0.0
 <tr>
 <td>$z$-statistic</td>
 <td>52.3</td>
-<td>$p < 10^{-50}$</td>
+<td>$p &lt; 10^{-50}$</td>
 </tr>
 <tr>
 <td>Cohen&rsquo;s $h$</td>
@@ -991,7 +997,9 @@ python src/evaluate.py --config config_bip.yaml \
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="appendix_b_eris_ketos.html" class="nav-prev">&larr; Define the coda type taxonomy</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_d_notation.html" class="nav-next">Appendix D: Notation and Conventions &rarr;</a>
       </div>
     </div>
   </article>
@@ -1019,6 +1027,7 @@ python src/evaluate.py --config config_bip.yaml \
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

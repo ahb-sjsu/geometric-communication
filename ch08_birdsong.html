@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 8: The Geometry of Birdsong &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 8: The Geometry of Birdsong from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch08_birdsong">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 8: The Geometry of Birdsong</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch07_whale_communication.html" class="nav-prev">&larr; Chapter 7: The Geometry of Whale Communication</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch09_cuneiform.html" class="nav-next">Chapter 9: Hyperbolic Attention for Cuneiform &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-8-the-geometry-of-birdsong">Chapter 8: The Geometry of Birdsong</h1>
@@ -53,8 +59,7 @@
 <hr />
 <p>Chapter 7 introduced the geometric analysis of non-human communication through sperm whale codas &mdash; broadband clicks whose inter-click intervals encode a combinatorial phonetic hierarchy. The three-geometry toolkit extracted meaningful structure from 8,719 codas, revealing linguistic universals, adversarial vulnerability boundaries, and identity signatures.</p>
 <p>This chapter applies the same toolkit to a fundamentally different acoustic system: birdsong. Where whale codas are brief, impulsive, and broadband, birdsong is extended, tonal, and narrowband. Where the whale dataset comprised 21 coda types from a single species, the birdsong dataset comprises 206 species. The question is whether the geometric toolkit transfers. The answer is yes, and productively: the geometric features capture aspects of birdsong that convolutional networks on spectrograms systematically miss.</p>
-<p>The context is the BirdCLEF competition, an annual challenge hosted on Kaggle that asks participants to identify bird species from field recordings of natural soundscapes.[^1] The 2026 edition features 206 species, five-second classification windows, and a constraint that makes the problem geometrically interesting: inference must run entirely on CPU, with a total budget of ninety minutes. This constraint forces a reckoning with computational cost that GPU-rich training environments never demand. It is in this constrained setting that geometric features find their niche: cheap to compute, complementary to neural features, and robust to the noise conditions that degrade spectrograms.</p>
-<p>[^1]: BirdCLEF is part of the LifeCLEF evaluation campaign, running annually since 2014. The competition series has driven significant advances in bioacoustic classification, progressing from small-scale species recognition to continent-scale soundscape monitoring. The 2026 edition continues the trend toward harder evaluation: longer soundscapes, more species, and stricter computational constraints.</p>
+<p>The context is the BirdCLEF competition, an annual challenge hosted on Kaggle that asks participants to identify bird species from field recordings of natural soundscapes.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> The 2026 edition features 206 species, five-second classification windows, and a constraint that makes the problem geometrically interesting: inference must run entirely on CPU, with a total budget of ninety minutes. This constraint forces a reckoning with computational cost that GPU-rich training environments never demand. It is in this constrained setting that geometric features find their niche: cheap to compute, complementary to neural features, and robust to the noise conditions that degrade spectrograms.</p>
 <hr />
 <h2 id="81-the-birdclef-problem">8.1 The BirdCLEF Problem</h2>
 <h3 id="811-the-task">8.1.1 The Task</h3>
@@ -91,8 +96,7 @@
 <p>The first component of the geometric feature vector captures <strong>cross-frequency correlations</strong> in the mel spectrogram. The construction proceeds in three steps: band aggregation, covariance estimation, and projection to log-Euclidean space.</p>
 <p><strong>Step 1: Band aggregation.</strong> The mel spectrogram has $n_{\text{mels}} = 128$ frequency bins and $T$ time frames (approximately 313 for a five-second window at the default hop length of 512 samples at 32 kHz). We aggregate the 128 mel bins into $n = 16$ frequency bands by averaging consecutive groups of $128 / 16 = 8$ mel bins. This produces a matrix $\mathbf{B} \in \mathbb{R}^{16 \times T}$, where $B_{i,t}$ is the average log-energy in the $i$-th frequency band at time $t$.</p>
 <p>The choice of $n = 16$ bands is a trade-off. Fewer bands (say, 8) would produce smaller covariance matrices but lose spectral resolution &mdash; the ability to distinguish species with similar broad spectral envelopes but different fine harmonic structure. More bands (say, 32) would preserve finer detail but produce larger covariance matrices (528-dimensional upper triangles rather than 136) with noisier off-diagonal entries, since each band contains fewer mel bins and the covariance estimates are less stable.</p>
-<p>Sixteen bands at 32 kHz sampling rate span approximately 0&ndash;16 kHz, with each band covering roughly 1 kHz of effective bandwidth.[^2] This resolution is well-matched to the scale of birdsong structure: most passerine songs occupy the 1&ndash;10 kHz range, and the major spectral features (fundamental frequency, first and second harmonics, formant-like resonances) are separated by intervals of 500 Hz&ndash;2 kHz.</p>
-<p>[^2]: The mel scale is nonlinear, compressing high frequencies and expanding low frequencies. The actual bandwidth of each band varies: lower bands span narrower frequency ranges (in Hz) and higher bands span wider ranges. The 16 bands provide finer resolution at low frequencies (where most birdsong energy concentrates) and coarser resolution at high frequencies &mdash; a design that aligns well with the distribution of avian vocalizations.</p>
+<p>Sixteen bands at 32 kHz sampling rate span approximately 0&ndash;16 kHz, with each band covering roughly 1 kHz of effective bandwidth.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> This resolution is well-matched to the scale of birdsong structure: most passerine songs occupy the 1&ndash;10 kHz range, and the major spectral features (fundamental frequency, first and second harmonics, formant-like resonances) are separated by intervals of 500 Hz&ndash;2 kHz.</p>
 <p>From the <code>geometric_features.py</code> implementation:</p>
 <pre><code class="language-python">def compute_covariance(spectrogram: np.ndarray, n_bands: int = 16,
                        epsilon: float = 1e-4) -&gt; np.ndarray:
@@ -114,10 +118,10 @@
 <p><strong>Step 2: Covariance estimation.</strong> The $16 \times T$ band-energy matrix $\mathbf{B}$ yields a $16 \times 16$ sample covariance matrix:</p>
 <p>$$\Sigma_{ij} = \frac{1}{T-1} \sum_{t=1}^{T} \left(B_{i,t} - \bar{B}_i\right)\left(B_{j,t} - \bar{B}_j\right)$$</p>
 <p>where $\bar{B}_i = \frac{1}{T}\sum_t B_{i,t}$ is the temporal mean of band $i$. The diagonal entries $\Sigma_{ii}$ measure the variance of energy in each band &mdash; how much the $i$-th band fluctuates over time. The off-diagonal entries $\Sigma_{ij}$ measure the cross-frequency correlations &mdash; how the energy in band $i$ co-varies with the energy in band $j$.</p>
-<p>A regularization term $\epsilon \mathbf{I}$ (with $\epsilon = 10^{-4}$) is added to ensure positive-definiteness. Without regularization, the sample covariance can be singular when $T < n$, or merely ill-conditioned when some frequency bands carry very little energy. The regularization places the matrix firmly in $\text{SPD}(16)$ &mdash; the manifold of $16 \times 16$ symmetric positive-definite matrices.</p>
+<p>A regularization term $\epsilon \mathbf{I}$ (with $\epsilon = 10^{-4}$) is added to ensure positive-definiteness. Without regularization, the sample covariance can be singular when $T &lt; n$, or merely ill-conditioned when some frequency bands carry very little energy. The regularization places the matrix firmly in $\text{SPD}(16)$ &mdash; the manifold of $16 \times 16$ symmetric positive-definite matrices.</p>
 <h3 id="822-what-cross-frequency-correlations-capture">8.2.2 What Cross-Frequency Correlations Capture</h3>
 <p>Why is this covariance matrix informative for species identification? The answer lies in what the off-diagonal entries encode: the <em>harmonic binding structure</em> of the vocalization.</p>
-<p>Consider a bird producing a pure tone at frequency $f_0$. If the tone has harmonics (as most biological sounds do), energy will appear simultaneously at $f_0, 2f_0, 3f_0, \ldots$ The frequency bands containing these harmonics will be strongly positively correlated &mdash; when the bird sings louder, all harmonics increase together; when the bird pauses, all harmonics drop together. The covariance matrix records this pattern: $\Sigma_{ij} > 0$ whenever bands $i$ and $j$ contain harmonics of the same fundamental.</p>
+<p>Consider a bird producing a pure tone at frequency $f_0$. If the tone has harmonics (as most biological sounds do), energy will appear simultaneously at $f_0, 2f_0, 3f_0, \ldots$ The frequency bands containing these harmonics will be strongly positively correlated &mdash; when the bird sings louder, all harmonics increase together; when the bird pauses, all harmonics drop together. The covariance matrix records this pattern: $\Sigma_{ij} &gt; 0$ whenever bands $i$ and $j$ contain harmonics of the same fundamental.</p>
 <p>Different species have different harmonic structures. A white-throated sparrow&rsquo;s descending whistle is nearly a pure tone: energy concentrates in one or two bands, and cross-frequency correlations are weak (only adjacent bands are correlated). A wood thrush&rsquo;s flute-like song has rich harmonics: energy appears in three or four bands simultaneously, producing strong off-diagonal correlations that extend several bands away from the diagonal. A brown-headed cowbird&rsquo;s liquid warble involves rapid frequency modulation that sweeps energy across many bands in complex, time-varying patterns: the covariance matrix has a dense, nearly full-rank structure.</p>
 <p>[Figure 8.2: Covariance matrices for three species. Left: white-throated sparrow (near-diagonal structure, weak cross-frequency correlations, nearly pure tone). Center: wood thrush (banded structure with off-diagonal peaks at harmonic intervals, rich overtone series). Right: brown-headed cowbird (dense, full-rank structure, complex frequency modulation). The species-specific covariance &ldquo;fingerprint&rdquo; is visible to the naked eye.]</p>
 <p>The analogy to human vowel space is precise. In human speech, vowels are distinguished not by their fundamental frequency (which varies with speaker) but by the relative positions of their formants &mdash; the resonant frequencies of the vocal tract that create peaks of energy at specific frequency bands. Two vowels with the same $f_0$ but different formant ratios produce different cross-frequency correlation patterns. The covariance matrix of a vowel captures the formant structure; the matrix logarithm places this structure in a vector space where distances are meaningful.</p>
@@ -126,8 +130,7 @@
 <p>The covariance matrix $\Sigma \in \text{SPD}(16)$ lives on a curved Riemannian manifold, not in a flat vector space. Standard machine learning algorithms &mdash; LightGBM, random forests, SVMs &mdash; assume flat (Euclidean) feature spaces. We need a map from the manifold to a vector space that preserves as much geometric structure as possible.</p>
 <p>The <strong>log-Euclidean metric</strong> provides exactly this. For $\Sigma \in \text{SPD}(n)$, the matrix logarithm $\log(\Sigma)$ is a symmetric (but not necessarily positive-definite) matrix that lives in the tangent space at the identity &mdash; which is a flat vector space isomorphic to $\text{Sym}(n)$. The log-Euclidean distance between two SPD matrices is:</p>
 <p>$$d_{\text{LE}}(\Sigma_1, \Sigma_2) = \|\log(\Sigma_1) - \log(\Sigma_2)\|_F$$</p>
-<p>where $\|\cdot\|_F$ denotes the Frobenius norm. This is a genuine metric on $\text{SPD}(n)$ &mdash; it satisfies non-negativity, symmetry, the triangle inequality, and the identity of indiscernibles &mdash; and it agrees with the geodesic distance in the log-Euclidean Riemannian structure.[^3]</p>
-<p>[^3]: The log-Euclidean metric is one of several Riemannian metrics on SPD(n). The affine-invariant metric $d_{\text{AI}}(\Sigma_1, \Sigma_2) = \|\log(\Sigma_1^{-1/2} \Sigma_2 \Sigma_1^{-1/2})\|_F$ has stronger geometric properties (it is invariant under congruence transformations $\Sigma \mapsto A\Sigma A^\top$), but the log-Euclidean metric is computationally cheaper and produces a flat (Euclidean) feature space after the logarithm. For our purposes &mdash; feeding features into a LightGBM classifier &mdash; the flat structure is a feature, not a limitation.</p>
+<p>where $\|\cdot\|_F$ denotes the Frobenius norm. This is a genuine metric on $\text{SPD}(n)$ &mdash; it satisfies non-negativity, symmetry, the triangle inequality, and the identity of indiscernibles &mdash; and it agrees with the geodesic distance in the log-Euclidean Riemannian structure.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <p>The implementation computes $\log(\Sigma)$ via scipy&rsquo;s <code>logm</code> function, then extracts the upper triangle (including the diagonal) as a flat feature vector:</p>
 <pre><code class="language-python">def spd_features_from_spectrogram(spectrogram: np.ndarray,
                                    n_bands: int = 16,
@@ -458,10 +461,26 @@ if elapsed_total &gt; 5000:
 </li>
 </ol>
 <p>The geometric features work because birdsong has geometric structure. The covariance matrix is a point on a Riemannian manifold. The song is a trajectory on that manifold. The vocal production system is a dynamical system whose attractor has a topology. These are not metaphors. They are mathematical facts, implemented in code, validated in competition, and ready to be applied to any acoustic communication system we encounter next.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>BirdCLEF is part of the LifeCLEF evaluation campaign, running annually since 2014. The competition series has driven significant advances in bioacoustic classification, progressing from small-scale species recognition to continent-scale soundscape monitoring. The 2026 edition continues the trend toward harder evaluation: longer soundscapes, more species, and stricter computational constraints.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The mel scale is nonlinear, compressing high frequencies and expanding low frequencies. The actual bandwidth of each band varies: lower bands span narrower frequency ranges (in Hz) and higher bands span wider ranges. The 16 bands provide finer resolution at low frequencies (where most birdsong energy concentrates) and coarser resolution at high frequencies &mdash; a design that aligns well with the distribution of avian vocalizations.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The log-Euclidean metric is one of several Riemannian metrics on SPD(n). The affine-invariant metric $d_{\text{AI}}(\Sigma_1, \Sigma_2) = \|\log(\Sigma_1^{-1/2} \Sigma_2 \Sigma_1^{-1/2})\|_F$ has stronger geometric properties (it is invariant under congruence transformations $\Sigma \mapsto A\Sigma A^\top$), but the log-Euclidean metric is computationally cheaper and produces a flat (Euclidean) feature space after the logarithm. For our purposes &mdash; feeding features into a LightGBM classifier &mdash; the flat structure is a feature, not a limitation.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch07_whale_communication.html" class="nav-prev">&larr; Chapter 7: The Geometry of Whale Communication</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch09_cuneiform.html" class="nav-next">Chapter 9: Hyperbolic Attention for Cuneiform &rarr;</a>
       </div>
     </div>
   </article>
@@ -489,6 +508,7 @@ if elapsed_total &gt; 5000:
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

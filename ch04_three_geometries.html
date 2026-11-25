@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 4: Three Geometries for Communication &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 4: Three Geometries for Communication from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch04_three_geometries">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 4: Three Geometries for Communication</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch03_communication_manifold.html" class="nav-prev">&larr; Chapter 3: The Communication Manifold</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch05_hyperbolic_embeddings.html" class="nav-next">Chapter 5: Hyperbolic Embeddings of Communication Structure &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-4-three-geometries-for-communication">Chapter 4: Three Geometries for Communication</h1>
@@ -61,9 +67,7 @@
 <h3 id="411-why-hyperbolic">4.1.1 Why Hyperbolic?</h3>
 <p>Consider a binary tree of depth $k$. The tree has $2^k - 1$ nodes, and any embedding must place each node at a location that reflects its position in the hierarchy: parent above child, siblings close together, distant cousins far apart. How much space does this require?</p>
 <p>In Euclidean space $\mathbb{R}^d$, the volume of a ball of radius $r$ grows as $r^d$ &mdash; polynomially in $r$ for fixed $d$. But the number of nodes at depth $k$ in a binary tree grows as $2^k$ &mdash; exponentially. To embed the tree without distortion, we need the space to accommodate exponential growth, which means either using exponentially many dimensions (impractical) or accepting distortion that grows with depth.</p>
-<p>In hyperbolic space of constant negative curvature $-c$, the volume of a ball of radius $r$ grows as $e^{(d-1)\sqrt{c}\,r}$ &mdash; exponentially in $r$ for any fixed dimension $d > 1$.[^1] This exponential volume growth matches the exponential branching of the tree. A binary tree of arbitrary depth embeds in hyperbolic space of dimension $O(\log 2) = O(1)$ with bounded distortion, whereas Euclidean embedding requires dimension $O(2^k)$ for a tree of depth $k$.[^2]</p>
-<p>[^1]: The precise formula for the volume of a geodesic ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-c$ is $V_d(r) = \omega_{d-1} \int_0^r \left(\frac{\sinh(\sqrt{c}\,t)}{\sqrt{c}}\right)^{d-1} dt$, where $\omega_{d-1}$ is the volume of the unit $(d-1)$-sphere. For large $r$, this is dominated by the exponential term $e^{(d-1)\sqrt{c}\,r}$. See <em>Geometric Methods</em> (Bond, 2026a), Ch. 4.3 for the derivation.</p>
-<p>[^2]: This is the Bourgain embedding theorem applied to tree metrics. Sarkar (2011) showed that any weighted tree on $n$ nodes can be embedded in the Poincare disk (2-dimensional hyperbolic space) with arbitrarily low distortion $1 + \epsilon$, using coordinates of $O(\log n / \epsilon)$ bits of precision. See Sala et al. (2018) for the multi-dimensional generalization.</p>
+<p>In hyperbolic space of constant negative curvature $-c$, the volume of a ball of radius $r$ grows as $e^{(d-1)\sqrt{c}\,r}$ &mdash; exponentially in $r$ for any fixed dimension $d &gt; 1$.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> This exponential volume growth matches the exponential branching of the tree. A binary tree of arbitrary depth embeds in hyperbolic space of dimension $O(\log 2) = O(1)$ with bounded distortion, whereas Euclidean embedding requires dimension $O(2^k)$ for a tree of depth $k$.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p>This is not an abstract curiosity. Every communication system we study in this book has hierarchical structure:</p>
 <ul>
 <li><strong>Whale codas</strong>: The 21 coda types form a combinatorial hierarchy indexed by click count, rhythm class, tempo, rubato, and ornamentation (Sharma et al., 2024).</li>
@@ -74,11 +78,11 @@
 <p>In each case, the hierarchy is not a convenient organizational device. It is an intrinsic structural feature of the communication system, and any representation that ignores it &mdash; such as a flat Euclidean feature vector &mdash; discards information that matters.</p>
 <h3 id="412-the-poincare-ball-model">4.1.2 The Poincare Ball Model</h3>
 <p>The Poincare ball model represents $d$-dimensional hyperbolic space of curvature $-c$ as the open ball</p>
-<p>$$\mathbb{B}^d_c = \left\{ \mathbf{x} \in \mathbb{R}^d : c\|\mathbf{x}\|^2 < 1 \right\}$$</p>
+<p>$$\mathbb{B}^d_c = \left\{ \mathbf{x} \in \mathbb{R}^d : c\|\mathbf{x}\|^2 &lt; 1 \right\}$$</p>
 <p>equipped with the Riemannian metric tensor</p>
 <p>$$g_{\mathbf{x}} = \left(\lambda_{\mathbf{x}}^c\right)^2 g^E$$</p>
 <p>where $g^E$ is the Euclidean metric and $\lambda_{\mathbf{x}}^c = \frac{2}{1 - c\|\mathbf{x}\|^2}$ is the <strong>conformal factor</strong>. The conformal factor diverges as $\mathbf{x}$ approaches the boundary of the ball ($c\|\mathbf{x}\|^2 \to 1$), which means distances stretch infinitely near the boundary &mdash; there is &ldquo;room&rdquo; for the exponentially many leaves of a tree.</p>
-<p><strong>Definition 4.1</strong> (Poincare Ball). <em>The Poincare ball of dimension $d$ and curvature parameter $c > 0$ is the Riemannian manifold $(\mathbb{B}^d_c, g)$ where $\mathbb{B}^d_c = \{\mathbf{x} \in \mathbb{R}^d : c\|\mathbf{x}\|^2 < 1\}$ and $g_{\mathbf{x}} = (\lambda_{\mathbf{x}}^c)^2 g^E$ with conformal factor $\lambda_{\mathbf{x}}^c = 2/(1 - c\|\mathbf{x}\|^2)$. The sectional curvature is $-c$ everywhere.</em></p>
+<p><strong>Definition 4.1</strong> (Poincare Ball). <em>The Poincare ball of dimension $d$ and curvature parameter $c &gt; 0$ is the Riemannian manifold $(\mathbb{B}^d_c, g)$ where $\mathbb{B}^d_c = \{\mathbf{x} \in \mathbb{R}^d : c\|\mathbf{x}\|^2 &lt; 1\}$ and $g_{\mathbf{x}} = (\lambda_{\mathbf{x}}^c)^2 g^E$ with conformal factor $\lambda_{\mathbf{x}}^c = 2/(1 - c\|\mathbf{x}\|^2)$. The sectional curvature is $-c$ everywhere.</em></p>
 <p>The curvature parameter $c$ controls the &ldquo;spread&rdquo; of the ball. Higher $c$ means more hyperbolic distortion: the boundary is closer (at radius $1/\sqrt{c}$), the conformal factor grows faster, and hierarchical structures are spread more aggressively. Lower $c$ makes the geometry more Euclidean near the origin. The choice of $c$ is a modeling decision &mdash; it sets the trade-off between resolving fine structure near the root of a hierarchy and resolving fine structure near the leaves.</p>
 <p>In the <code>eris-ketos</code> implementation, the ball is parameterized as:</p>
 <pre><code class="language-python">class PoincareBall:
@@ -172,7 +176,7 @@
 <li><strong>Cuneiform signs</strong> ($b \approx 10$, $k = 3$): $c \approx 0.15$.</li>
 <li><strong>WordNet nouns</strong> ($b \approx 400$, $k = 8$): $c \approx 0.14$, which is close to the $c = 0.1$ used in the original Nickel and Kiela (2017) Poincare embedding paper.</li>
 </ul>
-<p>[Figure 4.2] <em>Effect of curvature parameter $c$ on the same tree embedding. Left: $c = 0.1$ (mildly hyperbolic) &mdash; the tree is compact, with leaves well inside the ball. Center: $c = 1.0$ (moderately hyperbolic) &mdash; the tree fills the ball, with leaves near but not at the boundary. Right: $c = 10.0$ (strongly hyperbolic) &mdash; leaves are compressed against the boundary, with poor numerical resolution. The optimal $c$ places the deepest leaves in the outer half of the ball without exceeding $\|\mathbf{x}\| > 0.95/\sqrt{c}$.</em></p>
+<p>[Figure 4.2] <em>Effect of curvature parameter $c$ on the same tree embedding. Left: $c = 0.1$ (mildly hyperbolic) &mdash; the tree is compact, with leaves well inside the ball. Center: $c = 1.0$ (moderately hyperbolic) &mdash; the tree fills the ball, with leaves near but not at the boundary. Right: $c = 10.0$ (strongly hyperbolic) &mdash; leaves are compressed against the boundary, with poor numerical resolution. The optimal $c$ places the deepest leaves in the outer half of the ball without exceeding $\|\mathbf{x}\| &gt; 0.95/\sqrt{c}$.</em></p>
 <h3 id="416-applications-in-communication">4.1.6 Applications in Communication</h3>
 <p>Hyperbolic geometry applies wherever communication exhibits hierarchical organization. In this book, it appears in three principal roles:</p>
 <ol>
@@ -190,15 +194,14 @@
 <h2 id="42-riemannian-geometry-the-spd-manifold">4.2 Riemannian Geometry: The SPD Manifold</h2>
 <h3 id="421-why-covariance">4.2.1 Why Covariance?</h3>
 <p>A spectrogram is a matrix. Each column is a snapshot of the frequency content at a single moment in time; each row is the evolution of a single frequency band across the duration of the signal. Standard machine learning treats the spectrogram as a flat image &mdash; a grid of pixels to be fed to a convolutional neural network. This works well enough for classification, but it discards a specific and important kind of structure: the <em>correlations between frequency bands</em>.</p>
-<p>Consider a bird that produces a whistle with a strong fundamental frequency at 3 kHz and a harmonic at 6 kHz. These two frequency bands are not independent: when the fundamental rises, the harmonic rises in lockstep. This correlation is invisible in the spectrogram&rsquo;s pixel values (which record only the energy at each time-frequency point) but is captured by the <strong>covariance matrix</strong> of the frequency bands. The covariance matrix records how each pair of bands co-varies across time, encoding the harmonic structure &mdash; the &ldquo;vowel space&rdquo; &mdash; of the vocalization.[^3]</p>
-<p>[^3]: The term &ldquo;vowel space&rdquo; is borrowed from Begus et al. (2025), who discovered that sperm whale clicks exhibit formant-like spectral structure analogous to the vowel formants of human speech. Whether this analogy reflects a genuine functional similarity or a convergent acoustic phenomenon remains an open question. For our purposes, the mathematical structure &mdash; cross-frequency correlations encoded in an SPD matrix &mdash; is the same regardless of the functional interpretation.</p>
+<p>Consider a bird that produces a whistle with a strong fundamental frequency at 3 kHz and a harmonic at 6 kHz. These two frequency bands are not independent: when the fundamental rises, the harmonic rises in lockstep. This correlation is invisible in the spectrogram&rsquo;s pixel values (which record only the energy at each time-frequency point) but is captured by the <strong>covariance matrix</strong> of the frequency bands. The covariance matrix records how each pair of bands co-varies across time, encoding the harmonic structure &mdash; the &ldquo;vowel space&rdquo; &mdash; of the vocalization.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <p>The covariance matrix of $n$ frequency bands is an $n \times n$ symmetric positive-definite (SPD) matrix. The space of all such matrices is not a vector space &mdash; it is a <strong>Riemannian manifold</strong> with rich geometric structure. Using Euclidean distance on SPD matrices (the Frobenius norm of their difference) violates the manifold geometry: it can produce &ldquo;distances&rdquo; that fail to respect the positive-definite constraint, and it treats the space as flat when it is intrinsically curved. The correct distance requires a Riemannian metric that respects the manifold&rsquo;s curvature.</p>
 <h3 id="422-the-space-spdn">4.2.2 The Space SPD(n)</h3>
 <p><strong>Definition 4.6</strong> (SPD Manifold). <em>The manifold of $n \times n$ symmetric positive-definite matrices is</em></p>
 <p>$$\operatorname{SPD}(n) = \left\{ S \in \mathbb{R}^{n \times n} : S = S^\top,\, S \succ 0 \right\}$$</p>
 <p><em>where $S \succ 0$ means all eigenvalues of $S$ are strictly positive. $\operatorname{SPD}(n)$ is an open cone in the vector space of symmetric matrices, and is a smooth Riemannian manifold of dimension $n(n+1)/2$.</em></p>
 <p>The dimension $n(n+1)/2$ arises because a symmetric $n \times n$ matrix has $n$ diagonal entries and $n(n-1)/2$ off-diagonal entries (the lower triangle equals the upper triangle), giving $n + n(n-1)/2 = n(n+1)/2$ independent parameters. For $n = 16$ (our default number of frequency bands), this gives $16 \times 17 / 2 = 136$ independent parameters &mdash; 136 features that encode the complete cross-frequency correlation structure of the vocalization.</p>
-<p>The manifold $\operatorname{SPD}(n)$ is an <em>open cone</em>: if $S$ is SPD and $\alpha > 0$, then $\alpha S$ is SPD. It is not a vector space, because the zero matrix is not SPD (it has zero eigenvalues) and the difference of two SPD matrices is not necessarily SPD (the eigenvalues of $S_1 - S_2$ can be negative). This non-linearity is precisely why Euclidean methods fail: the &ldquo;straight line&rdquo; between two SPD matrices in the ambient Euclidean space can pass through non-positive-definite matrices, exiting the manifold entirely.</p>
+<p>The manifold $\operatorname{SPD}(n)$ is an <em>open cone</em>: if $S$ is SPD and $\alpha &gt; 0$, then $\alpha S$ is SPD. It is not a vector space, because the zero matrix is not SPD (it has zero eigenvalues) and the difference of two SPD matrices is not necessarily SPD (the eigenvalues of $S_1 - S_2$ can be negative). This non-linearity is precisely why Euclidean methods fail: the &ldquo;straight line&rdquo; between two SPD matrices in the ambient Euclidean space can pass through non-positive-definite matrices, exiting the manifold entirely.</p>
 <h3 id="423-the-log-euclidean-metric">4.2.3 The Log-Euclidean Metric</h3>
 <p>Several Riemannian metrics have been proposed for $\operatorname{SPD}(n)$: the affine-invariant metric, the Bures-Wasserstein metric, the power-Euclidean family, and the log-Euclidean metric. We use the log-Euclidean metric throughout this book because it offers the best trade-off between geometric fidelity and computational tractability.</p>
 <p><strong>Definition 4.7</strong> (Log-Euclidean Distance). <em>The log-Euclidean distance between $S_1, S_2 \in \operatorname{SPD}(n)$ is</em></p>
@@ -206,7 +209,7 @@
 <p><em>where $\log$ is the matrix logarithm and $\|\cdot\|_F$ is the Frobenius norm.</em></p>
 <p>The matrix logarithm of an SPD matrix $S$ with eigendecomposition $S = U \Lambda U^\top$ is</p>
 <p>$$\log(S) = U \operatorname{diag}(\log \lambda_1, \ldots, \log \lambda_n) U^\top$$</p>
-<p>where $\lambda_i > 0$ are the eigenvalues of $S$. Because all eigenvalues are positive, their logarithms are well-defined (and real), so the matrix logarithm maps $\operatorname{SPD}(n)$ into the vector space of $n \times n$ symmetric matrices. This mapping is a diffeomorphism &mdash; it is smooth, invertible (the inverse is the matrix exponential $\exp$), and structure-preserving.</p>
+<p>where $\lambda_i &gt; 0$ are the eigenvalues of $S$. Because all eigenvalues are positive, their logarithms are well-defined (and real), so the matrix logarithm maps $\operatorname{SPD}(n)$ into the vector space of $n \times n$ symmetric matrices. This mapping is a diffeomorphism &mdash; it is smooth, invertible (the inverse is the matrix exponential $\exp$), and structure-preserving.</p>
 <p>The key insight is that the log-Euclidean metric &ldquo;flattens&rdquo; the SPD manifold: after applying the matrix logarithm, the resulting symmetric matrices live in a genuine vector space where Euclidean distance is meaningful. This means standard machine learning methods &mdash; linear regression, SVMs, gradient boosting &mdash; can operate directly on the log-mapped features without special manifold-aware modifications.</p>
 <p>In the <code>eris-ketos</code> implementation, the log map is computed via eigendecomposition:</p>
 <pre><code class="language-python">@staticmethod
@@ -228,7 +231,7 @@ def log_map(S: torch.Tensor) -&gt; torch.Tensor:
 <p>The starting point for SPD features is a mel spectrogram &mdash; a time-frequency representation of the audio signal, typically with 128 mel-spaced frequency bins and a variable number of time frames. We group the mel bins into $n$ frequency bands (default $n = 16$), compute the mean energy in each band at each time step, and then compute the covariance matrix of the resulting $n$ band-energy time series.</p>
 <p><strong>Definition 4.8</strong> (Frequency-Band Covariance). <em>Given a mel spectrogram $\mathbf{X} \in \mathbb{R}^{n_{\text{mel}} \times T}$ with $n_{\text{mel}}$ mel bins and $T$ time frames, partition the mel bins into $n$ bands of approximately equal size. Let $\mathbf{b}_i(t) \in \mathbb{R}$ be the mean energy in band $i$ at time $t$, and let $\mathbf{B} \in \mathbb{R}^{n \times T}$ be the matrix of band energies. The frequency-band covariance matrix is</em></p>
 <p>$$\Sigma = \frac{1}{T-1} (\mathbf{B} - \bar{\mathbf{B}})(\mathbf{B} - \bar{\mathbf{B}})^\top + \epsilon \mathbf{I}_n$$</p>
-<p><em>where $\bar{\mathbf{B}}$ is the temporal mean and $\epsilon > 0$ is a regularization parameter guaranteeing positive definiteness.</em></p>
+<p><em>where $\bar{\mathbf{B}}$ is the temporal mean and $\epsilon &gt; 0$ is a regularization parameter guaranteeing positive definiteness.</em></p>
 <p>The regularization $\epsilon \mathbf{I}_n$ (default $\epsilon = 10^{-4}$) is essential. Without it, the covariance matrix could have zero eigenvalues (if two bands are perfectly correlated or a band has zero variance), placing it on the boundary of $\operatorname{SPD}(n)$ where the log map is undefined. The regularization shifts all eigenvalues away from zero, ensuring the matrix is strictly positive definite. This is not a hack &mdash; it is a Bayesian prior, equivalent to assuming a small amount of independent noise in each frequency band.</p>
 <p>In the BirdCLEF pipeline:</p>
 <pre><code class="language-python">def compute_covariance(spectrogram: np.ndarray, n_bands: int = 16,
@@ -313,11 +316,11 @@ def frechet_mean(matrices: torch.Tensor,
 <h3 id="432-takens-time-delay-embedding">4.3.2 Takens&rsquo; Time-Delay Embedding</h3>
 <p>The starting point of the TDA pipeline is a 1D time series: an audio waveform, a sequence of inter-click intervals, or an energy contour extracted from a spectrogram. The problem is that topology is a property of <em>spaces</em>, not of sequences. We need to convert the 1D time series into a point cloud in some ambient space where topological methods can be applied.</p>
 <p>The solution is Takens&rsquo; time-delay embedding, one of the most remarkable results in dynamical systems theory.</p>
-<p><strong>Theorem 4.1</strong> (Takens, 1981). <em>Let $f: \mathcal{M} \to \mathbb{R}$ be a smooth observation function on a compact manifold $\mathcal{M}$ of dimension $m$, and let $\phi_t: \mathcal{M} \to \mathcal{M}$ be a smooth flow. For generic $f$ and delay $\tau > 0$, the delay-coordinate map $\Phi: \mathcal{M} \to \mathbb{R}^{2m+1}$ defined by</em></p>
+<p><strong>Theorem 4.1</strong> (Takens, 1981). <em>Let $f: \mathcal{M} \to \mathbb{R}$ be a smooth observation function on a compact manifold $\mathcal{M}$ of dimension $m$, and let $\phi_t: \mathcal{M} \to \mathcal{M}$ be a smooth flow. For generic $f$ and delay $\tau &gt; 0$, the delay-coordinate map $\Phi: \mathcal{M} \to \mathbb{R}^{2m+1}$ defined by</em></p>
 <p>$$\Phi(\mathbf{x}) = \left(f(\mathbf{x}),\, f(\phi_\tau(\mathbf{x})),\, f(\phi_{2\tau}(\mathbf{x})),\, \ldots,\, f(\phi_{2m\tau}(\mathbf{x}))\right)$$</p>
 <p><em>is an embedding &mdash; a homeomorphism onto its image. In particular, $\Phi(\mathcal{M})$ is topologically equivalent to $\mathcal{M}$: the topology of the attractor is recovered from the time series of a single observable.</em></p>
 <p>The practical consequence of Takens&rsquo; theorem is that we can reconstruct the topology of the system that produced a signal by looking at the signal alone. We do not need to observe the full state of the whale&rsquo;s vocal apparatus, or the bird&rsquo;s syrinx, or the scribe&rsquo;s hand. A single 1D recording suffices, provided the embedding dimension is large enough and the delay is chosen generically.</p>
-<p><strong>Definition 4.12</strong> (Time-Delay Embedding). <em>Given a discrete time series $x(1), x(2), \ldots, x(N)$, a delay $\tau \in \mathbb{Z}_{>0}$, and an embedding dimension $d \in \mathbb{Z}_{>0}$, the time-delay embedding is the set of vectors</em></p>
+<p><strong>Definition 4.12</strong> (Time-Delay Embedding). <em>Given a discrete time series $x(1), x(2), \ldots, x(N)$, a delay $\tau \in \mathbb{Z}_{&gt;0}$, and an embedding dimension $d \in \mathbb{Z}_{&gt;0}$, the time-delay embedding is the set of vectors</em></p>
 <p>$$\mathbf{v}(t) = \left(x(t),\, x(t + \tau),\, x(t + 2\tau),\, \ldots,\, x(t + (d-1)\tau)\right) \in \mathbb{R}^d$$</p>
 <p><em>for $t = 1, 2, \ldots, N - (d-1)\tau$. The collection $\{\mathbf{v}(t)\}$ is a point cloud in $\mathbb{R}^d$.</em></p>
 <p>In the implementations (both <code>eris-ketos</code> and the BirdCLEF pipeline), the embedding uses default parameters $\tau = 10$ and $d = 3$:</p>
@@ -420,7 +423,7 @@ def frechet_mean(matrices: torch.Tensor,
 </li>
 </ol>
 <p>These three kinds of information are mathematically independent. Knowing the taxonomy of a coda type tells you nothing about its spectral covariance. Knowing the covariance structure of a birdsong tells you nothing about its attractor topology (two species can have identical covariance matrices but different temporal dynamics, producing different point clouds under Takens embedding). Knowing the attractor topology tells you nothing about the hierarchical position (many different species can have the same attractor topology &mdash; e.g., all species with simple trills have a single loop &mdash; while being at very different positions in the Linnaean tree).</p>
-<p>This independence is not merely theoretical. In the BirdCLEF experiments (Chapter 8), the correlation between SPD features and TDA features across the 206-species dataset is low (mean absolute Pearson $r < 0.15$ across feature pairs), confirming that the two feature sets capture largely non-overlapping information. The trajectory features correlate moderately with SPD features (they are derived from the same covariance computation, applied across time) but provide additional information about temporal dynamics that static covariance does not encode.</p>
+<p>This independence is not merely theoretical. In the BirdCLEF experiments (Chapter 8), the correlation between SPD features and TDA features across the 206-species dataset is low (mean absolute Pearson $r &lt; 0.15$ across feature pairs), confirming that the two feature sets capture largely non-overlapping information. The trajectory features correlate moderately with SPD features (they are derived from the same covariance computation, applied across time) but provide additional information about temporal dynamics that static covariance does not encode.</p>
 <h3 id="442-the-156-dimensional-vector">4.4.2 The 156-Dimensional Vector</h3>
 <p>The three geometries combine into a single feature vector for each audio signal:</p>
 <p><strong>Definition 4.16</strong> (Geometric Feature Vector). <em>The geometric feature vector of an audio signal with waveform $\mathbf{w} \in \mathbb{R}^N$ and mel spectrogram $\mathbf{X} \in \mathbb{R}^{n_{\text{mel}} \times T}$ is</em></p>
@@ -465,7 +468,7 @@ def frechet_mean(matrices: torch.Tensor,
 <h3 id="444-the-complementarity-argument">4.4.4 The Complementarity Argument</h3>
 <p>The central claim of this chapter is that no single geometry suffices for communication analysis, and the three geometries together capture more than any one alone. This claim can be stated precisely.</p>
 <p><strong>Proposition 4.3</strong> (Complementarity of Geometric Features). <em>Let $A_{\text{SPD}}$, $A_{\text{traj}}$, $A_{\text{TDA}}$, and $A_{\text{combined}}$ be the classification accuracies of a fixed classifier trained on SPD features alone, trajectory features alone, TDA features alone, and the combined 156-dimensional vector, respectively. For the BirdCLEF 206-species dataset (Chapter 8):</em></p>
-<p>$$A_{\text{combined}} > \max(A_{\text{SPD}}, A_{\text{traj}}, A_{\text{TDA}})$$</p>
+<p>$$A_{\text{combined}} &gt; \max(A_{\text{SPD}}, A_{\text{traj}}, A_{\text{TDA}})$$</p>
 <p><em>The improvement is not merely additive: the combined accuracy exceeds the sum of the individual improvements over baseline, indicating synergistic interaction between the feature sets.</em></p>
 <p>The synergy arises because the three geometries resolve different confusions. SPD features distinguish species with different harmonic structure but confuse species with similar spectral profiles (e.g., two warbler species with similar frequency ranges but different temporal patterns). TDA features distinguish species with different temporal dynamics but confuse species whose dynamics produce similar attractor topology (e.g., all trilling species have similar $H_1$ features regardless of their spectral content). The combination resolves both confusions simultaneously.</p>
 <p>This is the geometric analogue of a principle well known in ensemble learning: diverse classifiers combined outperform any individual, and the benefit of combination is greatest when the individual classifiers make <em>different</em> errors. The three geometries are the ultimate diverse ensemble &mdash; they do not merely use different algorithms on the same features but extract <em>structurally different kinds of information</em> from the same signal.</p>
@@ -559,10 +562,26 @@ def frechet_mean(matrices: torch.Tensor,
 <li><strong>Proposition 4.2</strong>: Stability of Persistence Diagrams (bottleneck bound)</li>
 <li><strong>Proposition 4.3</strong>: Complementarity of Geometric Features (combined &gt; max individual)</li>
 </ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The precise formula for the volume of a geodesic ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-c$ is $V_d(r) = \omega_{d-1} \int_0^r \left(\frac{\sinh(\sqrt{c}\,t)}{\sqrt{c}}\right)^{d-1} dt$, where $\omega_{d-1}$ is the volume of the unit $(d-1)$-sphere. For large $r$, this is dominated by the exponential term $e^{(d-1)\sqrt{c}\,r}$. See <em>Geometric Methods</em> (Bond, 2026a), Ch. 4.3 for the derivation.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>This is the Bourgain embedding theorem applied to tree metrics. Sarkar (2011) showed that any weighted tree on $n$ nodes can be embedded in the Poincare disk (2-dimensional hyperbolic space) with arbitrarily low distortion $1 + \epsilon$, using coordinates of $O(\log n / \epsilon)$ bits of precision. See Sala et al. (2018) for the multi-dimensional generalization.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The term &ldquo;vowel space&rdquo; is borrowed from Begus et al. (2025), who discovered that sperm whale clicks exhibit formant-like spectral structure analogous to the vowel formants of human speech. Whether this analogy reflects a genuine functional similarity or a convergent acoustic phenomenon remains an open question. For our purposes, the mathematical structure &mdash; cross-frequency correlations encoded in an SPD matrix &mdash; is the same regardless of the functional interpretation.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch03_communication_manifold.html" class="nav-prev">&larr; Chapter 3: The Communication Manifold</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch05_hyperbolic_embeddings.html" class="nav-next">Chapter 5: Hyperbolic Embeddings of Communication Structure &rarr;</a>
       </div>
     </div>
   </article>
@@ -590,6 +609,7 @@ def frechet_mean(matrices: torch.Tensor,
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 5: Hyperbolic Embeddings of Communication Structure &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 5: Hyperbolic Embeddings of Communication Structure from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch05_hyperbolic_embeddings">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 5: Hyperbolic Embeddings of Communication Structure</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch04_three_geometries.html" class="nav-prev">&larr; Chapter 4: Three Geometries for Communication</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch06_tda_signal.html" class="nav-next">Chapter 6: Topological Data Analysis of Signal &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-5-hyperbolic-embeddings-of-communication-structure">Chapter 5: Hyperbolic Embeddings of Communication Structure</h1>
@@ -51,10 +57,9 @@
 <p>The central insight is simple to state and deep in its consequences. Trees&mdash;the natural representation of hierarchies&mdash;embed faithfully in hyperbolic space but not in Euclidean space. The volume of a hyperbolic ball grows exponentially with radius, just as the number of nodes in a tree grows exponentially with depth. Euclidean space, whose volume grows polynomially, cannot accommodate this exponential branching without distortion. This is not an analogy. It is a theorem. And it has immediate practical consequences for any system that must represent, classify, or reason about hierarchically structured communication.</p>
 <hr />
 <h2 id="52-the-poincare-ball-model">5.2 The Poincare Ball Model</h2>
-<p>We work with the Poincare ball model of hyperbolic space, the most widely used model in machine learning applications.[^1] The development here is self-contained; readers seeking a fuller treatment may consult Appendix A or the exposition in <em>Geometric Methods</em> (Bond, 2026a, Ch. 4.6).</p>
-<p>[^1]: Other models exist&mdash;the hyperboloid (Lorentz) model, the Klein model, the upper half-space model&mdash;each with computational advantages in specific settings. The Poincare ball is preferred here for its conformal property: angles in the ball match angles in the ambient Euclidean space, making visualisations directly interpretable.</p>
-<p><strong>Definition 5.1</strong> (Poincare Ball). <em>The Poincare ball model $(\mathbb{B}^d_c, g^{\mathbb{B}})$ of $d$-dimensional hyperbolic space with constant sectional curvature $-1/c$ (where $c > 0$) is the open ball</em></p>
-<p>$$\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 < 1\}$$</p>
+<p>We work with the Poincare ball model of hyperbolic space, the most widely used model in machine learning applications.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> The development here is self-contained; readers seeking a fuller treatment may consult Appendix A or the exposition in <em>Geometric Methods</em> (Bond, 2026a, Ch. 4.6).</p>
+<p><strong>Definition 5.1</strong> (Poincare Ball). <em>The Poincare ball model $(\mathbb{B}^d_c, g^{\mathbb{B}})$ of $d$-dimensional hyperbolic space with constant sectional curvature $-1/c$ (where $c &gt; 0$) is the open ball</em></p>
+<p>$$\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 &lt; 1\}$$</p>
 <p><em>equipped with the Riemannian metric</em></p>
 <p>$$g^{\mathbb{B}}_x = (\lambda^c_x)^2 \, g^E$$</p>
 <p><em>where $g^E$ is the Euclidean metric and</em></p>
@@ -64,8 +69,7 @@
 <p>[Figure 5.1: The Poincare disk ($d = 2$, $c = 1$). Left: a regular tiling by congruent hyperbolic pentagons, illustrating exponential area growth. Right: geodesics (circular arcs perpendicular to the boundary). Near the boundary, geodesics appear to crowd together&mdash;a visual artifact of the conformal factor.]</p>
 <p>The curvature parameter $c$ controls the trade-off between the size of the ball (radius $1/\sqrt{c}$) and the rate of exponential growth. Larger $c$ means a smaller ball with more extreme distortion near the boundary&mdash;suitable for deep, narrow hierarchies. Smaller $c$ means a larger ball with gentler distortion&mdash;suitable for shallow, broad hierarchies. Throughout this chapter, we use $c = 1.0$ unless stated otherwise; in practice, $c$ can be treated as a hyperparameter or learned from data.</p>
 <h3 id="521-mobius-operations">5.2.1 Mobius Operations</h3>
-<p>Euclidean vector space has two fundamental operations: addition and scalar multiplication. The Poincare ball has hyperbolic analogues called Mobius operations, which respect the curved geometry.[^2]</p>
-<p>[^2]: Technically, these arise from the gyrovector space formalism of Ungar (2008), which provides an algebraic framework for hyperbolic geometry analogous to vector spaces for Euclidean geometry.</p>
+<p>Euclidean vector space has two fundamental operations: addition and scalar multiplication. The Poincare ball has hyperbolic analogues called Mobius operations, which respect the curved geometry.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p><strong>Definition 5.2</strong> (Mobius Addition). <em>For $x, y \in \mathbb{B}^d_c$, the Mobius addition is</em></p>
 <p>$$x \oplus_c y = \frac{(1 + 2c\langle x, y\rangle + c\|y\|^2)\,x + (1 - c\|x\|^2)\,y}{1 + 2c\langle x, y\rangle + c^2\|x\|^2\|y\|^2}$$</p>
 <p>Mobius addition is the hyperbolic analogue of vector addition. It reduces to ordinary addition in the limit $c \to 0$ (flat space). But unlike Euclidean addition, Mobius addition is <em>non-commutative</em>: $x \oplus_c y \neq y \oplus_c x$ in general. This non-commutativity is a genuine geometric property of hyperbolic space, not an artifact of the formalism. It will become relevant when we discuss the asymmetry of hierarchical relationships: the &ldquo;distance&rdquo; from a genus to one of its species is not the same operation as the &ldquo;distance&rdquo; from a species to its genus, even though the geodesic distance is symmetric.</p>
@@ -103,7 +107,7 @@
 <p>$$\text{distortion}(f) = \sup_{x, x' \in X} \frac{d_Y(f(x), f(x'))}{d_X(x, x')} \cdot \sup_{x, x' \in X} \frac{d_X(x, x')}{d_Y(f(x), f(x'))}$$</p>
 <p><em>i.e., the product of the maximum expansion and maximum contraction ratios.</em></p>
 <p>An embedding with distortion 1 is isometric: it preserves all distances exactly. An embedding with distortion $D$ may expand or contract some distances by up to a factor of $D$. The question is: for a given source metric space (e.g., a tree with its shortest-path metric), what is the minimum distortion achievable in a given target space (Euclidean or hyperbolic) of a given dimension?</p>
-<p><strong>Theorem 5.1</strong> (Tree Embedding in Hyperbolic Space; Sarkar, 2011). <em>Any finite weighted tree $T$ with $n$ nodes can be embedded in the Poincare disk $\mathbb{B}^2_c$ (two-dimensional hyperbolic space) with distortion at most $1 + \epsilon$ for any $\epsilon > 0$, provided $c$ is chosen sufficiently large (i.e., the curvature is sufficiently negative).</em></p>
+<p><strong>Theorem 5.1</strong> (Tree Embedding in Hyperbolic Space; Sarkar, 2011). <em>Any finite weighted tree $T$ with $n$ nodes can be embedded in the Poincare disk $\mathbb{B}^2_c$ (two-dimensional hyperbolic space) with distortion at most $1 + \epsilon$ for any $\epsilon &gt; 0$, provided $c$ is chosen sufficiently large (i.e., the curvature is sufficiently negative).</em></p>
 <p>This is a remarkable result. <em>Any</em> tree, regardless of its branching factor or depth, can be embedded in <em>two-dimensional</em> hyperbolic space with arbitrarily small distortion. The curvature parameter $c$ absorbs the complexity of the tree.</p>
 <p>The Euclidean situation is entirely different:</p>
 <p><strong>Theorem 5.2</strong> (Lower Bound for Euclidean Tree Embedding; Bourgain, 1985; Linial et al., 1995). <em>There exist trees with $n$ nodes and branching factor $b$ such that any embedding into $\mathbb{R}^d$ has distortion $\Omega(\sqrt{\log n})$ when $d$ is fixed, and achieving distortion $O(1)$ requires dimension $d = \Omega(n)$.</em></p>
@@ -274,8 +278,7 @@
 - Configuration A $\to$ C measures the contribution of the geometric attention bias alone.
 - Configuration D measures the combined effect, testing whether augmentation and geometric bias are complementary.</p>
 <p>The expected pattern&mdash;and the pattern consistent with the theoretical motivation&mdash;is that supplementary data provides the largest raw improvement (data is the dominant factor in extreme low-resource settings), while the geometric bias provides consistent but more modest gains, concentrated on sentences containing rare signs (where the structural prior compensates most for data scarcity). The two should be complementary: augmentation provides robustness to surface variation, while the geometric bias provides an inductive bias that encodes domain knowledge about the cuneiform sign hierarchy.</p>
-<p>The results, evaluated on a held-out 10% validation split, confirm this expected pattern.[^3] The geometric bias contributes measurably to chrF++ (which captures sub-word accuracy, precisely where the sign hierarchy is most informative) and to overall score, with the largest relative gains on sentences containing rare or polysemous signs.</p>
-<p>[^3]: The companion notebook (<code>deep_past_v2.ipynb</code>) produces the full results table. The paper reports expected trends rather than final numbers because the ablation was designed for a competition setting with late-binding results.</p>
+<p>The results, evaluated on a held-out 10% validation split, confirm this expected pattern.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> The geometric bias contributes measurably to chrF++ (which captures sub-word accuracy, precisely where the sign hierarchy is most informative) and to overall score, with the largest relative gains on sentences containing rare or polysemous signs.</p>
 <h3 id="564-augmentation-as-manifold-aware-noise">5.6.4 Augmentation as Manifold-Aware Noise</h3>
 <p>A brief digression on the augmentation strategies, which are relevant to the geometric framework even though they are not themselves hyperbolic. The three cuneiform-aware augmentations simulate real phenomena in Assyriology:</p>
 <ul>
@@ -323,7 +326,7 @@
 <p>The Einstein midpoint of points $\{x_1, \ldots, x_m\} \subset \mathbb{B}^d_c$ is defined as:</p>
 <p>$$\bar{x} = \text{proj}_{\mathbb{B}^d_c}\!\left(\frac{\sum_{i=1}^m \gamma_i x_i}{\sum_{i=1}^m \gamma_i}\right)$$</p>
 <p>where $\gamma_i = 1 / (1 - c\|x_i\|^2)$ is the Lorentz factor (conformal weight) of point $x_i$ and $\text{proj}_{\mathbb{B}^d_c}$ is the projection onto the ball. Points near the boundary (leaves deep in the hierarchy) have large $\gamma_i$ and contribute more to the midpoint. This weighting is geometrically correct: deep leaves carry more hierarchical specificity and should have more influence on the merged representation.</p>
-<p><strong>Proposition 5.5</strong> (Attention Bias Monotonicity). <em>The geometric attention bias $B_{\text{geo}}(i, j) = \alpha \cdot (-d_{\mathbb{B}}(e_i, e_j))$ is a monotonically decreasing function of hierarchical distance when $\alpha > 0$. That is, if tokens $i$ and $j$ are hierarchically closer than tokens $i$ and $k$, then $B_{\text{geo}}(i, j) > B_{\text{geo}}(i, k)$, and token $j$ receives more attention from token $i$ than token $k$ does (all else equal).</em></p>
+<p><strong>Proposition 5.5</strong> (Attention Bias Monotonicity). <em>The geometric attention bias $B_{\text{geo}}(i, j) = \alpha \cdot (-d_{\mathbb{B}}(e_i, e_j))$ is a monotonically decreasing function of hierarchical distance when $\alpha &gt; 0$. That is, if tokens $i$ and $j$ are hierarchically closer than tokens $i$ and $k$, then $B_{\text{geo}}(i, j) &gt; B_{\text{geo}}(i, k)$, and token $j$ receives more attention from token $i$ than token $k$ does (all else equal).</em></p>
 <p>This is immediate from the monotonicity of the Poincare distance and the negation in the bias formula. It ensures that the geometric bias <em>always</em> favours hierarchically related tokens, regardless of the specific values of the embeddings.</p>
 <p><strong>Proposition 5.6</strong> (Curvature Sensitivity). <em>The embedding&rsquo;s ability to distinguish between nodes at different hierarchical levels is controlled by the curvature $c$. Specifically, for two nodes at the same level of the hierarchy separated by angular distance $\theta$, their Poincare distance is approximately</em></p>
 <p>$$d_{\mathbb{B}} \approx \frac{2}{\sqrt{c}} \, \text{arctanh}\!\left(\sqrt{c} \cdot 2r\sin(\theta/2)\right)$$</p>
@@ -362,10 +365,26 @@
 <hr />
 <p><strong>Chapter 5 Notes</strong></p>
 <p>The Poincare ball model for machine learning was popularised by Nickel and Kiela (2017), who demonstrated that Poincare embeddings of WordNet dramatically outperform Euclidean embeddings in link prediction and taxonomy reconstruction. Ganea et al. (2018) extended this to hyperbolic neural networks with full Riemannian optimisation. The distortion theorem for tree embeddings in hyperbolic space was proved by Sarkar (2011), building on the lower bounds of Bourgain (1985) for Euclidean embeddings. The gyrovector space formalism used for Mobius operations throughout this chapter is due to Ungar (2008). The application to transformer attention follows Gulcehre et al. (2019), who introduced hyperbolic attention networks; our <code>GeometricAttentionBias</code> module adapts their approach to the byte-level setting of ByT5 (Xue et al., 2022). The cetacean application builds on the combinatorial phonetic analysis of Sharma et al. (2024) and the DSWP dataset of Gero et al. (2016). The cuneiform application uses the Deep Past Initiative benchmark and the Assyriological sign taxonomy described in Worthington (2010).</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Other models exist&mdash;the hyperboloid (Lorentz) model, the Klein model, the upper half-space model&mdash;each with computational advantages in specific settings. The Poincare ball is preferred here for its conformal property: angles in the ball match angles in the ambient Euclidean space, making visualisations directly interpretable.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Technically, these arise from the gyrovector space formalism of Ungar (2008), which provides an algebraic framework for hyperbolic geometry analogous to vector spaces for Euclidean geometry.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The companion notebook (<code>deep_past_v2.ipynb</code>) produces the full results table. The paper reports expected trends rather than final numbers because the ablation was designed for a competition setting with late-binding results.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch04_three_geometries.html" class="nav-prev">&larr; Chapter 4: Three Geometries for Communication</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch06_tda_signal.html" class="nav-next">Chapter 6: Topological Data Analysis of Signal &rarr;</a>
       </div>
     </div>
   </article>
@@ -393,6 +412,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 3: The Communication Manifold &mdash; Geometric Communication</title>
   <meta name="description" content="Chapter 3: The Communication Manifold from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="ch03_communication_manifold">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 3: The Communication Manifold</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch02_saussure.html" class="nav-prev">&larr; Chapter 2: Saussure&#x27;s Geometric Intuition</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch04_three_geometries.html" class="nav-next">Chapter 4: Three Geometries for Communication &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-3-the-communication-manifold">Chapter 3: The Communication Manifold</h1>
@@ -60,8 +66,7 @@
 <h2 id="31-the-product-structure-of-communication">3.1 The Product Structure of Communication</h2>
 <h3 id="311-why-a-product-manifold">3.1.1 Why a Product Manifold?</h3>
 <p>Every communicative act involves at least three distinguishable components. There is the physical carrier &mdash; the sound waves, the ink marks, the hand shapes, the electromagnetic signal. There is the speaker&rsquo;s intention &mdash; what the communicator means to accomplish, the social relation being enacted, the pragmatic force of the act. And there is the propositional content &mdash; the semantic meaning, the state of affairs being described or invoked.</p>
-<p>These three components are distinguishable because they can vary independently. The same propositional content (&ldquo;the meeting is at 3pm&rdquo;) can be carried by different signals (spoken English, written French, American Sign Language). The same signal (&ldquo;nice job&rdquo;) can carry different intentions (sincere praise, biting sarcasm). The same intention (to warn) can convey different content (&ldquo;the ice is thin&rdquo; versus &ldquo;the deadline has moved&rdquo;). This independence &mdash; not perfect, but sufficient &mdash; is what makes a product structure appropriate.[^1]</p>
-<p>[^1]: The independence is not absolute. Signal constrains content (you cannot express a 500-word argument in a single emoji with full fidelity), and pragmatic context shapes the range of available signals (a legal contract demands written form). These cross-factor dependencies are captured by the metric&rsquo;s off-diagonal terms (Section 3.2) and by the curvature of $M$. The product structure is the zeroth-order approximation; the metric provides the first-order corrections.</p>
+<p>These three components are distinguishable because they can vary independently. The same propositional content (&ldquo;the meeting is at 3pm&rdquo;) can be carried by different signals (spoken English, written French, American Sign Language). The same signal (&ldquo;nice job&rdquo;) can carry different intentions (sincere praise, biting sarcasm). The same intention (to warn) can convey different content (&ldquo;the ice is thin&rdquo; versus &ldquo;the deadline has moved&rdquo;). This independence &mdash; not perfect, but sufficient &mdash; is what makes a product structure appropriate.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <h3 id="312-the-three-factors">3.1.2 The Three Factors</h3>
 <p><strong>Definition 3.1</strong> (Communication Manifold). <em>The communication manifold is the product</em></p>
 <p>$$M = S \times P \times C$$</p>
@@ -112,10 +117,10 @@
 <p>We need a metric on $M$ &mdash; a principled measure of distance between communicative acts. Without a metric, the manifold is a topological space only: we know which acts are &ldquo;nearby&rdquo; in a qualitative sense, but we cannot say <em>how far apart</em> they are, and we cannot define geodesics (optimal communication paths), curvature (the complexity of the communication landscape), or deviation (the extent to which a communicative act misses its target).</p>
 <p>The product structure suggests a natural starting point. Since $M = S \times P \times C$, each factor contributes independently to the total distance, and the simplest metric is the product metric:</p>
 <p>$$d^2(\mathbf{m}_1, \mathbf{m}_2) = \alpha_S \, d_S^2(s_1, s_2) + \alpha_P \, d_P^2(p_1, p_2) + \alpha_C \, d_C^2(c_1, c_2)$$</p>
-<p>where $d_S$, $d_P$, $d_C$ are metrics on the individual factors and $\alpha_S, \alpha_P, \alpha_C > 0$ are weighting coefficients that control the relative importance of each factor. This is a block-diagonal metric: the distance depends only on within-factor distances, with no cross-factor terms.</p>
+<p>where $d_S$, $d_P$, $d_C$ are metrics on the individual factors and $\alpha_S, \alpha_P, \alpha_C &gt; 0$ are weighting coefficients that control the relative importance of each factor. This is a block-diagonal metric: the distance depends only on within-factor distances, with no cross-factor terms.</p>
 <p>But block-diagonality is an approximation. In practice, the factors are not fully independent. The signal constrains the content (some meanings are easier to express in some media than others). The pragmatic context shapes the signal (formal settings demand formal register). The content influences the pragmatic possibilities (you cannot sincerely promise something impossible). These cross-factor dependencies are captured by off-diagonal terms in the metric tensor.</p>
 <p><strong>Definition 3.2</strong> (Communication Metric). <em>The communication metric is a Riemannian metric $g$ on $M$ whose components, in the natural coordinates induced by the product structure, take the block form</em></p>
-<p>$$g = \begin{pmatrix} g_{SS} & g_{SP} & g_{SC} \\ g_{PS} & g_{PP} & g_{PC} \\ g_{CS} & g_{CP} & g_{CC} \end{pmatrix}$$</p>
+<p>$$g = \begin{pmatrix} g_{SS} &amp; g_{SP} &amp; g_{SC} \\ g_{PS} &amp; g_{PP} &amp; g_{PC} \\ g_{CS} &amp; g_{CP} &amp; g_{CC} \end{pmatrix}$$</p>
 <p><em>where $g_{SS}$, $g_{PP}$, $g_{CC}$ are the metric tensors on $S$, $P$, $C$ respectively, and the off-diagonal blocks $g_{SP}$, $g_{SC}$, $g_{PC}$ (and their transposes) encode cross-factor correlations.</em></p>
 <p>The metric tensor $g$ is symmetric and positive-definite, as required for a Riemannian metric. The diagonal blocks carry the primary distance information; the off-diagonal blocks carry the correlation information. When the off-diagonal blocks vanish, the metric is block-diagonal and the factors are metrically independent. When they are nonzero, the factors interact: the distance between two communicative acts depends not only on how they differ in each factor separately, but on how the differences across factors relate to each other.</p>
 <h3 id="322-the-diagonal-blocks-within-factor-distance">3.2.2 The Diagonal Blocks: Within-Factor Distance</h3>
@@ -124,7 +129,7 @@
 <p>$$d_{LE}(\Sigma_1, \Sigma_2) = \|\log(\Sigma_1) - \log(\Sigma_2)\|_F$$</p>
 <p>where $\Sigma_i$ is the spectral covariance matrix of signal $s_i$ and $\|\cdot\|_F$ is the Frobenius norm. This metric respects the manifold geometry of positive-definite matrices &mdash; it does not suffer from the swelling effect that plagues the arithmetic mean of covariance matrices in Euclidean space. For written text, $g_{SS}$ might be an edit distance, a character-level embedding distance, or a visual similarity measure for handwritten or typographic forms.</p>
 <p><strong>The pragmatic metric $g_{PP}$.</strong> The pragmatic manifold has both continuous and discrete structure. The social-relation coordinates (power, distance, imposition) are continuous and support a standard Euclidean or Riemannian metric. The illocutionary force coordinate is discrete (assertion, question, command, promise, etc.), and the distance between illocutionary types reflects the pragmatic effort of reinterpretation: misinterpreting a question as an assertion is a smaller error than misinterpreting a command as a promise. This mixed structure makes $g_{PP}$ a hybrid metric &mdash; smooth in the continuous directions, discrete-valued in the categorical directions.</p>
-<p><strong>The content metric $g_{CC}$.</strong> For propositional content, the natural metric is the semantic distance in an embedding space. Word-level metrics are inherited from word embeddings; sentence-level metrics from sentence embeddings. The BIP experiments (Chapters 11&ndash;12) provide empirical evidence about the structure of $g_{CC}$: the fact that moral content transfers across languages at 44.5% F1 (chance = 25%, $p < 10^{-50}$) means that the content metric is approximately preserved under the translation gauge transformation &mdash; a strong constraint on $g_{CC}$.</p>
+<p><strong>The content metric $g_{CC}$.</strong> For propositional content, the natural metric is the semantic distance in an embedding space. Word-level metrics are inherited from word embeddings; sentence-level metrics from sentence embeddings. The BIP experiments (Chapters 11&ndash;12) provide empirical evidence about the structure of $g_{CC}$: the fact that moral content transfers across languages at 44.5% F1 (chance = 25%, $p &lt; 10^{-50}$) means that the content metric is approximately preserved under the translation gauge transformation &mdash; a strong constraint on $g_{CC}$.</p>
 <p>For hierarchical content (taxonomies, ontologies, conceptual trees), the Poincare ball metric (Chapter 5) provides a more natural distance:</p>
 <p>$$d_{\mathbb{B}}(x, y) = \cosh^{-1}\!\left(1 + 2\frac{\|x - y\|^2}{(1 - \|x\|^2)(1 - \|y\|^2)}\right)$$</p>
 <p>This hyperbolic metric captures the exponential growth of semantic specificity: general concepts (near the origin) are close to each other, while specific instances (near the boundary) are far apart, matching the branching structure of natural-language taxonomies.</p>
@@ -137,7 +142,7 @@
 <p>The metric structure reveals three characteristic patterns that recur throughout the book.</p>
 <p><strong>Translation</strong>: same content, different signals. For a faithful translation, $d_C(c_1, c_2) \approx 0$ while $d_S(s_1, s_2)$ is large (the source and target language signals are very different). The total distance is dominated by the signal component. In a block-diagonal metric, translation preserves the content coordinates exactly and moves only in the signal directions. In the full metric with cross-terms, the signal change may induce a small content shift (the holonomy of translation, developed in Chapter 10).</p>
 <p><strong>Sarcasm</strong>: same signal, different pragmatics. The utterance &ldquo;Great job&rdquo; spoken with sincere enthusiasm and the same utterance spoken with contemptuous sarcasm have $d_S(s_1, s_2) \approx 0$ in the textual representation (identical words) but $d_P(p_1, p_2) \gg 0$ (opposite pragmatic force) and potentially $d_C(c_1, c_2) \gg 0$ (opposite propositional attitude). In the acoustic representation, $d_S$ is nonzero because prosody differs &mdash; but the prosodic difference is small compared to the pragmatic and content difference. Sarcasm is a near-isometry on $S$ that induces a large displacement on $P \times C$.</p>
-<p><strong>Paraphrase</strong>: same content, same pragmatics, different signals within a language. &ldquo;The cat sat on the mat&rdquo; and &ldquo;The mat was sat upon by the cat&rdquo; have $d_C \approx 0$, $d_P \approx 0$, and $d_S > 0$ (different word sequences). Paraphrase is a pure signal transformation that preserves both content and pragmatics &mdash; it is an element of the gauge group that we define in Section 3.4.</p>
+<p><strong>Paraphrase</strong>: same content, same pragmatics, different signals within a language. &ldquo;The cat sat on the mat&rdquo; and &ldquo;The mat was sat upon by the cat&rdquo; have $d_C \approx 0$, $d_P \approx 0$, and $d_S &gt; 0$ (different word sequences). Paraphrase is a pure signal transformation that preserves both content and pragmatics &mdash; it is an element of the gauge group that we define in Section 3.4.</p>
 <p><strong>Proposition 3.2</strong> (Diagnostic Patterns). <em>The three characteristic patterns &mdash; translation, sarcasm, and paraphrase &mdash; are distinguished by their distance profiles on $M$:</em></p>
 <table>
 <thead>
@@ -228,7 +233,7 @@
 <p>$$c' = c \quad \text{and} \quad p' \approx p$$</p>
 <p>That is, the content is preserved exactly (this is the definition of a faithful translation) and the pragmatic force is preserved approximately (the assertion remains an assertion, the social relation is maintained, the communicative goal is the same). The signal changes entirely: $s'$ is a sequence of French phonemes or graphemes bearing no systematic resemblance to $s$.</p>
 <p>The translation group is not abelian. Translating English $\to$ French $\to$ Japanese is not, in general, the same as translating English $\to$ Japanese directly. Different translation paths may induce different holonomies &mdash; different small rotations of the meaning vector upon arrival. This path-dependence is the geometric content of the well-known observation that translation is not transitive: back-translation (English $\to$ French $\to$ English) does not always recover the original.</p>
-<p>The empirical evidence for the approximate gauge invariance of content under $T$ is the BIP cross-lingual transfer result (Chapters 11&ndash;12): moral content expressed in ancient Hebrew/Aramaic can be recognized by a classifier trained on modern English with 44.5% F1, and the Hohfeldian correlative symmetry holds at 100% across all tested language pairs. This is not perfect invariance &mdash; the 44.5% is above chance ($p < 10^{-50}$) but below ceiling &mdash; and the gap between 44.5% and 100% measures the holonomy of the Hebrew-to-English translation path on the moral-content submanifold.</p>
+<p>The empirical evidence for the approximate gauge invariance of content under $T$ is the BIP cross-lingual transfer result (Chapters 11&ndash;12): moral content expressed in ancient Hebrew/Aramaic can be recognized by a classifier trained on modern English with 44.5% F1, and the Hohfeldian correlative symmetry holds at 100% across all tested language pairs. This is not perfect invariance &mdash; the 44.5% is above chance ($p &lt; 10^{-50}$) but below ceiling &mdash; and the gap between 44.5% and 100% measures the holonomy of the Hebrew-to-English translation path on the moral-content submanifold.</p>
 <h3 id="343-the-re-description-group-math196">3.4.3 The Re-Description Group $R$</h3>
 <p>The re-description group $R$ contains the transformations that paraphrase a communicative act within a single language. &ldquo;The cat sat on the mat,&rdquo; &ldquo;The mat had a cat sitting on it,&rdquo; and &ldquo;Upon the mat, a cat was seated&rdquo; are three elements of $R$ applied to the same content.</p>
 <p>$R$ is richer than it first appears. It includes:</p>
@@ -401,10 +406,20 @@
 <li><strong>Proposition 3.5</strong>: No Scalar Is Gauge-Invariant (impossibility of gauge-invariant scalar evaluation from signal alone)</li>
 <li><strong>Theorem 3.1</strong>: Communication Scalar Irrecoverability</li>
 </ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The independence is not absolute. Signal constrains content (you cannot express a 500-word argument in a single emoji with full fidelity), and pragmatic context shapes the range of available signals (a legal contract demands written form). These cross-factor dependencies are captured by the metric&rsquo;s off-diagonal terms (Section 3.2) and by the curvature of $M$. The product structure is the zeroth-order approximation; the metric provides the first-order corrections.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch02_saussure.html" class="nav-prev">&larr; Chapter 2: Saussure&#x27;s Geometric Intuition</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch04_three_geometries.html" class="nav-next">Chapter 4: Three Geometries for Communication &rarr;</a>
       </div>
     </div>
   </article>
@@ -432,6 +447,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

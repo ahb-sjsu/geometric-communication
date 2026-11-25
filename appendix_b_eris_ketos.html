@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Define the coda type taxonomy &mdash; Geometric Communication</title>
   <meta name="description" content="Define the coda type taxonomy from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-communication">
+<body data-book-slug="geometric-communication" data-chapter-id="appendix_b_eris_ketos">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Define the coda type taxonomy</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="appendix_a_math.html" class="nav-prev">&larr; Appendix A: Mathematical Prerequisites</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_c_bip_protocol.html" class="nav-next">Appendix C: The BIP Experimental Protocol &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h2 id="appendix-b-the-eris-ketos-toolkit">Appendix B: The eris-ketos Toolkit</h2>
@@ -111,7 +117,7 @@ pytest
 <h3 id="b3-api-reference">B.3 API Reference</h3>
 <h4 id="b31-poincare_coda-hyperbolic-embeddings">B.3.1 poincare_coda &mdash; Hyperbolic Embeddings</h4>
 <p><strong><code>PoincareBall(c: float = 1.0)</code></strong></p>
-<p>The core class implementing Mobius gyrovector operations on the Poincare ball model of hyperbolic space, $\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 < 1\}$. The curvature parameter <code>c</code> controls how aggressively distances grow toward the boundary; higher <code>c</code> increases hyperbolic spread.</p>
+<p>The core class implementing Mobius gyrovector operations on the Poincare ball model of hyperbolic space, $\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 &lt; 1\}$. The curvature parameter <code>c</code> controls how aggressively distances grow toward the boundary; higher <code>c</code> increases hyperbolic spread.</p>
 <p>Methods:</p>
 <ul>
 <li>
@@ -808,7 +814,7 @@ python notebooks/cetacean_geometric_analysis.py
 </tbody>
 </table>
 <h4 id="b54-reproducing-specific-results">B.5.4 Reproducing Specific Results</h4>
-<p><strong>Menzerath&rsquo;s law</strong> ($r = -0.269$, $p < 10^{-144}$):</p>
+<p><strong>Menzerath&rsquo;s law</strong> ($r = -0.269$, $p &lt; 10^{-144}$):</p>
 <pre><code class="language-python">from scipy.stats import spearmanr
 
 ici_cols = [c for c in df.columns if c.startswith(&quot;ICI&quot;)]
@@ -1039,7 +1045,9 @@ signal, sr = librosa.load(&quot;recording.wav&quot;, sr=32000)
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="appendix_a_math.html" class="nav-prev">&larr; Appendix A: Mathematical Prerequisites</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_c_bip_protocol.html" class="nav-next">Appendix C: The BIP Experimental Protocol &rarr;</a>
       </div>
     </div>
   </article>
@@ -1067,6 +1075,7 @@ signal, sr = librosa.load(&quot;recording.wav&quot;, sr=32000)
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>
