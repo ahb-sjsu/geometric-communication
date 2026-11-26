@@ -408,3 +408,141 @@ when the figures were drawn.
 [Figure 16.7: The complete Rosetta trajectory. Four stations, three geometric levels, one ascending path. From whale clicks (signal geometry, opaque meaning) through birdsong (signal geometry, known meaning) and cuneiform (hierarchical geometry, partial meaning) to moral reasoning (semantic geometry, gauge-invariant meaning). The arrow points from structure to meaning. The distance remaining is the distance to decoding.]
 
 **Verdict:** Drawn.
+
+## Placeholder 2.1 (manuscript/part_i/ch02_saussure.md)
+
+[Figure 2.1] *The arbitrariness of the sign as gauge invariance. Five signifiers — English "tree," French "arbre," German "Baum," Japanese 木, Akkadian 𒄑 — are five coordinate representations of the same point on the semantic manifold. Translation is a gauge transformation: it changes coordinates without moving the point. The gauge-invariant content — the concept TREE — is the geometric object; the signifiers are the coordinates.*
+
+**Verdict:** A sound schematic, not drawn.
+
+## Placeholder 2.2 (manuscript/part_i/ch02_saussure.md)
+
+[Figure 2.2] *Meaning as topology. Left: the English color space, with "blue" and "green" as distinct regions. Right: the Russian color space, where голубой (goluboy, light blue) and синий (siniy, dark blue) split what English treats as a single region. The topology of the color space differs across languages; the signifiers partition the space differently. The geometric content — the continuous space of visible wavelengths — is invariant, but the coordinate charts (the linguistic categories) are not. Meaning is the structure of the partition, not the labels on the parts.*
+
+**Verdict:** A sound schematic, not drawn.
+
+## Placeholder 2.3 (manuscript/part_i/ch02_saussure.md)
+
+[Figure 2.3] *Jakobson's distinctive features as a discrete symmetry group. The phonological space for three binary features (voiced/voiceless, nasal/oral, stop/fricative) is the 3-cube $\{-1, +1\}^3$. English phonemes occupy specific vertices. Minimal pairs (e.g., /b/ vs. /p/) are connected by single-feature reflections — elements of the symmetry group $(\mathbb{Z}/2\mathbb{Z})^3$. The phonological structure is the pattern of occupied vertices and meaning-distinguishing reflections, not the phonetic substance of any individual sound.*
+
+**Verdict:** Drawn, but the placeholder is partly wrong: it names a stop/fricative feature and English phonemes at specific vertices, while the text's example uses voiced, nasal, compact and grave and assigns only /b/ and /p/.
+
+## Placeholder 2.4 (manuscript/part_i/ch02_saussure.md)
+
+[Figure 2.4] *Chomsky's deep structure as a quotient manifold. The space of surface forms $\mathcal{S}$ is fibered by the transformation group $T$. Each fiber (vertical) contains all surface realizations of a single deep structure: "The king issued a decree," "A decree was issued by the king," "It was the king who issued a decree," etc. The quotient space $\mathcal{S}/T$ (horizontal) is the space of deep structures — the space of meanings. The projection $\pi$ maps surface forms to their underlying content.*
+
+**Verdict:** Drawn. Its third sentence ('It was the king who...') is not in the text.
+
+## Placeholder 2.5 (manuscript/part_i/ch02_saussure.md)
+
+[Figure 2.5] *The progression from distributional semantics to explicit geometry. Left: the co-occurrence matrix (Firth/Harris), a high-dimensional implicit representation. Center: the Word2vec embedding, explicit coordinates in a flat (Euclidean) space. Right: the Poincaré ball embedding (Nickel and Kiela, 2017), explicit coordinates in a curved (hyperbolic) space. Each step makes the geometric structure more explicit and more faithful to the actual topology of semantic relations.*
+
+**Verdict:** Not drawn; needs the embeddings.
+
+## Placeholder 3.1 (manuscript/part_i/ch03_communication_manifold.md)
+
+[Figure 3.1] *Three apologies as points on $M = S \times P \times C$. The axes represent (schematically) the three factors. Apology A and Apology C are close on $P \times C$ but far on $S$ (different languages, different modalities). Apology A and Apology B are closer on $S$ (both English) but far on $P$ (different pragmatic force). The dashed projection lines show what scalar evaluation discards: projecting onto any single axis loses the relationships visible in the full space.*
+
+**Verdict:** Drawn, as three factor lines.
+
+## Placeholder 3.2 (manuscript/part_i/ch03_communication_manifold.md)
+
+[Figure 3.2] *Summary of the communication manifold framework. The product manifold $M = S \times P \times C$ is shown with its metric (block structure with cross-terms), heuristic field (gradient arrows guiding interpretation), and gauge group $G = T \times R \times F$ (acting primarily on $S$). Scalar evaluation projects $M$ onto $\mathbb{R}$, destroying all structure except the one dimension measured. The five empirical systems studied in the book (whale codas, birdsong, cuneiform, cross-lingual moral transfer, LLM communication) are located on $M$ according to which factors are accessible to measurement.*
+
+**Verdict:** Not drawn. A summary of everything, overloaded.
+
+## Placeholder 4.1 (manuscript/part_ii/ch04_three_geometries.md)
+
+[Figure 4.1] *The Poincare disk (2D ball with $c = 1$). Left: a binary tree of depth 5 embedded in the disk, with the root at the center and leaves near the boundary. Geodesics (shortest paths) are arcs of circles perpendicular to the boundary. Right: concentric geodesic circles at equal distance increments from the origin. The circles bunch together in Euclidean coordinates near the boundary but are equally spaced in hyperbolic distance, illustrating the exponential volume growth.*
+
+**Verdict:** Drawn, with a tree of depth 4, not 5.
+
+## Placeholder 4.2 (manuscript/part_ii/ch04_three_geometries.md)
+
+[Figure 4.2] *Effect of curvature parameter $c$ on the same tree embedding. Left: $c = 0.1$ (mildly hyperbolic) --- the tree is compact, with leaves well inside the ball. Center: $c = 1.0$ (moderately hyperbolic) --- the tree fills the ball, with leaves near but not at the boundary. Right: $c = 10.0$ (strongly hyperbolic) --- leaves are compressed against the boundary, with poor numerical resolution. The optimal $c$ places the deepest leaves in the outer half of the ball without exceeding $\|\mathbf{x}\| > 0.95/\sqrt{c}$.*
+
+**Verdict:** Supported by the text (the effect of c); not drawn.
+
+## Placeholder 4.3 (manuscript/part_ii/ch04_three_geometries.md)
+
+[Figure 4.3] *Spectral trajectories on $\operatorname{SPD}(2)$ (schematic, projected to 2D for visualization). Left: a trill --- the trajectory oscillates between two covariance states, producing high path length and low geodesic distance. Center: a descending whistle --- the trajectory traces a nearly straight path, with path length close to geodesic distance. Right: a complex song --- the trajectory wanders through covariance space, visiting multiple distinct states. The geodesic deviation $\delta$ distinguishes all three.*
+
+**Verdict:** Do not draw. It gives the trill high path length and low geodesic distance, which is one side of an unresolved contradiction (item 8).
+
+## Placeholder 4.4 (manuscript/part_ii/ch04_three_geometries.md)
+
+[Figure 4.4] *Takens' time-delay embedding. Left: a sinusoidal signal $x(t) = \sin(2\pi t / T)$ and its 3D embedding $\mathbf{v}(t) = (x(t), x(t+\tau), x(t+2\tau))$ --- the point cloud traces an ellipse in $\mathbb{R}^3$, whose single loop corresponds to the periodic structure. Center: an exponentially decaying signal $x(t) = e^{-\alpha t}$ --- the point cloud traces a monotone curve with no loops. Right: a signal with two incommensurate frequencies $x(t) = \sin(2\pi t / T_1) + \sin(2\pi t / T_2)$ --- the point cloud traces a torus-like structure with two independent loops.*
+
+**Verdict:** Drawn.
+
+## Placeholder 4.5 (manuscript/part_ii/ch04_three_geometries.md)
+
+[Figure 4.5] *Persistence diagrams for three acoustic signals. Left: a regular sperm whale coda (5 clicks, even spacing) --- the $H_0$ diagram shows two dominant points (corresponding to two distinct ICI values), and the $H_1$ diagram is nearly empty (no periodic structure in the ICI sequence). Center: an accelerating coda --- the $H_0$ diagram is diffuse (no clean clusters), and the $H_1$ diagram shows one persistent loop (the spiral structure of progressively shortening intervals). Right: a bird trill --- the $H_1$ diagram shows a single highly persistent loop (the periodic alternation between two frequencies).*
+
+**Verdict:** Needs data.
+
+## Placeholder 4.6 (manuscript/part_ii/ch04_three_geometries.md)
+
+[Figure 4.6] *Summary of the three geometries for communication. Hyperbolic geometry captures hierarchical structure (trees, taxonomies, levels of abstraction). SPD Riemannian geometry captures covariance structure (cross-frequency correlations, spectral fingerprints). Persistent homology captures topological structure (attractor shape, periodicity, connected components). The combined 156-dimensional feature vector $(136 + 4 + 16)$ captures all three. No single geometry suffices: hierarchical information is orthogonal to covariance information, which is orthogonal to topological information.*
+
+**Verdict:** A summary; not drawn.
+
+## Placeholder 11.1 (manuscript/part_v/ch11_cross_lingual.md)
+
+[Figure 11.1] *Temporal distribution of the Sefaria corpus. The horizontal axis spans 2,300 years; the vertical axis shows passage count per century. The Talmudic period (200--500 CE) contributes the largest volume, reflecting the massive scope of the Babylonian and Jerusalem Talmuds. The medieval commentarial tradition (Rishonim) provides a second peak. Critically, the corpus spans the full evolution of rabbinic Hebrew from its Biblical roots through Mishnaic simplification to the technical precision of medieval legal commentary.*
+
+**Verdict:** Needs counts.
+
+## Placeholder 11.2 (manuscript/part_v/ch11_cross_lingual.md)
+
+[Figure 11.2] *Schematic comparison of the two corpora as coordinate charts on the content manifold $C$. The Sefaria chart (left) covers the moral content region using Hebrew/Aramaic coordinates, with dense coverage in the legal-religious subregion. The Dear Abby chart (right) covers an overlapping region using English coordinates, with dense coverage in the interpersonal-secular subregion. The overlap region---where both charts have nonzero resolution---is the Hohfeldian relational structure: rights, duties, liberties, and no-rights. The transfer experiment tests whether the model can navigate from one chart to the other via the shared geometric content.*
+
+**Verdict:** A schematic, not drawn.
+
+## Placeholder 11.3 (manuscript/part_v/ch11_cross_lingual.md)
+
+[Figure 11.3] *The BIP architecture. The encoder maps input text to a 384-dimensional representation $\mathbf{h}$. Two projection heads produce $\mathbf{z}_{\text{bond}}$ (64-dim, for moral structure) and $\mathbf{z}_{\text{label}}$ (32-dim, for surface features). A classification head predicts Hohfeldian relation from $\mathbf{z}_{\text{bond}}$. An adversarial head with gradient reversal (GRL) attempts to predict temporal period from $\mathbf{z}_{\text{bond}}$---and is deliberately defeated. The auxiliary temporal head predicts temporal period from $\mathbf{z}_{\text{label}}$ directly. The training loss $\mathcal{L} = \mathcal{L}_{\text{Hohfeld}}(\mathbf{z}_{\text{bond}}) + \mathcal{L}_{\text{time}}(\mathbf{z}_{\text{label}}) + \mathcal{L}_{\text{time}}^{\text{adv}}(\text{GRL}(\mathbf{z}_{\text{bond}}))$ forces $\mathbf{z}_{\text{bond}}$ to encode moral structure while being uninformative about surface features.*
+
+**Verdict:** Drawn.
+
+## Placeholder 11.4 (manuscript/part_v/ch11_cross_lingual.md)
+
+[Figure 11.4] *Cross-lingual transfer performance by language. Bars show macro F1 for Hohfeldian classification. The dashed line at 25% marks chance. All languages substantially exceed chance. The striking result is Classical Chinese (64.9%), which achieves the highest transfer despite being maximally distant from the training language on every typological and cultural dimension.*
+
+**Verdict:** Do not draw (unresolved item 2).
+
+## Placeholder 11.5 (manuscript/part_v/ch11_cross_lingual.md)
+
+[Figure 11.5] *Perturbation sensitivity analysis. Left: surface perturbations (name change, synonym, irrelevant detail) produce small embedding shifts clustered near zero. Right: structural perturbations (obligation flip, harm addition, role swap) produce shifts an order of magnitude larger. The non-overlapping distributions confirm that the bond space distinguishes gauge-invariant content from gauge-dependent surface features.*
+
+**Verdict:** Do not draw (unresolved item 4, and 'confirm' wording).
+
+## Placeholder 11.6 (manuscript/part_v/ch11_cross_lingual.md)
+
+[Figure 11.6] *PCA of the bond space. Left: scree plot showing that three components explain 90% of variance. Right: the first two principal components, with points colored by Hohfeldian class. The obligation-liberty axis (PC1) achieves perfect binary separation. The right-duty versus liberty-no-right distinction (PC2) provides the correlative separation. The structure is consistent across training languages and test languages.*
+
+**Verdict:** Do not draw ('perfect binary separation' is unresolved item 1).
+
+## Placeholder 12.1 (manuscript/part_v/ch12_temporal_invariance.md)
+
+[Figure 12.1] *Temporal invariance of deontic gates. Each point represents the effectiveness of a semantic gate type (binding, release, nullifier) in a specific temporal bin. The horizontal axis spans 2,300 years; the vertical axis shows gate effectiveness (proportion of passages correctly reclassified). The near-flat trend lines confirm temporal invariance: the gates work as well on Biblical texts as on modern English.*
+
+**Verdict:** Not drawable: no per-period values are printed, and it says 'confirm'.
+
+## Placeholder 12.2 (manuscript/part_v/ch12_temporal_invariance.md)
+
+[Figure 12.2] *The NLP extraction pipeline. Raw corpus text enters at left, passes through corpus-specific loaders, uniform preprocessing, and bond extraction (pattern matching + multi-model validation). The output is a set of passages with Hohfeldian labels, ready for input to the BIP architecture. The pipeline handles seven languages, four scripts, and 2,300 years of textual tradition.*
+
+**Verdict:** Drawn.
+
+## Placeholder 12.3 (manuscript/part_v/ch12_temporal_invariance.md)
+
+[Figure 12.3] *Dependency tree topology by Hohfeldian class. Each panel shows the average dependency tree structure for passages classified as Obligation, Right, Liberty, and No-Right. Obligation trees are compact (main clause carries the deontic relation). Right trees are deeper (the claim is often embedded in causal or conditional structure). Liberty trees show characteristic negation branches. No-Right trees are the most variable.*
+
+**Verdict:** Needs data.
+
+## Placeholder 12.4 (manuscript/part_v/ch12_temporal_invariance.md)
+
+[Figure 12.4] *Semantic gates as group elements on the Hohfeldian square. Each arrow represents a linguistic trigger and its corresponding $D_4$ action. "Only if convenient" applies $r$ (rotation), moving from Obligation to Liberty. "You promised" applies $r^3$ (inverse rotation), moving from Liberty back to Obligation. Role swap applies $s$ (reflection), exchanging Right and Duty. The gates are discrete: confidence scores are bimodal, not gradual.*
+
+**Verdict:** Stale: it draws the withdrawn D4 action with r and r cubed. The Klein four-group figure of Chapter 13 replaces it.

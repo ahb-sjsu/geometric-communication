@@ -113,7 +113,6 @@
 </tbody>
 </table>
 <p>The alignment is striking. The same linguistic triggers that flip a moral classification in a Dear Abby letter&mdash;words that shift obligation to permission or invoke conditions that nullify duty&mdash;have the same effect in Hebrew legal texts composed two millennia earlier. The deontic gates are temporal invariants.</p>
-<p>[Figure 12.1] <em>Temporal invariance of deontic gates. Each point represents the effectiveness of a semantic gate type (binding, release, nullifier) in a specific temporal bin. The horizontal axis spans 2,300 years; the vertical axis shows gate effectiveness (proportion of passages correctly reclassified). The near-flat trend lines confirm temporal invariance: the gates work as well on Biblical texts as on modern English.</em></p>
 <hr />
 <h2 id="122-the-nlp-extraction-pipeline">12.2 The NLP Extraction Pipeline</h2>
 <h3 id="1221-the-engineering-challenge">12.2.1 The Engineering Challenge</h3>
@@ -182,7 +181,6 @@ $$\text{LIBERTY}: \text{حلال} \;|\; \text{مباح} \;|\; \text{جائز}$$
 $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 <p><strong>Stage 2: Multi-model validation.</strong> For a subset of passages, four independent large language models provide Hohfeldian classifications with chain-of-thought reasoning. Labels are accepted when $\geq 3$ models agree with mean confidence $&gt; 0.7$. This stage serves as a quality check on the pattern-matching labels and provides higher-confidence labels for evaluation subsets.</p>
 <p>Passages matching no pattern receive the label NONE and are excluded from the classified training set. The label distribution is monitored to ensure no single class exceeds 70%, which would trivialize classification.</p>
-<p>[Figure 12.2] <em>The NLP extraction pipeline. Raw corpus text enters at left, passes through corpus-specific loaders, uniform preprocessing, and bond extraction (pattern matching + multi-model validation). The output is a set of passages with Hohfeldian labels, ready for input to the BIP architecture. The pipeline handles seven languages, four scripts, and 2,300 years of textual tradition.</em></p>
 <hr />
 <p><img alt="Figure 12.2" src="figures/ch12_fig2.svg" /></p>
 <p><em>Figure 12.2. The extraction pipeline of Section 12.2 as a flow. Corpus text passes through a loader for its corpus and a common preprocessing step; Stage 1 assigns a Hohfeldian label by matching deontic vocabulary; a passage that matches no pattern is labelled NONE and left out. Stage 2 checks a subset with four language models and keeps a label when at least three agree with mean confidence above 0.7. The labels therefore rest first on keyword patterns, of which two English examples are shown.</em></p>
@@ -301,7 +299,6 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 - Pragmatic inference from liberty claims (&ldquo;If you&rsquo;re free to say no, they can&rsquo;t make you&rdquo;)
 - Absence of a claim, expressed through silence or omission in the discourse structure</p>
 <p>The dependency structure serves as a <em>derived</em> coordinate on the signal manifold $S$&mdash;a coordinate that is computable from the text and partially predictive of the Hohfeldian category. Unlike the deontic markers, which are explicit surface features, dependency structure is a structural feature that requires parsing to extract. Its predictive power suggests that the gauge transformation from surface text to moral content operates not just through lexical substitution but through syntactic reorganization.</p>
-<p>[Figure 12.3] <em>Dependency tree topology by Hohfeldian class. Each panel shows the average dependency tree structure for passages classified as Obligation, Right, Liberty, and No-Right. Obligation trees are compact (main clause carries the deontic relation). Right trees are deeper (the claim is often embedded in causal or conditional structure). Liberty trees show characteristic negation branches. No-Right trees are the most variable.</em></p>
 <h3 id="1234-cross-linguistic-coordinate-comparison">12.3.4 Cross-Linguistic Coordinate Comparison</h3>
 <p>The linguistic analysis reveals that different languages use systematically different coordinates to express the same moral content. Comparing the Hebrew and English coordinate systems:</p>
 <table>
@@ -490,7 +487,6 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 </tbody>
 </table>
 <p>The fact that these gates produce <em>discrete</em> transitions (step functions rather than gradual shifts) supports the group-theoretic formalization. In a continuous theory, the transition from Obligation to Liberty would be a smooth path through intermediate states. In a discrete gauge theory, it is a jump&mdash;the application of a group element to the current state. The empirical bimodality of confidence scores (Section 12.4.2) is evidence for discrete rather than continuous structure.</p>
-<p>[Figure 12.4] <em>Semantic gates as group elements on the Hohfeldian square. Each arrow represents a linguistic trigger and its corresponding $D_4$ action. &ldquo;Only if convenient&rdquo; applies $r$ (rotation), moving from Obligation to Liberty. &ldquo;You promised&rdquo; applies $r^3$ (inverse rotation), moving from Liberty back to Obligation. Role swap applies $s$ (reflection), exchanging Right and Duty. The gates are discrete: confidence scores are bimodal, not gradual.</em></p>
 <h3 id="1244-why-the-deontic-axis-is-flat">12.4.4 Why the Deontic Axis Is Flat</h3>
 <p>The perfect transfer on the deontic axis demands an explanation. Why is this particular direction on the moral submanifold flat&mdash;free of curvature, holonomy-free&mdash;when the correlative directions show measurable curvature (reflected in the imperfect four-way transfer)?</p>
 <p>We propose two complementary explanations:</p>
