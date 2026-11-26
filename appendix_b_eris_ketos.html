@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Define the coda type taxonomy &mdash; Geometric Communication</title>
-  <meta name="description" content="Define the coda type taxonomy from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
+  <title>Appendix B: The eris-ketos Toolkit &mdash; Geometric Communication</title>
+  <meta name="description" content="Appendix B: The eris-ketos Toolkit from Geometric Communication: Language, Signal, and the Topology of Meaning, by Andrew H. Bond.">
   <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
@@ -35,7 +35,7 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <a href="index.html">Geometric Communication</a>
         <span class="breadcrumb-sep">&rsaquo;</span>
-        <span class="breadcrumb-current">Define the coda type taxonomy</span>
+        <span class="breadcrumb-current">Appendix B: The eris-ketos Toolkit</span>
       </nav>
       <div class="chapter-nav-top">
         <a href="appendix_a_math.html" class="nav-prev">&larr; Appendix A: Mathematical Prerequisites</a>
@@ -44,7 +44,7 @@
       </div>
 
       <div class="chapter-content">
-<h2 id="appendix-b-the-eris-ketos-toolkit">Appendix B: The eris-ketos Toolkit</h2>
+<h1 id="appendix-b-the-eris-ketos-toolkit">Appendix B: The eris-ketos Toolkit</h1>
 <p>This appendix provides a practical reference for the <strong>eris-ketos</strong> Python package (v0.2.0), which implements the geometric analysis pipeline described in Chapters 5&ndash;7 and applied to 8,719 annotated sperm whale codas from the Dominica Sperm Whale Project. The package is open-source (MIT licence) and available on PyPI and GitHub. Everything reported in the cetacean chapters of this book can be reproduced using the code documented here.</p>
 <p>The name <em>ketos</em> (Greek: <em>ketos</em>, from which &ldquo;cetacean&rdquo; derives) reflects the package&rsquo;s focus on whale communication; <em>eris</em> situates it within the broader ErisML geometric analysis family. The toolkit provides four analysis modules &mdash; hyperbolic embeddings, topological data analysis, SPD manifold metrics, and adversarial robustness testing &mdash; each capturing a different geometric aspect of cetacean vocalisation structure.</p>
 <hr />
@@ -979,7 +979,7 @@ signal, sr = librosa.load(&quot;recording.wav&quot;, sr=32000)
 <p>The eris-ketos toolkit adapts two core components from the ErisML geometric ethics framework:</p>
 <ol>
 <li>
-<p><strong>Adversarial fuzzing architecture</strong>: The DRI is a direct adaptation of the Bond Index. The mathematical structure is identical &mdash; graduated semantic distance, adversarial threshold search via binary search, sensitivity profiling, and compositional chain testing &mdash; with domain-specific substitutions (acoustic transforms for scenario transforms, coda semantic distance for option semantic distance). The weighting formula $\text{DRI} = 0.5\bar{\omega} + 0.3\omega_{75} + 0.2\omega_{95}$ is the Bond Index convention, emphasising tail behaviour.</p>
+<p><strong>Adversarial fuzzing architecture</strong>: The DRI is the Model Robustness Index of <em>Geometric Methods</em> (Sections 9.2.2 and 10.5.1) applied to input perturbations, on ErisML&rsquo;s fuzzing architecture. The structure it shares with that architecture is &mdash; graduated semantic distance, adversarial threshold search via binary search, sensitivity profiling, and compositional chain testing &mdash; with domain-specific substitutions (acoustic transforms for scenario transforms, coda semantic distance for option semantic distance). The weighting formula $\text{DRI} = 0.5\bar{\omega} + 0.3\omega_{75} + 0.2\omega_{95}$ is the MRI&rsquo;s default weighting, emphasising tail behaviour.</p>
 </li>
 <li>
 <p><strong>Parametric transform design</strong>: The <code>AcousticTransform</code> and <code>TransformChain</code> classes mirror ErisML&rsquo;s <code>ParametricTransform</code> and <code>TransformChain</code>. The identity property (intensity 0.0 = no change) and the invariant/stress classification are inherited from the ethics framework, where they distinguish between perturbations that a well-calibrated evaluator should tolerate and perturbations that may legitimately change the evaluation.</p>

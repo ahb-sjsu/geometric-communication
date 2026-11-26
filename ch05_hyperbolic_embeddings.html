@@ -57,8 +57,8 @@
 <p>The central insight is simple to state and deep in its consequences. Trees&mdash;the natural representation of hierarchies&mdash;embed faithfully in hyperbolic space but not in Euclidean space. The volume of a hyperbolic ball grows exponentially with radius, just as the number of nodes in a tree grows exponentially with depth. Euclidean space, whose volume grows polynomially, cannot accommodate this exponential branching without distortion. This is not an analogy. It is a theorem. And it has immediate practical consequences for any system that must represent, classify, or reason about hierarchically structured communication.</p>
 <hr />
 <h2 id="52-the-poincare-ball-model">5.2 The Poincare Ball Model</h2>
-<p>We work with the Poincare ball model of hyperbolic space, the most widely used model in machine learning applications.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> The development here is self-contained; readers seeking a fuller treatment may consult Appendix A or the exposition in <em>Geometric Methods</em> (Bond, 2026a, Ch. 4.6).</p>
-<p><strong>Definition 5.1</strong> (Poincare Ball). <em>The Poincare ball model $(\mathbb{B}^d_c, g^{\mathbb{B}})$ of $d$-dimensional hyperbolic space with constant sectional curvature $-1/c$ (where $c &gt; 0$) is the open ball</em></p>
+<p>We work with the Poincare ball model of hyperbolic space, the most widely used model in machine learning applications.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> The development here is self-contained; readers seeking a fuller treatment may consult Appendix A or the exposition in <em>Geometric Methods</em> (Bond, 2026a, Ch. 3).</p>
+<p><strong>Definition 5.1</strong> (Poincare Ball). <em>The Poincare ball model $(\mathbb{B}^d_c, g^{\mathbb{B}})$ of $d$-dimensional hyperbolic space with constant sectional curvature $-c$ (where $c &gt; 0$) is the open ball</em></p>
 <p>$$\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 &lt; 1\}$$</p>
 <p><em>equipped with the Riemannian metric</em></p>
 <p>$$g^{\mathbb{B}}_x = (\lambda^c_x)^2 \, g^E$$</p>
@@ -115,9 +115,9 @@
 - Hyperbolic embedding achieves bounded distortion in dimension $O(\log b)$.
 - Euclidean embedding with bounded distortion requires dimension $O(b^h)$ &mdash; exponential in depth.</p>
 <p>The gap between $O(\log b)$ and $O(b^h)$ is the theoretical justification for hyperbolic embeddings of hierarchical structure. For a binary tree of depth 10 (1,023 nodes), Euclidean embedding with bounded distortion requires on the order of 1,000 dimensions; hyperbolic embedding requires on the order of 1.</p>
-<p><strong>Proposition 5.1</strong> (Volume Growth Interpretation). <em>The volume of a ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-1/c$ grows as</em></p>
-<p>$$\text{Vol}(\mathbb{B}^d_c(r)) \sim \left(\frac{c}{4}\right)^{(d-1)/2} \cdot \frac{e^{(d-1)r/\sqrt{c}}}{((d-1)/\sqrt{c})^{d-1}}$$</p>
-<p><em>for large $r$. In Euclidean space, the corresponding volume is $\text{Vol}(B^d(r)) \sim r^d$.</em></p>
+<p><strong>Proposition 5.1</strong> (Volume Growth Interpretation). <em>The volume of a ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-c$ grows as</em></p>
+<p>$$\text{Vol}(\mathbb{B}^d_c(r)) \sim \frac{\omega_{d-1}}{(d-1)\sqrt{c}\,(2\sqrt{c})^{d-1}} \, e^{(d-1)\sqrt{c}\,r}$$</p>
+<p><em>for large $r$, where $\omega_{d-1}$ is the volume of the unit $(d-1)$-sphere (the large-$r$ form of the integral in footnote 1 of Chapter 4). In Euclidean space, the corresponding volume is $\text{Vol}(B^d(r)) \sim r^d$.</em></p>
 <p>The exponential volume growth of hyperbolic space matches the exponential branching of trees. This is the geometric reason why hyperbolic space accommodates hierarchies: there is <em>room</em> for all the leaves. Euclidean space, with its polynomial volume growth, runs out of room and must compress distant branches together, introducing distortion.</p>
 <hr />
 <h2 id="54-embedding-procedure">5.4 Embedding Procedure</h2>
@@ -339,7 +339,7 @@
 <h3 id="593-to-chapter-9-hyperbolic-attention-for-cuneiform">5.9.3 To Chapter 9 (Hyperbolic Attention for Cuneiform)</h3>
 <p>The cuneiform case study in Section 5.6 is developed further in Chapter 9, which presents the full Deep Past project: the training pipeline, the ablation results in quantitative detail, and the interpretation of the geometric attention bias in the context of Akkadian linguistics. The present chapter provides the mathematical foundation; Chapter 9 provides the full empirical analysis.</p>
 <h3 id="594-to-the-series">5.9.4 To the Series</h3>
-<p>The Poincare ball model appears throughout the Geometric Series as the preferred representation for hierarchical structure. In <em>Geometric Reasoning</em> (Ch. 14), it encodes the hierarchy of reasoning strategies (abstract heuristics near the origin, concrete rules near the boundary). In <em>Geometric Ethics</em> (Ch. 8), it encodes the hierarchy of normative concepts (abstract principles near the origin, specific duties near the boundary). In <em>Geometric Methods</em> (Ch. 4.6), the mathematical foundations are developed in full generality. This chapter instantiates the general framework for the specific domain of communication, where hierarchy is not merely one structural feature among many but the organising principle of every system we have examined.</p>
+<p>The Poincare ball model appears throughout the Geometric Series as the preferred representation for hierarchical structure. In <em>Geometric Reasoning</em> (Ch. 14), it encodes the hierarchy of reasoning strategies (abstract heuristics near the origin, concrete rules near the boundary). In <em>Geometric Methods</em> (Ch. 3), the mathematical foundations are developed. This chapter instantiates the general framework for the specific domain of communication, where hierarchy is not merely one structural feature among many but the organising principle of every system we have examined.</p>
 <hr />
 <h2 id="510-summary">5.10 Summary</h2>
 <p>This chapter has developed the Poincare ball model of hyperbolic space as a tool for representing hierarchical communication structure. The key results are:</p>

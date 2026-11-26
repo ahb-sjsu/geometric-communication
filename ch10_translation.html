@@ -149,7 +149,7 @@
 <p>$$\rho(t) = 1 - \text{sim}(t, \hat{t})$$</p>
 <p><em>where $\hat{t}$ is the result of the round-trip translation and $\text{sim}$ is a semantic similarity measure on $\mathcal{E}_{L_1}$ (e.g., sentence embedding cosine similarity).</em></p>
 <p>For a flat region, $\rho(t) \approx 0$: round-trip translation recovers the original. For a high-curvature region, $\rho(t) &gt; 0$: round-trip translation produces a measurably different text. The translation loop residual is the empirical counterpart of holonomy.</p>
-<p>In the Old Assyrian corpus, we computed $\rho$ for all 1,561 aligned pairs using the chain Akkadian $\to$ English $\to$ (backtranslation via the trained model) $\to$ Akkadian, with similarity measured by chrF++ on the Akkadian transliteration. The results stratified cleanly by genre:</p>
+<p>In the Old Assyrian corpus, we computed $\rho$ for all 1,561 aligned pairs using the chain Akkadian $\to$ English $\to$ (backtranslation via the trained model) $\to$ Akkadian, with similarity measured by chrF++ on the Akkadian transliteration. No run record for the table below is in the repository, and Chapter 9 does not describe the English-to-Akkadian model that the return leg needs, so its figures are unverified. As reported, the results stratified cleanly by genre:</p>
 <table>
 <thead>
 <tr>
@@ -206,7 +206,7 @@
 <p>In the language of Proposition 10.2, the hyperbolic bias reduces $\text{Area}(\Sigma)$ by constraining the translation path to lie near the structural geodesic. Even if the curvature $K_{\max}$ is high (as in personal letters and legal texts), the holonomy is reduced because the path does not explore the full high-curvature region.</p>
 <h3 id="1043-empirical-evidence-holonomy-reduction-by-genre">10.4.3 Empirical Evidence: Holonomy Reduction by Genre</h3>
 <p>The ablation study of Chapter 9 can be reanalysed through the lens of holonomy reduction. Recall that the hyperbolic attention bias provided its largest gains on sentences containing rare signs&mdash;precisely the sentences where data scarcity forces the unbiased model to take detours through poorly mapped regions of $C$, accumulating curvature.</p>
-<p>We re-stratified the ablation results by genre, using the translation loop residual as the holonomy measure:</p>
+<p>We re-stratified the ablation results by genre, using the translation loop residual as the holonomy measure. Chapter 9 reports only the qualitative trends of the ablation (Section 9.8.3), no run record for the table below is in the repository, and neither of its columns matches the table of Section 10.3.4, so its figures are unverified:</p>
 <table>
 <thead>
 <tr>
@@ -359,7 +359,7 @@
 <h3 id="1083-to-chapters-1113">10.8.3 To Chapters 11&ndash;13</h3>
 <p>The gauge invariance framework of Chapters 11&ndash;13 is the natural extension of the holonomy analysis. Chapter 11 measures holonomy empirically through cross-lingual transfer of moral concepts. Chapter 12 extends the measurement to temporal invariance. Chapter 13 develops the full gauge theory, where holonomy becomes a central object: the Wilson loop experiments on the Hohfeldian square measure non-trivial holonomy at cross-type boundaries. The present chapter provides the mathematical foundation for all three: the definitions of parallel transport, holonomy, and their relationship to curvature that the later chapters will use.</p>
 <h3 id="1084-to-the-series">10.8.4 To the Series</h3>
-<p>The parallel transport interpretation of translation is an instance of the general principle developed in <em>Geometric Reasoning</em> (Ch. 4): any process that carries structured information between coordinate systems is parallel transport, and its failure modes are holonomy. In <em>Geometric Ethics</em> (Ch. 8), the same framework describes the transport of moral concepts across cultural contexts. In <em>Geometric Methods</em> (Ch. 4.6), the mathematical foundations are developed in full generality. This chapter instantiates the framework for the specific domain of interlingual translation, where the curvature of the semantic manifold has concrete empirical signatures (the translation loop residual) and the holonomy reduction has concrete engineering implementations (the hyperbolic attention bias).</p>
+<p>The parallel transport interpretation of translation is an instance of the general principle of parallel transport (<em>Geometric Ethics</em>, Section 4.6 and Ch. 10): any process that carries structured information between coordinate systems is parallel transport, and its failure modes are holonomy. In <em>Geometric Ethics</em> (Ch. 10), the same framework describes the transport of moral evaluations along paths in moral space. This chapter instantiates the framework for the specific domain of interlingual translation, where the curvature of the semantic manifold has concrete empirical signatures (the translation loop residual) and the holonomy reduction has concrete engineering implementations (the hyperbolic attention bias).</p>
 <hr />
 <h2 id="109-summary">10.9 Summary</h2>
 <p>This chapter has developed the geometric interpretation of translation as parallel transport on the content manifold $(C, g)$. The key results are:</p>

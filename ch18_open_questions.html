@@ -131,7 +131,7 @@
 <p><strong>A Lagrangian.</strong> A functional $\mathcal{L}[\phi, \partial\phi]$ on the fields $\phi$ of the communication system, whose stationary points are the &ldquo;equations of motion&rdquo; of communication. What are the fields? What is the Lagrangian?</p>
 </li>
 <li>
-<p><strong>A continuous symmetry.</strong> The gauge group must be continuous (Lie group) for the standard Noether theorem to apply. But Lesson 1 of Chapter 17 argued that the communication gauge group may be discrete ($V_4$). Discrete symmetries produce <em>topological</em> conservation laws (e.g., conservation of parity in quantum mechanics), not the differential conservation laws (continuity equations) that Noether&rsquo;s theorem yields.</p>
+<p><strong>A continuous symmetry.</strong> The gauge group must be continuous (Lie group) for the standard Noether theorem to apply. But the gauge group posited for normative communication (Definition 13.9) has a discrete factor ($V_4$). Discrete symmetries produce <em>topological</em> conservation laws (e.g., conservation of parity in quantum mechanics), not the differential conservation laws (continuity equations) that Noether&rsquo;s theorem yields.</p>
 </li>
 <li>
 <p><strong>An independent definition of the conserved quantity.</strong> We need to know what the conserved quantity <em>is</em> before invoking the theorem, or at least we need the theorem to predict a quantity that can be independently verified. &ldquo;Meaning&rdquo; is not independently defined; it is the very thing we are trying to formalise.</p>
@@ -248,7 +248,7 @@
 <p><img alt="Figure 18.1" src="figures/ch18_fig1.svg" /></p>
 <p><em>Figure 18.1. The lower bounds of Section 18.5.1 on the dimension of each factor of the communication manifold, one mark per analysis. The chapter takes the largest bound on each factor (ringed) and adds them: 16 for the signal, 5 for the content and 2 for the pragmatics, a total of at least 23. These are counts of features the book&rsquo;s analyses used, posited as independent, and not estimates of the true dimension. The table&rsquo;s row for the Hohfeldian relations is left out because the book counts it in two ways; it does not change the total.</em></p>
 <h3 id="1852-why-the-true-dimension-matters">18.5.2 Why the True Dimension Matters</h3>
-<p>The dimensionality of $M$ determines the severity of scalar irrecoverability (Chapter 17, Proposition 17.2): a scalar metric on an $n$-dimensional manifold has fibres of dimension $n - 1$, so the amount of information destroyed grows linearly with $n$. If $\dim(M) = 23$, a BLEU score destroys at least 22 dimensions of information. If $\dim(M) = 100$ (a plausible estimate for the full communication manifold of human language), a BLEU score destroys at least 99 dimensions.</p>
+<p>The dimensionality of $M$ determines the severity of scalar irrecoverability (Chapter 15, Theorem 15.2, part 1): a scalar metric on an $n$-dimensional manifold has fibres of dimension $n - 1$, so the amount of information destroyed grows linearly with $n$. If $\dim(M) = 23$, a BLEU score destroys at least 22 dimensions of information. If $\dim(M) = 100$ (a plausible estimate for the full communication manifold of human language), a BLEU score destroys at least 99 dimensions.</p>
 <p>The dimensionality also determines the computational cost of geometric evaluation. Computing distances on a Riemannian manifold requires $O(n^2)$ operations per point (for the metric tensor), computing persistent homology requires $O(N^3)$ operations (for a point cloud of $N$ points in $n$ dimensions, with $N$ growing exponentially with $n$ for fixed resolution), and computing holonomy requires integration along paths on the manifold. High dimensionality makes all of these operations more expensive.</p>
 <h3 id="1853-estimation-strategies">18.5.3 Estimation Strategies</h3>
 <p>How might we estimate the true dimensionality? Several approaches are available:</p>
@@ -288,7 +288,7 @@
 <p>This book has focused primarily on the content manifold $C$ (Chapters 9&ndash;13) and the signal manifold $S$ (Chapters 7&ndash;8). The pragmatic manifold $P$ &mdash; the space of speaker intentions, social contexts, and communicative functions &mdash; has received comparatively less attention. Chapter 14 touched on pragmatic effects (framing, sycophancy), but a full geometric analysis of pragmatics remains undeveloped.</p>
 <p>The pragmatic manifold $P$ is likely the most geometrically complex factor of $M$. It encodes:</p>
 <ul>
-<li><strong>Speech act type</strong>: assertion, question, command, promise, apology, greeting, etc. These are discrete categories (supporting Lesson 1 of Chapter 17).</li>
+<li><strong>Speech act type</strong>: assertion, question, command, promise, apology, greeting, etc. These are discrete categories (consistent with the discrete $V_4$ factor of Definition 13.9).</li>
 <li><strong>Implicature</strong>: what is implied but not said. Gricean maxims (quantity, quality, relation, manner) are constraints on the pragmatic manifold that restrict the space of admissible interpretations.</li>
 <li><strong>Social context</strong>: power relations, solidarity, face-saving, politeness. Brown and Levinson&rsquo;s (1987) politeness theory describes a two-dimensional pragmatic space (power, distance) that determines the choice of politeness strategy.</li>
 <li><strong>Common ground</strong>: shared knowledge between speaker and hearer. Clark&rsquo;s (1996) theory of common ground describes an evolving state that constrains interpretation.</li>
@@ -311,7 +311,7 @@
 <li>Communication has manifold structure ($M = S \times P \times C$) with metric, connection, and curvature.</li>
 <li>Scalar evaluation destroys this structure irreversibly, with severity proportional to the manifold&rsquo;s dimensionality and the fibre&rsquo;s topological complexity.</li>
 <li>Three complementary geometries (hyperbolic, Riemannian, topological) capture the hierarchical, covariance, and shape structure of communication, respectively.</li>
-<li>These geometries produce informative results across three biological kingdoms (cetacean, avian, human) and across 4,000 years of human history (cuneiform to modern English).</li>
+<li>These geometries produce informative results across three animal lineages (cetacean, avian, human) and across 4,000 years of human history (cuneiform to modern English).</li>
 <li>The deepest communicative structure &mdash; the gauge-invariant core of meaning &mdash; is measurable, discrete ($V_4$), and preserved across languages and centuries.</li>
 </ol>
 <h3 id="1872-what-we-do-not-know">18.7.2 What We Do Not Know</h3>
@@ -334,7 +334,7 @@
 <p>Two centuries later, we sit with a different set of scripts &mdash; whale clicks, birdsong, cuneiform, modern language &mdash; and ask the same question. The geometric tools of this book have confirmed that the structure exists: hierarchical, topological, covariance-rich, and gauge-invariant at its core. What remains is to read it.</p>
 <p>The reading has begun. The trajectory continues.</p>
 <hr />
-<p><strong>Series cross-references.</strong> Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Gauge invariance and Noether&rsquo;s theorem: GR Ch. 8. Hyperbolic embeddings and distortion: GM Ch. 4.6; this volume Ch. 5. Persistent homology and stability: GM Ch. 5; this volume Ch. 6. Parallel transport and holonomy: this volume Ch. 10. The $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. The Rosetta trajectory: this volume Ch. 1, 16.</p>
+<p><strong>Series cross-references.</strong> Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Gauge invariance and Noether&rsquo;s theorem: GR Ch. 8. Hyperbolic embeddings and distortion: GM Ch. 3; this volume Ch. 5. Persistent homology and stability: GM Ch. 5; this volume Ch. 6. Parallel transport and holonomy: this volume Ch. 10. The $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. The Rosetta trajectory: this volume Ch. 1, 16.</p>
 <p><em>GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.</em></p>
       </div>
 
