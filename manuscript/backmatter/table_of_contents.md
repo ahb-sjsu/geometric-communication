@@ -86,7 +86,7 @@
 *The running example resolved. From whale clicks (unknown meaning) through birdsong (species identity), cuneiform (sparse parallel texts), to cross-lingual moral reasoning (deep invariant structure). The hierarchy of communicative structure: signal geometry, hierarchical geometry, semantic geometry.*
 
 **Chapter 17. What Communication Teaches the General Theory**
-*Feedback to the parent framework. Discrete gauge structure is natural. Hierarchy demands hyperbolic geometry. The same geometry works across kingdoms. Scalar irrecoverability is worst in communication.*
+*Feedback to the parent framework. Discrete gauge structure is natural. Hierarchy demands hyperbolic geometry. The same geometry works across animal lineages. Scalar irrecoverability is worst in communication.*
 
 **Chapter 18. Open Questions**
 *The frontier, honestly stated. Can we decode whale communication? Is semantic space Riemannian? What is the conservation law for meaning? Can persistent homology detect meaning in unknown systems? What is the dimensionality of the communication manifold?*

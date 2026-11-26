@@ -23,7 +23,7 @@ We work with the Poincare ball model of hyperbolic space, the most widely used m
 
 [^1]: Other models exist---the hyperboloid (Lorentz) model, the Klein model, the upper half-space model---each with computational advantages in specific settings. The Poincare ball is preferred here for its conformal property: angles in the ball match angles in the ambient Euclidean space, making visualisations directly interpretable.
 
-**Definition 5.1** (Poincare Ball). *The Poincare ball model $(\mathbb{B}^d_c, g^{\mathbb{B}})$ of $d$-dimensional hyperbolic space with constant sectional curvature $-1/c$ (where $c > 0$) is the open ball*
+**Definition 5.1** (Poincare Ball). *The Poincare ball model $(\mathbb{B}^d_c, g^{\mathbb{B}})$ of $d$-dimensional hyperbolic space with constant sectional curvature $-c$ (where $c > 0$) is the open ball*
 
 $$\mathbb{B}^d_c = \{x \in \mathbb{R}^d : c\|x\|^2 < 1\}$$
 
@@ -121,11 +121,11 @@ More practically, for a $b$-ary tree of depth $h$:
 
 The gap between $O(\log b)$ and $O(b^h)$ is the theoretical justification for hyperbolic embeddings of hierarchical structure. For a binary tree of depth 10 (1,023 nodes), Euclidean embedding with bounded distortion requires on the order of 1,000 dimensions; hyperbolic embedding requires on the order of 1.
 
-**Proposition 5.1** (Volume Growth Interpretation). *The volume of a ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-1/c$ grows as*
+**Proposition 5.1** (Volume Growth Interpretation). *The volume of a ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-c$ grows as*
 
-$$\text{Vol}(\mathbb{B}^d_c(r)) \sim \left(\frac{c}{4}\right)^{(d-1)/2} \cdot \frac{e^{(d-1)r/\sqrt{c}}}{((d-1)/\sqrt{c})^{d-1}}$$
+$$\text{Vol}(\mathbb{B}^d_c(r)) \sim \frac{\omega_{d-1}}{(d-1)\sqrt{c}\,(2\sqrt{c})^{d-1}} \, e^{(d-1)\sqrt{c}\,r}$$
 
-*for large $r$. In Euclidean space, the corresponding volume is $\text{Vol}(B^d(r)) \sim r^d$.*
+*for large $r$, where $\omega_{d-1}$ is the volume of the unit $(d-1)$-sphere (the large-$r$ form of the integral in footnote 1 of Chapter 4). In Euclidean space, the corresponding volume is $\text{Vol}(B^d(r)) \sim r^d$.*
 
 The exponential volume growth of hyperbolic space matches the exponential branching of trees. This is the geometric reason why hyperbolic space accommodates hierarchies: there is *room* for all the leaves. Euclidean space, with its polynomial volume growth, runs out of room and must compress distant branches together, introducing distortion.
 

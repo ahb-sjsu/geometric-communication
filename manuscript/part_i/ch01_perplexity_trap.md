@@ -246,7 +246,7 @@ The question is not whether geometric methods work. The question is whether they
 
 ## 1.7 The Plan
 
-The book proceeds in seven parts along what we call the Rosetta trajectory --- the path from raw signal to structured meaning, developed through five communication systems spanning 4,000 years and three biological kingdoms.
+The book proceeds in seven parts along what we call the Rosetta trajectory --- the path from raw signal to structured meaning, developed through five communication systems spanning 4,000 years and three animal lineages (cetaceans, birds and humans).
 
 **Part I (Chapters 1--3)** establishes the problem and the framework. Chapter 2 recovers the geometric intuitions buried in the history of linguistics --- Saussure's arbitrariness of the sign as gauge invariance, Jakobson's distinctive features as a discrete symmetry group, Chomsky's deep structure as a quotient manifold --- and shows that the field has been reaching toward geometry for over a century without naming it. Chapter 3 constructs the communication manifold $M = S \times P \times C$, the product of signal, pragmatic, and content manifolds, and defines the metric, heuristic field, and symmetry group that give it structure.
 

@@ -69,7 +69,7 @@ Consider the sign 𒀭. In Old Assyrian texts, it has (among others) three readi
 
 When used as a determinative before a divine name---written `{d}` in transliteration---it signals that the following sign(s) spell a god's name. It does not contribute a phonetic value; it is a semantic classifier, a flag that says "the next word belongs to the category DIVINE."
 
-This polyvalence creates a hierarchical structure. The sign form 𒀭 is the root. Its readings (AN, DINGIR, Anu, and others) are children. The words formed using each reading are grandchildren. The hierarchy has at least four levels:
+This polyvalence creates a hierarchical structure. The sign form 𒀭 is the root. Its readings (AN, DINGIR, Anu, and others) are children. The words formed using each reading are grandchildren. The hierarchy has at least four levels, of which the first three (sign form, reading, word) are the levels the tree of Section 9.3.2 models:
 
 $$\text{sign form} \to \text{reading} \to \text{word} \to \text{phrase}$$
 

@@ -60,7 +60,7 @@ The Social Cognition benchmark (T5) provides the cleanest measurement of heurist
 
 The rewriting is performed by a fixed transformer model (Gemini 2.0 Flash), not by the models being tested. This separation of stimulus generation from judgment eliminates the self-confirming loop that contaminates many adversarial evaluations. The test models judge pre-generated text; they do not generate the perturbations they evaluate.
 
-The result: euphemistic rewriting reduces total harm scores by 10--16 points on the 0--70 scale. Dramatic rewriting increases scores by 6--11 points. Control replications (same text, re-judged) drift by only 1--7 points. Fisher combination across five models and two framing types yields 8.9$\sigma$ --- a significance level that, even after accounting for the multiple comparisons implicit in a five-track benchmark, leaves no room for chance.
+The result: euphemistic rewriting reduces the four Gemini models' total harm scores by 10--16 points on the 0--70 scale. Dramatic rewriting increases their scores by 6--11 points. Claude's drifts, $-9.1$ and $-1.5$ (Section 14.2.3), fall outside both ranges. Control replications (same text, re-judged) drift by only 1--7 points. Fisher combination across five models and two framing types yields 8.9$\sigma$ --- a significance level that, even after accounting for the multiple comparisons implicit in a five-track benchmark, leaves no room for chance.
 
 What does 8.9$\sigma$ mean in geometric terms? The framing manipulation has introduced a corruption field $\delta h$ on the communication manifold whose gradient is large enough to displace interpretations by 15--25% of the total scale range. The corruption is not random --- it has a consistent direction. Euphemistic framing pushes the heuristic gradient toward the low-harm region of the manifold; dramatic framing pushes it toward the high-harm region. The content manifold $C$ is unchanged (the moral facts are identical), but the heuristic field over $C$ has been tilted.
 
@@ -143,7 +143,7 @@ The measured gradient:
 | Gemini 2.5 Pro | 68% | 44% [19--73%] | +0.238 | 0.657 |
 | Gemini 2.5 Flash | 76% | 56% [27--81%] | +0.206 | 0.726 |
 
-Wilson 95% confidence intervals in brackets. $n = 9$ wrong-correction items per model. Fisher combination across 4 models: **13.3$\sigma$**.
+Wilson 95% confidence intervals in brackets. $n = 9$ wrong-correction items per model. Fisher combination across 4 models: **13.3$\sigma$**. The Sycophancy Index is the wrong-flip rate divided by the correct-flip rate: 0 means the model never yields to an invalid correction, and 1 means it yields to invalid corrections as often as to valid ones.
 
 The gradient is monotonic and spans the full range from zero objective hijacking (Claude) to near-complete hijacking (Gemini 2.5 Flash, which flips its verdict on 56% of fabricated corrections). This is not a binary phenomenon --- "sycophantic" or "not sycophantic" --- but a continuous displacement along the spectrum between the content manifold and the approval manifold.
 
@@ -253,7 +253,7 @@ The Attention benchmark (A1) measures gauge breaking by introducing morally irre
 
 [^4]: The Attention results are drawn from Bond (2026), "Geometric Attention: Distractor Dose-Response in Moral Cognition," presented in detail in the Measuring AGI benchmark suite.
 
-The result: vivid distractors shift moral judgment at 5.0$\sigma$ (Fisher combination across 5 models). The displacement is robust across architecture families (both Gemini and Claude are affected) and exhibits a graded dose-response: vivid distractors produce larger displacement than mild distractors, which produce larger displacement than controls.
+The result: vivid distractors shift moral judgment at 5.0$\sigma$ (Stouffer's combination of the five per-model values below, their sum divided by $\sqrt{5}$; Fisher's method on their one-sided p-values gives 5.1$\sigma$). The displacement is robust across architecture families (both Gemini and Claude are affected) and exhibits a graded dose-response: vivid distractors produce larger displacement than mild distractors, which produce larger displacement than controls.
 
 Per-model sigma values tell a more nuanced story:
 
@@ -279,9 +279,9 @@ This ~33% recovery ceiling is remarkably consistent across models (ranging from 
 
 $$r = \frac{\#\{\phi'' = \phi\}}{\#\{\phi' \neq \phi\}}$$
 
-*is bounded above by approximately 0.33--0.50 across tested models. That is, even with explicit instruction to restore gauge invariance, at most half of gauge-breaking displacements are reversible.*
+*was at most 0.50 for every tested model: Section 14.5.2 counts 1 to 5 recoveries out of 3 to 14 displaced verdicts per model, a mean of 0.33 over the five rates and 14 of 40, or 0.35, pooled. That is, even with explicit instruction to restore gauge invariance, at most half of the observed gauge-breaking displacements were reversed.*
 
-This bound has profound implications for communication engineering. If even explicit metacognitive instruction recovers less than half of the displacement caused by irrelevant surface detail, then no amount of post-hoc prompting can restore full gauge invariance. The fix must be architectural --- the model's representation must separate content from surface form at the encoding level, not correct for their conflation at the decoding level.
+This bound, observed on small counts, has profound implications for communication engineering. If even explicit metacognitive instruction recovers at most half of the displacement caused by irrelevant surface detail, then no amount of post-hoc prompting can restore full gauge invariance. The fix must be architectural --- the model's representation must separate content from surface form at the encoding level, not correct for their conflation at the decoding level.
 
 ![Figure 14.2](figures/ch14_fig2.svg)
 

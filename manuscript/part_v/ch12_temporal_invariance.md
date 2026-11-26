@@ -41,7 +41,7 @@ The adversarial temporal head in the main architecture uses four coarser tempora
 
 ### 12.1.3 Results: Temporal Invariance Confirmed
 
-The temporal adversary achieves 27.3% accuracy on four-period classification (chance = 25%). This is within 2.3 percentage points of chance---statistically indistinguishable at conventional significance levels. The bond space contains no recoverable temporal information.
+The temporal adversary achieves 27.3% accuracy on four-period classification (chance = 25%). This is within 2.3 percentage points of chance.[^1] Whether the difference is statistically distinguishable from chance depends on the number of test passages, which is not given here, so the result shows that the bond space retains little recoverable temporal information, not that it retains none.
 
 Meanwhile, Hohfeldian classification from the same bond space achieves 45.91% accuracy (chance = 25%, $p < 10^{-6}$). The model successfully encodes moral structure while discarding temporal markers.
 
@@ -138,6 +138,8 @@ $$\text{RIGHT}: \text{حق} \;|\; \text{يستحق}$$
 $$\text{LIBERTY}: \text{حلال} \;|\; \text{مباح} \;|\; \text{جائز}$$
 $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$
 
+In Hohfeld's own terms three of these NO-RIGHT patterns are misassigned: the Hebrew אסור and the Arabic حرام and ممنوع ("forbidden", "prohibited") state a duty not to act, which is an OBLIGATION, not the absence of a claim. The passages they match are labelled NO-RIGHT in error (Section 11.2.2).
+
 **Stage 2: Multi-model validation.** For a subset of passages, four independent large language models provide Hohfeldian classifications with chain-of-thought reasoning. Labels are accepted when $\geq 3$ models agree with mean confidence $> 0.7$. This stage serves as a quality check on the pattern-matching labels and provides higher-confidence labels for evaluation subsets.
 
 Passages matching no pattern receive the label NONE and are excluded from the classified training set. The label distribution is monitored to ensure no single class exceeds 70%, which would trivialize classification.
@@ -158,7 +160,7 @@ The linguistic analysis asks: which surface features predict Hohfeldian classifi
 
 ### 12.3.2 Deontic Markers: The Primary Coordinates
 
-The most direct surface coordinates for Hohfeldian classification are deontic markers---words and morphemes that explicitly encode obligation, permission, prohibition, and entitlement. These are the coordinates that the pattern-matching stage of bond extraction (Section 12.2.4) targets.
+The most direct surface coordinates for Hohfeldian classification are deontic markers[^2]---words and morphemes that explicitly encode obligation, permission, prohibition, and entitlement. These are the coordinates that the pattern-matching stage of bond extraction (Section 12.2.4) targets.
 
 **English deontic markers.** Modal verbs carry the heaviest deontic load in English:
 
@@ -179,7 +181,7 @@ The frequency distribution reveals an asymmetry: obligation language (36% of pas
 | חייב | chayav | OBLIGATION | Adjective (passive participle) |
 | צריך | tsarich | OBLIGATION (weak) | Adjective |
 | מותר | mutar | LIBERTY | Adjective (passive participle) |
-| אסור | asur | NO-RIGHT (prohibition) | Adjective (passive participle) |
+| אסור | asur | OBLIGATION (prohibition: a duty not to act; the patterns of Section 11.2.2 label it NO-RIGHT) | Adjective (passive participle) |
 | זכאי | zakai | RIGHT | Adjective |
 | פטור | patur | LIBERTY (exemption) | Adjective (passive participle) |
 
@@ -227,7 +229,7 @@ The linguistic analysis reveals that different languages use systematically diff
 | Prohibition | Lexical (אסור/forbidden) | Modal (must not, cannot) |
 | Conditional obligation | Clause-initial אם (if) | Clause-initial if/when |
 
-The most instructive difference is in the treatment of obligation negation. In Hebrew, the negation of obligation has its own lexeme: פטור (patur, "exempt"). A person who is patur is released from an obligation---a Hohfeldian Liberty. In English, there is no single word for this concept. It must be expressed periphrastically: "you don't have to," "you're not required to," "you're off the hook." The Hebrew coordinate chart has a *dedicated coordinate* for a region of the moral submanifold that the English chart covers only through circumlocution.
+The most instructive difference is in the treatment of obligation negation. In Hebrew, the negation of obligation has its own lexeme: פטור (patur, "exempt"). A person who is patur is released from an obligation---a Hohfeldian Liberty. In English, there is no single word for this concept. It must be expressed periphrastically: "you don't have to," "you're not required to," "you're off the hook."[^4] The Hebrew coordinate chart has a *dedicated coordinate* for a region of the moral submanifold that the English chart covers only through circumlocution.
 
 This is exactly the chart-resolution phenomenon described in Chapter 10. Each language charts the moral submanifold with different resolution in different regions. Hebrew has fine-grained resolution in the exemption region (one word: patur) where English has coarse resolution (a multi-word paraphrase). Conversely, English has fine-grained resolution in the rights-claim region ("entitled to," "right to," "deserving of," "owed") where Hebrew uses the single term זכאי (zakai).
 
@@ -277,7 +279,7 @@ The most striking gate is the phrase **"only if convenient."** When appended to 
 
 $$P(\text{Liberty} \mid \text{Obligation context} + \text{"only if convenient"}) = 1.00$$
 
-This is the Level 5 result of SQND Protocol 1 ($N = 220$ evaluations across 11 levels; Chapter 13; binomial test $p < 10^{-12}$). The confidence score distribution is bimodal: modes at 0.12 (low confidence in Obligation) and 0.91 (high confidence in Liberty), with a gap $> 0.4$ between modes. The transition is not gradual. It is a discrete switch---a step function, not a sigmoid.
+This is the Level 5 result of SQND Protocol 1 ($N = 220$ evaluations across 11 levels; Chapter 13; binomial test $p < 10^{-12}$). The confidence score distribution is bimodal: modes at 0.12 (low confidence in Obligation) and 0.91 (high confidence in Liberty), with a gap $> 0.4$ between modes.[^3] The transition is not gradual. It is a discrete switch---a step function, not a sigmoid.
 
 Other gates show similar discrete behavior:
 
@@ -432,7 +434,7 @@ The BIP results are *measurements*. They tell us that the moral submanifold has 
 
 The progression from measurement to theory is deliberate. The BIP results were not derived from the gauge theory; the gauge theory was developed to explain the BIP results. The empirical fact came first. The geometry followed. This is the method of the entire book: measure the structure, then find the mathematics that explains why it was there all along.
 
-[^1]: The temporal adversary's 27.3% accuracy (versus 25% chance for four periods) is within the expected fluctuation range for a classifier operating at chance. A binomial test against 25% with the sample sizes involved yields $p > 0.05$---not significant. The temporal information in the bond space is, by all measurable standards, zero.
+[^1]: The temporal adversary's 27.3% accuracy (versus 25% chance for four periods) is within the expected fluctuation range for a classifier operating at chance. The text reports a binomial test against 25% with $p > 0.05$, not significant; the sample size behind that test is not given in this book, and with several thousand test passages the same 2.3-point gap would be significant. The temporal information in the bond space is small, and its exact size needs that count.
 
 [^2]: The term "deontic" derives from the Greek δέον (deon), "that which is binding." Deontic logic, the study of obligation and permission, was formalized by von Wright (1951). The BIP experiment provides the first empirical evidence that the deontic distinction is a cross-linguistic and cross-temporal invariant of natural moral language, not merely a logical primitive.
 

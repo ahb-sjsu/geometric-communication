@@ -21,7 +21,7 @@
 
 Chapter 7 introduced the geometric analysis of non-human communication through sperm whale codas --- broadband clicks whose inter-click intervals encode a combinatorial phonetic hierarchy. The three-geometry toolkit extracted meaningful structure from 8,719 codas, revealing linguistic universals, adversarial vulnerability boundaries, and identity signatures.
 
-This chapter applies the same toolkit to a fundamentally different acoustic system: birdsong. Where whale codas are brief, impulsive, and broadband, birdsong is extended, tonal, and narrowband. Where the whale dataset comprised 21 coda types from a single species, the birdsong dataset comprises 206 species. The question is whether the geometric toolkit transfers. The answer is yes, and productively: the geometric features capture aspects of birdsong that convolutional networks on spectrograms systematically miss.
+This chapter applies the same toolkit to a fundamentally different acoustic system: birdsong. Where whale codas are brief, impulsive, and broadband, birdsong is extended, tonal, and narrowband. Where the whale dataset comprised 28 coda types from a single species, the birdsong dataset comprises 206 species. The question is whether the geometric toolkit transfers. The answer is yes, and productively: the geometric features capture aspects of birdsong that convolutional networks on spectrograms systematically miss.
 
 The context is the BirdCLEF competition, an annual challenge hosted on Kaggle that asks participants to identify bird species from field recordings of natural soundscapes.[^1] The 2026 edition features 206 species, five-second classification windows, and a constraint that makes the problem geometrically interesting: inference must run entirely on CPU, with a total budget of ninety minutes. This constraint forces a reckoning with computational cost that GPU-rich training environments never demand. It is in this constrained setting that geometric features find their niche: cheap to compute, complementary to neural features, and robust to the noise conditions that degrade spectrograms.
 
@@ -422,13 +422,13 @@ The budget breakdown for a typical submission:
 | Geometric features | ~5 ms | ~2.5 min | Covariance + trajectory + TDA |
 | LightGBM predict | <1 ms | ~0.5 min | Tree traversal |
 | Ensemble + I/O | <1 ms | ~0.5 min | Weighted average + CSV write |
-| **Total** | | **~63 min** | Within 90-min budget |
+| **Total** | | **~63.5 min** | Within 90-min budget |
 
 The geometric features consume approximately 4% of the total inference budget while contributing 30% of the ensemble weight. This asymmetry --- cheap to compute, valuable in combination --- is precisely what makes them attractive in the constrained setting. If the total budget were unlimited, one might simply run larger neural networks or more aggressive test-time augmentation. But with a hard time limit, every second spent on inference must earn its keep, and the geometric features offer the best return on computational investment in the pipeline.
 
 ![Figure 8.2](figures/ch08_fig2.svg)
 
-*Figure 8.2. Share of the estimated inference time against ensemble weight for the three models of the BirdCLEF system, from the budget table of Section 8.6.1 and the weights of Section 8.1.3. Time shares are minutes out of the table's total of about 63; the geometric bar is feature extraction, 2.5 minutes, and the LightGBM prediction adds a further half minute. As the chapter reports, the geometric features take about 4 percent of the time and carry 30 percent of the weight. The weights were tuned on a validation set; the chapter prints no accuracy for the separate models.*
+*Figure 8.2. Share of the estimated inference time against ensemble weight for the three models of the BirdCLEF system, from the budget table of Section 8.6.1 and the weights of Section 8.1.3. Time shares are minutes out of the table's total of 63.5; the geometric bar is feature extraction, 2.5 minutes, and the LightGBM prediction adds a further half minute. As the chapter reports, the geometric features take about 4 percent of the time and carry 30 percent of the weight. The weights were tuned on a validation set; the chapter prints no accuracy for the separate models.*
 
 ### 8.6.2 What Geometry Buys Under Constraint
 

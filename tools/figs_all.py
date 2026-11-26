@@ -508,7 +508,7 @@ def fig_8_3():
 def fig_8_5():
     minutes = {"Audio loading + mel": 5, "EfficientNet-B3": 40, "EfficientNet-B0": 15, "Geometric features": 2.5,
                "LightGBM predict": 0.5, "Ensemble + I/O": 0.5}
-    total = 63   # the chapter's printed total; the rows sum to 63.5
+    total = 63.5   # the chapter prints 63.5, the sum of its rows (corrected 2026-11-26; it printed 63)
     assert abs(sum(minutes.values()) - 63.5) < 1e-9
     share = lambda k: round(100 * minutes[k] / total, 1)
     assert round(share("Geometric features")) == 4   # "approximately 4% of the total inference budget"
@@ -517,7 +517,7 @@ def fig_8_5():
     p = reg(P3 + "ch08_birdsong.md", "8.2",
             "Share of the estimated inference time against ensemble weight for the three models of the BirdCLEF "
             "system, from the budget table of Section 8.6.1 and the weights of Section 8.1.3. Time shares are minutes "
-            "out of the table's total of about 63; the geometric bar is feature extraction, 2.5 minutes, and the "
+            "out of the table's total of 63.5; the geometric bar is feature extraction, 2.5 minutes, and the "
             "LightGBM prediction adds a further half minute. As the chapter reports, the geometric features take "
             "about 4 percent of the time and carry 30 percent of the weight. The weights were tuned on a validation "
             "set; the chapter prints no accuracy for the separate models.",

@@ -1,4 +1,4 @@
-## Appendix B: The eris-ketos Toolkit
+# Appendix B: The eris-ketos Toolkit
 
 This appendix provides a practical reference for the **eris-ketos** Python package (v0.2.0), which implements the geometric analysis pipeline described in Chapters 5--7 and applied to 8,719 annotated sperm whale codas from the Dominica Sperm Whale Project. The package is open-source (MIT licence) and available on PyPI and GitHub. Everything reported in the cetacean chapters of this book can be reproduced using the code documented here.
 

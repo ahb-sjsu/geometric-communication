@@ -15,7 +15,7 @@
 >
 > *And in the British Museum, a clay tablet dating to approximately 1900 BCE records an Old Assyrian business transaction. The cuneiform signs are organized in a three-level hierarchy: sign form, reading, and word. The sign* 𒀭 *can be read as AN ("heaven"), DINGIR ("god"), or Anu (a personal name), depending on context.*
 >
-> *Three communication systems. Three biological kingdoms. Four thousand years. What geometric framework could possibly apply to all three?*
+> *Three communication systems. Three animal lineages. Four thousand years. What geometric framework could possibly apply to all three?*
 >
 > *This chapter introduces the answer: not one geometry, but three. Each captures a different kind of structure --- hierarchy, covariance, and shape --- and together they span the structural space of communication in a way that no single geometry could.*
 
@@ -41,13 +41,13 @@ In Euclidean space $\mathbb{R}^d$, the volume of a ball of radius $r$ grows as $
 
 In hyperbolic space of constant negative curvature $-c$, the volume of a ball of radius $r$ grows as $e^{(d-1)\sqrt{c}\,r}$ --- exponentially in $r$ for any fixed dimension $d > 1$.[^1] This exponential volume growth matches the exponential branching of the tree. A binary tree of arbitrary depth embeds in hyperbolic space of dimension $O(\log 2) = O(1)$ with bounded distortion, whereas Euclidean embedding requires dimension $O(2^k)$ for a tree of depth $k$.[^2]
 
-[^1]: The precise formula for the volume of a geodesic ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-c$ is $V_d(r) = \omega_{d-1} \int_0^r \left(\frac{\sinh(\sqrt{c}\,t)}{\sqrt{c}}\right)^{d-1} dt$, where $\omega_{d-1}$ is the volume of the unit $(d-1)$-sphere. For large $r$, this is dominated by the exponential term $e^{(d-1)\sqrt{c}\,r}$. See *Geometric Methods* (Bond, 2026a), Ch. 4.3 for the derivation.
+[^1]: The precise formula for the volume of a geodesic ball of radius $r$ in $d$-dimensional hyperbolic space of curvature $-c$ is $V_d(r) = \omega_{d-1} \int_0^r \left(\frac{\sinh(\sqrt{c}\,t)}{\sqrt{c}}\right)^{d-1} dt$, where $\omega_{d-1}$ is the volume of the unit $(d-1)$-sphere. For large $r$, this is dominated by the exponential term $e^{(d-1)\sqrt{c}\,r}$. See *Geometric Methods* (Bond, 2026a), Section 3.1.2 for the derivation.
 
 [^2]: This is the Bourgain embedding theorem applied to tree metrics. Sarkar (2011) showed that any weighted tree on $n$ nodes can be embedded in the Poincare disk (2-dimensional hyperbolic space) with arbitrarily low distortion $1 + \epsilon$, using coordinates of $O(\log n / \epsilon)$ bits of precision. See Sala et al. (2018) for the multi-dimensional generalization.
 
 This is not an abstract curiosity. Every communication system we study in this book has hierarchical structure:
 
-- **Whale codas**: The 21 coda types form a combinatorial hierarchy indexed by click count, rhythm class, tempo, rubato, and ornamentation (Sharma et al., 2024).
+- **Whale codas**: The 28 coda types form a combinatorial hierarchy indexed by click count, rhythm class, tempo, rubato, and ornamentation (Sharma et al., 2024).
 - **Birdsong**: Species are organized in a Linnaean taxonomy (species $\subset$ genus $\subset$ family $\subset$ order) with at least four levels.
 - **Cuneiform**: Signs are organized in a three-level hierarchy --- sign form $\to$ reading $\to$ word --- where a single sign can have multiple readings and each reading can map to multiple words.
 - **Semantic concepts**: WordNet organizes English nouns in a hypernymy tree with an average depth of 8 and a maximum branching factor of over 400.
@@ -369,7 +369,7 @@ $$\delta(\Gamma) = L(\Gamma) - d_{LE}(\Sigma_1, \Sigma_K)$$
 
 *where $L(\Gamma) = \sum_{k=1}^{K-1} d_{LE}(\Sigma_k, \Sigma_{k+1})$ is the path length (sum of consecutive distances) and $d_{LE}(\Sigma_1, \Sigma_K)$ is the direct (geodesic) distance between endpoints. By the triangle inequality, $\delta(\Gamma) \geq 0$, with equality if and only if the trajectory is a geodesic.*
 
-The geodesic deviation is a single number that encodes song complexity. A trill --- a repetitive vocal pattern --- produces a trajectory that oscillates in place on the manifold, traveling a long path but returning close to where it started: high path length, low geodesic distance, high deviation. A descending whistle --- a smooth transition from one spectral state to another --- produces a nearly straight trajectory: path length approximately equals geodesic distance, low deviation. A complex song with multiple distinct phrases produces a trajectory that wanders through $\operatorname{SPD}(n)$, visiting diverse regions of the manifold: high path length, moderate geodesic distance, high deviation.
+The geodesic deviation is a single number that encodes song complexity. A trill --- a rapid repetition of one spectral pattern --- depends on the window. If the sliding window resolves each repetition, the trajectory oscillates in place on the manifold, traveling a long path but returning close to where it started: high path length, low geodesic distance, high deviation. With the one-second sub-windows of the implementation (Section 8.3.1), each window averages over many repetitions, so the trajectory stays near a single point: short path, low deviation, as Section 8.3.2 describes. A descending whistle --- a smooth transition from one spectral state to another --- produces a nearly straight trajectory: path length approximately equals geodesic distance, low deviation. A complex song with multiple distinct phrases produces a trajectory that wanders through $\operatorname{SPD}(n)$, visiting diverse regions of the manifold: high path length, moderate geodesic distance, high deviation.
 
 In the implementation, the trajectory computation returns four features:
 
@@ -644,13 +644,13 @@ The total of 156 dimensions is modest by modern standards --- far fewer than the
 
 The central claim of this chapter is that no single geometry suffices for communication analysis, and the three geometries together capture more than any one alone. This claim can be stated precisely.
 
-**Proposition 4.3** (Complementarity of Geometric Features). *Let $A_{\text{SPD}}$, $A_{\text{traj}}$, $A_{\text{TDA}}$, and $A_{\text{combined}}$ be the classification accuracies of a fixed classifier trained on SPD features alone, trajectory features alone, TDA features alone, and the combined 156-dimensional vector, respectively. For the BirdCLEF 206-species dataset (Chapter 8):*
+**Proposition 4.3** (Complementarity of Geometric Features). *Let $A_{\text{SPD}}$, $A_{\text{traj}}$, $A_{\text{TDA}}$, and $A_{\text{combined}}$ be the classification accuracies of a fixed classifier trained on SPD features alone, trajectory features alone, TDA features alone, and the combined 156-dimensional vector, respectively. For the BirdCLEF 206-species dataset (Chapter 8), the framework predicts:*
 
 $$A_{\text{combined}} > \max(A_{\text{SPD}}, A_{\text{traj}}, A_{\text{TDA}})$$
 
-*The improvement is not merely additive: the combined accuracy exceeds the sum of the individual improvements over baseline, indicating synergistic interaction between the feature sets.*
+*It further predicts that the improvement is not merely additive: the combined accuracy would exceed the sum of the individual improvements over baseline, indicating synergistic interaction between the feature sets.*
 
-The synergy arises because the three geometries resolve different confusions. SPD features distinguish species with different harmonic structure but confuse species with similar spectral profiles (e.g., two warbler species with similar frequency ranges but different temporal patterns). TDA features distinguish species with different temporal dynamics but confuse species whose dynamics produce similar attractor topology (e.g., all trilling species have similar $H_1$ features regardless of their spectral content). The combination resolves both confusions simultaneously.
+The proposition is a prediction: neither this chapter nor Chapter 8 prints the four accuracies, so it has not been checked against the data here. The synergy, if present, would arise because the three geometries resolve different confusions. SPD features distinguish species with different harmonic structure but confuse species with similar spectral profiles (e.g., two warbler species with similar frequency ranges but different temporal patterns). TDA features distinguish species with different temporal dynamics but confuse species whose dynamics produce similar attractor topology (e.g., all trilling species have similar $H_1$ features regardless of their spectral content). The combination resolves both confusions simultaneously.
 
 This is the geometric analogue of a principle well known in ensemble learning: diverse classifiers combined outperform any individual, and the benefit of combination is greatest when the individual classifiers make *different* errors. The three geometries are the ultimate diverse ensemble --- they do not merely use different algorithms on the same features but extract *structurally different kinds of information* from the same signal.
 

@@ -353,6 +353,6 @@ The Rosetta trajectory begins here, with clicks in the Caribbean. It will pass t
 
 **Notes on data and reproducibility.** All analyses in this chapter are implemented in the `eris-ketos` Python package (v0.2.0; [PyPI](https://pypi.org/project/eris-ketos/), [GitHub](https://github.com/ahb-sjsu/eris-ketos)). The DSWP coda annotation dataset is available at the [Sharma et al. GitHub repository](https://github.com/pratyushasharma/sw-combinatoriality) under CC BY 4.0 licence. A self-contained Jupyter notebook reproducing all figures and statistical results is included in the eris-ketos repository (`notebooks/cetacean_geometric_analysis.py`, Jupytext percent format). The code is real, the data is public, and the results are reproducible.
 
-**Series cross-references.** Poincare ball model and distortion theorem: Ch. 5 of this volume; GM Ch. 4.6. Persistent homology and stability theorem: Ch. 6 of this volume; GM Ch. 5. Adversarial robustness framework: GE Ch. 22. Communication manifold $M = S \times P \times C$: Ch. 3 of this volume. The Rosetta trajectory: Ch. 1 and Ch. 16 of this volume.
+**Series cross-references.** Poincare ball model and distortion theorem: Ch. 5 of this volume; GM Ch. 3. Persistent homology and stability theorem: Ch. 6 of this volume; GM Ch. 5. Adversarial robustness framework: GE Ch. 22. Communication manifold $M = S \times P \times C$: Ch. 3 of this volume. The Rosetta trajectory: Ch. 1 and Ch. 16 of this volume.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*

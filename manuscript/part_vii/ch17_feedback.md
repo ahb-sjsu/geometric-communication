@@ -37,7 +37,7 @@ This group is discrete. It has four elements. It is not the discretisation of a 
 
 - "Only if convenient" $\to$ 100% Liberty (a single phrase collapses the probability distribution to a point)
 - "Found a friend" $\to$ 0% Liberty (another phrase snaps the distribution to the opposite vertex)
-- "Expecting me to" $\to$ Duty (a morphosyntactic frame selects the normative state categorically)
+- "Expecting me to" $\to$ Duty (a morphosyntactic frame proposed here as a further gate; it is not among the gates tested in Chapter 13, so that it selects the normative state categorically is a prediction)
 
 These semantic gates are the communication domain's analogue of phase transitions in physics. But in physics, phase transitions occur in systems with continuous underlying dynamics, and the discreteness of the phases (solid, liquid, gas) emerges from the continuous thermodynamics. In communication, the discreteness appears to be fundamental. There is no continuous parameter that interpolates smoothly between Duty and Liberty. The transition is topological: you are on one side of the boundary or the other, and the boundary is crossed by a discrete linguistic trigger.
 
@@ -69,7 +69,7 @@ The mathematical apparatus exists. Discrete gauge theories on lattices have been
 
 This conjecture is not proved. It is motivated by the evidence of this book and offered as a programme for the parent theory. If correct, it would require *Geometric Reasoning* to develop a parallel track of discrete differential geometry alongside its continuous apparatus.
 
-[Figure 17.1: Continuous versus discrete gauge structure. Left: the $U(1)$ gauge group of electromagnetism, a circle of continuous phase rotations. Right: the $D_4$ gauge group of normative communication, eight discrete symmetry operations on a square. Both are gauge groups. Only the former is a Lie group.]
+[Figure 17.1: Continuous versus discrete gauge structure. Left: the $U(1)$ gauge group of electromagnetism, a circle of continuous phase rotations. Right: the $V_4$ gauge group of normative communication, four discrete symmetry operations on the Hohfeldian square (the identity, the correlative exchange $s$, the negation $n$, and $sn$). Both are gauge groups. Only the former is a Lie group.]
 
 ---
 
@@ -119,33 +119,33 @@ The practical implication is architectural. Any neural model that processes hier
 
 *The hyperbolic embedding achieves bounded distortion with exponentially fewer dimensions.*
 
-*Proof.* Part (i) follows from the volume argument: the $b^d$ leaf nodes must be separated by distance at least $\delta$ (the minimum inter-leaf distance), which requires a ball of radius $\Omega(b^{d/n} \delta)$, forcing distortion $\Omega(b^{1/n})$ for fixed $n$. Part (ii) is the Sarkar (2011) construction, which places root at origin, distributes children in angular sectors, and adjusts the curvature so that the exponential volume growth at depth $d$ matches the branching. The dimension requirement $n = O(\log b)$ follows from the need to angularly separate $b$ children at each level, which requires $O(\log b)$ angular degrees of freedom. $\square$
+*Proof.* [Proof of part (i) incomplete, 2026-11-26: the volume argument below gives a ball of radius $\Omega(b^{d/n} \delta)$, but the step from that radius to the stated distortion bound is not given, and as written it does not follow.] Part (i) follows from the volume argument: the $b^d$ leaf nodes must be separated by distance at least $\delta$ (the minimum inter-leaf distance), which requires a ball of radius $\Omega(b^{d/n} \delta)$, forcing distortion $\Omega(b^{1/n})$ for fixed $n$. Part (ii) is the Sarkar (2011) construction, which places root at origin, distributes children in angular sectors, and adjusts the curvature so that the exponential volume growth at depth $d$ matches the branching. The dimension requirement $n = O(\log b)$ follows from the need to angularly separate $b$ children at each level, which requires $O(\log b)$ angular degrees of freedom. $\square$
 
-[Figure 17.2: Distortion as a function of embedding dimension for a binary tree of depth 10 (1,024 leaves). Blue: Euclidean embedding (distortion decreases polynomially with dimension). Orange: Poincaré ball embedding (distortion reaches $O(1)$ at dimension $\sim$5). The gap widens for deeper trees and larger branching factors.]
+[Figure 17.2: Distortion as a function of embedding dimension for a binary tree of depth 10 (1,023 nodes, as in Section 5.3). Blue: Euclidean embedding (distortion decreases polynomially with dimension). Orange: Poincaré ball embedding (distortion reaches $O(1)$ at dimension $\sim$5). The gap widens for deeper trees and larger branching factors.]
 
 ---
 
-## 17.3 Lesson 3: The Same Geometry Works Across Kingdoms
+## 17.3 Lesson 3: The Same Geometry Works Across Lineages
 
 ### 17.3.1 The Scope of the Claim
 
-The three-geometry toolkit --- hyperbolic embeddings, SPD manifold features, persistent homology --- was applied to communication systems from three biological kingdoms:
+The three-geometry toolkit --- hyperbolic embeddings, SPD manifold features, persistent homology --- was applied to communication systems from three animal lineages:
 
-- **Cetacea**: sperm whale codas (8,719 codas, 28 types, 18 individuals)
+- **Cetacea**: sperm whale codas (8,719 codas, 28 types, an estimated 18 individuals)
 - **Aves**: birdsong (206 species, Kaggle competition scale)
 - **Homo sapiens**: cuneiform (1,561 Akkadian-English pairs), moral reasoning (3.9M Hebrew/Aramaic passages, 68K English letters)
 
 In each case, the toolkit produced informative results without domain-specific modification. The same mathematical operations --- matrix logarithm, Riemannian distance, Vietoris-Rips filtration, Poincaré exponential map --- were applied to signals that differ in every physical property: broadband clicks versus tonal songs versus inscribed clay versus modern text. The toolkit does not care about the physics of the signal. It cares about the geometry of the information.
 
-### 17.3.2 What Cross-Kingdom Validity Means
+### 17.3.2 What Cross-Lineage Validity Means
 
-The cross-kingdom validity of the geometric toolkit has a strong implication and a weak implication.
+The cross-lineage validity of the geometric toolkit has a strong implication and a weak implication.
 
 The **weak implication** is methodological: these mathematical tools are useful in diverse settings. This is unsurprising. Linear algebra is useful in diverse settings too. The weak implication does not tell us anything about communication itself; it tells us that Riemannian geometry, algebraic topology, and hyperbolic embeddings are versatile mathematical frameworks.
 
 The **strong implication** is ontological: communication systems, regardless of their biological substrate, have geometric structure that is constrained by the mathematics of information rather than by the biology of the communicator. The geometric regularities are not accidents of evolution. They are consequences of what communication *must do* --- encode hierarchical information, transmit reliably through noise, distinguish content from identity, compose meanings from parts --- and the mathematical constraints that these functional requirements impose.
 
-The evidence for the strong implication comes not from the applicability of the tools (which supports only the weak implication) but from the *specific structural parallels* across kingdoms:
+The evidence for the strong implication comes not from the applicability of the tools (which supports only the weak implication) but from the *specific structural parallels* across lineages:
 
 ### 17.3.3 Structural Parallels
 
@@ -173,9 +173,9 @@ If this is correct, then the general theory should include a taxonomy of functio
 | Compression efficiency | Menzerath curvature constraint | $r = -0.269$ in whale codas; analogues in birdsong and human language |
 | Compositionality | Fibre bundle structure | Combinatorial phonetics in whale codas; morphology in cuneiform |
 
-This taxonomy is preliminary and incomplete. But it points toward a programme: derive the geometric structure of a domain from its functional requirements, rather than discovering it empirically each time. The communication domain, with its three-kingdom evidence base, provides the strongest current support for this programme.
+This taxonomy is preliminary and incomplete. But it points toward a programme: derive the geometric structure of a domain from its functional requirements, rather than discovering it empirically each time. The communication domain, with its three-lineage evidence base, provides the strongest current support for this programme.
 
-[Figure 17.3: Structural parallels across three kingdoms. Left column: whale codas. Centre column: birdsong. Right column: human language (cuneiform and moral reasoning). Each row shows a shared geometric property: hierarchical embedding (top), topological invariants (middle), content/identity factorisation (bottom). The same geometry, in three independently evolved systems.]
+[Figure 17.3: Structural parallels across three animal lineages. Left column: whale codas. Centre column: birdsong. Right column: human language (cuneiform and moral reasoning). Each row shows a shared geometric property: hierarchical embedding (top), topological invariants (middle), content/identity factorisation (bottom). The same geometry, in three independently evolved systems.]
 
 ---
 
@@ -270,7 +270,7 @@ The evidence comes from the semantic gates of Chapter 13:
 
 - "Only if convenient" flips Liberty from $0$ to $1$ --- a discontinuous jump, not a gradual increase.
 - "Found a friend" flips Liberty from $1$ to $0$ --- equally discontinuous.
-- "Expecting me to" selects Duty categorically --- no intermediate state.
+- "Expecting me to" would select Duty categorically --- no intermediate state (a prediction: this gate was not tested in Chapter 13).
 
 These transitions resemble phase transitions in condensed matter physics, where the order parameter jumps discontinuously at the critical temperature. The communication analogue: the "order parameter" is the normative classification (which Hohfeldian relation applies), and the "temperature" is the linguistic frame. A single phrase can flip the order parameter --- not by gradually heating the system past a critical point, but by directly triggering a discrete state transition.
 
@@ -296,7 +296,7 @@ The communication domain contributes five lessons to the parent framework of *Ge
 
 2. **Hierarchy demands hyperbolic geometry.** Every hierarchical communication system embeds more naturally in hyperbolic space. The parent theory should default to negative curvature for hierarchical domains.
 
-3. **Cross-kingdom universality constrains domain geometry.** The same geometric tools work for cetaceans, birds, and humans. Functional requirements (hierarchy, noise robustness, content/identity separation) impose shared geometric structure. The parent theory should derive domain geometry from functional requirements.
+3. **Cross-lineage universality constrains domain geometry.** The same geometric tools work for cetaceans, birds, and humans. Functional requirements (hierarchy, noise robustness, content/identity separation) impose shared geometric structure. The parent theory should derive domain geometry from functional requirements.
 
 4. **Scalar irrecoverability is worst in communication.** The high dimensionality and topological complexity of the communication manifold make scalar evaluation qualitatively misleading, not merely quantitatively lossy. The parent theory should recognise a spectrum of irrecoverability severity.
 
@@ -316,6 +316,6 @@ The next and final chapter of the book turns from what we have learned to what w
 
 ---
 
-**Series cross-references.** Gauge invariance: GR Ch. 8; this volume Ch. 13. Heuristic field formalism: GR Ch. 3; this volume Ch. 14. Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Hyperbolic embeddings: GR Ch. 14; GM Ch. 4.6; this volume Ch. 5, 9. $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. Adversarial robustness: GE Ch. 22; this volume Ch. 7, 14. Phase transitions and catastrophe theory: not yet treated in the series; proposed for future development in *Geometric Reasoning*, 2nd edition.
+**Series cross-references.** Gauge invariance: GR Ch. 8; this volume Ch. 13. Heuristic field formalism: GR Ch. 3; this volume Ch. 14. Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Hyperbolic embeddings: GR Ch. 14; GM Ch. 3; this volume Ch. 5, 9. $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. Adversarial robustness: GE Ch. 22; this volume Ch. 7, 14. Phase transitions and catastrophe theory: not yet treated in the series; proposed for future development in *Geometric Reasoning*, 2nd edition.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*

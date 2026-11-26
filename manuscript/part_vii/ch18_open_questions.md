@@ -119,7 +119,7 @@ For Noether's theorem to produce a non-trivial conservation law, we need:
 
 1. **A Lagrangian.** A functional $\mathcal{L}[\phi, \partial\phi]$ on the fields $\phi$ of the communication system, whose stationary points are the "equations of motion" of communication. What are the fields? What is the Lagrangian?
 
-2. **A continuous symmetry.** The gauge group must be continuous (Lie group) for the standard Noether theorem to apply. But Lesson 1 of Chapter 17 argued that the communication gauge group may be discrete ($V_4$). Discrete symmetries produce *topological* conservation laws (e.g., conservation of parity in quantum mechanics), not the differential conservation laws (continuity equations) that Noether's theorem yields.
+2. **A continuous symmetry.** The gauge group must be continuous (Lie group) for the standard Noether theorem to apply. But the gauge group posited for normative communication (Definition 13.9) has a discrete factor ($V_4$). Discrete symmetries produce *topological* conservation laws (e.g., conservation of parity in quantum mechanics), not the differential conservation laws (continuity equations) that Noether's theorem yields.
 
 3. **An independent definition of the conserved quantity.** We need to know what the conserved quantity *is* before invoking the theorem, or at least we need the theorem to predict a quantity that can be independently verified. "Meaning" is not independently defined; it is the very thing we are trying to formalise.
 
@@ -216,7 +216,7 @@ These are lower bounds, not estimates. The actual dimensionality is at least as 
 
 ### 18.5.2 Why the True Dimension Matters
 
-The dimensionality of $M$ determines the severity of scalar irrecoverability (Chapter 17, Proposition 17.2): a scalar metric on an $n$-dimensional manifold has fibres of dimension $n - 1$, so the amount of information destroyed grows linearly with $n$. If $\dim(M) = 23$, a BLEU score destroys at least 22 dimensions of information. If $\dim(M) = 100$ (a plausible estimate for the full communication manifold of human language), a BLEU score destroys at least 99 dimensions.
+The dimensionality of $M$ determines the severity of scalar irrecoverability (Chapter 15, Theorem 15.2, part 1): a scalar metric on an $n$-dimensional manifold has fibres of dimension $n - 1$, so the amount of information destroyed grows linearly with $n$. If $\dim(M) = 23$, a BLEU score destroys at least 22 dimensions of information. If $\dim(M) = 100$ (a plausible estimate for the full communication manifold of human language), a BLEU score destroys at least 99 dimensions.
 
 The dimensionality also determines the computational cost of geometric evaluation. Computing distances on a Riemannian manifold requires $O(n^2)$ operations per point (for the metric tensor), computing persistent homology requires $O(N^3)$ operations (for a point cloud of $N$ points in $n$ dimensions, with $N$ growing exponentially with $n$ for fixed resolution), and computing holonomy requires integration along paths on the manifold. High dimensionality makes all of these operations more expensive.
 
@@ -281,7 +281,7 @@ This book has focused primarily on the content manifold $C$ (Chapters 9--13) and
 
 The pragmatic manifold $P$ is likely the most geometrically complex factor of $M$. It encodes:
 
-- **Speech act type**: assertion, question, command, promise, apology, greeting, etc. These are discrete categories (supporting Lesson 1 of Chapter 17).
+- **Speech act type**: assertion, question, command, promise, apology, greeting, etc. These are discrete categories (consistent with the discrete $V_4$ factor of Definition 13.9).
 - **Implicature**: what is implied but not said. Gricean maxims (quantity, quality, relation, manner) are constraints on the pragmatic manifold that restrict the space of admissible interpretations.
 - **Social context**: power relations, solidarity, face-saving, politeness. Brown and Levinson's (1987) politeness theory describes a two-dimensional pragmatic space (power, distance) that determines the choice of politeness strategy.
 - **Common ground**: shared knowledge between speaker and hearer. Clark's (1996) theory of common ground describes an evolving state that constrains interpretation.
@@ -311,7 +311,7 @@ The geometric theory of communication, as developed in this book, claims the fol
 1. Communication has manifold structure ($M = S \times P \times C$) with metric, connection, and curvature.
 2. Scalar evaluation destroys this structure irreversibly, with severity proportional to the manifold's dimensionality and the fibre's topological complexity.
 3. Three complementary geometries (hyperbolic, Riemannian, topological) capture the hierarchical, covariance, and shape structure of communication, respectively.
-4. These geometries produce informative results across three biological kingdoms (cetacean, avian, human) and across 4,000 years of human history (cuneiform to modern English).
+4. These geometries produce informative results across three animal lineages (cetacean, avian, human) and across 4,000 years of human history (cuneiform to modern English).
 5. The deepest communicative structure --- the gauge-invariant core of meaning --- is measurable, discrete ($V_4$), and preserved across languages and centuries.
 
 ### 18.7.2 What We Do Not Know

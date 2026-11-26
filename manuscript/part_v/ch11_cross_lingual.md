@@ -42,7 +42,7 @@ If the model learns to classify moral relations from Hebrew legal texts and that
 
 ### 11.1.2 The Ancient Corpus: Sefaria
 
-The Sefaria database (sefaria.org) is one of the most comprehensive digital libraries of Jewish textual tradition. It contains the major works of the rabbinic canon in their original languages, with scholarly English translations. For this experiment, we extracted 3,979,817 passages with both original-language text and English translation.
+The Sefaria database (sefaria.org) is one of the most comprehensive digital libraries of Jewish textual tradition.[^2] It contains the major works of the rabbinic canon in their original languages, with scholarly English translations. For this experiment, we extracted 3,979,817 passages with both original-language text and English translation.
 
 The corpus spans approximately 2,300 years:
 
@@ -80,7 +80,7 @@ Despite these surface differences, the letters are structurally isomorphic to Ta
 
 To test whether the invariance extends beyond the Semitic-Germanic boundary, supplementary corpora were assembled from additional traditions:
 
-- **Classical Chinese** (500 BCE--200 CE): Analects of Confucius, Mencius, Dao De Jing, and Zhuangzi, from the Chinese Text Project (ctext.org). Approximately 10,000 passages in a language isolate with no typological relation to either Hebrew or English.
+- **Classical Chinese** (500 BCE--200 CE): Analects of Confucius, Mencius, Dao De Jing, and Zhuangzi, from the Chinese Text Project (ctext.org). Approximately 10,000 passages in a Sino-Tibetan language with no typological relation to either Hebrew or English.[^4]
 
 - **Classical Arabic** (600--900 CE): Quran (6,236 ayat) and major Hadith collections, from Tanzil.net. Arabic is Semitic and thus related to Hebrew, but the Islamic legal tradition developed independently of rabbinic Judaism, providing a test of cultural rather than purely linguistic invariance.
 
@@ -120,7 +120,7 @@ For Hebrew text, parallel patterns were applied to the original language:
 | LIBERTY | מותר (mutar/permitted), רשאי (rashai/allowed) |
 | NO-RIGHT | אין זכות (ein zekhut/no right), אסור (asur/forbidden) |
 
-This extraction method is deliberately noisy. Pattern matching captures surface deontic markers, not deep moral analysis. Many passages receive incorrect labels; some morally rich passages receive no label at all; some labeled passages are edge cases where reasonable annotators would disagree.
+This extraction method is deliberately noisy. Pattern matching captures surface deontic markers, not deep moral analysis. One Hebrew pattern is also misassigned in Hohfeld's own terms: אסור (asur, "forbidden") states a duty not to act, which is an OBLIGATION, not the absence of a claim, so the passages it matches are labelled NO-RIGHT in error. Many passages receive incorrect labels; some morally rich passages receive no label at all; some labeled passages are edge cases where reasonable annotators would disagree.
 
 We regard this noise as a feature, not a bug. Noisy labels make transfer *harder*, not easier. If the model achieves above-chance cross-lingual transfer despite label noise, the result is *more* impressive, not less. The signal must be strong enough to survive both the label noise and the language barrier simultaneously.
 
@@ -152,7 +152,7 @@ where:
 
 - $\mathcal{L}_{\text{time}}$ is the cross-entropy loss for temporal period classification from $\mathbf{z}_{\text{label}}$. This term ensures that temporal information is present in the raw representation $\mathbf{h}$ and learnable by the auxiliary head.
 
-- $\mathcal{L}_{\text{time}}^{\text{adv}}$ is the cross-entropy loss for temporal period classification from $\mathbf{z}_{\text{bond}}$, with **gradient reversal**: during backpropagation, the gradients from this term are negated before reaching the bond projection head $f_{\text{bond}}$. This term pushes $\mathbf{z}_{\text{bond}}$ *away* from encoding temporal information.
+- $\mathcal{L}_{\text{time}}^{\text{adv}}$ is the cross-entropy loss for temporal period classification from $\mathbf{z}_{\text{bond}}$, with **gradient reversal**: during backpropagation, the gradients from this term are negated before reaching the bond projection head $f_{\text{bond}}$.[^3] This term pushes $\mathbf{z}_{\text{bond}}$ *away* from encoding temporal information.
 
 The adversarial training has a precise geometric interpretation on the communication manifold. Recall from Chapter 3 that $M = S \times P \times C$, and that the gauge group $G = T \times R \times F$ acts on $M$ by changing surface coordinates while (ideally) preserving the content on $C$. The adversarial loss operationalizes this: the GRL forces $\mathbf{z}_{\text{bond}}$ to be invariant under the gauge transformation that changes temporal-stylistic coordinates ($S$ and $P$ factors) while retaining the content ($C$ factor).
 
@@ -191,7 +191,7 @@ The headline result:
 | Cohen's $h$ | 0.52 | Medium effect |
 | Language Probe Accuracy | 0.0% | (chance = 25%) |
 
-The model, trained exclusively on Hebrew and Aramaic moral texts, correctly classifies the Hohfeldian relation in modern English Dear Abby letters at nearly double the chance rate. The $z$-statistic of 52.3 corresponds to $p < 10^{-50}$---a probability so small that it exceeds the statistical thresholds used in particle physics ($5\sigma$, or $p \approx 3 \times 10^{-7}$) by more than 40 orders of magnitude.
+The model, trained exclusively on Hebrew and Aramaic moral texts, correctly classifies the Hohfeldian relation in modern English Dear Abby letters at nearly double the chance rate. The $z$-statistic of 52.3 corresponds to $p < 10^{-50}$[^1]---a probability so small that it exceeds the statistical thresholds used in particle physics ($5\sigma$, or $p \approx 3 \times 10^{-7}$) by more than 40 orders of magnitude.
 
 The language probe result is equally striking. A fresh linear probe, trained post hoc on frozen $\mathbf{z}_{\text{bond}}$ representations, achieved 0.0% accuracy at predicting the source language---*below* the 25% chance baseline for four languages. The probe did not recover the source language from the bond space. An accuracy below chance is not the same as chance, so this figure by itself does not establish that $\mathbf{z}_{\text{bond}}$ carries no linguistic information that a linear classifier can find.
 
@@ -206,7 +206,7 @@ The supplementary corpora reveal that the invariance extends beyond the Hebrew-E
 | Classical Chinese | 64.9% | Sino-Tibetan | Confucian/Daoist |
 | Arabic | 40.7% | Semitic | Islamic |
 
-Two results stand out. First, Classical Chinese achieves 64.9% F1---the *highest* transfer accuracy of any language, and the most typologically distant from Hebrew. Chinese is a language isolate with no genetic, typological, or areal relationship to Hebrew. It is written in logographic script. Its philosophical tradition developed in complete independence from the rabbinic tradition. The high transfer to Chinese is strong evidence against hypothesis H1 (transfer reflects Semitic language structure) and strong evidence for H2 (transfer reflects universal moral structure).
+Two results stand out. First, Classical Chinese achieves 64.9% F1---the *highest* transfer accuracy of any language, and the most typologically distant from Hebrew. Chinese is a Sino-Tibetan language with no genetic, typological, or areal relationship to Hebrew. It is written in logographic script. Its philosophical tradition developed in complete independence from the rabbinic tradition. The high transfer to Chinese is strong evidence against hypothesis H1 (transfer reflects Semitic language structure) and strong evidence for H2 (transfer reflects universal moral structure).
 
 Second, the transfer to Arabic (40.7%) is comparable to English (41.5%) despite Arabic being a Semitic language like Hebrew. If transfer were linguistic rather than structural, Arabic should outperform English substantially. The near-equality suggests that the model is not leveraging Semitic language similarity---the adversarial training has stripped it away---but rather detecting moral structure that is equally present in both test languages.
 

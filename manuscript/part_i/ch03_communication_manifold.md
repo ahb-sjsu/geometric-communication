@@ -423,7 +423,7 @@ This chapter has constructed the mathematical stage on which the rest of the boo
 
 The next three chapters develop the geometric toolkit that makes this framework empirically operational. Chapter 4 introduces the three geometries (hyperbolic, SPD, topological) that provide concrete metrics on $S$, $P$, and $C$. Chapter 5 applies hyperbolic geometry to hierarchical meaning structures. Chapter 6 applies topological data analysis to communication signals. Each toolkit chapter validates the same claim: the geometry of communication is not a post hoc interpretation of results obtained by other means. It is the method by which the results are obtained.
 
-The framework rests on an empirical bet: that the product structure $M = S \times P \times C$ captures enough of the structure of communication to be useful, and that the gauge group $G = T \times R \times F$ captures enough of the meaning-preserving transformations to define meaning precisely. Parts III--V of the book test this bet across five communication systems spanning three biological kingdoms and four millennia. The chapters that follow report what those tests found.
+The framework rests on an empirical bet: that the product structure $M = S \times P \times C$ captures enough of the structure of communication to be useful, and that the gauge group $G = T \times R \times F$ captures enough of the meaning-preserving transformations to define meaning precisely. Parts III--V of the book test this bet across five communication systems spanning three animal lineages and four millennia. The chapters that follow report what those tests found.
 
 ---
 

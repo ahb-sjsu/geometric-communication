@@ -199,7 +199,7 @@ $$\rho(t) = 1 - \text{sim}(t, \hat{t})$$
 
 For a flat region, $\rho(t) \approx 0$: round-trip translation recovers the original. For a high-curvature region, $\rho(t) > 0$: round-trip translation produces a measurably different text. The translation loop residual is the empirical counterpart of holonomy.
 
-In the Old Assyrian corpus, we computed $\rho$ for all 1,561 aligned pairs using the chain Akkadian $\to$ English $\to$ (backtranslation via the trained model) $\to$ Akkadian, with similarity measured by chrF++ on the Akkadian transliteration. The results stratified cleanly by genre:
+In the Old Assyrian corpus, we computed $\rho$ for all 1,561 aligned pairs using the chain Akkadian $\to$ English $\to$ (backtranslation via the trained model) $\to$ Akkadian, with similarity measured by chrF++ on the Akkadian transliteration. No run record for the table below is in the repository, and Chapter 9 does not describe the English-to-Akkadian model that the return leg needs, so its figures are unverified. As reported, the results stratified cleanly by genre:
 
 | Genre | Mean $\rho$ | Std. Dev. | $n$ |
 |---|---|---|---|
@@ -248,7 +248,7 @@ In the language of Proposition 10.2, the hyperbolic bias reduces $\text{Area}(\S
 
 The ablation study of Chapter 9 can be reanalysed through the lens of holonomy reduction. Recall that the hyperbolic attention bias provided its largest gains on sentences containing rare signs---precisely the sentences where data scarcity forces the unbiased model to take detours through poorly mapped regions of $C$, accumulating curvature.
 
-We re-stratified the ablation results by genre, using the translation loop residual as the holonomy measure:
+We re-stratified the ablation results by genre, using the translation loop residual as the holonomy measure. Chapter 9 reports only the qualitative trends of the ablation (Section 9.8.3), no run record for the table below is in the repository, and neither of its columns matches the table of Section 10.3.4, so its figures are unverified:
 
 | Genre | $\rho$ (no bias) | $\rho$ (with bias) | Reduction |
 |---|---|---|---|

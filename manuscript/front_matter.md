@@ -27,7 +27,7 @@ The series began with a simple observation: across domains --- ethics, law, econ
 
 This book turns to communication itself. The domain is, in some ways, the most natural home for the geometric framework. Communication is the process by which meaning is encoded, transmitted, and decoded --- and meaning, this book argues, is a geometric object. It lives on a manifold. It has topology (some meanings are neighbors; others require traversal through intermediate meanings). It has symmetry (the same meaning can be expressed in different languages, different registers, different media). It has curvature (some regions of semantic space are densely packed and easily navigated; others are sparse and treacherous). Scalar evaluation destroys all of this structure. Geometric analysis recovers it.
 
-What distinguishes this volume from the others is its empirical breadth. The evidence spans five communication systems across 4,000 years and three biological kingdoms: sperm whale codas, birdsong, Akkadian cuneiform, rabbinic Hebrew and Aramaic, and modern English moral discourse. The same three-geometry toolkit --- hyperbolic embeddings, SPD manifolds, persistent homology --- applies without domain-specific modification to all five. That this is possible at all is the book's central empirical claim. That it works as well as it does is, frankly, surprising even to its author.
+What distinguishes this volume from the others is its empirical breadth. The evidence spans five communication systems across 4,000 years and three animal lineages (cetaceans, birds and humans): sperm whale codas, birdsong, Akkadian cuneiform, rabbinic Hebrew and Aramaic, and modern English moral discourse. The same three-geometry toolkit --- hyperbolic embeddings, SPD manifolds, persistent homology --- applies without domain-specific modification to all five. That this is possible at all is the book's central empirical claim. That it works as well as it does is, frankly, surprising even to its author.
 
 ---
 
@@ -53,7 +53,7 @@ The coincidence bothered me. The same mathematical object --- a Poincare ball em
 
 I tested the hypothesis further. The BirdCLEF project required classifying birdsong recordings by species. The standard approach used convolutional neural networks on mel-spectrograms. I added the geometric pipeline: SPD manifold features (spectral covariance matrices, analyzed on the manifold of symmetric positive-definite matrices), TDA features (persistent homology of time-delay embedded waveforms), and trajectory features (geodesic deviation on the spectral manifold). The same three geometries I had used for whale codas. The 156-dimensional geometric feature vector was competitive with deep learning baselines, ran on CPU, and captured structure --- cross-frequency correlations, waveform topology, spectral trajectory complexity --- that convolutional filters missed.
 
-Three communication systems. Three biological kingdoms. The same geometry.
+Three communication systems. Three animal lineages. The same geometry.
 
 The final piece fell into place with the BIP experiments --- the Bond Invariance Principle applied to cross-lingual moral reasoning. We trained an encoder on 3.9 million passages from the Sefaria database (Hebrew Bible, Mishnah, Talmud, Midrash, spanning 500 BCE to 1800 CE) to recognize Hohfeldian moral relations (Right, Duty, Liberty, No-Right). We then tested it on 68,000 Dear Abby letters in American English. The cross-lingual transfer succeeded at 44.5% F1 (chance = 25%, $p < 10^{-50}$). Moral meaning --- at least its relational structure --- was invariant under the most extreme gauge transformation we could devise: translation across 2,500 years, two language families, and the entire distance from ancient rabbinic jurisprudence to mid-century American advice columns.
 
@@ -69,7 +69,7 @@ For **bioacousticians and animal communication researchers**, the book offers a 
 
 For **mathematicians and physicists** curious about applications of differential geometry, gauge theory, and algebraic topology to the human sciences, the book provides a worked example of what it means to take the geometric metaphor seriously --- not as a vague analogy between "semantic space" and actual manifolds, but as a literal claim about the mathematical structure of meaning, supported by computation and experiment.
 
-The book assumes basic linear algebra and probability. It does not assume differential geometry, topology, or gauge theory --- these are developed from first principles in Chapter 4 and Appendix A. It does assume intellectual seriousness: the reader should be prepared to follow a mathematical argument across three pages and an empirical argument across three kingdoms.
+The book assumes basic linear algebra and probability. It does not assume differential geometry, topology, or gauge theory --- these are developed from first principles in Chapter 4 and Appendix A. It does assume intellectual seriousness: the reader should be prepared to follow a mathematical argument across three pages and an empirical argument across three animal lineages.
 
 ### A Note on Scope
 
@@ -81,7 +81,7 @@ The book also does not pretend that geometry is the final word. Chapter 18 is ho
 
 ## Acknowledgments
 
-A book that spans five communication systems across 4,000 years and three biological kingdoms is necessarily a collaborative enterprise, even when written by a single author. The debts are many.
+A book that spans five communication systems across 4,000 years and three animal lineages is necessarily a collaborative enterprise, even when written by a single author. The debts are many.
 
 The geometric framework that underpins this book was developed in conversation with the Geometric Reasoning research group at San Jose State University. I am grateful to the group members --- particularly Lena Thiele, whose co-authorship on the selective invariance paper sharpened my thinking about gauge violation in communication; David Hartmann, who first suggested that the BirdCLEF pipeline could be recast in terms of SPD manifolds; and Priya Suresh, whose careful implementation of the Poincare ball embedding for cuneiform signs turned a theoretical possibility into an empirical result.
 

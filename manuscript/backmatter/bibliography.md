@@ -3,7 +3,7 @@
 ## Primary Sources (Author's Work)
 
 - Bond, A. H. (2026a). *Geometric Methods in Computational Modeling.* San Jose State University.
-- Bond, A. H. (2026b). *Geometric Ethics: The Mathematical Structure of Moral Reasoning.* v1.23.
+- Bond, A. H. (2026b). *Geometric Ethics: The Mathematical Structure of Moral Reasoning.* v1.25.
 - Bond, A. H. (2026c). *Geometric Reasoning: From Search to Manifolds.* San Jose State University.
 - Bond, A. H. (2026d). "Geometric Structure in Sperm Whale Communication: Hyperbolic Embeddings, Topological Analysis, and Adversarial Robustness." Submitted to *Royal Society Open Science.*
 - Bond, A. H. (2026e). "Geometric Deep Learning for Akkadian Machine Translation: Hyperbolic Attention Bias and Cuneiform-Aware Augmentation." Deep Past Initiative.

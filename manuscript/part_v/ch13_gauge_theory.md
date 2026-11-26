@@ -310,7 +310,7 @@ The transition from Level 4 (0%) to Level 5 (100%) is not a smooth increase thro
 
 *Evidence.* The claim is supported by three converging lines of evidence:
 
-*(i) Protocol 1 data: The transition between O and L at the gate boundary is a step function with no intermediate values (0% at Level 4, 100% at Level 5, 0% at Level 6).*
+*(i) Protocol 1 data: The transition between O and L at the gate boundary is a step function with no intermediate values (0% at Level 4, 100% at Level 5, 0% at Level 6). Away from the gates the rate can be intermediate: Level 7, an ambiguous trigger, gives 55% Liberty across responses, while each response is still classed O or L.*
 
 *(ii) Falsification of SU(2): The continuous group SU(2) predicts intermediate states $\alpha|O\rangle + \beta|L\rangle$ with $|\alpha|^2 + |\beta|^2 = 1$. No such superpositions were observed.*
 

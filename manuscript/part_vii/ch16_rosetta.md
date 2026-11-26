@@ -143,7 +143,7 @@ This is the most demanding requirement. It is why we cannot yet decode whale com
 
 The four stations reveal a hierarchy with three levels. Each level has its own geometry, its own data requirements, and its own scope.
 
-**Level 1: Signal geometry.** The geometry of the raw communication signal, extracted without semantic access. Tools: SPD manifold features (spectral covariance), persistent homology (topological invariants of signal attractors), Takens embedding (phase-space reconstruction). Data requirement: the signal itself --- audio recordings, written texts, gesture captures. No labels, no taxonomy, no parallel texts. Scope: domain-independent. Applies equally to whale clicks, birdsong, cuneiform readings, modern speech, and any other physical signal. Stations where validated: all four.
+**Level 1: Signal geometry.** The geometry of the raw communication signal, extracted without semantic access. Tools: SPD manifold features (spectral covariance), persistent homology (topological invariants of signal attractors), Takens embedding (phase-space reconstruction). Data requirement: the signal itself --- audio recordings, written texts, gesture captures. No labels, no taxonomy, no parallel texts. Scope: domain-independent. Applies equally to whale clicks, birdsong, cuneiform readings, modern speech, and any other physical signal. Stations where validated: Stations 1 and 2 (the table of Section 16.9.1 marks the signal tools not tested on cuneiform, and at Station 4 the analysis is of text, not of a signal).
 
 **Level 2: Hierarchical geometry.** The geometry of the organisational structure of the communication system. Tools: Poincaré ball embeddings (hyperbolic representation of taxonomies), hyperbolic attention bias (structural prior for neural models), radial-angular decomposition (interpretable hierarchy maps). Data requirement: a taxonomic tree or ontological hierarchy, either discovered from the data (clustering) or given by domain expertise (philology, biology). Scope: requires minimal domain knowledge --- the tree structure --- but not semantic access. Applies whenever the communication system has hierarchical organisation, which appears to be universal. Stations where validated: Stations 1, 3, and 4.
 
@@ -209,7 +209,7 @@ The transition from cuneiform to moral reasoning (Stations 3 to 4) is a transiti
 
 This transition tests the toolkit's **depth generality**. At Station 3, geometry aids translation. At Station 4, geometry *is* the content. The $V_4$ symmetry of the Hohfeldian square is not a tool applied to meaning; it is the posited symmetry of meaning itself. The Wilson loop experiments do not use geometry to improve a downstream task; they measure the geometry of the moral communication manifold directly.
 
-The transition also introduces discreteness. The cuneiform sign hierarchy is discrete (it is a finite tree), but the translation process is continuous (the attention weights vary smoothly). The Hohfeldian $V_4$ group is discrete in a stronger sense: the transitions between normative states are gated by specific linguistic triggers ("only if convenient" $\to$ 100% Liberty), and the gauge group itself is finite ($|V_4| = 4$). This discreteness is not an approximation to a continuous symmetry. It is the measured structure of moral communication, and it has consequences for the general theory (Chapter 17).
+The transition also introduces discreteness. The cuneiform sign hierarchy is discrete (it is a finite tree), but the translation process is continuous (the attention weights vary smoothly). The Hohfeldian $V_4$ group is discrete in a stronger sense: the transitions between normative states are gated by specific linguistic triggers ("only if convenient" $\to$ 100% Liberty), and the gauge group itself is finite ($|V_4| = 4$). This discreteness is not an approximation to a continuous symmetry. It is the measured structure of moral communication, and it has consequences for the general theory, one of which Section 18.3 takes up.
 
 ---
 
@@ -243,9 +243,9 @@ Neither possibility is close to realisation. The trajectory has brought us as fa
 
 ## 16.9 The Universality Argument
 
-### 16.9.1 The Same Geometry Works Across Kingdoms
+### 16.9.1 The Same Geometry Works Across Lineages
 
-The Rosetta trajectory spans three biological kingdoms: cetacean (whales), avian (birds), and human (cuneiform, moral reasoning). The same three-geometry toolkit produces meaningful results in all three. This is either a deep fact about the geometry of communication or a coincidence of mathematical versatility.
+The Rosetta trajectory spans three animal lineages: cetacean (whales), avian (birds), and human (cuneiform, moral reasoning). The same three-geometry toolkit produces meaningful results in all three. This is either a deep fact about the geometry of communication or a coincidence of mathematical versatility.
 
 The evidence favours the former. The coincidence hypothesis would require that three independently evolved communication systems happen to have structure that the same mathematical tools can extract, for unrelated reasons. The deep-fact hypothesis explains the same evidence parsimoniously: all communication systems, regardless of biological substrate, must solve the same geometric problems --- encoding hierarchy, preserving information under noise, separating content from identity --- and the solutions to these problems have the same mathematical structure.
 
@@ -261,7 +261,7 @@ The specific parallels are instructive:
 
 [^1]: Zipf's law in birdsong syllable frequencies has been reported by several authors, though the interpretation is debated. See Suzuki et al. (2006) for evidence and Ferrer-i-Cancho and McCowan (2012) for caveats.
 
-The table is not complete --- several cells are marked "not tested" because the corresponding analysis was not performed, not because the geometry would not apply. The SPD analysis was not applied to cuneiform because cuneiform is a written system with no acoustic signal; the TDA analysis was not applied to cuneiform or moral reasoning because the relevant signals are textual, not temporal. But where the analysis was performed, the geometry produced informative results across all three kingdoms.
+The table is not complete --- several cells are marked "not tested" because the corresponding analysis was not performed, not because the geometry would not apply. The SPD analysis was not applied to cuneiform because cuneiform is a written system with no acoustic signal; the TDA analysis was not applied to cuneiform or moral reasoning because the relevant signals are textual, not temporal. But where the analysis was performed, the geometry produced informative results across all three lineages.
 
 ### 16.9.2 Convergent Evolution of Communicative Geometry
 
@@ -290,7 +290,7 @@ The Rosetta trajectory is not four case studies. It is a single argument with fo
 
 **Premise 4** (Station 4): The toolkit, extended with semantic geometry, reveals gauge-invariant structure in moral reasoning across languages. The deepest structure of meaning --- the $V_4$ symmetry of normative relations --- is geometric, discrete, and empirically testable.
 
-**Conclusion**: Communicative structure is stratified into three geometric levels --- signal, hierarchical, and semantic --- each subsuming the previous, each requiring more data, each revealing more about meaning. The same mathematical toolkit operates at all three levels, and it works across biological kingdoms.
+**Conclusion**: Communicative structure is stratified into three geometric levels --- signal, hierarchical, and semantic --- each subsuming the previous, each requiring more data, each revealing more about meaning. The same mathematical toolkit operates at all three levels, and it works across animal lineages.
 
 This conclusion does not solve the problem of whale communication. It does not decode cuneiform in one pass. It does not make BLEU scores obsolete overnight. What it does is provide a framework --- rigorous, empirically grounded, and geometrically precise --- for understanding what communication *is*, what scalar evaluation *destroys*, and what geometric analysis *recovers*.
 
@@ -298,6 +298,6 @@ The framework is the contribution. The trajectory is the evidence.
 
 ---
 
-**Series cross-references.** Signal geometry: Ch. 4--6 of this volume; GM Ch. 4--5. Hyperbolic embeddings: Ch. 5 of this volume; GM Ch. 4.6. TDA: Ch. 6 of this volume; GM Ch. 5. SPD manifolds: Ch. 4 of this volume; GM Ch. 4.6. Parallel transport and holonomy: Ch. 10 of this volume; GR Ch. 4. Gauge invariance: Ch. 11--13 of this volume; GR Ch. 8. $V_4$ group (earlier drafts: $D_4$, withdrawn): Ch. 13 of this volume; GE Ch. 8. The Rosetta trajectory: introduced in Ch. 1, developed through Ch. 7--12, completed here.
+**Series cross-references.** Signal geometry: Ch. 4--6 of this volume; GM Ch. 4--5. Hyperbolic embeddings: Ch. 5 of this volume; GM Ch. 3. TDA: Ch. 6 of this volume; GM Ch. 5. SPD manifolds: Ch. 4 of this volume; GM Ch. 4.6. Parallel transport and holonomy: Ch. 10 of this volume; GR Ch. 4. Gauge invariance: Ch. 11--13 of this volume; GR Ch. 8. $V_4$ group (earlier drafts: $D_4$, withdrawn): Ch. 13 of this volume; GE Ch. 8. The Rosetta trajectory: introduced in Ch. 1, developed through Ch. 7--12, completed here.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*
