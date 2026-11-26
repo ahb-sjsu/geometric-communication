@@ -210,6 +210,10 @@ Every empirical analysis in this book provides a lower bound on the dimensionali
 
 These are lower bounds, not estimates. The actual dimensionality is at least as large as the largest lower bound for each factor, and likely much larger. The signal manifold $S$ has at least 16 independent dimensions (from the birdsong analysis). The content manifold $C$ has at least 5 independent dimensions (from the whale coda taxonomy). The pragmatic manifold $P$ has at least 2 independent dimensions (from the framing analysis). The total lower bound on $\dim(M)$ is at least 23.
 
+![Figure 18.1](figures/ch18_fig1.svg)
+
+*Figure 18.1. The lower bounds of Section 18.5.1 on the dimension of each factor of the communication manifold, one mark per analysis. The chapter takes the largest bound on each factor (ringed) and adds them: 16 for the signal, 5 for the content and 2 for the pragmatics, a total of at least 23. These are counts of features the book's analyses used, posited as independent, and not estimates of the true dimension. The table's row for the Hohfeldian relations is left out because the book counts it in two ways; it does not change the total.*
+
 ### 18.5.2 Why the True Dimension Matters
 
 The dimensionality of $M$ determines the severity of scalar irrecoverability (Chapter 17, Proposition 17.2): a scalar metric on an $n$-dimensional manifold has fibres of dimension $n - 1$, so the amount of information destroyed grows linearly with $n$. If $\dim(M) = 23$, a BLEU score destroys at least 22 dimensions of information. If $\dim(M) = 100$ (a plausible estimate for the full communication manifold of human language), a BLEU score destroys at least 99 dimensions.

@@ -39,8 +39,6 @@ $$\lambda^c_x = \frac{2}{1 - c\|x\|^2}$$
 
 The conformal factor $\lambda^c_x$ is the key to everything that follows. At the origin ($x = 0$), it equals 2: hyperbolic distances are simply twice Euclidean distances. But as $x$ approaches the boundary of the ball ($c\|x\|^2 \to 1$), the conformal factor diverges: $\lambda^c_x \to \infty$. A small Euclidean step near the boundary corresponds to an enormous hyperbolic distance. The boundary itself---the sphere $\{x : c\|x\|^2 = 1\}$---is infinitely far from every interior point. This is why the Poincare ball can represent infinite trees in a bounded region: the exponential growth of the tree is absorbed by the exponential growth of the conformal factor near the boundary.
 
-[Figure 5.1: The Poincare disk ($d = 2$, $c = 1$). Left: a regular tiling by congruent hyperbolic pentagons, illustrating exponential area growth. Right: geodesics (circular arcs perpendicular to the boundary). Near the boundary, geodesics appear to crowd together---a visual artifact of the conformal factor.]
-
 The curvature parameter $c$ controls the trade-off between the size of the ball (radius $1/\sqrt{c}$) and the rate of exponential growth. Larger $c$ means a smaller ball with more extreme distortion near the boundary---suitable for deep, narrow hierarchies. Smaller $c$ means a larger ball with gentler distortion---suitable for shallow, broad hierarchies. Throughout this chapter, we use $c = 1.0$ unless stated otherwise; in practice, $c$ can be treated as a hyperparameter or learned from data.
 
 ### 5.2.1 Mobius Operations
@@ -91,9 +89,11 @@ $$d_{\mathbb{B}}(x, 0) = \frac{2}{\sqrt{c}} \, \text{arctanh}\!\left(\sqrt{c}\,\
 
 This quantity---the hyperbolic radius---measures how "deep" a point is in the hierarchy. Points at the origin represent the root; points near the boundary represent leaves.
 
-[Figure 5.2: Poincare distance structure. Left: Euclidean distance contours (concentric circles of constant Euclidean radius). Right: Hyperbolic distance contours from the origin (concentric circles of constant hyperbolic radius). Near the boundary, hyperbolic contours crowd together, reflecting the exponential growth of distance.]
-
 ---
+
+![Figure 5.1](figures/ch05_fig1.svg)
+
+*Figure 5.1. Hyperbolic distance from the origin against Euclidean radius on the Poincare ball with c = 1, from the formula of Section 5.2.2. Near the origin the curve follows the dashed line 2 r, the approximation the text gives. Toward the boundary it leaves the line and grows without bound: a point at radius 0.9 is at distance 2.94 and a point at radius 0.99 is at distance 5.29.*
 
 ## 5.3 The Distortion Theorem
 
@@ -128,8 +128,6 @@ $$\text{Vol}(\mathbb{B}^d_c(r)) \sim \left(\frac{c}{4}\right)^{(d-1)/2} \cdot \f
 *for large $r$. In Euclidean space, the corresponding volume is $\text{Vol}(B^d(r)) \sim r^d$.*
 
 The exponential volume growth of hyperbolic space matches the exponential branching of trees. This is the geometric reason why hyperbolic space accommodates hierarchies: there is *room* for all the leaves. Euclidean space, with its polynomial volume growth, runs out of room and must compress distant branches together, introducing distortion.
-
-[Figure 5.3: The distortion theorem illustrated. Left: a binary tree of depth 5 embedded in $\mathbb{R}^2$ (Euclidean); significant distortion is visible as distant leaves crowd together. Centre: the same tree embedded in $\mathbb{B}^2_1$ (Poincare disk); the tree structure is faithfully preserved. Right: distortion as a function of embedding dimension for Euclidean (blue) and hyperbolic (red) embeddings; hyperbolic reaches low distortion in far fewer dimensions.]
 
 ---
 
@@ -167,8 +165,6 @@ For the Poincare embedding, we used a three-level taxonomy: rhythm class (regula
 ### 5.5.2 The Embedding
 
 Coda types were embedded into a Poincare ball of dimension $d = 16$ (the minimum of the embedding dimension and the number of types) with curvature $c = 1.0$, following the spectral initialisation procedure of Section 5.4. Three Euclidean baselines were computed: PCA on the distance matrix, classical multidimensional scaling (MDS), and Isomap.
-
-[Figure 5.4: Poincare ball versus Euclidean embeddings of the coda type hierarchy. Left: Poincare ball embedding projected to 2D. Coda types are coloured by rhythm class. Hierarchically related types (e.g., 5R1, 5R2, 5R3) cluster at similar radii while distinct rhythm classes separate angularly. Right: Euclidean PCA embedding of the same distance matrix. Both representations separate the major rhythm classes, but the Poincare embedding provides a more natural visualisation of the hierarchical depth structure.]
 
 The distortion comparison, measured by Spearman rank correlation ($\rho$) between embedded and true taxonomic distances, yielded a nuanced result:
 
@@ -208,7 +204,9 @@ The prototypes are parameterised in the tangent space at the origin and mapped t
 
 The 1.5 percentage point advantage is modest and should not be over-interpreted. The random split does not account for within-individual or within-session correlations (codas from the same whale in the same recording session may appear in both training and test sets), which can inflate accuracy estimates. Grouped cross-validation (leave-one-whale-out or leave-one-session-out) would provide a more conservative and ecologically meaningful estimate.
 
-[Figure 5.5: Classification results. Top left: HyperbolicMLR training loss over 500 epochs. Top right: accuracy comparison across methods (HyperbolicMLR 74.3%, random forest 72.8%, logistic regression 71.2%, $k$-NN 69.4%). Bottom: confusion matrices for HyperbolicMLR (left) and random forest (right). The confusion structure reveals which coda types the classifiers struggle to distinguish---predominantly types within the same rhythm class.]
+![Figure 5.2](figures/ch05_fig2.svg)
+
+*Figure 5.2. Accuracy of four classifiers on the 28 coda types, as the chapter reports them, on one 80/20 stratified random split of the same 11 features. The vertical axis is accuracy in percent and starts at zero. The hyperbolic classifier leads the best Euclidean baseline by 1.5 points, a margin the chapter calls modest and warns against over-reading, since codas of one whale can fall on both sides of the split.*
 
 ### 5.5.4 What the Embedding Reveals
 
@@ -275,8 +273,6 @@ This construction has several notable properties:
 
 4. **The bias is additive, not multiplicative.** It augments the attention logits alongside the existing position bias, leaving the model free to learn attention patterns that override the geometric prior when the data warrants it. The learnable scale $\alpha$ (initialised to 0.1) controls how strongly the geometric bias influences attention; if the hierarchy is uninformative, $\alpha$ can shrink toward zero.
 
-[Figure 5.6: The geometric attention bias for cuneiform. Left: schematic of the ByT5 encoder with additive geometric bias. The bias matrix $B_{\text{geo}}$ is computed from pairwise Poincare distances between byte-level embeddings and added to the attention logits in the first 4 encoder layers. Right: a visualisation of learned Poincare embeddings for a sample of byte tokens, coloured by their most common sign association.]
-
 ### 5.6.3 Ablation Results
 
 The contribution of the hyperbolic attention bias was isolated through a four-configuration ablation study:
@@ -335,8 +331,6 @@ This is exactly what the distortion theorem predicts. The theoretical advantage 
 For the coda taxonomy, with 28 types, 3 distance levels, and 16 embedding dimensions, we are in the "negligible advantage" regime. The full combinatorial space (540 configurations) would push us toward the "significant advantage" regime. For the cuneiform sign taxonomy, with approximately 600 signs, multiple readings per sign, and a constraint on the number of additional parameters, the advantage is present but modest.
 
 The decisive empirical test would be a large-scale hierarchy: the full coda combinatorial space (540 types), a complete cuneiform sign list with all attested readings (thousands of nodes), or a WordNet-scale semantic hierarchy (80,000+ synsets). At that scale, the distortion theorem predicts a substantial advantage for hyperbolic embeddings, and existing work on Poincare embeddings of WordNet (Nickel and Kiela, 2017) confirms this prediction.
-
-[Figure 5.7: Scaling comparison. Simulated distortion for random trees of increasing depth and branching factor, embedded in Euclidean $\mathbb{R}^{16}$ (blue) versus Poincare $\mathbb{B}^{16}_1$ (red). At depth 3 and branching factor 4 (comparable to the coda taxonomy), the two are similar. At depth 6 and branching factor 8, hyperbolic embedding achieves 3--5$\times$ lower distortion.]
 
 ### 5.7.1 The Representation-Computation Trade-off
 

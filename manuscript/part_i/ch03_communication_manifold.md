@@ -106,6 +106,10 @@ Now consider the distances between these points. Apologies A and C share similar
 
 [Figure 3.1] *Three apologies as points on $M = S \times P \times C$. The axes represent (schematically) the three factors. Apology A and Apology C are close on $P \times C$ but far on $S$ (different languages, different modalities). Apology A and Apology B are closer on $S$ (both English) but far on $P$ (different pragmatic force). The dashed projection lines show what scalar evaluation discards: projecting onto any single axis loses the relationships visible in the full space.*
 
+![Figure 3.1](figures/ch03_fig1.svg)
+
+*Figure 3.1. Schematic: the three apologies of the worked example placed on each factor of M = S × P × C. Positions are illustrative; only which pairs are near and which are far is taken from the text. A and C are far apart in signal and close in pragmatics and content; A and B are closer in signal and far apart in pragmatics. A score read off any one line cannot show both facts.*
+
 ### 3.1.4 Why Product Structure Matters
 
 The product structure $M = S \times P \times C$ is not merely organizational. It has a precise mathematical consequence: **scalar evaluation of a communicative act is a projection onto one factor followed by a further contraction to $\mathbb{R}$.**

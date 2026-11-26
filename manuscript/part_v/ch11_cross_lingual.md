@@ -164,6 +164,10 @@ The adversarial training has a precise geometric interpretation on the communica
 
 In the language of gauge theory: the adversarial training strips away the fiber coordinates and retains only the base point. The bond space $\mathbf{z}_{\text{bond}}$ is trained to be a gauge-invariant quantity---the ethical analogue of the electromagnetic field tensor $F_{\mu\nu}$, which depends on the physical configuration but not on the choice of gauge potential $A_\mu$.
 
+![Figure 11.1](figures/ch11_fig1.svg)
+
+*Figure 11.1. The architecture of Sections 11.2.3 and 11.2.4 as a block diagram. The encoder gives a 384-dimensional vector h; one head projects it to the 64-dimensional bond space, another to the 32-dimensional label space. The bond space feeds the Hohfeldian classifier and, through a gradient reversal layer, an adversary that tries to predict the period of the text; the reversal trains the bond space to make that prediction fail. The label space is trained to predict the period directly, as a control.*
+
 ### 11.2.5 The Experimental Protocol
 
 Three conditions test the invariance hypothesis:

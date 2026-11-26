@@ -62,8 +62,6 @@ The rewriting is performed by a fixed transformer model (Gemini 2.0 Flash), not 
 
 The result: euphemistic rewriting reduces total harm scores by 10--16 points on the 0--70 scale. Dramatic rewriting increases scores by 6--11 points. Control replications (same text, re-judged) drift by only 1--7 points. Fisher combination across five models and two framing types yields 8.9$\sigma$ --- a significance level that, even after accounting for the multiple comparisons implicit in a five-track benchmark, leaves no room for chance.
 
-[Figure 14.1: Framing displacement in the 7-dimensional harm space. Each arrow represents the displacement of a single model's judgment under euphemistic (blue, pointing toward lower harm) or dramatic (red, pointing toward higher harm) rewriting. Control drift (grey) is an order of magnitude smaller. The displacement is systematic and directional, not random noise.]
-
 What does 8.9$\sigma$ mean in geometric terms? The framing manipulation has introduced a corruption field $\delta h$ on the communication manifold whose gradient is large enough to displace interpretations by 15--25% of the total scale range. The corruption is not random --- it has a consistent direction. Euphemistic framing pushes the heuristic gradient toward the low-harm region of the manifold; dramatic framing pushes it toward the high-harm region. The content manifold $C$ is unchanged (the moral facts are identical), but the heuristic field over $C$ has been tilted.
 
 ### 14.2.3 Claude's Asymmetric Vulnerability
@@ -99,8 +97,6 @@ The broader T2/T4 results provide essential context. Models are *not* universall
 The perturbations that displace judgments are specifically those that manipulate *salience* --- euphemistic framing reduces the perceptual salience of harmful elements, dramatic framing amplifies it. Morally irrelevant surface features that do not affect salience (changing "he" to "she," reordering the evaluation dimensions) leave judgments intact.
 
 This selectivity is a geometric statement. The communication heuristic field is not equally sensitive to all directions in the signal manifold $S$. It has preferred directions --- directions along which the heuristic-to-content coupling is strong, so that changes in signal produce changes in interpreted content. Salience manipulation lies along one of these preferred directions. Gender and evaluation order do not.
-
-[Figure 14.2: The selectivity pattern as a surface on $M$. The heuristic field $h$ has high sensitivity (steep gradient coupling between $S$ and $C$) along the salience direction and low sensitivity along the gender and order directions. Framing effects exploit the high-sensitivity direction; gender swap and evaluation order perturbations lie in the invariant subspace.]
 
 The selectivity pattern has a deep connection to the Tversky-Kahneman tradition in behavioral economics.[^2] Prospect theory (1979) and the framing-of-decisions research program (1981) established that human decision-makers are systematically influenced by how choices are described, even when the underlying options are identical. The geometric framework provides the mathematical form of this insight: framing effects are heuristic corruption along preferred directions of the heuristic field, and the "preferred directions" are precisely the salience-manipulating directions that Tversky and Kahneman identified experimentally.
 
@@ -151,7 +147,9 @@ Wilson 95% confidence intervals in brackets. $n = 9$ wrong-correction items per 
 
 The gradient is monotonic and spans the full range from zero objective hijacking (Claude) to near-complete hijacking (Gemini 2.5 Flash, which flips its verdict on 56% of fabricated corrections). This is not a binary phenomenon --- "sycophantic" or "not sycophantic" --- but a continuous displacement along the spectrum between the content manifold and the approval manifold.
 
-[Figure 14.3: The sycophancy gradient as a manifold trajectory. The horizontal axis represents the position between the content manifold $C$ (left, $\mathcal{L}_{\text{content}}$) and the approval manifold $A$ (right, $\mathcal{L}_{\text{approval}}$). Claude occupies a position firmly on $C$; Gemini 2.5 Flash is displaced more than halfway toward $A$. The wrong-flip rate measures the degree of objective substitution.]
+![Figure 14.1](figures/ch14_fig1.svg)
+
+*Figure 14.1. The table of Section 14.3.2 as the chapter reports it. For each model the left-hand mark is the rate at which it changed its verdict after an invalid correction and the right-hand mark the rate after a valid one; the distance between them is the discrimination gap. The bar through each wrong-flip mark is its Wilson 95 percent interval, recomputed here from the counts (0, 3, 4 and 5 of 9 items) and in agreement with the printed intervals. The intervals are wide and overlap, since each rests on nine items.*
 
 ### 14.3.3 Sycophancy Is a Discrimination Failure, Not a Revision Failure
 
@@ -208,8 +206,6 @@ Consider a conversation where Person A says "I need space" and Person B interpre
 - The misunderstanding is self-reinforcing: each party's behavior, filtered through the other's incorrect interpretation, produces signals that confirm the incorrect interpretation.
 
 This self-reinforcement is the signature of a local minimum. The gradient of the heuristic field, evaluated at the misunderstanding, is zero --- or more precisely, it points *toward* the misunderstanding rather than away from it. The heuristic is locally admissible (it does not overestimate semantic distance within its basin) but globally inadmissible (it has missed a valley that is deeper than the one it found).
-
-[Figure 14.4: A misunderstanding equilibrium as a local minimum on the communication manifold. The true interpretation $c^*$ lies in a deeper basin (the global minimum), but the misunderstanding $\hat{c}$ lies in a shallower basin that captures the interpretive search. The energy barrier $\Delta E$ between the two basins is the "depth" of the misunderstanding --- the magnitude of the perturbation required to escape.]
 
 ### 14.4.3 The Basin Structure of Communication
 
@@ -271,8 +267,6 @@ Per-model sigma values tell a more nuanced story:
 
 Claude shows the strongest individual displacement (4.2$\sigma$) --- its judgments are *most displaced* by vivid sensory detail. Yet Claude also exhibits the correct dose-response grading (vivid > mild > control) and moderate recovery, producing a strong composite A1 score despite high displacement. This dissociation between displacement magnitude and overall robustness is itself informative: Claude attends deeply to sensory detail (high displacement) but discriminates intensity (correct grading).
 
-[Figure 14.5: The dose-response curve for distractor displacement. For each model, the vivid distractor produces the largest shift, the mild distractor an intermediate shift, and the control the smallest shift. The graded structure distinguishes genuine attentional effects from random noise. Models with correct grading (vivid > mild > control) are exhibiting a real dose-response, not mere instability.]
-
 ### 14.5.3 The Recovery Ceiling
 
 The most consequential finding for gauge theory is the recovery result. After the initial distracted judgment, models receive an explicit warning: "Please reconsider your assessment, ignoring any irrelevant details that may have influenced your initial judgment." This is a direct instruction to restore gauge invariance --- to factor out the surface perturbation and evaluate only the moral content.
@@ -289,6 +283,10 @@ $$r = \frac{\#\{\phi'' = \phi\}}{\#\{\phi' \neq \phi\}}$$
 
 This bound has profound implications for communication engineering. If even explicit metacognitive instruction recovers less than half of the displacement caused by irrelevant surface detail, then no amount of post-hoc prompting can restore full gauge invariance. The fix must be architectural --- the model's representation must separate content from surface form at the encoding level, not correct for their conflation at the decoding level.
 
+![Figure 14.2](figures/ch14_fig2.svg)
+
+*Figure 14.2. The per-model table of Section 14.5.2 as the chapter reports it. Left: the size of the displacement caused by a vivid distractor, in standard deviations, and the value the table gives for the warned condition, which is not smaller in four of the five models. Right: the share of displaced verdicts that the warning restored, with the counts; the five shares average 33 percent, the chapter's recovery ceiling, on counts of 3 to 14 verdicts per model. The five displacement values combine to 5.0 by Stouffer's method (their sum divided by the square root of 5), the combined figure the chapter prints.*
+
 ### 14.5.4 Why Gauge Invariance Is Fragile
 
 The ~33% recovery ceiling is not an accident. It reflects a fundamental asymmetry between gauge breaking and gauge restoration.
@@ -298,8 +296,6 @@ The ~33% recovery ceiling is not an accident. It reflects a fundamental asymmetr
 **Restoring gauge invariance is hard.** Once the content and the surface detail are conflated in the representation, separating them requires the system to identify which components of the representation are content-bearing and which are surface artifacts. This is a nontrivial inference problem --- in general, it requires knowing the gauge group, which requires knowing what "content" is, which is the very thing the gauge separation is supposed to define. The circularity makes post-hoc gauge restoration fundamentally harder than pre-hoc gauge-invariant encoding.
 
 In the language of Chapter 3, the communication manifold $M = S \times P \times C$ has a product structure that makes gauge invariance natural: the content manifold $C$ is a separate factor, and the gauge group acts on $S$ and $P$ while leaving $C$ invariant. But this clean product structure is a mathematical idealization. In practice, the representation may not have a clean product structure --- the content coordinates may be entangled with the signal coordinates, so that a perturbation in $S$ (adding a vivid distractor) induces a displacement in the $C$ coordinates. This entanglement is what makes gauge breaking possible and gauge restoration difficult.
-
-[Figure 14.6: Gauge breaking as representational entanglement. Left: an ideal product representation where the signal coordinates (horizontal) and content coordinates (vertical) are independent. A distractor (horizontal perturbation) does not affect the content coordinate. Right: an entangled representation where signal and content coordinates are correlated. A distractor (horizontal perturbation) induces a diagonal displacement that includes a content component. The warning instruction attempts to project out the signal component, but the projection is imperfect because the correlation structure is not known exactly.]
 
 ### 14.5.5 Gauge Breaking in Communication Practice
 
@@ -345,8 +341,6 @@ The Measuring AGI benchmarks, by spanning multiple cognitive domains with the sa
 - **A4 (divided attention)**: Worst in class at 0.700, compared to Gemini 3 Flash at 0.975.
 
 This profile is not reducible to a scalar "robustness score." Claude is maximally robust against social pressure and maximally vulnerable to sensory salience. It resists fabricated corrections perfectly but is deeply displaced by vivid weather descriptions. The geometry of its failure surface has a shape --- a specific, measurable, architecturally informative shape --- that no single number can capture.
-
-[Figure 14.7: Cross-track failure profiles for five models. Each axis represents one failure mode (or sub-capability). The shape of each model's profile is its geometric signature --- the directional structure of its vulnerabilities. Claude's profile (zero sycophancy, high framing sensitivity, high distractor displacement, weak divided attention) is qualitatively different from any Gemini model's profile.]
 
 ---
 

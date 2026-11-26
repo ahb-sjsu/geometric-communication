@@ -53,8 +53,6 @@ The local triviality condition says that in a neighbourhood of any meaning, ther
 
 [^1]: Global triviality would mean that every meaning can be expressed in exactly the same set of ways --- the same languages, the same registers, the same modalities --- with the same structure. The existence of untranslatable concepts (Chapter 10) is a direct refutation of global triviality: some fibers have components that others lack.
 
-[Figure 13.1: The communication fiber bundle. The base space $\mathcal{B}$ (content manifold) is drawn as a surface. Above each point, a vertical fiber represents the space of surface realisations. A local section $\sigma$ (a particular language/register choice) traces a curve through the total space. Two sections $\sigma_1$ (English) and $\sigma_2$ (Hebrew) are shown, agreeing on the base space (same content) but differing in the fiber (different surface forms). The gauge transformation $g$ maps $\sigma_1$ to $\sigma_2$ within each fiber.]
-
 ### 13.1.2 Sections and Gauge Transformations
 
 **Definition 13.2** (Local Section). *A local section of the communication fiber bundle is a smooth map $\sigma: U \to \mathcal{E}$, defined on an open set $U \subseteq \mathcal{B}$, satisfying $\pi \circ \sigma = \text{id}_U$. A section assigns to each meaning in $U$ a particular surface realisation of that meaning.*
@@ -187,7 +185,11 @@ L & \xleftrightarrow{s} & N
 
 *where $s$ denotes the correlative exchange along the horizontal edges and $n$ denotes the negation along the vertical edges. The two involutions commute, and together they generate the Klein four-group $V_4 = \{e, s, n, sn\}$.*
 
-### 13.3.2 The Dihedral Group $D_4$
+![Figure 13.1](figures/ch13_fig1.svg)
+
+*Figure 13.1. The Hohfeldian square of Definition 13.7 with the two operations the chapter posits. The correlative exchange s runs along the horizontal edges (Duty with Claim, Liberty with No-Claim) and the negation n along the vertical ones (Duty with Liberty, Claim with No-Claim); their product sn joins the diagonals. The table is the multiplication of the four elements, computed from the definition: every element is its own inverse and the order of two operations does not matter. This is the Klein four-group, with no quarter-turn, and the semantic gates of Section 13.4 are triggers for n.*
+
+### 13.3.2 The Dihedral Group $D_4$ (Withdrawn) (Withdrawn)
 
 **Definition 13.8** ($D_4$). [Withdrawn pending restatement under $V_4$, 2026-11-26: the quarter-turn $r$ below is not a demonstrated normative operation, and $D_4$ is kept here only as the group that earlier drafts used.] *The dihedral group $D_4$ is the symmetry group of the square, presented as*
 
@@ -316,6 +318,10 @@ The transition from Level 4 (0%) to Level 5 (100%) is not a smooth increase thro
 
 *The discreteness is a defining feature of the $V_4$ gauge theory: $V_4$ is a finite group, and its representations are finite-dimensional with a discrete spectrum.*
 
+![Figure 13.2](figures/ch13_fig2.svg)
+
+*Figure 13.2. The Protocol 1 result as the chapter reports it in Section 13.4.2: the percentage of Liberty judgments at each of the eleven levels of contextual modification. Levels 0 to 4 give no Liberty judgments, the phrase "only if convenient" at level 5 gives all Liberty, "found a friend" at level 6 returns to none, and levels 8 to 10 give all Liberty. The chapter reads the jump between levels 4 and 5 as a discrete gate. Level 7, at 55 percent, is the one level that is neither, and the chapter calls its trigger ambiguous.*
+
 ### 13.4.3 Phase Transitions and Gate Reliability
 
 The semantic gates are not unconditionally reliable. The SQND experiments identified conditions under which gate reliability degrades:
@@ -407,7 +413,9 @@ The journalist scenario is cross-type: the truth-telling obligation (pointing to
 
 *Evidence.* The Protocol 2 data show the selectivity: 2/2 cross-type scenarios show significant path dependence ($p < 10^{-4}$); 0/6 within-type scenarios show significant path dependence. The combined $p < 10^{-8}$ rejects the null hypothesis that path dependence is absent.
 
-[Figure 13.2: Wilson loop results on the Hohfeldian square. Left: the 8 scenarios mapped to the square, with arrows indicating the direction of the conflicting factors. Cross-type scenarios (journalist, teacher) straddle type boundaries; within-type scenarios remain within a single quadrant or correlative pair. Right: Wilson loop values with 95% confidence intervals. Cross-type scenarios deviate significantly from 1 (trivial holonomy); within-type scenarios cluster near 1.]
+![Figure 13.3](figures/ch13_fig3.svg)
+
+*Figure 13.3. The Protocol 2 estimates of Section 13.5.3. For each of eight scenarios the same facts were presented in two orders, and the estimate W-hat is the overlap (Bhattacharyya coefficient) of the two distributions of judgments: 1 when the order makes no difference, lower as the two orders diverge. The two scenarios the chapter classes as cross-type, journalist and teacher, are the two with the lowest overlap and the two the chapter reports as significant; the other six lie between 0.96 and 1. The figure shows the estimates only; the earlier explanation of the pattern is withdrawn.*
 
 ### 13.5.4 Holonomy as Communicative Path Dependence
 
@@ -445,8 +453,6 @@ The preceding sections have developed the gauge-theoretic framework piece by pie
 | **Gauge invariant** | Meaning itself: what survives all re-descriptions |
 | **Flat connection** | Perfect mutual understanding: no path dependence, no holonomy |
 | **Curved connection** | Pragmatically complex communication: path-dependent, holonomy-generating |
-
-[Figure 13.3: The gauge theory dictionary, illustrated. A path on the base space (semantic trajectory of a conversation) is shown, with the corresponding horizontal lift (the speaker's intended interpretation) and two alternative lifts (two listeners' interpretations, using slightly different connections). The lifts diverge as the path enters a high-curvature region, and the discrepancy at the endpoint measures the miscommunication.]
 
 ### 13.6.2 Five Consequences
 

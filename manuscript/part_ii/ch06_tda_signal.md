@@ -48,8 +48,6 @@ $$\mathbf{v}(t) = \bigl[x(t),\; x(t + \tau),\; x(t + 2\tau),\; \ldots,\; x(t + (
 
 for $t = 0, 1, \ldots, N - (d-1)\tau - 1$. This produces a set of $n = N - (d-1)\tau$ points in $\mathbb{R}^d$ --- a **point cloud** that lives in the reconstructed phase space.
 
-[Figure 6.1: Schematic of the time-delay embedding. Left: a 1D signal $x(t)$ with marked sample points at times $t$, $t + \tau$, and $t + 2\tau$. Right: the corresponding 3D point $\mathbf{v}(t) = [x(t), x(t+\tau), x(t+2\tau)]$ in the reconstructed phase space. Multiple time steps trace out a curve (the reconstructed attractor).]
-
 The implementation is direct. From the `geometric_features.py` pipeline:
 
 ```python
@@ -109,9 +107,11 @@ For the BirdCLEF pipeline, we use $\tau = 10$ samples, which corresponds to roug
 
 In practice, for acoustic signals, $d = 3$ is often sufficient. The vocal attractors of interest are typically one- or two-dimensional (periodic orbits for sustained tones, limit cycles for trills, low-dimensional chaos for complex calls), and $d = 3$ satisfies the $2m + 1$ bound for $m = 1$. The BirdCLEF and eris-ketos pipelines both default to $d = 3$, with the eris-ketos whale analysis using the full ICI vector dimension ($d = 9$) as an upper bound.
 
-[Figure 6.2: Effect of delay and dimension on the reconstructed point cloud. A synthetic periodic signal $x(t) = \sin(2\pi t / T)$ embedded with (a) $\tau$ too small: the cloud collapses to the diagonal; (b) $\tau$ optimal: the cloud forms a clean ellipse; (c) $\tau$ too large: the cloud fills a rectangle. Below: (d) $d = 2$: a circle (correct topology); (e) $d = 3$: a torus knot (correct topology, higher resolution); (f) $d = 10$: same topology, unnecessary dimensions.]
-
 ---
+
+![Figure 6.1](figures/ch06_fig1.svg)
+
+*Figure 6.1. The effect of the delay on the reconstructed cloud of a pure tone of period 100 samples, with x(t) across and x(t + delay) up. A delay that is too small leaves the two coordinates nearly equal and the loop is squeezed onto the diagonal. At a quarter period, the first zero crossing of the autocorrelation, the loop is fully open, and for this signal a delay of half a period squeezes it again. The loop is the feature persistent homology is meant to find, so the delay sets how well it can be seen.*
 
 ## 6.2 Persistent Homology: Extracting Topology from Point Clouds
 
@@ -147,7 +147,9 @@ As $\varepsilon$ increases, topological features appear (**birth**) and disappea
 
 Each persistence diagram is a scatter plot in the upper half of the plane (since $d > b$ for every genuine feature). Points far from the diagonal have high persistence --- they represent robust topological features that persist over a wide range of scales. Points near the diagonal are short-lived and typically represent noise.
 
-[Figure 6.3: The Vietoris--Rips filtration. Top row: a point cloud at four increasing values of $\varepsilon$, with the Rips complex drawn. Bottom row: the corresponding persistence diagram, accumulating birth-death pairs as $\varepsilon$ increases. A long-lived $H_1$ loop (the central ring) appears far from the diagonal; short-lived components near the diagonal are noise.]
+![Figure 6.2](figures/ch06_fig2.svg)
+
+*Figure 6.2. The Vietoris-Rips filtration of twelve points on a circle of radius 1 (Definition 6.2). Below scale 0.52, the spacing of neighbours, the points are twelve separate components; at 0.52 neighbours join, eleven components die and one loop is born. The loop lasts until scale 1.73, when triangles first cover the centre. In the persistence diagram, birth across and death up, the loop stands far above the diagonal with lifetime 1.21; the eleven components sit at birth 0.*
 
 ### 6.2.4 Homology Dimensions and Their Interpretation
 
@@ -249,8 +251,6 @@ The choice is motivated by the stability theorem and the practical requirements 
 
 These eight statistics are not the only possible summary --- persistence landscapes and persistence images retain more spatial information about the diagram. But for the 206-species birdsong and 21-type whale coda classification problems, the summary statistics capture sufficient structure. The tradeoff --- information loss in exchange for interpretability, speed, and a compact 16-dimensional representation --- is favorable.
 
-[Figure 6.4: The eight summary statistics, illustrated on two persistence diagrams. Left: a diagram with few, persistent $H_1$ features (a clean periodic signal). Right: a diagram with many, short-lived $H_1$ features (a noisy aperiodic signal). The statistics distinguish the two: the left diagram has low count, high max lifetime, high normalized persistence; the right has high count, low max lifetime, low normalized persistence.]
-
 ---
 
 ## 6.4 Empirical Case: Whale Click Patterns
@@ -286,10 +286,6 @@ This is the topological signature of temporal regularity: a point mass in ICI sp
 - **Higher $H_1$ persistence**: persistent loops appear, indicating cyclic patterns in the timing distribution. This is consistent with a production mechanism that cycles through a repertoire of timing variants.
 
 **Compound codas (x+y).** Codas with distinct groups of clicks (e.g., three fast clicks followed by two slow clicks) produce point clouds with **elevated $H_0$ persistence** --- the two click groups correspond to two sub-clusters in ICI space that merge only at large scale. This is the most intuitively clear topological signature: the internal structure of the coda (two distinct groups) manifests directly as two components in the point cloud.
-
-[Figure 6.5: Persistence diagrams for three coda types, reproduced from the eris-ketos analysis (Bond, 2026). Left: regular coda (5R) --- tight cluster, low persistence. Center: irregular coda (5i) --- dispersed cloud, elevated $H_1$. Right: compound coda (3+1+1) --- multi-component structure, elevated $H_0$. $H_0$ features in blue, $H_1$ features in orange. Points far from the diagonal indicate persistent topological features.]
-
-[Figure 6.6: Topological feature summary across coda types. Left: $H_1$ loop count versus maximum $H_1$ lifetime for each coda type, colored by rhythm class. Right: total $H_1$ persistence ranked by coda type. Irregular and compound types show systematically higher topological complexity.]
 
 ### 6.4.4 Topological Content vs. Metric Identity
 
@@ -365,13 +361,9 @@ Different bird species produce vocalizations with different dynamical structure,
 - **Complex broadband songs** (mockingbirds, starlings): variable, aperiodic vocalizations fill the embedding space without loop structure. TDA features: low $H_1$ persistence, high $H_0$ persistence from syllable-type sub-clusters.
 - **Click-based calls** (woodpeckers, corvids): discrete impulses create separated clusters, qualitatively similar to the whale coda analysis. TDA features: high $H_0$ persistence, low $H_1$ persistence.
 
-[Figure 6.7: Point clouds and persistence diagrams for four vocalization types. (a) Sustained tone (Swainson's thrush): clean elliptical loop, single persistent $H_1$ feature. (b) Trill (Pacific wren): thickened loop, multiple $H_1$ features. (c) Complex song (Northern mockingbird): filled region, low $H_1$ persistence. (d) Click train (Downy woodpecker): separated clusters, high $H_0$ persistence.]
-
 ### 6.5.3 Complementarity with SPD Features
 
 The 16 TDA features capture structure that the 136 SPD features cannot, and vice versa. SPD features encode **spectral covariance** --- which frequencies co-occur. TDA features encode **temporal topology** --- the qualitative dynamics of the signal (periodic, quasiperiodic, chaotic, impulsive). Two species can have nearly identical spectral envelopes but different temporal structure (one sustains a tone, the other trills); TDA distinguishes them. Conversely, two species can have different spectral content but similar dynamics; SPD distinguishes them. The spectral trajectory features (4 dims) bridge the two, tracking how covariance evolves on the SPD manifold. The three components provide complementary geometric views, and the combined pipeline extracts richer structure than any single view.
-
-[Figure 6.8: Feature importance for species classification (LightGBM on 156-dimensional geometric features). The top 20 features include contributions from all three components. No single component dominates.]
 
 ---
 
@@ -418,8 +410,6 @@ The robustness properties of topological features can be organized into a hierar
 | Spectral coloration | Approximate | Time-domain embedding |
 | Time stretch (moderate) | Approximate | Reparameterization of the attractor |
 | Signal destruction (dropout, clipping) | Not invariant | Signal change, not representation change |
-
-[Figure 6.9: Robustness comparison across feature types under increasing noise. Horizontal axis: signal-to-noise ratio (dB). Vertical axis: classification accuracy for coda type. Lines: TDA features (16-dim), SPD features (136-dim), MFCCs (13-dim). TDA features maintain accuracy longest as SNR decreases, followed by SPD, followed by MFCCs. Below approximately 3 dB, all feature types degrade.]
 
 This hierarchy is precisely what field recordings demand. Amplitude and distance variation are ubiquitous and uncontrollable --- exact invariance to these is essential. Noise is always present but bounded --- approximate robustness proportional to the noise magnitude is the best one can hope for. Signal destruction (a whale that swims behind a rock, a bird that flies away mid-recording) changes the signal itself and cannot be compensated by any feature extraction method.
 

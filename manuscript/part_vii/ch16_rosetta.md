@@ -63,8 +63,6 @@ The whale station teaches us what geometry can extract from signal alone. The an
 
 The lesson, stated precisely: **signal geometry is domain-independent**. The three-geometry toolkit extracts signal structure from any acoustic communication system, regardless of whether we understand the semantics. It requires only the raw signal. It assumes nothing about what the signal means.
 
-[Figure 16.1: Station 1 on the Rosetta trajectory. The signal manifold $S$ is illuminated by three geometries. The content manifold $C$ remains dark. The arrow from $S$ to $C$ represents the decoding problem --- the mapping from signal structure to meaning --- which remains unsolved for cetacean communication.]
-
 ---
 
 ## 16.3 Station 2: Birdsong --- Validation on Known Meaning
@@ -86,8 +84,6 @@ This is not circular. The geometric features were not designed to classify bird 
 The birdsong station teaches us that **signal geometry, when validated against known meaning, is informative**. The geometric features are not arbitrary coordinates on the signal manifold. They are coordinates that align with the manifold's meaningful structure --- the axes along which different communicative acts actually differ. The SPD features capture the "vowel space" of birdsong; the trajectory features capture song complexity; the TDA features capture rhythmic and harmonic shape. Each geometry contributes information that the others miss, and the combination outperforms any single geometry.
 
 The transition from Station 1 to Station 2 is the transition from *structure extraction* to *structure validation*. The tools are the same. What changes is the availability of ground truth.
-
-[Figure 16.2: Station 2 on the Rosetta trajectory. The signal manifold $S$ is illuminated (as at Station 1). The arrow from $S$ to $C$ is now partially resolved: the geometric features on $S$ correlate with the known meaning (species identity) on $C$. The connection between signal geometry and semantic content is empirically confirmed.]
 
 ---
 
@@ -112,8 +108,6 @@ The cuneiform station also introduced the interpretation of translation as paral
 The cuneiform station teaches us that **hierarchical geometry requires domain knowledge**. Signal geometry (Station 1) requires only the raw signal. Hierarchical geometry (Station 3) requires knowledge of the hierarchy --- the taxonomic tree, the sign system's internal organisation, the ontological structure of the domain. This knowledge may come from the data (as in the whale coda taxonomy, where the tree is discovered by clustering) or from external sources (as in the cuneiform sign hierarchy, where the tree is given by scholarship). Either way, it goes beyond the signal itself.
 
 The gain from hierarchical geometry is substantial. The hyperbolic attention bias improved translation quality on the hardest cases --- rare signs, unusual constructions --- precisely where the model most needed structural guidance. The hierarchy constrains the space of admissible interpretations, reducing $\epsilon_{\text{path}}$ in the translation error decomposition of Proposition 10.3. Without the hierarchy, the model is free to wander through high-curvature regions of the content manifold. With the hierarchy, the model's path is guided by the structural geodesics that the taxonomy defines.
-
-[Figure 16.3: Station 3 on the Rosetta trajectory. The signal manifold $S$ is illuminated (as before). The hierarchical structure $H$ --- the taxonomic tree of the communication system --- is now explicitly represented as a Poincaré ball embedding, and it constrains the mapping from $S$ to $C$. The translation process is parallel transport, and the hierarchy reduces holonomy.]
 
 ---
 
@@ -140,8 +134,6 @@ The moral reasoning station closes the loop that the whale station opened. At St
 The moral reasoning station teaches us that **semantic geometry requires aligned corpora**. Signal geometry (Station 1) requires only the raw signal. Hierarchical geometry (Station 3) requires a taxonomy. Semantic geometry (Station 4) requires parallel data --- the same meaning expressed in two or more coordinate systems --- so that the invariant content can be extracted by factoring out the coordinate-dependent surface.
 
 This is the most demanding requirement. It is why we cannot yet decode whale communication: we lack parallel whale-human data. The BIP experiment succeeds because the Hebrew/Aramaic and English traditions discuss the same moral problems --- the obligation to help, the right to refuse, the duty of hospitality, the liberty of personal choice --- in different linguistic coordinates. The invariant moral structure survives the coordinate change because it is a property of the content manifold $C$, not of the particular chart used to describe it.
-
-[Figure 16.4: Station 4 on the Rosetta trajectory, complete. All three geometric layers are illuminated: signal geometry ($S$), hierarchical geometry ($H$), and semantic geometry ($C$). The gauge group $G = T \times R \times F$ acts on the surface forms; the invariant content --- the Hohfeldian $D_4$ structure --- is the fixed point of this action.]
 
 ---
 
@@ -171,7 +163,9 @@ $$\text{Signal geometry} \subset \text{Hierarchical geometry} \subset \text{Sema
 
 where $\subset$ denotes "is subsumed by" --- each higher level requires and extends the lower.
 
-[Figure 16.5: The hierarchy of communicative structure. Three concentric regions: signal geometry (outer, domain-independent), hierarchical geometry (middle, taxonomy-dependent), semantic geometry (inner, corpus-dependent). Each level subsumes the previous. The four stations of the Rosetta trajectory ascend through these levels.]
+![Figure 16.1](figures/ch16_fig1.svg)
+
+*Figure 16.1. The Rosetta trajectory as the chapter lays it out: four stations and the three levels of structure it posits. Each station is placed at the highest level the chapter says it adds. Whale codas and birdsong are studied through signal geometry alone, cuneiform adds the hierarchy of the sign taxonomy, and cross-lingual moral reasoning adds the semantic level. Each level needs more data than the one below it, and the bottom row gives the state of the meaning at each station; this is a diagram of the argument, not a measurement.*
 
 ### 16.6.3 The Subsumption Is Not Merely Logical
 
@@ -216,8 +210,6 @@ The transition from cuneiform to moral reasoning (Stations 3 to 4) is a transiti
 This transition tests the toolkit's **depth generality**. At Station 3, geometry aids translation. At Station 4, geometry *is* the content. The $V_4$ symmetry of the Hohfeldian square is not a tool applied to meaning; it is the posited symmetry of meaning itself. The Wilson loop experiments do not use geometry to improve a downstream task; they measure the geometry of the moral communication manifold directly.
 
 The transition also introduces discreteness. The cuneiform sign hierarchy is discrete (it is a finite tree), but the translation process is continuous (the attention weights vary smoothly). The Hohfeldian $V_4$ group is discrete in a stronger sense: the transitions between normative states are gated by specific linguistic triggers ("only if convenient" $\to$ 100% Liberty), and the gauge group itself is finite ($|V_4| = 4$). This discreteness is not an approximation to a continuous symmetry. It is the measured structure of moral communication, and it has consequences for the general theory (Chapter 17).
-
-[Figure 16.6: The three transitions along the Rosetta trajectory. Station 1 → 2: domain generality (whale → bird). Station 2 → 3: level generality (signal → hierarchy). Station 3 → 4: depth generality (hierarchy → semantics). Each transition tests a different dimension of the toolkit's scope.]
 
 ---
 
@@ -303,8 +295,6 @@ The Rosetta trajectory is not four case studies. It is a single argument with fo
 This conclusion does not solve the problem of whale communication. It does not decode cuneiform in one pass. It does not make BLEU scores obsolete overnight. What it does is provide a framework --- rigorous, empirically grounded, and geometrically precise --- for understanding what communication *is*, what scalar evaluation *destroys*, and what geometric analysis *recovers*.
 
 The framework is the contribution. The trajectory is the evidence.
-
-[Figure 16.7: The complete Rosetta trajectory. Four stations, three geometric levels, one ascending path. From whale clicks (signal geometry, opaque meaning) through birdsong (signal geometry, known meaning) and cuneiform (hierarchical geometry, partial meaning) to moral reasoning (semantic geometry, gauge-invariant meaning). The arrow points from structure to meaning. The distance remaining is the distance to decoding.]
 
 ---
 

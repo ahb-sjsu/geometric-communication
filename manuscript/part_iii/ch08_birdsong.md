@@ -51,8 +51,6 @@ This approach works. EfficientNet-B3 and its relatives have won or placed in mul
 
 **Limitation 3: CNNs are expensive on CPU.** An EfficientNet-B3 forward pass takes 50--100 ms per spectrogram on a Kaggle CPU; with test-time augmentation, this doubles. Geometric features involve only linear algebra and simple statistics --- an order of magnitude cheaper per window.
 
-[Figure 8.1: Schematic comparison of the CNN pipeline (left) and the geometric feature pipeline (right). The CNN path: waveform $\to$ mel spectrogram $\to$ EfficientNet $\to$ species probabilities. The geometric path: waveform $\to$ mel spectrogram $\to$ SPD covariance + trajectory $\to$ TDA features from waveform $\to$ LightGBM $\to$ species probabilities. The ensemble combines both paths with learned weights.]
-
 ### 8.1.3 The Ensemble Architecture
 
 The deployment system, as implemented in `inference_notebook.py`, combines three models in a weighted ensemble:
@@ -123,8 +121,6 @@ Why is this covariance matrix informative for species identification? The answer
 Consider a bird producing a pure tone at frequency $f_0$. If the tone has harmonics (as most biological sounds do), energy will appear simultaneously at $f_0, 2f_0, 3f_0, \ldots$ The frequency bands containing these harmonics will be strongly positively correlated --- when the bird sings louder, all harmonics increase together; when the bird pauses, all harmonics drop together. The covariance matrix records this pattern: $\Sigma_{ij} > 0$ whenever bands $i$ and $j$ contain harmonics of the same fundamental.
 
 Different species have different harmonic structures. A white-throated sparrow's descending whistle is nearly a pure tone: energy concentrates in one or two bands, and cross-frequency correlations are weak (only adjacent bands are correlated). A wood thrush's flute-like song has rich harmonics: energy appears in three or four bands simultaneously, producing strong off-diagonal correlations that extend several bands away from the diagonal. A brown-headed cowbird's liquid warble involves rapid frequency modulation that sweeps energy across many bands in complex, time-varying patterns: the covariance matrix has a dense, nearly full-rank structure.
-
-[Figure 8.2: Covariance matrices for three species. Left: white-throated sparrow (near-diagonal structure, weak cross-frequency correlations, nearly pure tone). Center: wood thrush (banded structure with off-diagonal peaks at harmonic intervals, rich overtone series). Right: brown-headed cowbird (dense, full-rank structure, complex frequency modulation). The species-specific covariance "fingerprint" is visible to the naked eye.]
 
 The analogy to human vowel space is precise. In human speech, vowels are distinguished not by their fundamental frequency (which varies with speaker) but by the relative positions of their formants --- the resonant frequencies of the vocal tract that create peaks of energy at specific frequency bands. Two vowels with the same $f_0$ but different formant ratios produce different cross-frequency correlation patterns. The covariance matrix of a vowel captures the formant structure; the matrix logarithm places this structure in a vector space where distances are meaningful.
 
@@ -235,9 +231,11 @@ This provides a geometric encoding of song complexity:
 
 **High deviation ($\delta \gg 0$):** The vocalization's spectral structure changes in a complex, non-monotonic way --- wandering through SPD space along a curved or zigzagging path. A wood thrush song (alternating between a low-frequency "bup" and a high-frequency flute-like phrase), a mockingbird's medley (switching rapidly between imitated phrases with different spectral structures), or any vocalization with multiple distinct spectral "states" produces high deviation.
 
-[Figure 8.3: Spectral trajectories on SPD(16), projected to two dimensions via PCA of the log-covariance matrices. Left: a trill (Chipping Sparrow) --- the trajectory oscillates tightly around a single point, with low path length and low deviation. Center: a descending whistle (White-throated Sparrow) --- the trajectory moves in a nearly straight line from high-frequency to low-frequency covariance, with moderate path length but low deviation. Right: a complex song (Wood Thrush) --- the trajectory wanders through a large region of SPD space, with high path length and high deviation.]
-
 The four trajectory features stored in the feature vector --- path length, geodesic distance, deviation, and number of trajectory steps --- provide a compact summary of the vocalization's temporal dynamics on the spectral manifold. The path length measures the total amount of spectral change; the geodesic distance measures the net spectral change; the deviation measures the geometric complexity of the change; and the number of steps is a normalization factor that accounts for windows of different effective duration (some five-second windows may contain silence at the edges, reducing the number of valid trajectory points).
+
+![Figure 8.1](figures/ch08_fig1.svg)
+
+*Figure 8.1. Schematic of the geodesic deviation of Section 8.3.2. Each path is a sequence of eight covariance matrices, drawn as points in the flat log-Euclidean space where the distance is the straight-line length. The deviation is the length of the path minus the direct distance between its two ends (dashed). It is close to zero for a path that goes straight and large for one that wanders; the coordinates are illustrative and the lengths printed are computed from them.*
 
 ### 8.3.3 Connection to Geodesic Deviation in the Parent Theory
 
@@ -286,8 +284,6 @@ The topology of the reconstructed attractor encodes structural properties of the
 **Frequency-modulated signals produce spiral attractors.** A descending whistle, in which the frequency changes monotonically over time, produces an attractor that spirals rather than closes. The $H_1$ persistence is shorter (the loops do not quite close), and the $H_0$ structure may show elongated, chain-like connectivity.
 
 **Complex songs produce high-dimensional attractor structure.** A song with multiple distinct phrase types --- alternating between different spectral states --- produces an attractor with multiple disjoint lobes connected by transitional regions. The $H_0$ diagram reflects the number of lobes (connected components that persist across a range of filtration scales); the $H_1$ diagram reflects the periodicity within each lobe.
-
-[Figure 8.4: Reconstructed attractors (time-delay embedding, $\tau = 10$, $d = 3$) for three birdsong types. Left: a pure whistle (White-throated Sparrow) --- clean loop, single strong $H_1$ feature. Center: a harmonic song (Wood Thrush) --- torus-like structure, multiple $H_1$ features. Right: a rapid trill (Chipping Sparrow) --- tightly wound spiral, dense $H_0$ cluster with moderate $H_1$.]
 
 ### 8.4.3 The 16 TDA Features
 
@@ -429,6 +425,10 @@ The budget breakdown for a typical submission:
 | **Total** | | **~63 min** | Within 90-min budget |
 
 The geometric features consume approximately 4% of the total inference budget while contributing 30% of the ensemble weight. This asymmetry --- cheap to compute, valuable in combination --- is precisely what makes them attractive in the constrained setting. If the total budget were unlimited, one might simply run larger neural networks or more aggressive test-time augmentation. But with a hard time limit, every second spent on inference must earn its keep, and the geometric features offer the best return on computational investment in the pipeline.
+
+![Figure 8.2](figures/ch08_fig2.svg)
+
+*Figure 8.2. Share of the estimated inference time against ensemble weight for the three models of the BirdCLEF system, from the budget table of Section 8.6.1 and the weights of Section 8.1.3. Time shares are minutes out of the table's total of about 63; the geometric bar is feature extraction, 2.5 minutes, and the LightGBM prediction adds a further half minute. As the chapter reports, the geometric features take about 4 percent of the time and carry 30 percent of the weight. The weights were tuned on a validation set; the chapter prints no accuracy for the separate models.*
 
 ### 8.6.2 What Geometry Buys Under Constraint
 

@@ -121,3 +121,30 @@ Bracketed figure placeholders were not edited. Four now disagree with the text: 
 3. Chapters 15 to 18 cite about 27 works that the bibliography does not list (for example Russell 1980, Thom 1975, Wilson 1974, Levina and Bickel 2004, Rao et al. 2009, Coecke et al. 2010). The three Measuring AGI papers cited in the Chapter 14 footnotes are not listed either. The bibliography cites Geometric Ethics at v1.23, before the withdrawal.
 4. No figure files exist in the repository. Every figure in the book, published chapters included, is a bracketed description.
 5. `OUTLINE.md` at the repository root still describes the D4 chapter plan. It is not part of the manuscript and was not edited.
+
+## Found while drawing the figures (2026-11-26), not changed
+
+These were noticed while the figures were drawn and are left for the author. No figure draws them.
+
+1. Coda types: Sections 4.1.1 and 6.3.3 say 21; Chapters 5, 7 and 16 say 28 (the corrections fixed the index only).
+2. Proposition 5.1 gives curvature -1/c and growth e^((d-1)r/sqrt(c)); Definition 5.1 and Chapter 4 give -c and e^((d-1)sqrt(c) r).
+3. Section 6.1.4 calls the coordinates at the first minimum of mutual information "maximally informative about each other"; a minimum means the opposite.
+4. The delay of 10 samples is 0.3 ms at 32 kHz in Section 4.3.2 and 0.5 ms at 22,050 Hz in Section 6.1.4.
+5. Section 9.3.1 says "at least four levels" and Section 9.3.2 draws a three-level tree (correction 20 fixed the same point in Chapter 5 only).
+6. Section 11.3.2 calls Chinese a language isolate; its own table says Sino-Tibetan. Section 11.2.3 has the adversary predict era, language, genre and formality; the loss of Section 11.2.4 has period only.
+7. The seven periods of Section 12.1.2 span 2,800 years; the corpus is "2,300 years" in Chapters 11 and 12 and "2,500 years" in the Chapter 16 opening box.
+8. Section 12.1.3 calls 27.3% "statistically indistinguishable" from 25% without a sample size.
+9. Section 12.2.4 lists the Hebrew and Arabic words for "forbidden" as NO-RIGHT patterns; a prohibition is a duty.
+10. Theorem 13.3 says "no intermediate values"; level 7 of Protocol 1 is at 55% Liberty.
+11. Section 14.3.2: 13.3 sigma is hard to square with nine items per model across four models, and the "Sycophancy Index" is undefined (it equals the wrong-flip rate over the correct-flip rate). Section 14.5.3's 33% is a mean of five rates on 3 to 14 verdicts each (pooled, 14 of 40 = 35%), and Proposition 14.1 states a bound from those samples.
+12. Section 15.1 counts the birdsong signal as 156 dimensions and the whale signal as at least 20; Section 18.5.1 counts them as 16 and 9.
+13. Section 18.5.2 cites Chapter 17, Proposition 17.2, which is not published and is unresolved item 13.
+14. Section 16.6.1 says Level 1 is validated at all four stations; the table of Section 16.9.1 marks covariance and topology "not tested" for cuneiform.
+15. The Chapter 16 opening box repeats the 44.5% F1 of unresolved item 2.
+16. A power law with exponent 1.44 over 28 types gives the top three about 67% of codas (Section 7.5.3); Section 7.1 says about 50%.
+17. The rows of the Section 8.6.1 budget sum to 63.5 minutes against the printed "about 63".
+18. Section 14.5 calls its combination Fisher's method; the printed value 5.0 is reproduced by Stouffer's method, which the figure caption names.
+
+## Figure placeholders and Section 13.3.2
+
+The bracketed figure descriptions of the illustrated chapters were taken out when the drawn figures went in, and are kept with a verdict on each in figures/PLACEHOLDERS.md; ten of them are stale or wrong (2.3, 4.3, 5.7, 6.2, 6.9, 9.3, 9.4, 10.3, 15.4, 16.5) besides the four D4 ones (12.4, 13.2, 16.4, 17.1). Chapter 17 is not published and keeps its own. The heading of Section 13.3.2, "The Dihedral Group D4", now ends "(Withdrawn)", as the definition under it is withdrawn pending restatement.

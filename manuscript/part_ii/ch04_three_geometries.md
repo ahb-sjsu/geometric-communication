@@ -157,6 +157,10 @@ def dist(self, x: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
 
 [Figure 4.1] *The Poincare disk (2D ball with $c = 1$). Left: a binary tree of depth 5 embedded in the disk, with the root at the center and leaves near the boundary. Geodesics (shortest paths) are arcs of circles perpendicular to the boundary. Right: concentric geodesic circles at equal distance increments from the origin. The circles bunch together in Euclidean coordinates near the boundary but are equally spaced in hyperbolic distance, illustrating the exponential volume growth.*
 
+![Figure 4.1](figures/ch04_fig1.svg)
+
+*Figure 4.1. The Poincare disk with c = 1. The grey circles lie at hyperbolic distances 1 to 5 from the centre, computed from Definition 4.5: equal steps of distance, and Euclidean radii 0.46, 0.76, 0.91, 0.96 and 0.99 that crowd toward the boundary. A binary tree of depth 4 is placed with level k at hyperbolic distance 0.8 k (an illustrative spacing); its edges are geodesics, arcs that meet the boundary at right angles. The number of nodes doubles at each level and the disk still has room for them near the edge.*
+
 ### 4.1.4 Classification via Hyperbolic Prototypes
 
 The fundamental operations above provide the vocabulary for hyperbolic computation. To use them for classification --- assigning a whale coda to a type, a birdsong to a species, a cuneiform sign to a reading --- we need a classification head that respects the hyperbolic geometry.
@@ -470,6 +474,10 @@ The choice $d = 3$ is conservative: by Takens' theorem, $d = 3$ suffices to embe
 The delay $\tau = 10$ corresponds to approximately 0.3 milliseconds at 32 kHz sample rate, or about 6 milliseconds at 1.6 kHz (the effective sample rate after subsampling a mel-spectrogram energy contour). The choice of $\tau$ affects the resolution: too small, and consecutive points in the embedding are nearly identical (the point cloud collapses onto the diagonal); too large, and the temporal structure is lost (the points appear random). A common heuristic is to set $\tau$ to the first zero-crossing of the autocorrelation function, which decorrelates consecutive coordinates in the embedding.
 
 [Figure 4.4] *Takens' time-delay embedding. Left: a sinusoidal signal $x(t) = \sin(2\pi t / T)$ and its 3D embedding $\mathbf{v}(t) = (x(t), x(t+\tau), x(t+2\tau))$ --- the point cloud traces an ellipse in $\mathbb{R}^3$, whose single loop corresponds to the periodic structure. Center: an exponentially decaying signal $x(t) = e^{-\alpha t}$ --- the point cloud traces a monotone curve with no loops. Right: a signal with two incommensurate frequencies $x(t) = \sin(2\pi t / T_1) + \sin(2\pi t / T_2)$ --- the point cloud traces a torus-like structure with two independent loops.*
+
+![Figure 4.2](figures/ch04_fig2.svg)
+
+*Figure 4.2. Time-delay embedding (Definition 4.12) of three signals, drawn in the plane of the first two delay coordinates, x(t) across and x(t + 10) up, with the delay of 10 samples the chapter uses. A pure tone traces one closed loop. A decaying exponential traces a segment with no loop. Two tones whose periods have an irrational ratio never close up and fill a band, the flat shadow of a torus.*
 
 ### 4.3.3 The Rips Complex and Persistent Homology
 

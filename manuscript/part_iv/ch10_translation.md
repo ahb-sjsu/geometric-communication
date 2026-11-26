@@ -27,8 +27,6 @@ This is not a metaphor. It is the precise content of Saussure's arbitrariness pr
 
 The partiality of the chart is essential. Not every meaning is expressible in every language---not because some languages are deficient, but because languages chart different regions of $C$ with different resolution. Finnish has dozens of words for types of snow and ice; Old Assyrian has dozens of words for types of textile and metal quality. Each language provides fine-grained coordinates in the regions of $C$ that its speakers most frequently navigate, and coarse or absent coordinates elsewhere. The domain $U_L$ is the expressible region; its complement $C \setminus U_L$ is the ineffable.
 
-[Figure 10.1: Languages as overlapping coordinate charts on the content manifold $C$. Three charts---Akkadian, English, Modern Turkish---cover partially overlapping regions. In the commercial-transaction region (centre), all three charts overlap and coordinate transformations (translations) are well-defined. In the region of Akkadian legal formulae (left), only the Akkadian chart has fine resolution. In the region of modern financial instruments (right), only the English chart applies. The overlap region is where translation is possible; its complement is where untranslatability begins.]
-
 ### 10.1.2 Translation as Coordinate Transformation
 
 If languages are coordinate charts, then translation is a coordinate transformation: the transition map between overlapping charts.
@@ -109,8 +107,6 @@ $$\text{Hol}_p(C, \nabla) = \{\Pi_\gamma : \gamma \text{ is a closed loop at } p
 
 Translation loss is not an artefact of bad translation. It is a geometric inevitability on curved manifolds. Even a perfect translator---one who executes parallel transport exactly---will accumulate holonomy when the path passes through high-curvature regions. The Italian proverb *traduttore, traditore* is not a moral judgment. It is a theorem.
 
-[Figure 10.2: Holonomy on a curved surface. Left: on a flat plane, parallel transport around a closed loop returns the vector to its original orientation (zero holonomy). Centre: on a sphere, parallel transport around a triangle with three right angles rotates the vector by 90 degrees. Right: schematic of the semantic manifold, where translation from Akkadian to English to Modern Turkish and back to Akkadian accumulates holonomy proportional to the enclosed curvature.]
-
 ### 10.2.3 The Ambrose-Singer Theorem: Holonomy Is Determined by Curvature
 
 The relationship between holonomy and curvature is not merely qualitative. The Ambrose-Singer theorem provides the precise link.
@@ -145,6 +141,10 @@ This corollary is the geometric explanation for why formulaic texts translate cl
 
 ---
 
+![Figure 10.1](figures/ch10_fig1.svg)
+
+*Figure 10.1. Holonomy in its standard example. A tangent vector is carried by parallel transport around a triangle on a sphere with three right angles: from the equator to the pole, down a second meridian a quarter turn away, and back along the equator, and it returns rotated by 90 degrees. The rotation equals the curvature times the enclosed area, here (1/R²) × (π/2) R² = π/2, the constant-curvature case of the relation of Section 10.2.3; on a flat surface the same trip returns the vector unchanged (Corollary 10.1). The chapter posits that a round trip of translations behaves in the same way.*
+
 ## 10.3 The Cuneiform Case Study
 
 ### 10.3.1 The Old Assyrian Corpus
@@ -172,8 +172,6 @@ The template is a coordinate system in miniature. Each slot ($X$, $Y$, $Z$) acce
 Translate to English: "5 minas of silver, property of Pushuken, in the care of Assur-idi." Translate to Modern Turkish: "Pushuken'in mulku olan 5 mina gumus, Assur-idi'nin elinde." Translate back to Akkadian: *5 ma-na kaspam sa Pushuken ina qati Assur-idi*.
 
 The loop closes exactly. The holonomy is zero. Every intermediate translation preserves the full meaning vector because the commercial region of $C$ is flat: quantity, ownership, and custodianship are orthogonal semantic dimensions with no cross-curvature, and every language that participates in commerce has coordinate capacity for all three.
-
-[Figure 10.3: The curvature landscape of the Old Assyrian corpus. Horizontal axis: genre (commercial records, contracts, legal proceedings, private letters). Vertical axis: estimated sectional curvature $K$, measured by translation loop residual (see Section 10.3.4). Commercial records cluster near $K = 0$. Private letters and legal proceedings occupy high-curvature regions. The gradient is monotonic: as pragmatic complexity increases, so does curvature.]
 
 ### 10.3.3 High Curvature: The Personal Letter
 
@@ -211,8 +209,6 @@ In the Old Assyrian corpus, we computed $\rho$ for all 1,561 aligned pairs using
 | Private letters | 0.31 | 0.14 | 364 |
 
 The gradient is monotonic and statistically significant ($F(3, 1557) = 142.7$, $p < 10^{-80}$). Commercial records, with their formulaic structure and flat semantics, have residuals near zero. Private letters, with their entangled morphology and pragmatic complexity, have residuals three to four times larger. This is the curvature of the semantic manifold as seen through its empirical proxy, the loop residual.
-
-[Figure 10.4: Translation loop residual $\rho$ versus genre for the Old Assyrian corpus. Box plots showing median, interquartile range, and outliers. The monotonic increase from commercial records to private letters corresponds to increasing curvature of the content manifold $C$.]
 
 ---
 
@@ -262,8 +258,6 @@ We re-stratified the ablation results by genre, using the translation loop resid
 | Private letters | 0.35 | 0.27 | 23% |
 
 The hyperbolic attention bias reduces holonomy across all genres, but the reduction is proportionally largest in the high-curvature genres (legal proceedings and private letters). In the low-curvature commercial genre, there is little holonomy to reduce, and the bias contributes minimally. This is exactly what the geometric theory predicts: a better path matters most where the curvature is highest.
-
-[Figure 10.5: Holonomy reduction by genre. Paired bar chart showing translation loop residual $\rho$ with and without hyperbolic attention bias, stratified by genre. The reduction is proportionally largest for high-curvature genres (legal, letters). Error bars show $\pm 1$ standard error.]
 
 ---
 
@@ -323,8 +317,6 @@ $$\epsilon(\mathcal{T}, s) = \epsilon_{\text{hol}} + \epsilon_{\text{path}} + \e
 
 The decomposition clarifies what each paradigm optimises. Rule-based systems minimise $\epsilon_{\text{path}}$ by design but suffer from large $\epsilon_{\text{chart}}$ (limited coverage). Statistical systems minimise $\epsilon_{\text{chart}}$ through data but may have large $\epsilon_{\text{path}}$ (suboptimal paths). Neural systems minimise all three simultaneously through end-to-end training but are limited by data quantity and quality. The hyperbolic attention bias of Chapter 9 targets $\epsilon_{\text{path}}$ specifically: it reduces path error by providing geometric constraints that guide the neural model's paths closer to the structural geodesics.
 
-[Figure 10.6: The three paradigms as path-selection algorithms on the semantic manifold. Left: Rule-based MT follows a prescribed geodesic (solid line) where rules exist, and fails where they do not (dashed region). Centre: Statistical MT follows a maximum-likelihood path (dotted line) that detours through high-curvature terrain. Right: Neural MT learns a path (solid curved line) that approximates the geodesic, with the hyperbolic attention bias (arrows) pulling it closer to the structural geodesic.]
-
 ---
 
 ## 10.6 Connection to Gauge Invariance
@@ -366,8 +358,6 @@ $$\|\text{Hol}(\gamma) - \text{Id}\| \geq K_{\min} \cdot A$$
 *Proof.* Immediate from Proposition 10.1 and the lower bound on curvature. The holonomy of a small loop enclosing area $\delta A$ is $\text{Id} + R(X,Y)\,\delta A + O(\delta A^2)$, and $\|R(X,Y)\| \geq K_{\min}$ for any unit 2-plane by the curvature bound. For a loop enclosing area $A$ decomposed into infinitesimal loops, the bound follows by composition, with higher-order corrections from the non-commutativity of the holonomy group. $\square$
 
 The proposition makes untranslatability quantitative. It is not a binary property (translatable or not) but a continuous one, measured by the curvature at the concept's location on $C$. Schadenfreude is more translatable than saudade if the curvature at its location is lower. This matches linguistic intuition: Schadenfreude has been borrowed into English (reducing the curvature by expanding the English chart to include it), while saudade resists borrowing because its semantic entanglement is deeper.
-
-[Figure 10.7: Untranslatability as curvature. Schematic of the content manifold $C$ with curvature visualised by surface deformation. Flat regions (commercial terms, mathematical concepts) permit lossless translation. Gently curved regions (Schadenfreude, common idioms) permit approximate translation with bounded loss. Highly curved regions (saudade, giri, culturally specific rituals) resist translation: the holonomy is large regardless of path choice.]
 
 ### 10.6.3 The BIP Experiments Revisited
 

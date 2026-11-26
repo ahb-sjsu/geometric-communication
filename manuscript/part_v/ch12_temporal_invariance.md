@@ -35,6 +35,10 @@ The adversarial architecture of Chapter 11 already includes a temporal adversary
 
 The adversarial temporal head in the main architecture uses four coarser temporal periods (ancient, classical, medieval, modern) to maintain statistical power. The temporal probe analysis uses the finer seven-bin division for diagnostic purposes.
 
+![Figure 12.1](figures/ch12_fig1.svg)
+
+*Figure 12.1. The design of the temporal protocol of Section 12.1.2. The Sefaria corpus is cut into seven periods; in the forward test the model is trained on the five periods up to 1000 CE and tested on the two later ones; the backward test swaps the roles. A fresh probe then tries to name the period from the bond space, and with seven periods its chance level is 14.3 percent. The time axis is in calendar years, so the widths show how unequal the periods are.*
+
 ### 12.1.3 Results: Temporal Invariance Confirmed
 
 The temporal adversary achieves 27.3% accuracy on four-period classification (chance = 25%). This is within 2.3 percentage points of chance---statistically indistinguishable at conventional significance levels. The bond space contains no recoverable temporal information.
@@ -143,6 +147,10 @@ Passages matching no pattern receive the label NONE and are excluded from the cl
 [Figure 12.2] *The NLP extraction pipeline. Raw corpus text enters at left, passes through corpus-specific loaders, uniform preprocessing, and bond extraction (pattern matching + multi-model validation). The output is a set of passages with Hohfeldian labels, ready for input to the BIP architecture. The pipeline handles seven languages, four scripts, and 2,300 years of textual tradition.*
 
 ---
+
+![Figure 12.2](figures/ch12_fig2.svg)
+
+*Figure 12.2. The extraction pipeline of Section 12.2 as a flow. Corpus text passes through a loader for its corpus and a common preprocessing step; Stage 1 assigns a Hohfeldian label by matching deontic vocabulary; a passage that matches no pattern is labelled NONE and left out. Stage 2 checks a subset with four language models and keeps a label when at least three agree with mean confidence above 0.7. The labels therefore rest first on keyword patterns, of which two English examples are shown.*
 
 ## 12.3 Linguistic Analysis: Surface Coordinates on the Moral Manifold
 

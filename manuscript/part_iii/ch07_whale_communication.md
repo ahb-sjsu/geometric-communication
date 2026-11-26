@@ -19,8 +19,6 @@ The Dominica Sperm Whale Project (DSWP) has been recording sperm whale (*Physete
 
 The coda types decompose into four rhythm classes: regular (xR), deceleration (xD), irregular (xi), and compound (x+y). The three most frequent types --- 1+1+3, 5R1, and 5R3 --- account for approximately 50% of all codas. The distribution is heavily skewed: a handful of types dominate, while many types appear only rarely.
 
-[Figure 7.1: Dataset overview. (Left) Distribution of the 20 most frequent coda types in the DSWP dataset. The compound type 1+1+3 and regular types 5R1, 5R3 dominate. (Right) Click count histogram; the majority of codas contain 4--6 clicks.]
-
 The landmark contribution of Sharma et al. (2024) was to show that this coda system is not a simple repertoire of fixed call types. It is a combinatorial phonetic system --- decomposable into four independently controlled features: rhythm (18 types), tempo (5 types), rubato (3 types), and ornamentation (2 types), yielding a combinatorial space of up to 540 configurations. Subsequent work by Begus et al. (2024, 2025) identified vowel-like spectral patterns within individual clicks, adding a fifth phonetic dimension. The complexity is not metaphorical. It is structural, measurable, and --- as this chapter demonstrates --- geometric.
 
 The question this chapter addresses is not *what do the codas mean?* We do not know the answer to that question, and we will not pretend to. The question is: *what geometric structure does the coda system possess, and what does that structure tell us about the nature of cetacean communication?*
@@ -47,8 +45,6 @@ The theoretical prediction is clear. The practical question is whether it matter
 
 We constructed a taxonomic distance matrix $D \in \mathbb{R}^{28 \times 28}$ by computing the number of levels at which two coda types first differ, yielding integer distances in $\{0, 1, 2, 3, 4\}$. The 28 types were then embedded into a Poincare ball of curvature $c = 1.0$ and dimension $d = 16$ via gradient descent minimising the mean squared error between embedded hyperbolic distances and normalised taxonomic distances. Three Euclidean baselines were computed for comparison: PCA on the distance matrix, classical multidimensional scaling (MDS), and Isomap.
 
-[Figure 7.2: Poincare ball versus Euclidean embeddings of the coda type hierarchy. (Left) Poincare ball embedding: the unit disk boundary represents the ideal boundary of hyperbolic space. Coda types are coloured by rhythm class. Hierarchically related types (e.g., 5R1, 5R2, 5R3) cluster at similar radii while distinct rhythm classes separate angularly, providing an interpretable two-dimensional visualisation. (Right) Euclidean PCA embedding of the same distance matrix.]
-
 The results were honest and instructive. In terms of pure distance preservation (Spearman $\rho$ between embedded and true taxonomic distances), classical MDS achieved the highest rank correlation ($\rho = 0.79$), with PCA comparable ($\rho = 0.79$) and Isomap close behind ($\rho = 0.77$). The Poincare embedding achieved lower $\rho$. At this scale --- 28 types, 3 distance levels, ample embedding dimensions --- Euclidean methods have sufficient capacity to preserve the hierarchy. The theoretical $O(\log n)$ distortion advantage of hyperbolic space (Sarkar, 2011) is expected to manifest more clearly for larger, deeper trees, such as the full 540-configuration combinatorial space that the rhythm $\times$ tempo $\times$ rubato $\times$ ornamentation decomposition implies.
 
 But distortion is not the only criterion. The Poincare ball offers two advantages that matter for communication analysis.
@@ -68,8 +64,6 @@ The second advantage is that the hyperbolic embedding provides a natural initial
 The result: 74.3% classification accuracy, competitive with Euclidean baselines (logistic regression, $k$-nearest neighbours with $k = 5$, random forest with 100 trees), all trained on the same standardised features with an 80/20 stratified random split.[^1]
 
 [^1]: We note an important caveat. This split does not account for within-individual or within-session correlations; codas from the same whale may appear in both training and test sets. Grouped cross-validation (leave-one-whale-out or leave-one-session-out) would provide a more conservative and ecologically meaningful estimate. The accuracy reported here should be interpreted as a method comparison on the same split, not as an estimate of generalisation to novel individuals.
-
-[Figure 7.3: Classification results. (Top left) HyperbolicMLR training loss. (Top right) Classification accuracy comparison across methods. (Bottom) Confusion matrices for the HyperbolicMLR classifier (left) and the best Euclidean baseline (right). All classifiers use the same 11-dimensional feature representation with an 80/20 stratified random split.]
 
 The headline is not that hyperbolic beats Euclidean. At this scale, it does not --- and we do not claim otherwise. The headline is that the hyperbolic classifier, initialised from a geometrically meaningful embedding of the taxonomic hierarchy, achieves competitive accuracy while producing class prototypes that have interpretable positions in the Poincare ball. Each prototype's radial position encodes its hierarchical depth; each prototype's angular position encodes its relationship to other types. The classifier is not a black box. It is a geometric map of coda space.
 
@@ -102,10 +96,6 @@ The persistence diagrams revealed systematic topological differences across rhyt
 **Irregular codas (xi)** produced higher $H_1$ persistence --- persistent loops in the ICI point cloud. This indicates that the timing variability of irregular codas is not random noise spread uniformly around a centre. It is structured variability that creates topological features: closed paths in the ICI space through which individual productions cycle. The loop structure suggests that the timing variation has a preferred pattern --- perhaps alternating between two or more timing configurations --- rather than being isotropic.
 
 **Compound codas (x+y)** showed elevated $H_0$ persistence --- multiple distinct connected components that persist over a wide range of scales. This is the topological hallmark of multi-modal structure. A compound coda like 1+1+3 consists of two sub-groups of clicks with a longer pause between them; the ICI pattern therefore has two natural scales (within-group and between-group), producing a point cloud with multiple clusters. Persistent homology detects this multi-component structure directly.
-
-[Figure 7.4: Persistence diagrams by coda type. Each panel shows the $H_0$ (connected components, blue) and $H_1$ (loops, orange) persistence diagrams for one coda type. Points far from the diagonal indicate long-lived topological features. Rhythm classes exhibit systematically different topological complexity.]
-
-[Figure 7.5: Topological feature summary. (Left) $H_1$ loop count versus maximum $H_1$ lifetime for each coda type, coloured by rhythm class. (Right) Total $H_1$ persistence ranked by coda type. Irregular and compound types show higher topological complexity.]
 
 ### 7.3.3 Invariance: Why Topology Matters for Field Recordings
 
@@ -169,7 +159,9 @@ $$\text{DRI} = 0.5 \cdot \bar{\omega} + 0.3 \cdot \omega_{75} + 0.2 \cdot \omega
 
 The weights (0.5/0.3/0.2) follow the Bond Index convention, emphasising tail behaviour --- the worst-case perturbations are more informative than the average case, because they expose structural vulnerabilities.
 
-[Figure 7.6: Decoder Robustness Index results. (Left) Per-transform sensitivity profile: mean $\omega$ at full intensity. Red bars indicate high vulnerability. (Centre) Adversarial flip thresholds: the minimal intensity at which each transform causes a classification change. Lower thresholds indicate greater vulnerability. (Right) DRI gauge showing the overall decoder robustness score.]
+![Figure 7.1](figures/ch07_fig1.svg)
+
+*Figure 7.1. The graduated distance of Section 7.4.2 between the coda type a decoder gives before and after a perturbation, computed from the chapter's formula and weights (rhythm 1.0, tempo 0.7, rubato 0.4, ornamentation 0.2). The bars are the cases in which the two types differ in one feature only, and in all four. Any flip costs at least 0.5, and a flip of rhythm costs more than a flip of ornamentation. The Decoder Robustness Index is a weighted summary of these distances over all perturbations.*
 
 ### 7.4.3 The Transform Sensitivity Spectrum
 
@@ -225,8 +217,6 @@ The result: Spearman $r = -0.269$, $n = 8{,}719$, $p < 10^{-144}$.
 
 The effect is real. Longer codas compress their constituents. With a sample size of 8,719, even weak correlations achieve extreme statistical significance, and the $p$-value alone is uninformative. The relevant quantity is the effect size: $|r| = 0.269$ represents a modest but robust negative association. Clicks in longer codas are, on average, more tightly spaced than clicks in shorter codas.
 
-[Figure 7.7: Menzerath's law in sperm whale codas. Mean ICI decreases with click count ($r = -0.269$, $p < 10^{-144}$). Each point represents one coda; the trend line shows the negative association between construct length and constituent duration.]
-
 What does Menzerath's law mean geometrically? On the communication manifold $M = S \times P \times C$ (Chapter 3), Menzerath's law is a constraint on the signal manifold $S$: it says that the trajectory of a coda through signal space (the sequence of ICIs) is not arbitrary. Longer trajectories (more clicks) are constrained to have shorter steps (shorter ICIs). This is a curvature constraint --- it limits the set of paths that communication can trace through signal space, concentrating longer utterances in a region of $S$ characterised by compressed timing. In the language of differential geometry, Menzerath's law constrains the geodesics of the signal manifold to satisfy a length-step inverse relationship.
 
 We note that a mixed-effects model with random intercepts for whale and recording session would provide a more rigorous test by accounting for pseudo-replication (multiple codas from the same whale in the same session are not independent). We report the simple correlation here as a first-order confirmation, consistent with the cross-species meta-analysis of Youngblood et al. (2025).
@@ -235,11 +225,13 @@ We note that a mixed-effects model with random intercepts for whale and recordin
 
 The rank-frequency distribution of coda types follows a Zipf-like power law with fitted exponent $\alpha = 1.44$ (nonlinear least-squares on ranks). This is steeper than the $\alpha \approx 1.0$ typical of human language, indicating a more skewed distribution dominated by a few high-frequency types (1+1+3, 5R1, 5R3).
 
-[Figure 7.8: Rank-frequency distribution of coda types, with fitted power law ($\alpha = 1.44$). The distribution is Zipf-like but steeper than typical human language ($\alpha \approx 1.0$), indicating greater dominance by a few high-frequency types.]
-
 We emphasise that this fit is descriptive. With only 28 distinct types, formal power-law testing (MLE with Kolmogorov--Smirnov goodness-of-fit and comparison against log-normal alternatives) lacks statistical power, and we do not claim the distribution is a true power law. The Zipf-like skew is consistent with frequency-dependent selection pressures reported across cetacean species.
 
 Zipf's law of abbreviation --- the prediction that more frequent types should be shorter in duration --- was not statistically significant at the type level ($r = -0.129$, $p = 0.50$). This likely reflects the small number of distinct types (28) rather than an absence of the effect; with 28 data points, the test has low power to detect a moderate correlation.
+
+![Figure 7.2](figures/ch07_fig2.svg)
+
+*Figure 7.2. The power law the chapter fits to the rank-frequency distribution of the 28 coda types, exponent 1.44, beside the exponent near 1.0 that is typical of human language. Rank is across and frequency relative to the most frequent type is up, both on logarithmic scales, so each law is a straight line. Only the fitted laws are drawn; the chapter does not print the counts. It calls the fit descriptive and does not claim a true power law.*
 
 ### 7.5.4 Sequential Structure: Markov Chains on Coda Space
 
@@ -256,8 +248,6 @@ The geometric interpretation is immediate. A Markov chain on coda types is a ran
 The most suggestive finding among the linguistic universals concerns turn-taking. If whales are engaged in communicative exchange --- as opposed to broadcasting independently --- we would expect the latency between one whale's coda and another whale's response to differ from the latency between successive codas from the same whale.
 
 It does. Cross-whale response latency ($\bar{x} = 2.25$ s, $n = 2{,}225$) was approximately half that of same-whale continuation latency ($\bar{x} = 4.68$ s, $n = 1{,}379$). The distributional difference was large: Kolmogorov--Smirnov $D = 0.560$, $p < 10^{-247}$. The $p$-value, as with all tests on this dataset, reflects the large sample size; the effect size ($D = 0.56$, $2.08\times$ latency ratio) is the informative quantity.
-
-[Figure 7.9: Turn-taking structure. (Left) Distribution of inter-coda latencies for same-whale continuations (blue) and cross-whale responses (orange). Cross-whale responses are approximately twice as fast. (Right) Latency ratio by whale pair, showing consistency of the turn-taking pattern.]
 
 The finding is striking. When a different whale responds, the response comes faster --- roughly half the time that the same whale takes to produce its next coda. This pattern is consistent with active turn-taking, in which whales are monitoring each other's vocalisations and initiating responses promptly, rather than vocalising independently at their own rate. The faster cross-whale latency suggests that a response is, in some sense, *prepared* before the preceding coda ends --- that the responding whale is processing the incoming signal and readying its reply while the first whale is still vocalising.
 
@@ -284,8 +274,6 @@ The DSWP dataset includes individual whale identifiers, enabling a direct test. 
 The result: all six pairwise Kolmogorov--Smirnov tests yielded $p < 0.001$, and all remained significant after Bonferroni correction for 6 comparisons at $\alpha = 0.05$.
 
 Individual whales produce the same coda type with statistically distinguishable inter-click interval patterns. The same "word" (1+1+3), produced by different whales, has measurably different timing --- not different enough to change the type classification (the rhythm pattern is the same), but different enough that the individual is identifiable from the timing alone.
-
-[Figure 7.10: Individual accents in the 1+1+3 coda type. ICI distributions for four identified whales, showing statistically distinguishable timing patterns within the same coda type. All pairwise KS tests: $p < 0.001$.]
 
 ### 7.6.2 Identity in the Metric, Content in the Topology
 

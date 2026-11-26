@@ -41,8 +41,6 @@ The BLEU score tells us that Translation B has low $n$-gram overlap with the ref
 
 These three failure modes have identical BLEU scores. They have completely different implications for the translation system, completely different remedies, and completely different relationships to the source text's meaning. The scalar has compressed a three-dimensional failure taxonomy into a single number, and the compression is irreversible. No amount of staring at the BLEU score will tell you which failure occurred.
 
-[Figure 1.1: The three failure modes of Translation B, visualized as points in a semantic space. Lexical substitution (1) lies close to the source on two of three axes but displaced on the third. Structural collapse (2) lies in the correct region of topic space but at the wrong structural coordinates. Hallucination (3) is displaced on all axes. All three project to the same point on the scalar BLEU axis.]
-
 This is not a contrived example. It is the normal operating condition of every scalar evaluation metric used in communication science. The vodka problem is not about translation. It is about the geometry of meaning and the impossibility of capturing that geometry in a single number.
 
 ## 1.2 The Scalar Menagerie
@@ -70,8 +68,6 @@ What does BLEU destroy?
 **Hierarchical structure.** "The dog that bit the cat that ate the rat" has a nested clause structure that determines its meaning. Scrambling the clause order produces nonsense. BLEU's $n$-gram window sees only local fragments; the global syntactic tree --- the hierarchical structure that determines compositional meaning --- is visible only to the extent that it is reflected in local $n$-gram statistics. For deeply embedded structures, this reflection is faint.
 
 Each of these losses corresponds to the destruction of a specific geometric structure. Synonymy is metric structure: nearby points on the semantic manifold are projected to distant points on the lexical surface. Word order flexibility is a symmetry: the set of valid surface realizations of a meaning forms the orbit of a syntactic transformation group, and BLEU breaks this symmetry by privileging one element of the orbit (the reference). Pragmatic equivalence is a fiber: the meaning "request to close the door" is the base point, and the various ways to express it (imperative, interrogative, indirect) are the fiber above that point. BLEU evaluates in the total space rather than the base space. Hierarchical structure is topology: the tree structure of the sentence is a topological object that BLEU's sliding window cannot detect.
-
-[Figure 1.2: The four geometric structures destroyed by BLEU. (a) Metric: synonymous expressions are nearby on the semantic manifold but distant on the lexical surface. (b) Symmetry: word-order variants form an orbit under syntactic transformation; BLEU privileges one element. (c) Fiber: pragmatic equivalents are different points in the total space that project to the same base point. (d) Topology: hierarchical structure is a global property invisible to local $n$-gram windows.]
 
 ### 1.2.2 Perplexity: The Probabilistic Myopia
 
@@ -163,8 +159,6 @@ The previous section catalogued six scalar metrics and their specific losses. A 
 
 **Topological structure.** The global shape of meaning space --- the hierarchical nesting of categories, the connected components of discourse, the loops in argumentative structure. Classification accuracy erases the topology of the class space. Perplexity, by averaging over positions, erases the topology of the discourse trajectory. Readability indices, by projecting onto two surface statistics, erase the topological structure of coherence. Topology is inherently global --- it concerns properties that are invariant under continuous deformation --- and scalar metrics, by contracting to a point, destroy all global structure.
 
-[Figure 1.3: The four geometric structures destroyed by scalar evaluation. (a) Metric: continuous distance replaced by discrete or crude approximation. (b) Symmetry: meaning-preserving transformations broken by privileging one surface form. (c) Fiber: content-expression separation collapsed by evaluating in the total space. (d) Topology: global structure erased by local or pointwise evaluation.]
-
 These four structures are not independent luxuries. They are the mathematical substance of what communication *is*. Metric structure is what makes some utterances more similar than others. Symmetry structure is what makes translation, paraphrase, and reformulation possible. Fiber structure is what separates meaning from expression --- the fundamental duality that Saussure identified in 1916 and that every subsequent theory of language has grappled with. Topological structure is what gives discourse its coherence, argument its validity, and narrative its arc. A measurement apparatus that destroys all four is not measuring communication. It is measuring something else --- something correlated with communication, perhaps, but structurally impoverished in exactly the dimensions that matter.
 
 ## 1.4 The Scalar Irrecoverability Theorem
@@ -196,7 +190,9 @@ This is likely an undercount. The BIP experiments described in Chapters 11--12 i
 
 The theorem does not say that scalar metrics are useless. It says they are lossy, and the loss is irrecoverable. A BLEU score of 0.35 is not meaningless --- it constrains the set of possible translations to those that share roughly 35% of their $n$-grams with the reference. But it constrains the set along *one* axis while leaving all other axes unconstrained. The set of translations consistent with BLEU = 0.35 is not a point; it is a $(d-1)$-dimensional submanifold of the quality space. Everything in that submanifold looks identical to BLEU. The information that distinguishes points within the submanifold --- the information that tells you whether the translation is adequate but disfluent, fluent but pragmatically inappropriate, or uniformly mediocre --- is gone.
 
-[Figure 1.4: Scalar irrecoverability visualized. The quality space is $d$-dimensional. A scalar metric $\pi$ projects onto a line. The preimage of a scalar value $\pi = c$ is a $(d-1)$-dimensional hyperplane (shown as a plane for $d = 3$). All points on this hyperplane are indistinguishable to $\pi$. The geometric structure within the hyperplane --- the distances, symmetries, and topological features that distinguish qualitatively different translations with the same BLEU score --- is irrecoverable from the scalar.]
+![Figure 1.1](figures/ch01_fig1.svg)
+
+*Figure 1.1. Schematic of Theorem 1.1 for two of the quality dimensions the chapter lists, semantic adequacy (horizontal) and fluency (vertical), and an illustrative scalar, the mean of the two. Each slanted line is a level set: every point on it receives the same score. Translations A, B and M lie on the line of score 0.5 and differ in which dimension is strong. With d dimensions the level set has dimension d - 1.*
 
 ## 1.5 What This Costs
 

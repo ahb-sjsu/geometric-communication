@@ -81,6 +81,10 @@ Jakobson did not use group-theoretic language. He spoke of "binary oppositions" 
 
 [Figure 2.3] *Jakobson's distinctive features as a discrete symmetry group. The phonological space for three binary features (voiced/voiceless, nasal/oral, stop/fricative) is the 3-cube $\{-1, +1\}^3$. English phonemes occupy specific vertices. Minimal pairs (e.g., /b/ vs. /p/) are connected by single-feature reflections — elements of the symmetry group $(\mathbb{Z}/2\mathbb{Z})^3$. The phonological structure is the pattern of occupied vertices and meaning-distinguishing reflections, not the phonetic substance of any individual sound.*
 
+![Figure 2.1](figures/ch02_fig1.svg)
+
+*Figure 2.1. Three of Jakobson's binary features as the cube of sign patterns. Each vertex is one bundle of feature values and each edge flips one feature. The chapter's example is marked: /b/ is voiced, oral and compact, /p/ differs from it in voicing alone, and that single edge is the minimal pair bat and pat. The fourth feature of the example, grave, is held at plus, and the other vertices are left unlabelled because the chapter assigns no phonemes to them.*
+
 ### 2.2.2 Chomsky's Deep Structure: A Quotient Manifold
 
 Noam Chomsky's revolution, beginning with *Syntactic Structures* (1957) and reaching its most articulated form in *Aspects of the Theory of Syntax* (1965), shifted the focus from the sound system to the generative machinery of grammar. Chomsky's central claim was that the surface forms of sentences — the strings of words we actually produce and hear — are derived from underlying *deep structures* by a series of syntactic transformations. The passive sentence "The decree was issued by the king" and the active sentence "The king issued the decree" have different surface forms but the same deep structure: a single underlying representation from which both can be derived.
@@ -96,6 +100,10 @@ Chomsky's subsequent theoretical evolution — from the Standard Theory through 
 Chomsky, like Saussure and Jakobson before him, did not frame his work in geometric terms. He used the language of formal grammars, rewrite rules, and tree structures. But the geometric skeleton is visible: surface forms are coordinates, transformations are group elements, deep structure is the quotient, and meaning is what the quotient preserves.
 
 [Figure 2.4] *Chomsky's deep structure as a quotient manifold. The space of surface forms $\mathcal{S}$ is fibered by the transformation group $T$. Each fiber (vertical) contains all surface realizations of a single deep structure: "The king issued a decree," "A decree was issued by the king," "It was the king who issued a decree," etc. The quotient space $\mathcal{S}/T$ (horizontal) is the space of deep structures — the space of meanings. The projection $\pi$ maps surface forms to their underlying content.*
+
+![Figure 2.2](figures/ch02_fig2.svg)
+
+*Figure 2.2. Schematic of the quotient the section describes. Each vertical line is a fibre: the surface forms that syntactic transformations turn into one another. The projection sends every form in a fibre to one point of the quotient S/T, its deep structure. The active and passive sentences are the chapter's example of two forms in one fibre.*
 
 ### 2.2.3 Montague Grammar: Coordinate-Free Semantics
 

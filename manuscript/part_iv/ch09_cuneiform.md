@@ -81,9 +81,11 @@ For the purposes of embedding, we model the cuneiform sign taxonomy as a rooted 
 
 This is a simplification. The real structure is a directed acyclic graph, not a tree: some readings are shared across sign forms (through scribal convention or historical evolution), and some words can be written with different sign sequences. But the tree approximation captures the primary axis of variation---which sign was used, and how was it read---and the distortion introduced by forcing the DAG into a tree structure is bounded and measurable.
 
-[Figure 9.1: The cuneiform sign taxonomy as a hierarchy. Top: the sign form 𒀭 branches into readings AN, DINGIR, Anu, etc. Each reading branches into the words and phrases it participates in. Bottom: the same structure for the sign 𒌓 (UD/UTU/BABBAR), illustrating high branching factor at the reading level. The hierarchy is wide and shallow---precisely the regime described by Proposition 5.3 in Chapter 5.]
-
 The branching factor varies dramatically across signs. Common signs like 𒀭 and 𒌓 have many readings. Rare signs---used perhaps for a single word in a single text---have exactly one reading. This asymmetry is important: the geometric prior should help most for the highly branched signs, where the model must learn to disambiguate among many possibilities, and should be neutral for the singly-valued signs, where no disambiguation is needed.
+
+![Figure 9.1](figures/ch09_fig1.svg)
+
+*Figure 9.1. The sign taxonomy of Section 9.3 as a tree, for the two signs the chapter uses as examples. One sign form has several readings (the sign AN is read AN, DINGIR or Anu; the sign UD has at least five readings) and each reading enters many words. The brackets show the taxonomic distance of Section 9.3.3 that the embedding starts from: 1 between two readings of one sign, 2 between readings of different signs.*
 
 ### 9.3.3 From Taxonomy to Embedding
 
@@ -119,6 +121,10 @@ $$\text{Attention}_{\text{geo}}(Q, K, V) = \text{softmax}\!\left(\frac{QK^\top}{
 
 The geometric bias is injected into the first four encoder layers via forward hooks---pre-forward callbacks that modify the attention logits before the softmax. This design has several properties worth examining.
 
+![Figure 9.2](figures/ch09_fig2.svg)
+
+*Figure 9.2. Schematic of the hyperbolic attention bias of Section 9.4.1. The attention logits are the sum of the usual content term, T5's position bias and a third term, minus α times the Poincare distance between the embeddings of the two byte tokens. The sum goes through the softmax, so the bias multiplies the unnormalised weight of a pair at distance d by exp(−α d). The curve is that factor at the starting value α = 0.1: tokens close in the sign taxonomy keep their weight and distant ones are turned down.*
+
 ### 9.4.2 Why Additive Bias?
 
 The choice to inject the geometric prior as an additive bias, rather than as a multiplicative gate, a separate attention head, or a modified key-query product, is not arbitrary. It reflects a specific claim about the relationship between geometric structure and learned attention.
@@ -144,8 +150,6 @@ Let us be precise about the information content of the geometric bias. For a pai
 - **Depth asymmetry.** The Poincare ball assigns different radii to different levels of the hierarchy. Abstract signs (used in many readings) embed near the origin; specific signs (used in one reading) embed near the boundary. The distance between a general sign and a specific one reflects this depth difference. Two bytes associated with the same level of the hierarchy but different branches are hyperbolically far apart even if they are angularly close---exactly the property identified in Chapter 5, Section 5.2.2.
 
 What the bias does *not* encode: word boundaries, morphological structure, syntactic roles, or semantic content. These must be learned from the data. The geometric prior provides a single axis of structural information---the cuneiform sign hierarchy---and leaves everything else to the 250 million pretrained parameters.
-
-[Figure 9.2: Attention maps with and without geometric bias for the transliteration `a-na {d}UTU be-lí-ni`. Left: baseline ByT5 attention (first encoder layer). Attention is diffuse, with no special treatment of the determinative-logogram pair `{d}UTU`. Right: attention with geometric bias. The bytes of `{d}` and `UTU` attend strongly to each other, reflecting their hierarchical proximity in the cuneiform taxonomy. The bias has effectively told the model: these bytes belong together structurally.]
 
 ---
 
@@ -213,8 +217,6 @@ This augmentation is a perturbation along what we might call the *convention dim
 The three augmentation strategies are not arbitrary perturbations. They are structured noise, each operating along a specific axis of the communication manifold. Together, they define a noise model that is *manifold-aware*: the perturbations move along the manifold's coordinate directions (signal, syntax, convention) while preserving the invariant content.
 
 This connects to a general principle of geometric data augmentation: effective augmentation is augmentation along the orbits of the symmetry group. If meaning is invariant under signal damage (sign dropout), syntactic reordering (word shuffle), and notational convention (determinative variation), then augmenting along these directions teaches the model to extract the invariant---the meaning---from the variable surface form. The augmented examples are, in the language of Chapter 3, points on the same gauge orbit: different surface forms of the same underlying content.
-
-[Figure 9.3: The three cuneiform-aware augmentation strategies as perturbations on the communication manifold $M = S \times P \times C$. Sign dropout perturbs along $S$ (signal integrity). Word-order shuffle perturbs along $P$ (syntactic structure). Determinative variation perturbs along the gauge orbit (notational convention). All three preserve $C$ (semantic content), training the model to extract the invariant.]
 
 ---
 
@@ -287,8 +289,6 @@ The progression is clear:
 
 4. **The full model (D) outperforms all individual components.** The geometric mean of BLEU and chrF++ is highest for Configuration D, confirming the superadditive hypothesis.
 
-[Figure 9.4: Ablation results. Bar chart showing the competition score ($\sqrt{\text{BLEU} \times \text{chrF++}}$) for each configuration. Configuration D (full model) achieves the highest score, with the gap between B and D attributable to the geometric attention bias.]
-
 ### 9.6.7 Interpreting the Ablation
 
 The ablation tells a story about the *nature* of the structural deficit in extreme low-resource translation.
@@ -331,8 +331,6 @@ A third pattern: the geometric bias improves the translation of determinative co
 Baseline ByT5, operating at the byte level, has no built-in knowledge that `{d}` is a semantic classifier that modifies the following word. It must learn this from examples. The geometric bias provides this knowledge directly: the bytes of `{d}` and the bytes of `UTU` are hierarchically close in the cuneiform taxonomy (both associated with the sign 𒀭 and its divine reading), so they attend to each other more strongly.
 
 This is the most direct manifestation of the Poincare distance as an attention bias: it groups bytes into meaningful units that correspond to cuneiform signs, overriding the byte-level tokenisation that would otherwise treat each byte as independent.
-
-[Figure 9.5: Per-sentence improvement from the geometric bias (Configuration D vs. B) plotted against three measures: (a) average sign rarity in the sentence, (b) number of polysemous signs, (c) number of determinative constructions. In each case, the improvement correlates positively: the geometric bias helps more for sentences with rare signs, polysemous signs, and determinative constructions.]
 
 ### 9.7.4 Where the Prior Does Not Help
 

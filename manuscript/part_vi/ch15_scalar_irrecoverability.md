@@ -37,8 +37,6 @@ The proof follows directly from the dimension count. The communication manifold 
 
 In every case, $\dim(M) \gg 1$. A scalar evaluation compresses at least 20 dimensions --- and often 150 or more --- to a single number. The level set $\phi^{-1}(r)$ has dimension $\dim(M) - 1$, which means it is essentially as large as $M$ itself. Knowing the scalar value eliminates exactly one degree of freedom and leaves all others undetermined.
 
-[Figure 15.1: The level sets of a scalar evaluation on the communication manifold. Each horizontal slice (constant scalar value) contains communicative acts that differ in every uncompressed dimension. Two translations with BLEU = 0.35 can differ in adequacy, fluency, style, and pragmatic force simultaneously. The scalar picks out a hypersurface, not a point.]
-
 ---
 
 ## 15.2 The BLEU Decomposition
@@ -63,6 +61,10 @@ the score is a geometric mean of modified $n$-gram precisions, weighted uniforml
 
 These four profiles produce the same scalar. A BLEU score of 0.35 is a *contraction* of a quality tensor with at least four independent dimensions --- adequacy, fluency, terminology, and style --- and the contraction discards three of them. The information is not merely compressed; it is destroyed. No amount of staring at the number 0.35 will tell you which profile produced it.
 
+![Figure 15.1](figures/ch15_fig1.svg)
+
+*Figure 15.1. Three of the quality profiles of Section 15.2.1, with the n-gram precisions the chapter gives; the bars are the precisions for word sequences of length 1 to 4. BLEU without a brevity penalty is their geometric mean, and for all three profiles it is 0.35 (0.350, 0.351 and 0.350). The score is the dashed line; the shape of the bars, which is what tells the three systems apart, is what the score leaves out. Profile D is described in words only and is not drawn.*
+
 ### 15.2.2 The Quality Tensor
 
 To make this formal, define the translation quality tensor as a point in $\mathbb{R}^k$ where $k \geq 4$:
@@ -74,8 +76,6 @@ BLEU is a function $\phi_{\text{BLEU}}: \mathbb{R}^k \to \mathbb{R}$ that contra
 **Proposition 15.1** (BLEU Level Set Diversity). *For $k \geq 4$ independent quality dimensions, the level set $\phi_{\text{BLEU}}^{-1}(r)$ for any $r \in (0, 1)$ contains points that are maximally separated on any $(k-1)$-dimensional subspace of the quality space. That is, two translations with the same BLEU score can be maximally different on every quality dimension except the one that BLEU explicitly measures (surface $n$-gram overlap).*
 
 This is not a theoretical curiosity. It is the daily operating condition of every MT evaluation that reports BLEU scores. When a paper reports "our system achieves BLEU = 0.35 on WMT-2024," the reader does not know whether the system is uniformly mediocre (Profile A), lexically accurate but structurally broken (Profile B), locally fluent but globally incoherent (Profile C), or semantically faithful but stylistically alien (Profile D). The scalar has destroyed the diagnostic information that would distinguish these radically different systems.
-
-[Figure 15.2: The BLEU level set in quality space. The horizontal plane at BLEU = 0.35 intersects the quality space along a surface containing all four profiles (A--D). The profiles are maximally separated on the adequacy-fluency plane but collapse to the same point on the BLEU axis. Any diagnostic distinction between the profiles requires evaluation in the full quality space.]
 
 ### 15.2.3 The chrF++ Mirage
 
@@ -124,8 +124,6 @@ Formally, the sentiment function $\phi_{\text{sent}}: M \to [-1, +1]$ destroys f
 **3. Pragmatic force.** The same surface sentiment can serve opposite pragmatic functions. "Great, just great" spoken with a flat tone is negative despite the positive lexicon. "You're killing it" is positive despite the violent metaphor. Irony, sarcasm, understatement, and hyperbole all invert or modulate the relationship between surface sentiment and pragmatic force. The sentiment scalar measures surface form; pragmatic force lives on the pragmatic manifold $P$, which the scalar does not access.
 
 **4. Contextual dependence.** Sentiment is not a property of text in isolation. It is a relation between text and context. "The operation was a success" is positive in a medical context and potentially ironic in a military context ("the operation was a success, but the patient died"). The same text has different sentiment when preceded by different discourse. Context is a coordinate on $P$, and the sentiment scalar evaluates without it.
-
-[Figure 15.3: The four destructions of sentiment analysis. The communication manifold (top) has object, intensity, pragmatic, and contextual coordinates. The sentiment projection (arrow) collapses all four to a single valence axis (bottom). Three texts with sentiment $= +0.7$ occupy completely different positions in the full space.]
 
 ### 15.3.3 The Content Moderation Failure
 
@@ -188,8 +186,6 @@ This bias is a geometric object --- a function on pairs of tokens that reflects 
 What does the hyperbolic attention map recover? Standard attention treats all token pairs as initially equidistant --- the only structure comes from learned positional embeddings and content similarity. The hyperbolic bias introduces prior knowledge about the *organization* of the symbol system: signs that share a determinative (semantic classifier) attend preferentially, signs that are taxonomically distant attend weakly. This structural prior is most valuable precisely where data is scarcest --- for rare signs, where the model has few training examples and the taxonomic prior provides the strongest guidance.
 
 The improvement on rare signs is the clearest evidence of geometric recovery. A scalar BLEU score on the full test set might show a small average improvement. But the improvement is concentrated on the tail of the sign-frequency distribution --- the rare signs where the structural prior compensates most for data scarcity. The scalar hides this concentration; the per-sign analysis reveals it.
-
-[Figure 15.4: Three instances of geometric recovery. Left: the 156-dimensional birdsong feature vector on $\text{SPD}(16)$. Center: the bond space representation with adversarial disentanglement. Right: the hyperbolic attention bias for cuneiform. Each recovers different structure --- spectral covariance, moral invariance, taxonomic hierarchy --- from the same geometric toolkit.]
 
 ---
 
