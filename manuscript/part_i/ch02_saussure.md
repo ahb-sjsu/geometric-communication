@@ -37,8 +37,6 @@ where $G$ is the communication gauge group — the set of all content-preserving
 
 Saussure could not have stated this in 1916. Gauge theory would not be developed until Hermann Weyl's work in 1918 and its mature formulation by Yang and Mills in 1954. But the conceptual structure is identical: the sign is a coordinate, meaning is invariant under coordinate change, and the study of meaning is the study of what survives the transformation.
 
-[Figure 2.1] *The arbitrariness of the sign as gauge invariance. Five signifiers — English "tree," French "arbre," German "Baum," Japanese 木, Akkadian 𒄑 — are five coordinate representations of the same point on the semantic manifold. Translation is a gauge transformation: it changes coordinates without moving the point. The gauge-invariant content — the concept TREE — is the geometric object; the signifiers are the coordinates.*
-
 ### 2.1.2 Meaning from Relations as Topology
 
 Saussure's second insight is subtler and more consequential. It is the claim captured in the epigraph: *in language there are only differences without positive terms*. No sign has meaning in isolation. The meaning of "dog" is not determined by some intrinsic property of the word or some direct connection to the concept DOG. It is determined by the word's *position in a network of relations* — its difference from "cat," from "wolf," from "pet," from "animal," and from every other term in the language.
@@ -54,8 +52,6 @@ This is a deeper claim than the arbitrariness of the sign. Arbitrariness says th
 $$\text{value}(\text{sign}_i) = f\left(\{d(\text{sign}_i, \text{sign}_j) : j \neq i\}\right)$$
 
 The value of a sign is a function of its distances to all other signs in the system. Change the distance structure — add a sign, remove a sign, shift the boundaries between categories — and you change the value of every sign in the system. This is why languages are not nomenclatures. A nomenclature is a list of labels for pre-existing categories. A language is a system whose categories are *defined by* the labels' mutual relations.
-
-[Figure 2.2] *Meaning as topology. Left: the English color space, with "blue" and "green" as distinct regions. Right: the Russian color space, where голубой (goluboy, light blue) and синий (siniy, dark blue) split what English treats as a single region. The topology of the color space differs across languages; the signifiers partition the space differently. The geometric content — the continuous space of visible wavelengths — is invariant, but the coordinate charts (the linguistic categories) are not. Meaning is the structure of the partition, not the labels on the parts.*
 
 ---
 
@@ -79,8 +75,6 @@ This is a discrete symmetry group acting on a discrete space. The group of all p
 
 Jakobson did not use group-theoretic language. He spoke of "binary oppositions" and "distinctive features" and "the pattern of contrasts." But the mathematical structure is unmistakable: he had discovered that phonological space has the symmetry of a discrete group, and that the inventory of contrasts — the topology of the phonological system — is what carries linguistic information.
 
-[Figure 2.3] *Jakobson's distinctive features as a discrete symmetry group. The phonological space for three binary features (voiced/voiceless, nasal/oral, stop/fricative) is the 3-cube $\{-1, +1\}^3$. English phonemes occupy specific vertices. Minimal pairs (e.g., /b/ vs. /p/) are connected by single-feature reflections — elements of the symmetry group $(\mathbb{Z}/2\mathbb{Z})^3$. The phonological structure is the pattern of occupied vertices and meaning-distinguishing reflections, not the phonetic substance of any individual sound.*
-
 ![Figure 2.1](figures/ch02_fig1.svg)
 
 *Figure 2.1. Three of Jakobson's binary features as the cube of sign patterns. Each vertex is one bundle of feature values and each edge flips one feature. The chapter's example is marked: /b/ is voiced, oral and compact, /p/ differs from it in voicing alone, and that single edge is the minimal pair bat and pat. The fourth feature of the example, grave, is held at plus, and the other vertices are left unlabelled because the chapter assigns no phonemes to them.*
@@ -98,8 +92,6 @@ In the language of differential geometry, this is a *quotient manifold*: a manif
 Chomsky's subsequent theoretical evolution — from the Standard Theory through Government and Binding to the Minimalist Program — can be read as a progressive attempt to simplify the transformation group $T$, reducing the number of generators required. The Minimalist Program's single operation *Merge* is, in geometric terms, the conjecture that the transformation group has a single generator: that all syntactic structure can be built from one operation, recursively applied. Whether this conjecture is correct is an empirical question about the structure of the quotient. But the *form* of the conjecture — that complex surface variation arises from simple underlying structure via group action — is a quintessentially geometric idea.
 
 Chomsky, like Saussure and Jakobson before him, did not frame his work in geometric terms. He used the language of formal grammars, rewrite rules, and tree structures. But the geometric skeleton is visible: surface forms are coordinates, transformations are group elements, deep structure is the quotient, and meaning is what the quotient preserves.
-
-[Figure 2.4] *Chomsky's deep structure as a quotient manifold. The space of surface forms $\mathcal{S}$ is fibered by the transformation group $T$. Each fiber (vertical) contains all surface realizations of a single deep structure: "The king issued a decree," "A decree was issued by the king," "It was the king who issued a decree," etc. The quotient space $\mathcal{S}/T$ (horizontal) is the space of deep structures — the space of meanings. The projection $\pi$ maps surface forms to their underlying content.*
 
 ![Figure 2.2](figures/ch02_fig2.svg)
 
@@ -142,8 +134,6 @@ This is a geometric statement: the semantic relation "male → female" defines a
 Subsequent developments made the geometric structure richer. GloVe (Pennington, Socher, and Manning, 2014) derived embeddings from a global co-occurrence matrix, making the connection to distributional semantics explicit.[^8] ELMo (Peters et al., 2018) produced context-dependent embeddings — different vectors for the same word in different contexts — effectively parameterizing the semantic manifold by context as well as word identity. BERT (Devlin et al., 2019) and GPT (Radford et al., 2018, 2019) extended this to full-sentence representations in high-dimensional spaces where the geometry of meaning is encoded in the attention patterns and residual stream trajectories.
 
 The progression from Word2vec to modern transformer representations is, in geometric terms, a progression from flat to curved. Word2vec's embedding space is Euclidean — a flat manifold where distances are computed by the standard inner product. But semantic space is not flat. Hierarchical relations (hypernymy: "animal" → "dog" → "poodle") are poorly served by Euclidean geometry, which lacks the exponential volume growth needed to embed trees without distortion. Nickel and Kiela (2017) demonstrated that hyperbolic embeddings — representations in the Poincaré ball model of hyperbolic geometry — embed hierarchical semantic structure with far less distortion than their Euclidean counterparts.[^9] This result connects directly to the hyperbolic attention mechanism we develop for cuneiform translation in Chapter 9: the sign taxonomy of the Akkadian writing system embeds naturally in hyperbolic space because it is hierarchical, and injecting that embedding into the transformer's attention pattern improves translation quality on rare signs.
-
-[Figure 2.5] *The progression from distributional semantics to explicit geometry. Left: the co-occurrence matrix (Firth/Harris), a high-dimensional implicit representation. Center: the Word2vec embedding, explicit coordinates in a flat (Euclidean) space. Right: the Poincaré ball embedding (Nickel and Kiela, 2017), explicit coordinates in a curved (hyperbolic) space. Each step makes the geometric structure more explicit and more faithful to the actual topology of semantic relations.*
 
 ---
 

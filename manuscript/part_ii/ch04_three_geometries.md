@@ -155,8 +155,6 @@ def dist(self, x: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
     return (2.0 / self.sqrt_c) * torch.arctanh(self.sqrt_c * norm)
 ```
 
-[Figure 4.1] *The Poincare disk (2D ball with $c = 1$). Left: a binary tree of depth 5 embedded in the disk, with the root at the center and leaves near the boundary. Geodesics (shortest paths) are arcs of circles perpendicular to the boundary. Right: concentric geodesic circles at equal distance increments from the origin. The circles bunch together in Euclidean coordinates near the boundary but are equally spaced in hyperbolic distance, illustrating the exponential volume growth.*
-
 ![Figure 4.1](figures/ch04_fig1.svg)
 
 *Figure 4.1. The Poincare disk with c = 1. The grey circles lie at hyperbolic distances 1 to 5 from the centre, computed from Definition 4.5: equal steps of distance, and Euclidean radii 0.46, 0.76, 0.91, 0.96 and 0.99 that crowd toward the boundary. A binary tree of depth 4 is placed with level k at hyperbolic distance 0.8 k (an illustrative spacing); its edges are geodesics, arcs that meet the boundary at right angles. The number of nodes doubles at each level and the disk still has room for them near the edge.*
@@ -218,8 +216,6 @@ For the empirical systems in this book:
 - **Whale codas** ($b \approx 5$, $k = 3$): $c \approx 0.07$, though the implementations use $c = 1.0$ for simplicity and compensate by scaling the initial tangent vectors.
 - **Cuneiform signs** ($b \approx 10$, $k = 3$): $c \approx 0.15$.
 - **WordNet nouns** ($b \approx 400$, $k = 8$): $c \approx 0.14$, which is close to the $c = 0.1$ used in the original Nickel and Kiela (2017) Poincare embedding paper.
-
-[Figure 4.2] *Effect of curvature parameter $c$ on the same tree embedding. Left: $c = 0.1$ (mildly hyperbolic) --- the tree is compact, with leaves well inside the ball. Center: $c = 1.0$ (moderately hyperbolic) --- the tree fills the ball, with leaves near but not at the boundary. Right: $c = 10.0$ (strongly hyperbolic) --- leaves are compressed against the boundary, with poor numerical resolution. The optimal $c$ places the deepest leaves in the outer half of the ball without exceeding $\|\mathbf{x}\| > 0.95/\sqrt{c}$.*
 
 ### 4.1.6 Applications in Communication
 
@@ -394,8 +390,6 @@ def spectral_trajectory(spectrogram, n_bands=16, window=64, hop=32,
 
 These four values --- path length, geodesic distance, deviation, and number of trajectory steps --- form the trajectory component of the combined feature vector.
 
-[Figure 4.3] *Spectral trajectories on $\operatorname{SPD}(2)$ (schematic, projected to 2D for visualization). Left: a trill --- the trajectory oscillates between two covariance states, producing high path length and low geodesic distance. Center: a descending whistle --- the trajectory traces a nearly straight path, with path length close to geodesic distance. Right: a complex song --- the trajectory wanders through covariance space, visiting multiple distinct states. The geodesic deviation $\delta$ distinguishes all three.*
-
 ### 4.2.7 The Frechet Mean and Population Statistics
 
 When comparing populations --- all songs of one species versus all songs of another --- we need a notion of the "average" covariance matrix. The Euclidean mean of SPD matrices is not necessarily SPD (the eigenvalues of the average can be smaller than the minimum eigenvalue of any individual matrix). The correct notion is the **Frechet mean**: the matrix that minimizes the sum of squared Riemannian distances to all matrices in the population.
@@ -472,8 +466,6 @@ def time_delay_embedding(signal: np.ndarray, delay: int = 10,
 The choice $d = 3$ is conservative: by Takens' theorem, $d = 3$ suffices to embed attractors of dimension up to $m = 1$ (since $2m + 1 = 3$). For more complex attractors, a higher dimension may be needed. In practice, $d = 3$ captures the periodic and quasi-periodic structures that dominate acoustic signals, and increasing $d$ adds features that are largely redundant.
 
 The delay $\tau = 10$ corresponds to approximately 0.3 milliseconds at 32 kHz sample rate, or about 6 milliseconds at 1.6 kHz (the effective sample rate after subsampling a mel-spectrogram energy contour). The choice of $\tau$ affects the resolution: too small, and consecutive points in the embedding are nearly identical (the point cloud collapses onto the diagonal); too large, and the temporal structure is lost (the points appear random). A common heuristic is to set $\tau$ to the first zero-crossing of the autocorrelation function, which decorrelates consecutive coordinates in the embedding.
-
-[Figure 4.4] *Takens' time-delay embedding. Left: a sinusoidal signal $x(t) = \sin(2\pi t / T)$ and its 3D embedding $\mathbf{v}(t) = (x(t), x(t+\tau), x(t+2\tau))$ --- the point cloud traces an ellipse in $\mathbb{R}^3$, whose single loop corresponds to the periodic structure. Center: an exponentially decaying signal $x(t) = e^{-\alpha t}$ --- the point cloud traces a monotone curve with no loops. Right: a signal with two incommensurate frequencies $x(t) = \sin(2\pi t / T_1) + \sin(2\pi t / T_2)$ --- the point cloud traces a torus-like structure with two independent loops.*
 
 ![Figure 4.2](figures/ch04_fig2.svg)
 
@@ -571,8 +563,6 @@ What do the persistence features *mean* for communication signals? The interpret
 **For birdsong waveforms.** The waveform of a pure-tone whistle produces a nearly circular point cloud (a single dominant loop, one strong $H_1$ feature). A harmonic stack (fundamental plus overtones) produces a more complex cloud with multiple nested loops (strong $H_1$ features at multiple persistence levels). A noisy broadband call produces a diffuse cloud with no persistent loops (weak $H_1$ features). The 16 TDA features thus encode the harmonic structure --- the "shape" of the sound in phase space --- in a way that is complementary to the covariance structure captured by SPD features.
 
 **For speech prosody.** The pitch contour of a declarative sentence (falling intonation) produces a monotone trajectory with no loops. A yes/no question (rising intonation) produces a trajectory that curves upward. A list intonation ("apples, bananas, and cherries") produces a trajectory with multiple small loops. These topological distinctions correspond to pragmatic categories on the manifold $P$ --- the shape of the prosodic contour encodes the illocutionary force.
-
-[Figure 4.5] *Persistence diagrams for three acoustic signals. Left: a regular sperm whale coda (5 clicks, even spacing) --- the $H_0$ diagram shows two dominant points (corresponding to two distinct ICI values), and the $H_1$ diagram is nearly empty (no periodic structure in the ICI sequence). Center: an accelerating coda --- the $H_0$ diagram is diffuse (no clean clusters), and the $H_1$ diagram shows one persistent loop (the spiral structure of progressively shortening intervals). Right: a bird trill --- the $H_1$ diagram shows a single highly persistent loop (the periodic alternation between two frequencies).*
 
 ---
 
@@ -701,8 +691,6 @@ The three geometries are not merely useful tools. They correspond to three funda
 Any communication system --- indeed, any information-bearing system --- can be analyzed along these three dimensions. The specific parameterization (16 frequency bands, delay $\tau = 10$, embedding dimension $d = 3$) is a design choice that can be adjusted for different domains. But the *kinds* of structure captured by the three geometries --- abstraction, association, and dynamics --- are not design choices. They are, we claim, the fundamental axes along which communicative structure is organized.
 
 The rest of the book is an extended argument for this claim.
-
-[Figure 4.6] *Summary of the three geometries for communication. Hyperbolic geometry captures hierarchical structure (trees, taxonomies, levels of abstraction). SPD Riemannian geometry captures covariance structure (cross-frequency correlations, spectral fingerprints). Persistent homology captures topological structure (attractor shape, periodicity, connected components). The combined 156-dimensional feature vector $(136 + 4 + 16)$ captures all three. No single geometry suffices: hierarchical information is orthogonal to covariance information, which is orthogonal to topological information.*
 
 ---
 

@@ -104,8 +104,6 @@ where $s_C$ encodes the acoustic waveform of formal Japanese with accompanying d
 
 Now consider the distances between these points. Apologies A and C share similar pragmatic force (both are genuine, face-to-face, relationship-restoring acts) and similar content (both acknowledge fault for lateness), but their signals are maximally different (spoken English vs. spoken Japanese with bow). Apologies A and B share similar signals in the broadest sense (both are in English) but differ sharply in pragmatics (genuine contrition vs. casual acknowledgment) and partially in content (A attributes the cause to negligence, B is vague). These distance patterns are exactly what the metric of Section 3.2 formalizes.
 
-[Figure 3.1] *Three apologies as points on $M = S \times P \times C$. The axes represent (schematically) the three factors. Apology A and Apology C are close on $P \times C$ but far on $S$ (different languages, different modalities). Apology A and Apology B are closer on $S$ (both English) but far on $P$ (different pragmatic force). The dashed projection lines show what scalar evaluation discards: projecting onto any single axis loses the relationships visible in the full space.*
-
 ![Figure 3.1](figures/ch03_fig1.svg)
 
 *Figure 3.1. Schematic: the three apologies of the worked example placed on each factor of M = S × P × C. Positions are illustrative; only which pairs are near and which are far is taken from the text. A and C are far apart in signal and close in pragmatics and content; A and B are closer in signal and far apart in pragmatics. A score read off any one line cannot show both facts.*
@@ -426,8 +424,6 @@ This chapter has constructed the mathematical stage on which the rest of the boo
 The next three chapters develop the geometric toolkit that makes this framework empirically operational. Chapter 4 introduces the three geometries (hyperbolic, SPD, topological) that provide concrete metrics on $S$, $P$, and $C$. Chapter 5 applies hyperbolic geometry to hierarchical meaning structures. Chapter 6 applies topological data analysis to communication signals. Each toolkit chapter validates the same claim: the geometry of communication is not a post hoc interpretation of results obtained by other means. It is the method by which the results are obtained.
 
 The framework rests on an empirical bet: that the product structure $M = S \times P \times C$ captures enough of the structure of communication to be useful, and that the gauge group $G = T \times R \times F$ captures enough of the meaning-preserving transformations to define meaning precisely. Parts III--V of the book test this bet across five communication systems spanning three biological kingdoms and four millennia. The chapters that follow report what those tests found.
-
-[Figure 3.2] *Summary of the communication manifold framework. The product manifold $M = S \times P \times C$ is shown with its metric (block structure with cross-terms), heuristic field (gradient arrows guiding interpretation), and gauge group $G = T \times R \times F$ (acting primarily on $S$). Scalar evaluation projects $M$ onto $\mathbb{R}$, destroying all structure except the one dimension measured. The five empirical systems studied in the book (whale codas, birdsong, cuneiform, cross-lingual moral transfer, LLM communication) are located on $M$ according to which factors are accessible to measurement.*
 
 ---
 

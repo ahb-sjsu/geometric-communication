@@ -57,8 +57,6 @@ Cross-temporal validation against Hebrew legal texts from 200 BCE--500 CE provid
 
 The alignment is striking. The same linguistic triggers that flip a moral classification in a Dear Abby letter---words that shift obligation to permission or invoke conditions that nullify duty---have the same effect in Hebrew legal texts composed two millennia earlier. The deontic gates are temporal invariants.
 
-[Figure 12.1] *Temporal invariance of deontic gates. Each point represents the effectiveness of a semantic gate type (binding, release, nullifier) in a specific temporal bin. The horizontal axis spans 2,300 years; the vertical axis shows gate effectiveness (proportion of passages correctly reclassified). The near-flat trend lines confirm temporal invariance: the gates work as well on Biblical texts as on modern English.*
-
 ---
 
 ## 12.2 The NLP Extraction Pipeline
@@ -144,8 +142,6 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$
 
 Passages matching no pattern receive the label NONE and are excluded from the classified training set. The label distribution is monitored to ensure no single class exceeds 70%, which would trivialize classification.
 
-[Figure 12.2] *The NLP extraction pipeline. Raw corpus text enters at left, passes through corpus-specific loaders, uniform preprocessing, and bond extraction (pattern matching + multi-model validation). The output is a set of passages with Hohfeldian labels, ready for input to the BIP architecture. The pipeline handles seven languages, four scripts, and 2,300 years of textual tradition.*
-
 ---
 
 ![Figure 12.2](figures/ch12_fig2.svg)
@@ -217,8 +213,6 @@ Beyond individual deontic markers, the syntactic structure of a passage carries 
 - Absence of a claim, expressed through silence or omission in the discourse structure
 
 The dependency structure serves as a *derived* coordinate on the signal manifold $S$---a coordinate that is computable from the text and partially predictive of the Hohfeldian category. Unlike the deontic markers, which are explicit surface features, dependency structure is a structural feature that requires parsing to extract. Its predictive power suggests that the gauge transformation from surface text to moral content operates not just through lexical substitution but through syntactic reorganization.
-
-[Figure 12.3] *Dependency tree topology by Hohfeldian class. Each panel shows the average dependency tree structure for passages classified as Obligation, Right, Liberty, and No-Right. Obligation trees are compact (main clause carries the deontic relation). Right trees are deeper (the claim is often embedded in causal or conditional structure). Liberty trees show characteristic negation branches. No-Right trees are the most variable.*
 
 ### 12.3.4 Cross-Linguistic Coordinate Comparison
 
@@ -330,8 +324,6 @@ Each semantic gate corresponds to a specific group element:
 | Role swap | $s$ | Right $\leftrightarrow$ Duty |
 
 The fact that these gates produce *discrete* transitions (step functions rather than gradual shifts) supports the group-theoretic formalization. In a continuous theory, the transition from Obligation to Liberty would be a smooth path through intermediate states. In a discrete gauge theory, it is a jump---the application of a group element to the current state. The empirical bimodality of confidence scores (Section 12.4.2) is evidence for discrete rather than continuous structure.
-
-[Figure 12.4] *Semantic gates as group elements on the Hohfeldian square. Each arrow represents a linguistic trigger and its corresponding $D_4$ action. "Only if convenient" applies $r$ (rotation), moving from Obligation to Liberty. "You promised" applies $r^3$ (inverse rotation), moving from Liberty back to Obligation. Role swap applies $s$ (reflection), exchanging Right and Duty. The gates are discrete: confidence scores are bimodal, not gradual.*
 
 ### 12.4.4 Why the Deontic Axis Is Flat
 

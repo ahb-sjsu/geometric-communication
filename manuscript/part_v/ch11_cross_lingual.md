@@ -56,8 +56,6 @@ The corpus spans approximately 2,300 years:
 | Rishonim | 1000--1500 CE | Medieval Hebrew | Rashi, Maimonides, Nachmanides |
 | Achronim | 1500--1800 CE | Early Modern Hebrew | Shulchan Aruch, Chasidic texts |
 
-[Figure 11.1] *Temporal distribution of the Sefaria corpus. The horizontal axis spans 2,300 years; the vertical axis shows passage count per century. The Talmudic period (200--500 CE) contributes the largest volume, reflecting the massive scope of the Babylonian and Jerusalem Talmuds. The medieval commentarial tradition (Rishonim) provides a second peak. Critically, the corpus spans the full evolution of rabbinic Hebrew from its Biblical roots through Mishnaic simplification to the technical precision of medieval legal commentary.*
-
 The Sefaria corpus is not merely large. It is *morally dense*. The rabbinic tradition is, at its core, a sustained engagement with questions of obligation, entitlement, permission, and prohibition. The Mishnah codifies law; the Talmud debates its application; the medieval commentaries refine its reasoning. Every page of this literature is saturated with moral relations: who owes what to whom, when a person is obligated and when they are free, what rights one may claim and what exposures one must accept.
 
 This moral density is critical. The model does not need to find moral content in a corpus that is mostly about something else. Nearly every passage in Sefaria engages with the structure of interpersonal moral relations.
@@ -77,8 +75,6 @@ This corpus was chosen to be maximally distant from Sefaria on every surface dim
 - **Naturalistic**: Writers seeking genuine help, not performing for researchers or constructing philosophical arguments
 
 Despite these surface differences, the letters are structurally isomorphic to Talmudic cases. "My mother-in-law keeps showing up unannounced---do I have to let her in?" is, in Hohfeldian terms, a question about whether the writer has a *liberty* to refuse entry or a *duty* to admit family. "My neighbour borrowed my lawnmower and broke it---should he pay for it?" is a question about whether the writer has a *right* to compensation and the neighbour a *duty* to provide it. These are the same relational structures debated in tractate Bava Kamma (damages law) and tractate Bava Metzia (property law) of the Talmud---expressed in different words, in a different language, in a different millennium.
-
-[Figure 11.2] *Schematic comparison of the two corpora as coordinate charts on the content manifold $C$. The Sefaria chart (left) covers the moral content region using Hebrew/Aramaic coordinates, with dense coverage in the legal-religious subregion. The Dear Abby chart (right) covers an overlapping region using English coordinates, with dense coverage in the interpersonal-secular subregion. The overlap region---where both charts have nonzero resolution---is the Hohfeldian relational structure: rights, duties, liberties, and no-rights. The transfer experiment tests whether the model can navigate from one chart to the other via the shared geometric content.*
 
 ### 11.1.4 Supplementary Corpora
 
@@ -143,8 +139,6 @@ $$\mathbf{z}_{\text{bond}} = f_{\text{bond}}(\mathbf{h}) \in \mathbb{R}^{64} \qq
 The **bond space** $\mathbf{z}_{\text{bond}}$ is the representation we care about. It is trained to predict the Hohfeldian relation (Right, Duty, Liberty, No-Right) via a classification head. Simultaneously, an **adversarial head** with gradient reversal attempts to predict temporal-stylistic features (era, language, genre, formality) from $\mathbf{z}_{\text{bond}}$. The gradient reversal layer (Ganin et al., 2016) negates the gradients during backpropagation: where the adversary would push $\mathbf{z}_{\text{bond}}$ toward encoding temporal-stylistic information, the reversal pushes it away.
 
 The **label space** $\mathbf{z}_{\text{label}}$ is an auxiliary representation trained to predict temporal-stylistic features directly (without gradient reversal). It serves as a control: by showing that temporal-stylistic information is learnable from $\mathbf{h}$, we confirm that the adversary's failure to extract it from $\mathbf{z}_{\text{bond}}$ is due to successful disentanglement, not to absence of the information in the first place.
-
-[Figure 11.3] *The BIP architecture. The encoder maps input text to a 384-dimensional representation $\mathbf{h}$. Two projection heads produce $\mathbf{z}_{\text{bond}}$ (64-dim, for moral structure) and $\mathbf{z}_{\text{label}}$ (32-dim, for surface features). A classification head predicts Hohfeldian relation from $\mathbf{z}_{\text{bond}}$. An adversarial head with gradient reversal (GRL) attempts to predict temporal period from $\mathbf{z}_{\text{bond}}$---and is deliberately defeated. The auxiliary temporal head predicts temporal period from $\mathbf{z}_{\text{label}}$ directly. The training loss $\mathcal{L} = \mathcal{L}_{\text{Hohfeld}}(\mathbf{z}_{\text{bond}}) + \mathcal{L}_{\text{time}}(\mathbf{z}_{\text{label}}) + \mathcal{L}_{\text{time}}^{\text{adv}}(\text{GRL}(\mathbf{z}_{\text{bond}}))$ forces $\mathbf{z}_{\text{bond}}$ to encode moral structure while being uninformative about surface features.*
 
 ### 11.2.4 The Training Objective
 
@@ -216,8 +210,6 @@ Two results stand out. First, Classical Chinese achieves 64.9% F1---the *highest
 
 Second, the transfer to Arabic (40.7%) is comparable to English (41.5%) despite Arabic being a Semitic language like Hebrew. If transfer were linguistic rather than structural, Arabic should outperform English substantially. The near-equality suggests that the model is not leveraging Semitic language similarity---the adversarial training has stripped it away---but rather detecting moral structure that is equally present in both test languages.
 
-[Figure 11.4] *Cross-lingual transfer performance by language. Bars show macro F1 for Hohfeldian classification. The dashed line at 25% marks chance. All languages substantially exceed chance. The striking result is Classical Chinese (64.9%), which achieves the highest transfer despite being maximally distant from the training language on every typological and cultural dimension.*
-
 ### 11.3.3 Bidirectional Transfer
 
 Direction B (Dear Abby to Hebrew) confirms that transfer is symmetric. The model trained on 68,000 English letters achieves above-chance Hohfeldian classification on Hebrew test passages. The consistency across directions rules out the hypothesis that transfer is an artifact of corpus size, encoder bias, or training direction. The invariance is bidirectional, as gauge invariance requires: if meaning is preserved under the gauge transformation Hebrew $\to$ English, it must also be preserved under the inverse transformation English $\to$ Hebrew.
@@ -274,8 +266,6 @@ The ordering is telling. Among surface perturbations, irrelevant detail causes t
 
 This is the BIP in action. The bond space is gauge-invariant: changing the surface description (coordinates on the fiber) barely moves the representation, while changing the moral structure (the base point on $C$) moves it dramatically. The model has learned, without being told, which features of a moral scenario are morally relevant and which are not.
 
-[Figure 11.5] *Perturbation sensitivity analysis. Left: surface perturbations (name change, synonym, irrelevant detail) produce small embedding shifts clustered near zero. Right: structural perturbations (obligation flip, harm addition, role swap) produce shifts an order of magnitude larger. The non-overlapping distributions confirm that the bond space distinguishes gauge-invariant content from gauge-dependent surface features.*
-
 ---
 
 ## 11.4 The Geometry of Bond Space
@@ -287,8 +277,6 @@ PCA analysis of the 64-dimensional $\mathbf{z}_{\text{bond}}$ reveals that the b
 This is consistent with the theoretical expectation. The Hohfeldian system has four categories (Right, Duty, Liberty, No-Right), but they are not independent. The correlative symmetry $\text{Right} \leftrightarrow \text{Duty}$ and $\text{Liberty} \leftrightarrow \text{No-Right}$ reduces the effective dimensionality. Two independent axes---the deontic axis (Obligation versus Liberty) and the correlative axis (first-person versus second-person perspective)---suffice to span the Hohfeldian square. A third dimension, capturing the intensity or certainty of the moral relation, accounts for the third principal component.
 
 The low dimensionality is also consistent with the geometric framework of Chapter 3. The content manifold $C$ has many dimensions in general, but the moral submanifold---the region of $C$ that the BIP experiment probes---is a low-dimensional embedded submanifold. The Hohfeldian structure lives on a surface, not in a volume.
-
-[Figure 11.6] *PCA of the bond space. Left: scree plot showing that three components explain 90% of variance. Right: the first two principal components, with points colored by Hohfeldian class. The obligation-liberty axis (PC1) achieves perfect binary separation. The right-duty versus liberty-no-right distinction (PC2) provides the correlative separation. The structure is consistent across training languages and test languages.*
 
 ### 11.4.2 The Obligation-Liberty Axis
 
