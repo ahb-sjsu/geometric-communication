@@ -370,7 +370,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 <p>The 100% deontic transfer is corroborated by the <em>discrete semantic gate</em> experiments. These experiments test whether specific linguistic triggers produce deterministic Hohfeldian transitions&mdash;and whether those transitions are the same across languages.</p>
 <p>The most striking gate is the phrase <strong>&ldquo;only if convenient.&rdquo;</strong> When appended to an obligation scenario (&ldquo;You must help your neighbor&hellip; only if convenient&rdquo;), the classification flips from Obligation to Liberty with 100% reliability:</p>
 <p>$$P(\text{Liberty} \mid \text{Obligation context} + \text{"only if convenient"}) = 1.00$$</p>
-<p>This was tested on $N = 220$ passages (binomial test $p &lt; 10^{-12}$). The confidence score distribution is bimodal: modes at 0.12 (low confidence in Obligation) and 0.91 (high confidence in Liberty), with a gap $&gt; 0.4$ between modes. The transition is not gradual. It is a discrete switch&mdash;a step function, not a sigmoid.</p>
+<p>This is the Level 5 result of SQND Protocol 1 ($N = 220$ evaluations across 11 levels; Chapter 13; binomial test $p &lt; 10^{-12}$). The confidence score distribution is bimodal: modes at 0.12 (low confidence in Obligation) and 0.91 (high confidence in Liberty), with a gap $&gt; 0.4$ between modes. The transition is not gradual. It is a discrete switch&mdash;a step function, not a sigmoid.</p>
 <p>Other gates show similar discrete behavior:</p>
 <table>
 <thead>
@@ -386,7 +386,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 <td>&ldquo;Only if convenient&rdquo;</td>
 <td>Obligation $\to$ Liberty</td>
 <td>100%</td>
-<td>220</td>
+<td>220 (all 11 levels of the protocol)</td>
 </tr>
 <tr>
 <td>&ldquo;You promised&rdquo;</td>
@@ -447,14 +447,17 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 </table>
 <p>No difference reaches statistical significance (all Fisher exact $p &gt; 0.15$). The gates are temporal invariants.</p>
 <h3 id="1243-geometric-interpretation-group-elements">12.4.3 Geometric Interpretation: Group Elements</h3>
-<p>The discrete semantic gates have a precise algebraic interpretation in terms of the $D_4$ group structure developed formally in Chapter 13.</p>
+<blockquote>
+<p><strong>Note (2026-11-26).</strong> <em>Geometric Ethics</em> withdrew the dihedral group $D_4$ as the symmetry group of the four Hohfeldian positions in its version 1.25. The correlative exchange $s$ and the negation $n$ (&ldquo;opposite&rdquo; in the square below) commute and generate the Klein four-group $V_4 = \{e, s, n, sn\}$, of order 4, and there is no quarter-turn. The gates of this section move a state between Obligation and Liberty or exchange Right and Duty. They use only $n$ and $s$, so the section stands and is restated with $V_4$. The sentence of Section 12.4.4 that singles out the deontic partition by the size of its symmetry subgroup in $D_4$ is withdrawn pending restatement.</p>
+</blockquote>
+<p>The discrete semantic gates have a precise algebraic interpretation in terms of the $V_4$ group structure developed formally in Chapter 13.</p>
 <p>The Hohfeldian square:</p>
 <p>$$\begin{array}{ccc}
 \text{Right} &amp; \xleftrightarrow{\text{correlative}} &amp; \text{Duty} \\
 \updownarrow\text{opposite} &amp; &amp; \updownarrow\text{opposite} \\
 \text{No-Right} &amp; \xleftrightarrow{\text{correlative}} &amp; \text{Liberty}
 \end{array}$$</p>
-<p>is acted upon by the dihedral group $D_4 = \langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$, where $r$ is a 90-degree rotation ($\text{Obligation} \to \text{Right} \to \text{No-Right} \to \text{Liberty} \to \text{Obligation}$) and $s$ is the correlative reflection ($\text{Obligation} \leftrightarrow \text{Right}$, $\text{Liberty} \leftrightarrow \text{No-Right}$).</p>
+<p>is acted upon by the Klein four-group $V_4 = \langle s, n \mid s^2 = n^2 = e, \; sn = ns \rangle$, where $n$ is the negation ($\text{Obligation} \leftrightarrow \text{Liberty}$, $\text{Right} \leftrightarrow \text{No-Right}$) and $s$ is the correlative reflection ($\text{Obligation} \leftrightarrow \text{Right}$, $\text{Liberty} \leftrightarrow \text{No-Right}$).</p>
 <p>Each semantic gate corresponds to a specific group element:</p>
 <table>
 <thead>
@@ -467,12 +470,12 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 <tbody>
 <tr>
 <td>&ldquo;Only if convenient&rdquo;</td>
-<td>$r$</td>
+<td>$n$</td>
 <td>Obligation $\to$ Liberty</td>
 </tr>
 <tr>
 <td>&ldquo;You promised&rdquo;</td>
-<td>$r^3$</td>
+<td>$n$</td>
 <td>Liberty $\to$ Obligation</td>
 </tr>
 <tr>
@@ -488,7 +491,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 <p>The perfect transfer on the deontic axis demands an explanation. Why is this particular direction on the moral submanifold flat&mdash;free of curvature, holonomy-free&mdash;when the correlative directions show measurable curvature (reflected in the imperfect four-way transfer)?</p>
 <p>We propose two complementary explanations:</p>
 <p><strong>Evolutionary explanation.</strong> The obligation-liberty distinction is the most functionally important moral distinction for social coordination. Any organism capable of social cooperation must distinguish between actions it is committed to perform and actions it is free to omit. This distinction is under strong selective pressure: agents who confuse obligation with liberty are unreliable cooperators and face social sanction. The universality of the deontic axis may reflect its deep roots in the cognitive architecture for cooperation, predating language and perhaps predating <em>Homo sapiens</em>.</p>
-<p><strong>Geometric explanation.</strong> The deontic axis corresponds to the simplest partition of the Hohfeldian square: the horizontal axis dividing the upper row (Right, Duty) from the lower row (No-Right, Liberty). This partition is preserved by the correlative reflection $s$ (which maps Right $\leftrightarrow$ Duty and No-Right $\leftrightarrow$ Liberty but does not cross the horizontal axis). It is the <em>maximally symmetric</em> partition&mdash;the one that is invariant under the largest subgroup of $D_4$. Geometric invariance theory predicts that the most symmetric structures are the most robust: they persist under the widest class of transformations. The deontic axis, being maximally symmetric, is correspondingly maximally invariant.</p>
+<p><strong>Geometric explanation.</strong> The deontic axis corresponds to the simplest partition of the Hohfeldian square: the horizontal axis dividing the upper row (Right, Duty) from the lower row (No-Right, Liberty). This partition is preserved by the correlative reflection $s$ (which maps Right $\leftrightarrow$ Duty and No-Right $\leftrightarrow$ Liberty but does not cross the horizontal axis). [Withdrawn pending restatement under $V_4$, 2026-11-26.] It is the <em>maximally symmetric</em> partition&mdash;the one that is invariant under the largest subgroup of $D_4$. Geometric invariance theory predicts that the most symmetric structures are the most robust: they persist under the widest class of transformations. The deontic axis, being maximally symmetric, is correspondingly maximally invariant.</p>
 <p>The correlative distinctions (Right vs. Duty, Liberty vs. No-Right) break this symmetry. They require perspective-taking: whether the passage is framed from the viewpoint of the obligated party or the entitled party. This perspective is linguistically embedded&mdash;the same situation generates different surface forms depending on whose perspective the author adopts. The correlative axis is therefore more coordinate-dependent than the deontic axis, and correspondingly shows more curvature (more holonomy under cross-lingual transport).</p>
 <hr />
 <h2 id="125-surface-coordinates-and-deep-geometry">12.5 Surface Coordinates and Deep Geometry</h2>
@@ -526,8 +529,8 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 - The moral submanifold has a low-dimensional core: three principal components explain 90% of the bond space variance
 - The primary axis (obligation-liberty) is flat: zero holonomy, perfect cross-lingual transfer
 - The secondary axis (correlative: right vs. duty, liberty vs. no-right) is curved: nonzero holonomy, imperfect but above-chance transfer
-- The $D_4$ symmetry group acts on the manifold through discrete semantic gates
-- The Bond Index (0.1239) quantifies how closely the learned representation respects the $D_4$ correlative symmetry</p>
+- The $V_4$ symmetry group acts on the manifold through discrete semantic gates
+- The Bond Index (0.1239) quantifies how closely the learned representation respects the correlative symmetry $s$</p>
 <p><strong>The surface coordinates</strong> (Chapter 12):
 - Each language provides a coordinate chart on the moral submanifold
 - Deontic markers are the primary coordinates (different lexical items, same geometric content)
@@ -540,7 +543,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 - Cross-cultural: all ten transfer experiments exceed chance, including maximally distant pairs (Semitic to Chinese, Stoic to Confucian)
 - Structural vs. surface: 14.4:1 perturbation sensitivity ratio, confirming that the bond space encodes moral structure, not linguistic surface</p>
 <h3 id="1262-connection-to-the-communication-manifold">12.6.2 Connection to the Communication Manifold</h3>
-<p>The BIP results validate the theoretical framework of Chapter 3 at the most demanding level. The communication manifold $M = S \times P \times C$ was proposed as a formal structure; the BIP experiment demonstrates that the content factor $C$ has the predicted properties.</p>
+<p>The BIP results test the theoretical framework of Chapter 3 at the most demanding level. The communication manifold $M = S \times P \times C$ was proposed as a formal structure; the BIP experiment asks whether the content factor $C$ has the predicted properties.</p>
 <p>Specifically:
 - $C$ has gauge-invariant structure (the bond space is invariant under language change and temporal shift)
 - The gauge group $G = T \times R \times F$ acts on $M$ while preserving content on $C$ (the adversarial architecture operationalizes this)
@@ -548,7 +551,7 @@ $$\text{NO-RIGHT}: \text{حرام} \;|\; \text{ممنوع}$$</p>
 - Scalar evaluation of moral content ($\phi: C \to \mathbb{R}$, such as a single &ldquo;morality score&rdquo;) destroys the structure that the bond space reveals (the 64-dimensional representation captures distinctions that no scalar can)</p>
 <p>The moral submanifold is the first region of the content manifold $C$ to be empirically characterized with geometric precision. The Rosetta trajectory (Chapter 16) will return to this result as the highest point of the ascent: from whale clicks (unknown meaning, known signal) through cuneiform (known meaning, sparse data) to moral communication (known meaning, deep invariant structure).</p>
 <h3 id="1263-looking-ahead-the-gauge-theory-of-chapter-13">12.6.3 Looking Ahead: The Gauge Theory of Chapter 13</h3>
-<p>The BIP results are <em>measurements</em>. They tell us that the moral submanifold has certain empirical properties: flatness along the deontic axis, curvature along the correlative axis, $D_4$ symmetry, discrete semantic gates. Chapter 13 develops the <em>theory</em> that explains these measurements: the gauge theory of communicative acts, which identifies the $D_4$ group as the moral gauge group, the semantic gates as group elements, the holonomy as measurable path-dependence, and the Bond Index as a gauge-theoretic quantity.</p>
+<p>The BIP results are <em>measurements</em>. They tell us that the moral submanifold has certain empirical properties: flatness along the deontic axis, curvature along the correlative axis, $V_4$ symmetry, discrete semantic gates. Chapter 13 develops the <em>theory</em> that explains these measurements: the gauge theory of communicative acts, which posits the $V_4$ group as the moral gauge group, the semantic gates as group elements, the holonomy as measurable path-dependence, and the Bond Index as a gauge-theoretic quantity.</p>
 <p>The progression from measurement to theory is deliberate. The BIP results were not derived from the gauge theory; the gauge theory was developed to explain the BIP results. The empirical fact came first. The geometry followed. This is the method of the entire book: measure the structure, then find the mathematics that explains why it was there all along.</p>
 <div class="footnote">
 <hr />

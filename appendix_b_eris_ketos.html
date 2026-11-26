@@ -496,7 +496,7 @@ for name, icis in [(&quot;Regular&quot;, regular_icis), (&quot;Irregular&quot;, 
     print(f&quot;{name}: H0_count={feat[0]:.0f}, H1_count={feat[8]:.0f}, &quot;
           f&quot;H1_max_life={feat[11]:.4f}&quot;)
 </code></pre>
-<p>The key insight is that regular codas produce tight clusters with low H1 persistence (no topological loops), while irregular codas produce spread distributions with detectable loops &mdash; the topological fingerprint of timing variability. These signatures are invariant to monotone transformations of the distance metric, making them robust to amplitude scaling and recording conditions.</p>
+<p>The key insight is that regular codas produce tight clusters with low H1 persistence (no topological loops), while irregular codas produce spread distributions with detectable loops &mdash; the topological fingerprint of timing variability. These signatures are invariant, up to a rescaling of the filtration values, to monotone transformations of the distance metric, making them robust to amplitude scaling and recording conditions.</p>
 <h4 id="b43-extracting-spd-features-from-spectrograms">B.4.3 Extracting SPD Features from Spectrograms</h4>
 <p>This example demonstrates the SPD manifold analysis pipeline: from raw audio to frequency-band covariance matrices to Riemannian feature vectors.</p>
 <pre><code class="language-python">import numpy as np

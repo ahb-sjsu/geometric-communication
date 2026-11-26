@@ -204,7 +204,7 @@
 - <strong>DINGIR</strong> &mdash; meaning &ldquo;god&rdquo; or &ldquo;divine&rdquo;
 - <strong>Anu</strong> &mdash; a proper name (the god of the sky)</p>
 <p>This polyvalence&mdash;one sign, many meanings&mdash;is the fundamental challenge of cuneiform NLP. A byte-level transformer model processing the transliteration <code>a-na {d}UTU</code> (&ldquo;to the sun-god Shamash&rdquo;) must learn that <code>{d}</code> is a determinative (a semantic classifier meaning &ldquo;divine&rdquo;), that <code>UTU</code> is the logographic writing of the god Shamash, and that together they form a two-sign compound with a specific hierarchical relationship.</p>
-<p>The hierarchy has (at least) four levels:</p>
+<p>The hierarchy has (at least) four levels, of which the first three (sign form, reading, word) are the three-level hierarchy referred to elsewhere in this book:</p>
 <p>$$\text{sign form} \to \text{reading} \to \text{word} \to \text{phrase}$$</p>
 <p>This is a tree, but a wide and shallow one compared to the coda taxonomy. The branching factor is high (some signs have dozens of readings), the depth is modest (4 levels), and the total number of distinct signs is approximately 600 in the Old Assyrian corpus.</p>
 <h3 id="562-the-attention-bias">5.6.2 The Attention Bias</h3>
