@@ -389,7 +389,7 @@ for name, icis in [("Regular", regular_icis), ("Irregular", irregular_icis)]:
           f"H1_max_life={feat[11]:.4f}")
 ```
 
-The key insight is that regular codas produce tight clusters with low H1 persistence (no topological loops), while irregular codas produce spread distributions with detectable loops --- the topological fingerprint of timing variability. These signatures are invariant to monotone transformations of the distance metric, making them robust to amplitude scaling and recording conditions.
+The key insight is that regular codas produce tight clusters with low H1 persistence (no topological loops), while irregular codas produce spread distributions with detectable loops --- the topological fingerprint of timing variability. These signatures are invariant, up to a rescaling of the filtration values, to monotone transformations of the distance metric, making them robust to amplitude scaling and recording conditions.
 
 #### B.4.3 Extracting SPD Features from Spectrograms
 

@@ -41,7 +41,7 @@
 **deep structure**, 2
 **deontic transfer (100% result)**, 12
 **determinative (cuneiform)**, 9
-**dihedral group**, *see* $D_4$
+**dihedral group**, *see* $D_4$ (withdrawn)
 **discrete semantic gates**, 13, 17
 **distinctive features (Jakobson)**, 2
 **distortion theorem (hyperbolic embedding)**, 5
@@ -125,7 +125,7 @@
 **spectral covariance**, 4, 8
 **spectral trajectory**, 4, 8
 **sycophancy**, 14
-**symmetry group**, *see* communication gauge group; $D_4$
+**symmetry group**, *see* communication gauge group; $V_4$
 **synonymy**, 1
 
 **Takens embedding**, 4, 6, 8
@@ -155,7 +155,7 @@
 **Firth, J. R.**, 2 --- distributional semantics
 **Gero, Shane**, 7 --- sperm whale coda research, individual identity
 **Harris, Zellig**, 2 --- distributional structure
-**Hohfeld, Wesley Newcomb**, 11, 12, 13 --- jural relations ($D_4$ structure), correlative symmetry
+**Hohfeld, Wesley Newcomb**, 11, 12, 13 --- jural relations ($V_4$ structure), correlative symmetry
 **Jakobson, Roman**, 2 --- distinctive features as discrete symmetry on phonological space
 **Kahneman, Daniel**, 14 --- framing effects
 **Menzerath, Paul**, 7 --- Menzerath's law in linguistic units
@@ -183,7 +183,7 @@
 **CBETA (Chinese Buddhist Electronic Text Association)**, 12 --- Buddhist canonical texts for cross-tradition invariance testing
 **Dear Abby corpus**, 11, 12 --- 68,000 advice columns (1956--2020), Hohfeldian classification target
 **Deep Past Akkadian corpus**, 9, 10 --- 1,561 parallel Akkadian-English sentence pairs, Old Assyrian business records
-**DSWP (Dominica Sperm Whale Project) coda dataset**, 5, 6, 7 --- 8,719 codas, 21 coda types, inter-click interval recordings
+**DSWP (Dominica Sperm Whale Project) coda dataset**, 5, 6, 7 --- 8,719 codas, 28 coda types, inter-click interval recordings
 **Measuring AGI benchmarks**, 14 --- social cognition track (framing effects), attention track (distractor resistance)
 **Sefaria digital library**, 11, 12 --- 3.9 million passages, Hebrew Bible, Mishnah, Talmud, Midrash, medieval commentary (500 BCE--1800 CE)
 **Wenyanwen corpus**, 12 --- Classical Chinese texts for cross-tradition linguistic analysis
@@ -193,7 +193,7 @@
 
 ## Software and Tools
 
-**BIP (Bias Invariance Principle) pipeline**, 11, 12 --- adversarial encoder for cross-lingual moral transfer; v10.16 notebook suite
+**BIP (Bond Invariance Principle) pipeline**, 11, 12 --- adversarial encoder for cross-lingual moral transfer; v10.16 notebook suite
 **ByT5**, 9, 10 --- byte-level transformer for cuneiform MT; baseline and geometric-augmented variants
 **eris-ketos**, 4, 5, 6, 7 --- geometric cetacean communication toolkit; Poincare coda embedding, TDA click analysis, SPD spectral features
 **geometric_features.py**, 4, 8 --- 156-dimensional geometric feature extraction pipeline for acoustic signals
@@ -210,7 +210,7 @@
 **$\mathbb{B}^n$ (Poincare ball)**, 4, 5, 7, 9 --- unit ball model of $n$-dimensional hyperbolic space; metric $ds^2 = \frac{4}{(1-\|x\|^2)^2}(dx_1^2 + \cdots + dx_n^2)$
 **$c$ (curvature parameter)**, 4, 5 --- controls precision at different levels of abstraction in hyperbolic embeddings
 **$C$ (content manifold)**, 3, 10, 15
-**$D_4$ (dihedral group of order 8)**, 13, 17 --- $\langle r, s \mid r^4 = s^2 = e, srs = r^{-1}\rangle$; acts on Hohfeldian square via correlative symmetry ($s$) and state transition ($r$)
+**$D_4$ (dihedral group of order 8)**, 13 --- $\langle r, s \mid r^4 = s^2 = e, srs = r^{-1}\rangle$; withdrawn as the group of the Hohfeldian square (2026-11-26), *see* $V_4$
 **$d_{\text{LE}}$ (log-Euclidean metric)**, 4, 8 --- $d_{\text{LE}}(S_1, S_2) = \|\log(S_1) - \log(S_2)\|_F$ on SPD manifold
 **$F$ (format group)**, 3 --- spoken vs. written vs. signed; component of communication gauge group
 **$G = T \times R \times F$ (communication gauge group)**, 3, 13
@@ -223,8 +223,9 @@
 **$S$ (signal manifold)**, 3, 15
 **SPD($n$) (symmetric positive-definite matrices)**, 4, 8 --- manifold of $n \times n$ SPD matrices; spectral covariance representation
 **$T$ (translation group)**, 3 --- relabeling across languages; component of communication gauge group
+**$V_4$ (Klein four-group)**, 12, 13, 17 --- $\langle s, n \mid s^2 = n^2 = e, sn = ns\rangle$; acts on Hohfeldian square via correlative exchange ($s$) and negation ($n$)
 **$V_{ij}$ (gauge violation tensor)**, 14 --- measures gauge invariance failure across transformation $i$ and outcome dimension $j$
-**Wilson loop**, 13 --- parallel transport around closed path; non-trivial holonomy at cross-type boundaries
+**Wilson loop**, 13 --- parallel transport around closed path; order effect at cross-type boundaries
 
 ---
 
@@ -233,10 +234,10 @@
 **8.9$\sigma$ framing displacement**, 14 --- communication surface is not gauge-invariant under dramatic vs. euphemistic rewriting
 **13.3$\sigma$ sycophancy gradient**, 14 --- objective hijacking in LLM moral judgment
 **44.5% F1 cross-lingual moral transfer**, 11 --- chance = 25%, $p < 10^{-50}$; Hebrew/Aramaic to English
-**100% deontic transfer**, 12 --- exact gauge invariance of Hohfeldian correlative symmetry
+**100% deontic transfer**, 12 --- reported for the binary obligation-liberty axis
 **156-dimensional geometric feature vector**, 4, 8 --- 136 SPD + 4 trajectory + 16 TDA
 **Menzerath's law ($r = -0.269$, $p < 10^{-144}$)**, 7 --- linguistic universals in sperm whale codas
-**~39% recovery ceiling**, 14 --- metacognitive warning recovers less than half of displaced meaning
+**~33% recovery ceiling**, 14 --- metacognitive warning recovers less than half of displaced meaning
 **74.3% coda classification accuracy**, 5, 7 --- Poincare ball embedding of whale coda taxonomy
 
 ---

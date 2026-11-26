@@ -195,7 +195,7 @@ The headline result:
 
 The model, trained exclusively on Hebrew and Aramaic moral texts, correctly classifies the Hohfeldian relation in modern English Dear Abby letters at nearly double the chance rate. The $z$-statistic of 52.3 corresponds to $p < 10^{-50}$---a probability so small that it exceeds the statistical thresholds used in particle physics ($5\sigma$, or $p \approx 3 \times 10^{-7}$) by more than 40 orders of magnitude.
 
-The language probe result is equally striking. A fresh linear probe, trained post hoc on frozen $\mathbf{z}_{\text{bond}}$ representations, achieved 0.0% accuracy at predicting the source language---*below* the 25% chance baseline for four languages. The bond space contains no recoverable linguistic information. The adversarial training has succeeded completely: $\mathbf{z}_{\text{bond}}$ encodes moral structure and nothing else that a linear classifier can find.
+The language probe result is equally striking. A fresh linear probe, trained post hoc on frozen $\mathbf{z}_{\text{bond}}$ representations, achieved 0.0% accuracy at predicting the source language---*below* the 25% chance baseline for four languages. The probe did not recover the source language from the bond space. An accuracy below chance is not the same as chance, so this figure by itself does not establish that $\mathbf{z}_{\text{bond}}$ carries no linguistic information that a linear classifier can find.
 
 ### 11.3.2 Per-Language Transfer
 
@@ -311,7 +311,7 @@ In the expanded eleven-language study, the obligation-permission binary transfer
 
 Table 11.2: *Individual cross-cultural transfer results (binary obligation/liberty F1). All transfers exceed the 0.50 chance baseline for binary classification. Transfers are strongest between traditions sharing geographic proximity and weakest for maximally distant pairs, but no transfer fails. The gradient from 0.78 (Jewish-Islamic) to 0.61 (Daoist-Buddhist) may reflect varying degrees of structural similarity in moral reasoning traditions.*
 
-The four-way classification is harder. The distinction between Obligation and Right (who bears the duty versus who holds the claim) requires perspective-taking: the same moral situation generates an Obligation for one party and a Right for the other. Similarly, the distinction between Liberty and No-Right requires recognizing whose freedom is at issue. These correlative distinctions are the reflections of the dihedral group $D_4$ (Chapter 13), and they are more linguistically embedded---the perspective is often implicit in the source text's framing rather than explicitly marked by deontic keywords.
+The four-way classification is harder. The distinction between Obligation and Right (who bears the duty versus who holds the claim) requires perspective-taking: the same moral situation generates an Obligation for one party and a Right for the other. Similarly, the distinction between Liberty and No-Right requires recognizing whose freedom is at issue. These correlative distinctions are the action of the correlative exchange $s$ in the group $V_4$ (Chapter 13), and they are more linguistically embedded---the perspective is often implicit in the source text's framing rather than explicitly marked by deontic keywords.
 
 ### 11.4.3 The Harm-Care Axis
 
@@ -329,7 +329,7 @@ A Bond Index of 0.0 indicates perfect correlative consistency (every Obligation 
 
 $$\text{Bd} = 0.1239$$
 
-This means that 87.6% of the model's classifications respect Hohfeldian correlative symmetry. The correlative structure---the $D_4$ symmetry group that Chapter 13 develops formally---is empirically preserved in the learned representation.
+This means that 87.6% of the model's classifications respect Hohfeldian correlative symmetry. The correlative structure---the involution $s$ of the $V_4$ symmetry group that Chapter 13 develops formally---is empirically preserved in the learned representation.
 
 The breakdown by correlative pair is informative:
 

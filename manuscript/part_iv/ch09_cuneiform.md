@@ -302,7 +302,7 @@ But the geometric bias contributes something that data alone does not. Consider 
 
 Configuration B translates Sentence 1 well---the phrases `a-na be-lí-a` ("to my lord") and `qí-bi-ma um-ma` ("say, thus") are formulaic, appearing many times in the training data. But it struggles with Sentence 2, which contains the rare divine name Sharrumaten and the less common optative verbal form. Configuration D handles Sentence 2 better, because the geometric bias ensures that the determinative `{d}` and the divine name attend strongly to each other, providing the model with structural context that the training data alone does not supply.
 
-This pattern---geometric bias helps most on rare elements---is exactly what the theory predicts. The attention bias is a *prior*, not a learned feature. It contributes information that is independent of the training data. When the data is abundant (for common signs), the prior adds little to what the model has already learned. When the data is scarce (for rare signs), the prior provides the structural scaffolding that allows the model to generalise from limited examples.
+This pattern---geometric bias helps most on rare elements---is exactly what the theory predicts. The attention bias is a *prior*: its embeddings are initialised from the sign taxonomy (Section 9.3.3) before training refines them. Its starting point contributes information that is independent of the training data. When the data is abundant (for common signs), the prior adds little to what the model has already learned. When the data is scarce (for rare signs), the prior provides the structural scaffolding that allows the model to generalise from limited examples.
 
 ---
 

@@ -23,21 +23,23 @@ The gauge invariance framework of *Geometric Reasoning* (Ch. 8) draws its mathem
 
 The communication domain challenges this assumption at its foundations.
 
-### 17.1.2 The $D_4$ Evidence
+### 17.1.2 The $V_4$ Evidence
 
-The Hohfeldian relations of normative communication --- Right, Duty, Liberty, No-Right --- form the vertices of a square. The measured symmetry group is the dihedral group $D_4 = \langle r, s \mid r^4 = s^2 = e,\; srs = r^{-1} \rangle$, with eight elements:
+> **Note (2026-11-26).** *Geometric Ethics* withdrew the dihedral group $D_4$ as the symmetry group of the four Hohfeldian positions in its version 1.25. The correlative exchange $s$ and the negation $n$ commute and generate the Klein four-group $V_4$, of order 4, and there is no quarter-turn. Lesson 1 needs only a finite group and discrete gating, so it stands and is restated with $V_4$. The reading of the Wilson loop result of Chapter 13 as discrete curvature of a non-abelian discrete gauge theory (Section 17.1.4) depended on $D_4$ and is withdrawn pending restatement.
 
-$$D_4 = \{e, r, r^2, r^3, s, sr, sr^2, sr^3\}$$
+The Hohfeldian relations of normative communication --- Right, Duty, Liberty, No-Right --- form the vertices of a square. The symmetry group is the Klein four-group $V_4 = \langle s, n \mid s^2 = n^2 = e,\; sn = ns \rangle$, with four elements:
 
-where $r$ is the state-transition rotation (cycling through normative positions: Right $\to$ Duty $\to$ No-Right $\to$ Liberty $\to$ Right) and $s$ is the correlative reflection (swapping perspective between parties: Right $\leftrightarrow$ Duty, Liberty $\leftrightarrow$ No-Right).
+$$V_4 = \{e, s, n, sn\}$$
 
-This group is discrete. It has eight elements. It is not the discretisation of a continuous group; there is no continuous deformation from Right to Duty. The transition is gated --- triggered by specific linguistic constructions that flip the normative state all at once:
+where $n$ is the negation (the state transition: Duty $\leftrightarrow$ Liberty, Right $\leftrightarrow$ No-Right) and $s$ is the correlative reflection (swapping perspective between parties: Right $\leftrightarrow$ Duty, Liberty $\leftrightarrow$ No-Right).
+
+This group is discrete. It has four elements. It is not the discretisation of a continuous group; there is no continuous deformation from Duty to Liberty. The transition is gated --- triggered by specific linguistic constructions that flip the normative state all at once:
 
 - "Only if convenient" $\to$ 100% Liberty (a single phrase collapses the probability distribution to a point)
 - "Found a friend" $\to$ 0% Liberty (another phrase snaps the distribution to the opposite vertex)
 - "Expecting me to" $\to$ Duty (a morphosyntactic frame selects the normative state categorically)
 
-These semantic gates are the communication domain's analogue of phase transitions in physics. But in physics, phase transitions occur in systems with continuous underlying dynamics, and the discreteness of the phases (solid, liquid, gas) emerges from the continuous thermodynamics. In communication, the discreteness appears to be fundamental. There is no continuous parameter that interpolates smoothly between Right and Duty. The transition is topological: you are on one side of the boundary or the other, and the boundary is crossed by a discrete linguistic trigger.
+These semantic gates are the communication domain's analogue of phase transitions in physics. But in physics, phase transitions occur in systems with continuous underlying dynamics, and the discreteness of the phases (solid, liquid, gas) emerges from the continuous thermodynamics. In communication, the discreteness appears to be fundamental. There is no continuous parameter that interpolates smoothly between Duty and Liberty. The transition is topological: you are on one side of the boundary or the other, and the boundary is crossed by a discrete linguistic trigger.
 
 ### 17.1.3 Corroborating Evidence from Other Stations
 
@@ -61,7 +63,7 @@ The mathematical apparatus exists. Discrete gauge theories on lattices have been
 - **Discrete curvature**: the product of group elements around a closed face (the Wilson loop), which is nontrivial if and only if the face has nonzero holonomy.
 - **Discrete parallel transport**: multiplication of group elements along a path in the graph.
 
-The Wilson loop experiments of Chapter 13 are already using this discrete apparatus, though they were motivated by empirical measurement rather than theoretical commitment. The combined $p < 10^{-8}$ for nontrivial holonomy at cross-type boundaries on the Hohfeldian square is a measurement of discrete curvature on a discrete gauge theory. The parent framework should recognise this as a native construction, not an approximation to a continuous one.
+[Withdrawn pending restatement under $V_4$, 2026-11-26: in the abelian group $V_4$ the product of gate elements around a closed face is always trivial.] The Wilson loop experiments of Chapter 13 are already using this discrete apparatus, though they were motivated by empirical measurement rather than theoretical commitment. The combined $p < 10^{-8}$ for nontrivial holonomy at cross-type boundaries on the Hohfeldian square is a measurement of discrete curvature on a discrete gauge theory. The parent framework should recognise this as a native construction, not an approximation to a continuous one.
 
 **Conjecture 17.1** (Discrete Gauge Hypothesis). *For cognitive domains where the fundamental categories of reasoning are discrete (moral relations, speech acts, emotional states, social roles), the appropriate gauge group is a finite group acting on a discrete structure, not a Lie group acting on a smooth manifold. The continuous geometry of the signal manifold $S$ and the discrete geometry of the content manifold $C$ coexist in a hybrid framework where the gauge group of meaning is discrete while the gauge group of expression is continuous.*
 
@@ -87,7 +89,7 @@ Every hierarchical structure examined in this book embeds more naturally in hype
 
 **Cuneiform sign hierarchy** (Chapter 9). The three-level hierarchy (sign form $\to$ reading $\to$ word) has branching factors that vary from 1 to $>$10 per sign. The hyperbolic attention bias, which computes Poincaré ball distances between signs and injects them as additive attention weights, consistently improves translation quality, with the largest gains on sentences containing rare signs deep in the hierarchy.
 
-**Hohfeldian moral ontology** (Chapter 13). The square of normative relations, while not a tree, has a hierarchical character: the abstract categories (Right, Duty, Liberty, No-Right) subsume specific instances (particular rights, particular duties) that are more numerous and more culturally specific. The $D_4$ group structure can be viewed as the symmetry group of a two-level hierarchy: the type level (which vertex of the square) and the instance level (which specific right or duty).
+**Hohfeldian moral ontology** (Chapter 13). The square of normative relations, while not a tree, has a hierarchical character: the abstract categories (Right, Duty, Liberty, No-Right) subsume specific instances (particular rights, particular duties) that are more numerous and more culturally specific. The $V_4$ group structure can be viewed as the symmetry group of a two-level hierarchy: the type level (which vertex of the square) and the instance level (which specific right or duty).
 
 **WordNet and other linguistic ontologies** (not analysed in this book, but extensively studied in the NLP literature). The WordNet noun hierarchy has branching factor $\sim$5 and depth $\sim$16. Nickel and Kiela (2017) demonstrated that Poincaré ball embeddings of WordNet achieve substantially lower distortion than Euclidean embeddings of the same dimension --- the result that launched the hyperbolic embedding literature in NLP.
 
@@ -95,7 +97,7 @@ Every hierarchical structure examined in this book embeds more naturally in hype
 
 The theoretical explanation is straightforward and was presented in Chapter 5, but its implications for the general theory bear restating.
 
-A tree with branching factor $b$ has $b^d$ nodes at depth $d$. The number of nodes grows exponentially with depth. In Euclidean space of dimension $n$, the volume of a ball of radius $r$ grows as $r^n$ --- polynomially. In hyperbolic space of dimension $n$ and curvature $-c$, the volume grows as $e^{(n-1)\sqrt{c}\,r}$ --- exponentially. The exponential growth of hyperbolic volume matches the exponential growth of the tree, allowing an embedding with bounded distortion in $O(\log b)$ dimensions (Sarkar, 2011). Euclidean space requires $O(b)$ dimensions for comparable distortion.
+A tree with branching factor $b$ has $b^d$ nodes at depth $d$. The number of nodes grows exponentially with depth. In Euclidean space of dimension $n$, the volume of a ball of radius $r$ grows as $r^n$ --- polynomially. In hyperbolic space of dimension $n$ and curvature $-c$, the volume grows as $e^{(n-1)\sqrt{c}\,r}$ --- exponentially. The exponential growth of hyperbolic volume matches the exponential growth of the tree, allowing an embedding with bounded distortion in $O(\log b)$ dimensions (Sarkar, 2011). Euclidean space requires $O(b^d)$ dimensions for comparable distortion (Chapter 5).
 
 This is not a property of the embedding algorithm. It is a property of the geometry itself. Hyperbolic space is *intrinsically suited* to hierarchical structure because its volume growth matches the branching structure of trees. Any domain whose fundamental objects are organised hierarchically --- and communication is such a domain, at every level from phonology to semantics --- will benefit from hyperbolic representation.
 
@@ -212,9 +214,9 @@ Each of these losses corresponds to the destruction of a specific geometric stru
 
 We can make the qualitative argument quantitative by defining an *irrecoverability gradient* across domains.
 
-**Definition 17.1** (Irrecoverability Gradient). *Let $M$ be the domain manifold of dimension $n$, and let $\pi: M \to \mathbb{R}$ be the standard scalar evaluation for the domain. The irrecoverability gradient is the pair $(\dim(\ker d\pi), \, \text{rank}(H_*(\pi^{-1}(c))))$, measuring (i) the codimension of the scalar's fibres (how many dimensions are lost) and (ii) the topological complexity of the fibres (how structured the lost information is).*
+**Definition 17.1** (Irrecoverability Gradient). *Let $M$ be the domain manifold of dimension $n$, and let $\pi: M \to \mathbb{R}$ be the standard scalar evaluation for the domain. The irrecoverability gradient is the pair $(\dim(\ker d\pi), \, \text{rank}(H_*(\pi^{-1}(c))))$, measuring (i) the dimension of the scalar's fibres (how many dimensions are lost) and (ii) the topological complexity of the fibres (how structured the lost information is).*
 
-For GDP on an economic manifold of dimension $\sim$50 (sectors, regions, demographics), the codimension is $\sim$49 and the fibre topology is relatively simple (convex polytopes of distributions summing to the same GDP). For BLEU on a communication manifold of dimension $\sim$100+ (semantic, pragmatic, syntactic, and lexical dimensions), the codimension is $\sim$99 and the fibre topology is highly complex: the set of translations with the same BLEU score includes semantically perfect translations, semantically catastrophic translations, and everything in between, with no topological constraint relating them.
+For GDP on an economic manifold of dimension $\sim$50 (sectors, regions, demographics), the fibre dimension is $\sim$49 and the fibre topology is relatively simple (convex polytopes of distributions summing to the same GDP). For BLEU on a communication manifold of dimension $\sim$100+ (semantic, pragmatic, syntactic, and lexical dimensions), the fibre dimension is $\sim$99 and the fibre topology is highly complex: the set of translations with the same BLEU score includes semantically perfect translations, semantically catastrophic translations, and everything in between, with no topological constraint relating them.
 
 The key difference is fibre topology. In economics, knowing the GDP constrains the economy to a convex set --- a topologically simple fibre. In communication, knowing the BLEU score constrains the translation to a topologically wild set --- a fibre that includes both excellent and terrible translations, connected by paths through every intermediate quality. The scalar tells you almost nothing, because the fibre is so large and so unstructured.
 
@@ -256,9 +258,9 @@ The proposition's force is in part (ii). Every standard evaluation metric in com
 
 ### 17.5.1 Heuristic Corruption in Communication
 
-The heuristic field formalism of *Geometric Reasoning* (Ch. 3) models the learned associations that guide reasoning as a field on the domain manifold. The field assigns to each point $x \in M$ a vector $h(x) \in T_x M$ that represents the default direction of inference: given this input, what is the most natural next step?
+The heuristic field formalism of *Geometric Reasoning* (Ch. 3) models the learned associations that guide reasoning as a field on the domain manifold. The field assigns to each point $x \in M$ a vector $-\nabla h(x) \in T_x M$, the negative gradient of the scalar heuristic $h$ of Definition 3.3, that represents the default direction of inference: given this input, what is the most natural next step?
 
-In communication, the heuristic field encodes the contextual associations that guide interpretation: given this utterance in this context, what does it most likely mean? Chapter 14 documented how this field can be corrupted by framing effects (the 8.9$\sigma$ displacement of moral judgment under dramatic vs. euphemistic rewriting) and exploited by sycophancy (the 13.3$\sigma$ sycophancy gradient across questioning rounds).
+In communication, the heuristic field encodes the contextual associations that guide interpretation: given this utterance in this context, what does it most likely mean? Chapter 14 documented how this field can be corrupted by framing effects (the 8.9$\sigma$ displacement of moral judgment under dramatic vs. euphemistic rewriting) and exploited by sycophancy (the 13.3$\sigma$ sycophancy gradient across models).
 
 ### 17.5.2 The Phase Structure
 
@@ -290,7 +292,7 @@ If correct, this conjecture would explain the anisotropic vulnerability observed
 
 The communication domain contributes five lessons to the parent framework of *Geometric Reasoning*:
 
-1. **Discrete gauge structure is natural.** The $D_4$ group of normative communication is discrete, not continuous. Discrete gauge theories, not Lie group gauge theories, may be the norm for cognitive domains.
+1. **Discrete gauge structure is natural.** The $V_4$ group of normative communication is discrete, not continuous. Discrete gauge theories, not Lie group gauge theories, may be the norm for cognitive domains.
 
 2. **Hierarchy demands hyperbolic geometry.** Every hierarchical communication system embeds more naturally in hyperbolic space. The parent theory should default to negative curvature for hierarchical domains.
 
@@ -314,6 +316,6 @@ The next and final chapter of the book turns from what we have learned to what w
 
 ---
 
-**Series cross-references.** Gauge invariance: GR Ch. 8; this volume Ch. 13. Heuristic field formalism: GR Ch. 3; this volume Ch. 14. Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Hyperbolic embeddings: GR Ch. 14; GM Ch. 4.6; this volume Ch. 5, 9. $D_4$ group: GE Ch. 8; this volume Ch. 13. Adversarial robustness: GE Ch. 22; this volume Ch. 7, 14. Phase transitions and catastrophe theory: not yet treated in the series; proposed for future development in *Geometric Reasoning*, 2nd edition.
+**Series cross-references.** Gauge invariance: GR Ch. 8; this volume Ch. 13. Heuristic field formalism: GR Ch. 3; this volume Ch. 14. Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Hyperbolic embeddings: GR Ch. 14; GM Ch. 4.6; this volume Ch. 5, 9. $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. Adversarial robustness: GE Ch. 22; this volume Ch. 7, 14. Phase transitions and catastrophe theory: not yet treated in the series; proposed for future development in *Geometric Reasoning*, 2nd edition.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*

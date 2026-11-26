@@ -125,6 +125,8 @@ where $d_B$ is the bottleneck distance.
 
 ## A.7 The Dihedral Group $D_4$
 
+> **Note (2026-11-26).** *Geometric Ethics* withdrew $D_4$ as the symmetry group of the four Hohfeldian positions in its version 1.25. The correlative exchange $s$ ($O \leftrightarrow C$, $L \leftrightarrow N$) and the negation $n$ ($O \leftrightarrow L$, $C \leftrightarrow N$) commute and generate the Klein four-group $V_4 = \{e, s, n, sn\}$, of order 4, abelian, with every element its own inverse. The definition and properties of $D_4$ below are standard group theory and stand as mathematics. The communication interpretation at the end of this section, which uses the quarter-turn $r$, is withdrawn pending restatement under $V_4$ (see Section 13.3).
+
 **Definition A.20 ($D_4$).** The *dihedral group of order 8* is
 
 $$D_4 = \langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$$
@@ -136,4 +138,4 @@ Its eight elements are $\{e, r, r^2, r^3, s, sr, sr^2, sr^3\}$. It is the symmet
 - Center: $Z(D_4) = \{e, r^2\}$
 - Conjugacy classes: $\{e\}$, $\{r^2\}$, $\{r, r^3\}$, $\{s, sr^2\}$, $\{sr, sr^3\}$
 
-*Communication interpretation*: $D_4$ is the symmetry group of the Hohfeldian square of jural relations. The generator $r$ rotates through normative positions (Right → Duty → Liberty → No-Right). The generator $s$ reflects between correlative positions (Right ↔ Duty). (See Chapter 13.)
+*Communication interpretation* [Withdrawn pending restatement under $V_4$, 2026-11-26]: $D_4$ is the symmetry group of the Hohfeldian square of jural relations. The generator $r$ rotates through normative positions (Right → Duty → Liberty → No-Right). The generator $s$ reflects between correlative positions (Right ↔ Duty). (See Chapter 13.)

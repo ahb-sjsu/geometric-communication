@@ -237,7 +237,7 @@ Consider the sign 𒀭. It has (among others) three readings:
 
 This polyvalence---one sign, many meanings---is the fundamental challenge of cuneiform NLP. A byte-level transformer model processing the transliteration `a-na {d}UTU` ("to the sun-god Shamash") must learn that `{d}` is a determinative (a semantic classifier meaning "divine"), that `UTU` is the logographic writing of the god Shamash, and that together they form a two-sign compound with a specific hierarchical relationship.
 
-The hierarchy has (at least) four levels:
+The hierarchy has (at least) four levels, of which the first three (sign form, reading, word) are the three-level hierarchy referred to elsewhere in this book:
 
 $$\text{sign form} \to \text{reading} \to \text{word} \to \text{phrase}$$
 

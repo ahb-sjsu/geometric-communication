@@ -21,9 +21,9 @@
 
 In Chapter 1, we surveyed the scalar menagerie --- BLEU, perplexity, WER, classification accuracy, sentiment scores --- and catalogued, informally, what each metric destroys. In Chapter 3, we constructed the communication manifold $M = S \times P \times C$ and showed that scalar evaluation is a projection $\pi: M \to \mathbb{R}$ that discards the manifold structure. Now we make this precise.
 
-**Theorem 15.1** (Scalar Irrecoverability for Communication). *Let $M = S \times P \times C$ be the communication manifold with metric $g$ and gauge group $G = T \times R \times F$. Let $\phi: M \to \mathbb{R}$ be any scalar evaluation. Then:*
+**Theorem 15.1** (Scalar Irrecoverability for Communication). *Let $M = S \times P \times C$ be the communication manifold with metric $g$ and gauge group $G = T \times R \times F$. Let $\phi: M \to \mathbb{R}$ be any smooth scalar evaluation. Then:*
 
-1. *For any value $r \in \text{range}(\phi)$, the level set $\phi^{-1}(r)$ is a submanifold of $M$ of codimension 1 --- that is, it has dimension $\dim(M) - 1$.*
+1. *For any regular value $r \in \text{range}(\phi)$, the level set $\phi^{-1}(r)$ is a submanifold of $M$ of codimension 1 --- that is, it has dimension $\dim(M) - 1$.*
 2. *No function $\psi: \mathbb{R} \to M$ can invert $\phi$ --- there is no way to recover the point on $M$ from its scalar image.*
 3. *The level set $\phi^{-1}(r)$ generically intersects every fiber of the product structure --- that is, for generic $\phi$, the set of communicative acts with the same scalar score includes acts that differ in signal, pragmatics, and content simultaneously.*
 
@@ -55,9 +55,9 @@ the score is a geometric mean of modified $n$-gram precisions, weighted uniforml
 
 **Profile A: Uniformly mediocre.** Each $n$-gram precision $p_n$ is approximately 0.35, meaning that about a third of the unigrams, bigrams, trigrams, and 4-grams in the translation appear in the reference. The translation captures some of the vocabulary and some of the local phrase structure, but misses two-thirds of both. This is a system that has a general sense of what the source says but cannot reliably reproduce it.
 
-**Profile B: Lexically accurate, structurally wrong.** The unigram precision $p_1$ is high (say, 0.70 --- most of the right words are present), but the bigram and higher precisions drop sharply ($p_2 = 0.25$, $p_3 = 0.15$, $p_4 = 0.10$). The geometric mean $\exp(0.25 \times (\log 0.70 + \log 0.25 + \log 0.15 + \log 0.10)) \approx 0.24$, and a mild brevity bonus could lift this to 0.35. This is a system that knows the vocabulary but cannot construct phrases --- a bag-of-words translator with a post-hoc ordering step.
+**Profile B: Lexically accurate, structurally wrong.** The unigram precision $p_1$ is high (say, 0.70 --- most of the right words are present), but the bigram and higher precisions drop sharply ($p_2 = 0.40$, $p_3 = 0.30$, $p_4 = 0.18$). The geometric mean $\exp(0.25 \times (\log 0.70 + \log 0.40 + \log 0.30 + \log 0.18)) \approx 0.35$, with no brevity penalty. This is a system that knows the vocabulary but cannot construct phrases --- a bag-of-words translator with a post-hoc ordering step.
 
-**Profile C: Locally fluent, globally incoherent.** The short $n$-gram precisions are high ($p_1 = 0.60$, $p_2 = 0.50$) but the long $n$-gram precisions are low ($p_3 = 0.20$, $p_4 = 0.12$). The system produces fluent bigrams and trigrams --- natural-sounding local sequences --- but the sentences do not cohere at the clause level. The geometric mean works out to approximately 0.32, and the brevity penalty adjusts to 0.35. This is the failure mode of early neural MT: locally fluent, globally confused.
+**Profile C: Locally fluent, globally incoherent.** The short $n$-gram precisions are high ($p_1 = 0.60$, $p_2 = 0.50$) but the long $n$-gram precisions are low ($p_3 = 0.25$, $p_4 = 0.20$). The system produces fluent bigrams and trigrams --- natural-sounding local sequences --- but the sentences do not cohere at the clause level. The geometric mean works out to approximately 0.35, with no brevity penalty. This is the failure mode of early neural MT: locally fluent, globally confused.
 
 **Profile D: Semantically faithful, stylistically alien.** The translation captures the meaning of every sentence but uses unnatural phrasing, calques, and non-idiomatic constructions. Because BLEU measures surface overlap, the unigram precision is moderate (the right concepts are present but expressed with unusual word choices), and the higher $n$-gram precisions are low (the phrase structures are non-native). A human evaluator would rate this translation as "accurate but awkward" --- high adequacy, low fluency. BLEU sees only the low fluency.
 
@@ -172,7 +172,7 @@ The resulting bond space representation is a point in a learned latent space whe
 
 What does the bond space recover that a scalar moral evaluation destroys? A scalar "moral score" (e.g., toxicity = 0.3) collapses the Hohfeldian structure into a single number, losing:
 
-- The *type* of moral relation (Right vs. Duty vs. Liberty vs. No-Right --- the D4 structure of Chapter 13).
+- The *type* of moral relation (Right vs. Duty vs. Liberty vs. No-Right --- the $V_4$ structure of Chapter 13).
 - The *parties* involved (who has the right? who bears the duty?).
 - The *strength* of the relation (absolute obligation vs. defeasible preference).
 - The *context dependence* (rights that hold in some jurisdictions but not others, duties that vary with role).
@@ -219,9 +219,9 @@ The force of the theorem lies in the dimensional gap between what scalars measur
 | Whale codas | $\geq 28$ | Classification accuracy | 1 | $\geq 27$ |
 | Birdsong | $\geq 159$ | Species accuracy | 1 | $\geq 158$ |
 | Moral judgment | $\geq 21$ | Toxicity score | 1 | $\geq 20$ |
-| Cross-lingual transfer | $\geq 15$ | F1 score | 1 | $\geq 14$ |
+| Cross-lingual transfer | $\geq 18$ | F1 score | 1 | $\geq 17$ |
 
-In every case, the scalar captures less than 5% of the manifold's dimensionality. The information loss ratio is not a matter of degree --- it is the difference between knowing one coordinate and knowing twenty, between a point on a line and a point in a twenty-dimensional space.
+In every case, the scalar captures at most about 6% of the manifold's dimensionality. The information loss ratio is not a matter of degree --- it is the difference between knowing one coordinate and knowing twenty, between a point on a line and a point in a twenty-dimensional space.
 
 ### 15.5.3 What the Theorem Does Not Say
 
@@ -243,7 +243,7 @@ The scalar metric cannot detect the distortion because the distortion occurs in 
 
 **Proposition 15.2** (Failure-Irrecoverability Compounding). *Let $\delta \mathbf{m}$ be the displacement caused by a failure mode (Chapter 14). If $\delta \mathbf{m}$ lies in the null space of the scalar evaluation $\phi$ --- i.e., if $\phi(\mathbf{m}) = \phi(\mathbf{m} + \delta \mathbf{m})$ --- then the failure is invisible to $\phi$. For scalar evaluations of codimension 1, the null space has dimension $d - 1$, so "most" failure displacements are invisible to any given scalar.*
 
-This is the geometric explanation for why the Measuring AGI benchmarks (Chapters 14) found failures at 5.0--13.3$\sigma$ that prior scalar evaluations did not detect. The failures were present all along. They were invisible because they lay in the null space of the scalar metrics that prior evaluations used. The 7-dimensional harm space, the multi-turn correction protocol, the graded dose-response curve --- these are geometric measurements that access the dimensions where the failures live. Scalar metrics cannot see what they cannot reach.
+This is the geometric explanation for why the Measuring AGI benchmarks (Chapter 14) found failures at 5.0--13.3$\sigma$ that prior scalar evaluations did not detect. The failures were present all along. They were invisible because they lay in the null space of the scalar metrics that prior evaluations used. The 7-dimensional harm space, the multi-turn correction protocol, the graded dose-response curve --- these are geometric measurements that access the dimensions where the failures live. Scalar metrics cannot see what they cannot reach.
 
 ---
 
@@ -300,7 +300,7 @@ Of all the domains treated in the Geometric series --- reasoning, ethics, law, m
 
 Communication exists to convey meaning. A metric that cannot represent meaning cannot evaluate communication. This is not a statement about the limitations of current technology. It is a statement about the mathematical structure of the problem. The communication manifold is high-dimensional, richly structured, and geometrically non-trivial. The meaning of a communicative act is a point on this manifold. A scalar evaluation is a projection from this manifold to a line. The projection destroys the structure that makes the manifold worth studying.
 
-The five communication systems examined in this book --- whale codas, birdsong, cuneiform inscriptions, cross-lingual moral reasoning, and LLM moral judgment --- are unified by a single finding: geometric evaluation recovers structure that scalar evaluation destroys. The 156-dimensional feature vector, the bond space representation, the hyperbolic attention map, the 7-dimensional harm space, the D4 gauge group of normative communication --- these are not competing approaches. They are coordinates on a single geometric object. The communication manifold is real. Its structure is measurable. And its structure is what scalar evaluation discards.
+The five communication systems examined in this book --- whale codas, birdsong, cuneiform inscriptions, cross-lingual moral reasoning, and LLM moral judgment --- are unified by a single finding: geometric evaluation recovers structure that scalar evaluation destroys. The 156-dimensional feature vector, the bond space representation, the hyperbolic attention map, the 7-dimensional harm space, the $V_4$ gauge group of normative communication --- these are not competing approaches. They are coordinates on a single geometric object. The communication manifold is real. Its structure is measurable. And its structure is what scalar evaluation discards.
 
 The theorem is a negative result. It says what cannot be done. But every negative result in mathematics has a constructive shadow: it tells you what *must* be done instead. The Scalar Irrecoverability Theorem for communication says: to evaluate communication, you must preserve the manifold. The rest of this book has shown how.
 

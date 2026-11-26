@@ -210,7 +210,7 @@ In the Old Assyrian corpus, we computed $\rho$ for all 1,561 aligned pairs using
 | Legal proceedings | 0.23 | 0.11 | 198 |
 | Private letters | 0.31 | 0.14 | 364 |
 
-The gradient is monotonic and statistically significant ($F(3, 1557) = 142.7$, $p < 10^{-80}$). Commercial records, with their formulaic structure and flat semantics, have residuals near zero. Private letters, with their entangled morphology and pragmatic complexity, have residuals three to four times larger. This is the curvature of the semantic manifold, measured empirically.
+The gradient is monotonic and statistically significant ($F(3, 1557) = 142.7$, $p < 10^{-80}$). Commercial records, with their formulaic structure and flat semantics, have residuals near zero. Private letters, with their entangled morphology and pragmatic complexity, have residuals three to four times larger. This is the curvature of the semantic manifold as seen through its empirical proxy, the loop residual.
 
 [Figure 10.4: Translation loop residual $\rho$ versus genre for the Old Assyrian corpus. Box plots showing median, interquartile range, and outliers. The monotonic increase from commercial records to private letters corresponds to increasing curvature of the content manifold $C$.]
 

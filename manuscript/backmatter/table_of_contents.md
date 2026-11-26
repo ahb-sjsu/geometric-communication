@@ -63,17 +63,17 @@
 *The BIP experiment --- the most direct test of whether meaning has gauge-invariant structure. Training on 3.9 million Sefaria passages (Hebrew/Aramaic, 500 BCE--1800 CE). Testing on 68,000 Dear Abby letters (American English, 1956--2020). Cross-lingual Hohfeldian classification at 44.5% F1.*
 
 **Chapter 12. Temporal Invariance and the Topology of Moral Language**
-*The temporal dimension of the BIP experiment. The NLP extraction pipeline for ancient texts. Linguistic analysis of surface features and deep moral structure. The 100% deontic transfer result and exact gauge invariance of Hohfeldian correlative symmetry.*
+*The temporal dimension of the BIP experiment. The NLP extraction pipeline for ancient texts. Linguistic analysis of surface features and deep moral structure. The 100% deontic transfer result reported for the obligation-liberty axis.*
 
 **Chapter 13. The Gauge Theory of Communicative Acts**
-*The theoretical capstone. The $D_4$ structure of normative communication. Discrete semantic gates. Wilson loop experiments and non-trivial holonomy at cross-type boundaries. Meaning as the connection on the communication fiber bundle.*
+*The theoretical capstone. The $V_4$ structure of normative communication ($D_4$ withdrawn, 2026-11-26). Discrete semantic gates. Wilson loop experiments and the order effect at cross-type boundaries. Meaning as the connection on the communication fiber bundle.*
 
 ---
 
 ## Part VI: Communication Failure
 
 **Chapter 14. The Four Failure Modes of Communication**
-*The general failure taxonomy instantiated for communication. Heuristic corruption (framing effects, 8.9$\sigma$). Objective hijacking (sycophancy, 13.3$\sigma$). Local minima (misunderstanding equilibria). Gauge breaking (distractor interference, 4.6$\sigma$, ~39% recovery ceiling).*
+*The general failure taxonomy instantiated for communication. Heuristic corruption (framing effects, 8.9$\sigma$). Objective hijacking (sycophancy, 13.3$\sigma$). Local minima (misunderstanding equilibria). Gauge breaking (distractor interference, 5.0$\sigma$, ~33% recovery ceiling).*
 
 **Chapter 15. Scalar Irrecoverability in Communication**
 *The domain-specific Scalar Irrecoverability Theorem. The BLEU decomposition: four independent dimensions compressed to one. The sentiment trap. What geometry recovers: the full communication tensor on $M = S \times P \times C$.*

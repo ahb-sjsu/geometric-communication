@@ -38,10 +38,11 @@ Consistent with the Geometric Series. Where domain-specific notation extends the
 | $T$ | Translation group (relabeling across languages) | Ch. 3 |
 | $R$ | Re-description group (paraphrase within a language) | Ch. 3 |
 | $F$ | Format group (spoken, written, signed) | Ch. 3 |
-| $D_4$ | Dihedral group of order 8 (Hohfeldian symmetry) | Ch. 13 |
-| $r$ | Rotation generator of $D_4$ (normative state transition) | Ch. 13 |
-| $s$ | Reflection generator of $D_4$ (correlative symmetry) | Ch. 13 |
-| $U(1)_H$ | Harm conservation gauge group | Ch. 13 |
+| $V_4$ | Klein four-group of order 4 (Hohfeldian symmetry) | Ch. 13 |
+| $n$ | Negation generator of $V_4$ (normative state transition) | Ch. 13 |
+| $s$ | Correlative generator of $V_4$ (correlative symmetry) | Ch. 13 |
+| $D_4$, $r$ | Dihedral group of order 8 and its quarter-turn, withdrawn as the Hohfeldian symmetry (2026-11-26) | Ch. 13 |
+| $U(1)_H$ | Harm/benefit magnitude gauge group | Ch. 13 |
 
 ## Maps and Operations
 

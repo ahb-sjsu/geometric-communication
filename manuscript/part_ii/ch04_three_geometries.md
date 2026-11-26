@@ -225,7 +225,7 @@ Hyperbolic geometry applies wherever communication exhibits hierarchical organiz
 
 2. **Cuneiform sign hierarchy** (Chapter 9). The three-level structure of Akkadian writing (sign $\to$ reading $\to$ word) is encoded as an additive attention bias in a transformer: tokens whose signs are hierarchically close attend to each other more strongly, with the bias computed as the hyperbolic distance between sign embeddings on the Poincare ball. This is a fixed geometric prior, not a learned embedding --- it injects Assyriological knowledge directly into the model architecture.
 
-3. **Semantic taxonomies** (Chapter 11). The Hohfeldian relations (Right, Duty, Liberty, No-Right) form a shallow hierarchy that embeds trivially in hyperbolic space. The deeper insight is that the *connections* between normative positions --- the D4 symmetry group explored in Chapter 13 --- are naturally represented as isometries of the ball.
+3. **Semantic taxonomies** (Chapter 11). The Hohfeldian relations (Right, Duty, Liberty, No-Right) form a shallow hierarchy that embeds trivially in hyperbolic space. The deeper insight is that the *connections* between normative positions --- the $V_4$ symmetry group explored in Chapter 13 --- are naturally represented as isometries of the ball.
 
 ---
 

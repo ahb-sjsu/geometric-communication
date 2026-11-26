@@ -21,11 +21,11 @@
 
 ---
 
-The preceding two chapters established the empirical facts. Chapter 11 demonstrated that Hohfeldian moral structure transfers across languages, centuries, and civilisations at levels far above chance ($F_1 = 44.5\%$, chance $= 25\%$, $p < 10^{-50}$). Chapter 12 showed that Hohfeldian correlative symmetry holds at 100% across all tested scenarios and that temporal invariance persists within textual traditions spanning millennia. These are extraordinary claims. They demand a theoretical framework commensurate with their strength.
+The preceding two chapters established the empirical facts. Chapter 11 demonstrated that Hohfeldian moral structure transfers across languages, centuries, and civilisations at levels far above chance ($F_1 = 44.5\%$, chance $= 25\%$, $p < 10^{-50}$). Chapter 12 reported that the obligation-liberty axis transfers at 100% and that temporal invariance persists within textual traditions spanning millennia. These are extraordinary claims. They demand a theoretical framework commensurate with their strength.
 
-This chapter provides that framework. The central thesis is that communication has gauge structure in the precise mathematical sense: the content of a communicative act is a gauge-invariant quantity --- the residue that remains after all re-descriptions (translation, paraphrase, reformulation, change of medium, shift of register) have been factored out. This is not an analogy borrowed from physics. It is a claim about the mathematical structure of communication itself, validated by the experimental results of Chapters 5--12 and formalised here with the full machinery of fiber bundles, connections, curvature, and holonomy.
+This chapter provides that framework. The central thesis is that communication has gauge structure in the precise mathematical sense: the content of a communicative act is a gauge-invariant quantity --- the residue that remains after all re-descriptions (translation, paraphrase, reformulation, change of medium, shift of register) have been factored out. This is not an analogy borrowed from physics. It is a claim about the mathematical structure of communication itself, motivated by the experimental results of Chapters 5--12 and formalised here with the full machinery of fiber bundles, connections, curvature, and holonomy.
 
-The development proceeds through the communication fiber bundle (Section 13.1), the connection governing parallel transport of meaning (Section 13.2), the identification of $D_4$ as the gauge group (Section 13.3), the discrete semantic gates (Section 13.4), Wilson loops and holonomy (Section 13.5), and the full interpretation (Section 13.6). Throughout, the SQND experimental results ($N = 3{,}110$ evaluations) serve as the empirical anchor. Without a gauge-theoretic framework, the cross-lingual invariance results of Chapters 11--12 are striking coincidences. With it, they are consequences of structure.
+The development proceeds through the communication fiber bundle (Section 13.1), the connection governing parallel transport of meaning (Section 13.2), the discrete gauge group of normative communication (Section 13.3), the discrete semantic gates (Section 13.4), Wilson loops and holonomy (Section 13.5), and the full interpretation (Section 13.6). Throughout, the SQND experimental results ($N = 3{,}110$ evaluations) serve as the empirical anchor. Without a gauge-theoretic framework, the cross-lingual invariance results of Chapters 11--12 are striking coincidences. With it, they are consequences of structure.
 
 ---
 
@@ -33,7 +33,7 @@ The development proceeds through the communication fiber bundle (Section 13.1), 
 
 ### 13.1.1 From Product Manifold to Fiber Bundle
 
-Chapter 3 introduced the communication manifold $M = S \times P \times C$ as a product of the signal manifold, the pragmatic manifold, and the content manifold. This product structure was adequate for defining communicative acts as points and scalar evaluation as lossy projection. But the product structure is insufficient for the theory we now require, because it treats the three factors as independent. They are not.
+Chapter 3 introduced the communication manifold $M = S \times P \times C$ as a product of the signal manifold, the pragmatic manifold, and the content manifold. This product structure was adequate for defining communicative acts as points and scalar evaluation as lossy projection. But the product structure is insufficient for the theory we now require, because it treats the three factors as independent. They are not. Chapter 3 placed the pragmatic manifold $P$ in the base together with $C$ (Section 3.4.5); in this chapter the base is the content manifold $C$ alone and pragmatic framing is counted with the surface form in the fiber. The two descriptions differ only in where $P$ is counted.
 
 The relationship between surface form and meaning is not a product --- it is a *fibration*. At each point of the base space (the semantic content), there is an entire *fiber* of possible surface realisations: all the ways that content can be expressed. The fiber over the concept "Alex owes Jordan assistance on Saturday" includes the five descriptions in the running example, and indefinitely many others. The choice of a particular surface form --- English or Hebrew, formal or casual, spoken or written --- is a choice of point within the fiber. It is a *local section* of the bundle.
 
@@ -90,7 +90,7 @@ $$G = \{g: \mathcal{E} \to \mathcal{E} \mid \pi \circ g = \pi, \; g \text{ is a 
 - *The format group $F$: change of medium (spoken, written, signed)*
 - *The register group $\mathcal{R}$: shift of formality, style, social positioning*
 
-*For normative communication restricted to Hohfeldian relations, the effective gauge group reduces to $D_4 \times U(1)_H$ (Section 13.3).*
+*For normative communication restricted to Hohfeldian relations, the effective gauge group reduces to $V_4 \times U(1)_H$ (Section 13.3).*
 
 ---
 
@@ -150,7 +150,9 @@ This proposition gives precise meaning to "talking past each other." Two interlo
 
 ---
 
-## 13.3 The $D_4$ Structure of Normative Communication
+## 13.3 The $V_4$ Structure of Normative Communication
+
+> **Note (2026-11-26).** *Geometric Ethics* withdrew the dihedral group $D_4$ as the symmetry group of the four Hohfeldian positions in its version 1.25. The two demonstrated operations, the correlative exchange $s$ ($O \leftrightarrow C$, $L \leftrightarrow N$) and the negation $n$ ($O \leftrightarrow L$, $C \leftrightarrow N$), commute, and the group they generate is the Klein four-group $V_4 = \{e, s, n, sn\}$, of order 4. No quarter-turn that cycles the four positions has been demonstrated as a normative operation. Earlier drafts of this chapter stated the $D_4$ result. The statements that use only $s$ and $n$ stand and are restated here with $V_4$: the Hohfeldian square (Definition 13.7), the exact correlative symmetry (Finding 1), the discreteness of gating (Findings 2 and 3, Definition 13.10, Theorem 13.3), the asymmetry between perspective shift and state transition (Theorem 13.2, where the state transition is the negation $n$), and the gates of Section 13.4.1, whose transitions are all $O \leftrightarrow L$ and are therefore the element $n$. The statements that depend on the quarter-turn $r$, on a group of order 8, or on non-commutativity are withdrawn pending restatement: Definition 13.8 as the group of the square, Theorem 13.1, the uniqueness argument that closes Section 13.3.3, the remark on non-commuting gates in Section 13.4.1, and the group-theoretic explanation of path dependence in Proposition 13.3 and Theorem 13.4(iii). The order effect reported in Section 13.5.3 stands as an observation. Because $V_4$ is abelian it cannot be the source of that effect, and *Geometric Ethics* now attributes it to curvature of the continuous connection. The gauge group of normative communication is accordingly posited as $V_4 \times U(1)_H$.
 
 ### 13.3.1 The Hohfeldian Square
 
@@ -178,16 +180,16 @@ These four relations form a square with two types of structural relationships:
 *The square can be drawn as:*
 
 $$\begin{array}{ccc}
-O & \xrightarrow{r} & C \\
-{\scriptstyle s}\updownarrow & & \updownarrow{\scriptstyle s} \\
-N & \xleftarrow{r} & L
+O & \xleftrightarrow{s} & C \\
+{\scriptstyle n}\updownarrow & & \updownarrow{\scriptstyle n} \\
+L & \xleftrightarrow{s} & N
 \end{array}$$
 
-*where $r$ denotes the quarter-turn rotation $O \to C \to L \to N \to O$ and $s$ denotes the reflection (correlative exchange).*
+*where $s$ denotes the correlative exchange along the horizontal edges and $n$ denotes the negation along the vertical edges. The two involutions commute, and together they generate the Klein four-group $V_4 = \{e, s, n, sn\}$.*
 
 ### 13.3.2 The Dihedral Group $D_4$
 
-**Definition 13.8** ($D_4$). *The dihedral group $D_4$ is the symmetry group of the square, presented as*
+**Definition 13.8** ($D_4$). [Withdrawn pending restatement under $V_4$, 2026-11-26: the quarter-turn $r$ below is not a demonstrated normative operation, and $D_4$ is kept here only as the group that earlier drafts used.] *The dihedral group $D_4$ is the symmetry group of the square, presented as*
 
 $$D_4 = \langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$$
 
@@ -203,7 +205,7 @@ $$D_4 = \langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$$
 - $sr(O) = s(C) = O$: *reflect-then-rotate returns to start*
 - $rs(O) = r(C) = L$: *rotate-then-reflect reaches Liberty*
 
-**Theorem 13.1** ($D_4$ as the Symmetry Group of Normative Communication). *The group of transformations that preserves the structure of the Hohfeldian square --- the correlative pairings and the negation relations --- is isomorphic to $D_4$. Specifically:*
+**Theorem 13.1** ($D_4$ as the Symmetry Group of Normative Communication). [Withdrawn pending restatement under $V_4$, 2026-11-26. Part (i) stands. Parts (ii) to (iv) depend on the quarter-turn.] *The group of transformations that preserves the structure of the Hohfeldian square --- the correlative pairings and the negation relations --- is isomorphic to $D_4$. Specifically:*
 
 *(i) The correlative involution $s$ generates a $\mathbb{Z}_2$ subgroup: $\{e, s\}$.*
 
@@ -217,17 +219,17 @@ $$D_4 = \langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$$
 
 ### 13.3.3 Experimental Identification
 
-The identification of $D_4$ as the gauge group of normative communication is not a mathematical curiosity. It is an experimentally validated claim, grounded in the SQND programme ($N = 3{,}110$ evaluations across multiple protocols). Three experimental findings fix the group structure:
+The identification of the gauge group of normative communication is not a mathematical curiosity. It is a claim tested in the SQND programme ($N = 3{,}110$ evaluations across multiple protocols). Three experimental findings bear on the group structure:
 
 **Finding 1: Exact correlative symmetry.** Protocol 3 ($N = 100$, 5 scenarios) tested whether the reflection generator $s$ is an exact or approximate symmetry. Across all scenarios --- debt, promise, professional obligation, absence of duty, explicit release --- the correlative pairing held at 100%. When Alex has a duty to Jordan, Jordan has a claim against Alex, with no exceptions. When Alex has liberty, Jordan has no-claim, with no exceptions. This is the signature of an exact reflection symmetry: $s$ acts freely, without probabilistic noise.[^4]
 
 [^4]: The 100% symmetry rate is the strongest empirical result in the SQND programme. It is consistent with the introspective report: "It feels like rotating a cube to see another face. The OBJECT hasn't changed. The FRAME has." The correlative transformation is not a change in content; it is a change in perspective --- a gauge transformation in the purest sense.
 
-**Finding 2: Discrete gating, not continuous rotation.** Protocol 1 ($N = 220$, 11 levels) tested whether state transitions between normative positions ($O \to L$, for instance) are continuous or discrete. The original SQND framework proposed $SU(2)$ as the gauge group, predicting smooth rotation through intermediate states. The experimental results falsified this prediction: Level 5 ("only if convenient") produced 100% Liberty; Level 6 ("found a friend") produced 0% Liberty. This is a complete reversal between adjacent levels --- a discrete gate, not a continuous rotation. The finding is inconsistent with $SU(2)$ (which is connected and admits continuous paths between any two elements) but consistent with $D_4$ (which is discrete and admits only jumps between elements).
+**Finding 2: Discrete gating, not continuous rotation.** Protocol 1 ($N = 220$, 11 levels) tested whether state transitions between normative positions ($O \to L$, for instance) are continuous or discrete. The original SQND framework proposed $SU(2)$ as the gauge group, predicting smooth rotation through intermediate states. The experimental results falsified this prediction: Level 5 ("only if convenient") produced 100% Liberty; Level 6 ("found a friend") produced 0% Liberty. This is a complete reversal between adjacent levels --- a discrete gate, not a continuous rotation. The finding is inconsistent with $SU(2)$ (which is connected and admits continuous paths between any two elements) but consistent with a finite group such as $V_4$ (which is discrete and admits only jumps between elements).
 
-**Finding 3: Classical correlations.** Protocol 3 ($N = 600$, CHSH and Hardy tests) tested whether the non-abelian structure is quantum or classical. All CHSH parameters satisfied $|S| \leq 2$, the classical bound. The quantum prediction of $SU(2)$ allows $|S|$ up to $2\sqrt{2} \approx 2.83$ for appropriate states. The data rule out quantum correlations and support a classical discrete group.
+**Finding 3: Classical correlations.** The contextuality protocol ($N = 600$, CHSH and Hardy tests) tested whether the structure is quantum or classical. All CHSH parameters satisfied $|S| \leq 2$, the classical bound. The quantum prediction of $SU(2)$ allows $|S|$ up to $2\sqrt{2} \approx 2.83$ for appropriate states. The data rule out quantum correlations and support a classical discrete group.
 
-Together, these findings determine the gauge group uniquely: it must be non-abelian (to account for path dependence, Finding 2 of Protocol 2), discrete (Finding 2 above), and classical (Finding 3). The only group that satisfies all three constraints while acting faithfully on the Hohfeldian square is $D_4$.
+[Withdrawn pending restatement under $V_4$, 2026-11-26.] Together, these findings determine the gauge group uniquely: it must be non-abelian (to account for the path dependence found in Protocol 2, Section 13.5.3), discrete (Finding 2 above), and classical (Finding 3). The only group that satisfies all three constraints while acting faithfully on the Hohfeldian square is $D_4$. What the three findings support without the quarter-turn is a discrete, classical group containing the two involutions $s$ and $n$, which is $V_4$. There is no uniqueness claim.
 
 ### 13.3.4 The Full Gauge Group
 
@@ -235,34 +237,34 @@ The full gauge group for normative communication includes a continuous abelian f
 
 **Definition 13.9** (Normative Communication Gauge Group). *The gauge group of normative communication is*
 
-$$\mathcal{G}_{\text{norm}} = D_4 \times U(1)_H$$
+$$\mathcal{G}_{\text{norm}} = V_4 \times U(1)_H$$
 
-*where $D_4$ governs the discrete structure of normative relations (the Hohfeldian square) and $U(1)_H$ governs the continuous dimension of harm/benefit magnitude. The $D_4$ factor determines the type of relation (Duty, Claim, Liberty, No-Claim). The $U(1)_H$ factor determines the intensity (a mild courtesy vs. a life-or-death obligation).*
+*where $V_4$ governs the discrete structure of normative relations (the Hohfeldian square) and $U(1)_H$ governs the continuous dimension of harm/benefit magnitude. The $V_4$ factor determines the type of relation (Duty, Claim, Liberty, No-Claim). The $U(1)_H$ factor determines the intensity (a mild courtesy vs. a life-or-death obligation). The group is posited, not derived as unique.*
 
-The product structure $D_4 \times U(1)_H$ reflects the experimental finding that the discrete normative classification and the continuous harm/benefit dimension are independent: the type of relation does not determine its intensity, and vice versa. The $D_4$ factor is the focus of this chapter; the $U(1)_H$ factor is continuous and abelian, contributing no holonomy in isolation.
+The product structure $V_4 \times U(1)_H$ reflects the experimental finding that the discrete normative classification and the continuous harm/benefit dimension are independent: the type of relation does not determine its intensity, and vice versa. The $V_4$ factor is the focus of this chapter; the $U(1)_H$ factor is continuous and abelian, contributing no holonomy in isolation.
 
 ### 13.3.5 Generator Asymmetry
 
-A discovery of considerable theoretical importance emerged from the introspective validation experiments (SQND, Section 6): the two generators of $D_4$ have fundamentally different phenomenological character.
+A discovery of considerable theoretical importance emerged from the introspective validation experiments (SQND, Section 6): the two generators of $V_4$ have fundamentally different phenomenological character.
 
 | Generator | Character | Implementation | Experimental Signature |
 |-----------|-----------|----------------|----------------------|
-| $s$ (reflection) | Smooth, immediate | Perspective shift | 100% correlative symmetry |
-| $r$ (rotation) | Discrete, gated | Semantic triggers | Probabilistic, trigger-dependent |
+| $s$ (correlative exchange) | Smooth, immediate | Perspective shift | 100% correlative symmetry |
+| $n$ (negation) | Discrete, gated | Semantic triggers | Probabilistic, trigger-dependent |
 
-The reflection $s$ is experienced and implemented as a perspective shift: the content does not change; only the viewpoint changes. "Alex owes Jordan" becomes "Jordan is owed by Alex" with no computation, no ambiguity, no probability of error. This is a pure gauge transformation --- a change of coordinates on the fiber that leaves the base point entirely invariant.
+The correlative exchange $s$ is experienced and implemented as a perspective shift: the content does not change; only the viewpoint changes. "Alex owes Jordan" becomes "Jordan is owed by Alex" with no computation, no ambiguity, no probability of error. This is a pure gauge transformation --- a change of coordinates on the fiber that leaves the base point entirely invariant.
 
-The rotation $r$ is experienced and implemented as a substantive state change: moving from Duty to Liberty, or from Claim to No-Claim, requires something to *happen* in the communicative context. A promise must be made, or rescinded. A right must be asserted, or waived. These are the semantic gates of Section 13.4.
+The negation $n$ is experienced and implemented as a substantive state change: moving from Duty to Liberty, or from Claim to No-Claim, requires something to *happen* in the communicative context. A promise must be made, or rescinded. A right must be asserted, or waived. These are the semantic gates of Section 13.4.
 
-**Theorem 13.2** (Generator Asymmetry). *In the gauge group $D_4$ acting on the Hohfeldian square:*
+**Theorem 13.2** (Generator Asymmetry). *In the gauge group $V_4$ acting on the Hohfeldian square:*
 
-*(i) The reflection generator $s$ is a pure gauge transformation: it acts on the fiber (surface form / perspective) without changing the base point (normative content). For any Hohfeldian state $\psi$, $s(\psi)$ is the same normative relation viewed from the other party.*
+*(i) The correlative exchange $s$ is a pure gauge transformation: it acts on the fiber (surface form / perspective) without changing the base point (normative content). For any Hohfeldian state $\psi$, $s(\psi)$ is the same normative relation viewed from the other party.*
 
-*(ii) The rotation generator $r$ is a state transition: it changes the base point (normative content) and requires a semantic trigger to implement. The gate that implements $r$ is context-dependent and probabilistic.*
+*(ii) The negation $n$ is a state transition: it changes the base point (normative content) and requires a semantic trigger to implement. The gate that implements $n$ is context-dependent and probabilistic.*
 
-*(iii) The generators are phenomenologically distinguishable: $s$ is continuous and immediate; $r$ is discrete and gated.*
+*(iii) The generators are phenomenologically distinguishable: $s$ is smooth and immediate; $n$ is discrete and gated.*
 
-*This asymmetry explains why correlative symmetry ($s$) is exact (100%) while state transitions ($r$) are probabilistic (gate-dependent): gauge transformations are free, but physical transitions require triggers.*
+*This asymmetry explains why correlative symmetry ($s$) is exact (100%) while state transitions ($n$) are probabilistic (gate-dependent): gauge transformations are free, but physical transitions require triggers.*
 
 ---
 
@@ -270,25 +272,25 @@ The rotation $r$ is experienced and implemented as a substantive state change: m
 
 ### 13.4.1 Gates as Group Elements
 
-The $D_4$ generators do not act abstractly. They are implemented by specific linguistic triggers --- words, phrases, and speech acts that change the normative state of a communicative relationship. These are the *semantic gates*.
+The $V_4$ generators do not act abstractly. They are implemented by specific linguistic triggers --- words, phrases, and speech acts that change the normative state of a communicative relationship. These are the *semantic gates*.
 
-**Definition 13.10** (Semantic Gate). *A semantic gate is a pair $(\tau, g)$ where $\tau$ is a linguistic trigger (a word, phrase, or speech act) and $g \in D_4$ is the group element that $\tau$ implements. The gate fires when $\tau$ appears in the communicative context, mapping the current normative state $\psi$ to $g(\psi)$.*
+**Definition 13.10** (Semantic Gate). *A semantic gate is a pair $(\tau, g)$ where $\tau$ is a linguistic trigger (a word, phrase, or speech act) and $g \in V_4$ is the group element that $\tau$ implements. The gate fires when $\tau$ appears in the communicative context, mapping the current normative state $\psi$ to $g(\psi)$.*
 
 The experimentally identified gates include:
 
 | Trigger $\tau$ | Group Element $g$ | Action | Protocol 1 Evidence |
 |---|---|---|---|
-| "I promise" | $r^{-1}$ ($= r^3$) | $L \to O$ (binding) | Levels 8--10: 100% Obligation |
-| "only if convenient" | $r$ | $O \to L$ (release) | Level 5: 100% Liberty |
-| "explicitly released from" | $r$ | $O \to L$ (strong release) | Level 10: 100% Liberty |
-| "found a friend [to help]" | $r^{-1}$ | $L \to O$ (re-binding by context) | Level 6: 0% Liberty |
+| "I promise" | $n$ | $L \to O$ (binding) | Levels 0--4: 0% Liberty (solid Obligation) |
+| "only if convenient" | $n$ | $O \to L$ (release) | Level 5: 100% Liberty |
+| "explicitly released from" | $n$ | $O \to L$ (strong release) | Level 10: 100% Liberty |
+| "found a friend [to help]" | $n$ | $L \to O$ (re-binding by context) | Level 6: 0% Liberty |
 | [perspective shift] | $s$ | $O \leftrightarrow C$, $L \leftrightarrow N$ | 100% correlative symmetry |
 
-**Gate composition.** Because $D_4$ is a group, sequential gates compose by multiplication:
+**Gate composition.** Because $V_4$ is a group, sequential gates compose by multiplication:
 
 $$\text{Gate}_1 \text{ then Gate}_2 = g_1 \cdot g_2$$
 
-The non-abelian property $sr \neq rs$ means that *the order of communicative acts matters*. Shifting perspective and then transitioning to a new normative state is not the same as transitioning and then shifting perspective. This is path dependence at the level of individual speech acts.
+[Withdrawn pending restatement under $V_4$, 2026-11-26: in $V_4$ the gates commute, $sn = ns$.] The non-abelian property $sr \neq rs$ means that *the order of communicative acts matters*. Shifting perspective and then transitioning to a new normative state is not the same as transitioning and then shifting perspective. This is path dependence at the level of individual speech acts.
 
 ### 13.4.2 The Discreteness of Gating
 
@@ -302,7 +304,7 @@ The most striking experimental finding is the *discreteness* of the gate transit
 
 The transition from Level 4 (0%) to Level 5 (100%) is not a smooth increase through intermediate values. It is a step function. There is no state that is "50% Obligation, 50% Liberty." The system is in one normative state or the other, and the transition is triggered by a specific linguistic form.
 
-**Theorem 13.3** (Discrete Gating). *The state transitions in normative communication are discrete: the normative state $\psi \in \mathcal{H} = \{O, C, L, N\}$ takes values in a discrete set, and transitions between states are mediated by semantic gates that implement elements of $D_4$. There are no intermediate normative states.*
+**Theorem 13.3** (Discrete Gating). *The state transitions in normative communication are discrete: the normative state $\psi \in \mathcal{H} = \{O, C, L, N\}$ takes values in a discrete set, and transitions between states are mediated by semantic gates that implement elements of $V_4$. There are no intermediate normative states.*
 
 *Evidence.* The claim is supported by three converging lines of evidence:
 
@@ -312,23 +314,23 @@ The transition from Level 4 (0%) to Level 5 (100%) is not a smooth increase thro
 
 *(iii) CHSH bounds: All $|S| \leq 2$, ruling out the quantum coherence that would be required for superposition of normative states.*
 
-*The discreteness is a defining feature of the $D_4$ gauge theory: $D_4$ is a finite group, and its representations are finite-dimensional with a discrete spectrum.*
+*The discreteness is a defining feature of the $V_4$ gauge theory: $V_4$ is a finite group, and its representations are finite-dimensional with a discrete spectrum.*
 
 ### 13.4.3 Phase Transitions and Gate Reliability
 
 The semantic gates are not unconditionally reliable. The SQND experiments identified conditions under which gate reliability degrades:
 
-**Ordered phase** (low normative uncertainty): Gates fire consistently. "Only if convenient" produces 100% Liberty. "I promise" produces 100% Obligation. The $D_4$ structure is intact.
+**Ordered phase** (low normative uncertainty): Gates fire consistently. "Only if convenient" produces 100% Liberty. "I promise" produces 100% Obligation. The $V_4$ structure is intact.
 
-**Disordered phase** (high normative uncertainty): Gates become unreliable. The same trigger may or may not produce a state transition, depending on contextual factors that are themselves uncertain. The $D_4$ structure is softened.
+**Disordered phase** (high normative uncertainty): Gates become unreliable. The same trigger may or may not produce a state transition, depending on contextual factors that are themselves uncertain. The $V_4$ structure is softened.
 
 **Critical temperature**: At the boundary between ordered and disordered phases, gate reliability undergoes a phase transition. The introspective report captures this precisely: "It's not that O becomes L at high temperature. It's that the O/L DISTINCTION loses meaning. The symmetry is RESTORED --- everything is equivalent."
 
-This is the discrete analogue of the Higgs mechanism. In the ordered phase, the $D_4$ symmetry is spontaneously broken: the system selects a definite normative state, and the gates implement definite transitions between states. In the disordered phase, the symmetry is restored: all normative states are equivalent, and the distinction between them disappears.
+This is the discrete analogue of the Higgs mechanism. In the ordered phase, the $V_4$ symmetry is spontaneously broken: the system selects a definite normative state, and the gates implement definite transitions between states. In the disordered phase, the symmetry is restored: all normative states are equivalent, and the distinction between them disappears.
 
 **Definition 13.11** (Default Gate State). *At a boundary between normative regions $S_i$ and $S_j$, the default gate state is the group element applied in the absence of an explicit semantic trigger:*
 
-$$\langle g \rangle_{\partial S_{ij}} = \begin{cases} e & \text{(identity: boundary is transparent)} \\ r^2 & \text{(negation: boundary flips states)} \end{cases}$$
+$$\langle g \rangle_{\partial S_{ij}} = \begin{cases} e & \text{(identity: boundary is transparent)} \\ n & \text{(negation: boundary flips states)} \end{cases}$$
 
 *The phase transition describes the transition between different default gate states as a function of normative uncertainty (the "moral temperature").*
 
@@ -344,23 +346,23 @@ With the bundle, connection, and gauge group in hand, we can now define curvatur
 
 $$\Omega = d\omega + \omega \wedge \omega$$
 
-*In the discrete setting ($D_4$ gauge group on a lattice), the curvature at a plaquette $\square$ is the Wilson loop around that plaquette:*
+*In the discrete setting (a finite gauge group on a lattice), the curvature at a plaquette $\square$ is the Wilson loop around that plaquette:*
 
 $$F_\square = g_{12} \cdot g_{23} \cdot g_{34} \cdot g_{41}$$
 
 *The curvature is trivial ($F_\square = e$) if and only if the connection is flat on that plaquette.*
 
-In the continuous case, the curvature 2-form $\Omega$ measures the infinitesimal failure of parallel transport to commute around small loops --- the communication analogue of the electromagnetic field tensor $F_{\mu\nu}$. In the discrete case relevant to $D_4$, the curvature is the Wilson loop around the smallest closed path.
+In the continuous case, the curvature 2-form $\Omega$ measures the infinitesimal failure of parallel transport to commute around small loops --- the communication analogue of the electromagnetic field tensor $F_{\mu\nu}$. In the discrete case relevant to normative communication, the curvature is the Wilson loop around the smallest closed path.
 
-The key insight is that the curvature is generically *non-trivial* for normative communication. The $D_4$ structure predicts non-commutativity at cross-type boundaries, and the experiments confirm it.
+[Withdrawn pending restatement under $V_4$, 2026-11-26: the predicted non-commutativity rested on the non-abelian $D_4$.] The key insight is that the curvature is generically *non-trivial* for normative communication. The $D_4$ structure predicts non-commutativity at cross-type boundaries, and the experiments confirm it. The order effect itself is reported in Section 13.5.3.
 
 ### 13.5.2 Wilson Loops on the Hohfeldian Square
 
-**Definition 13.13** (Discrete Wilson Loop). *On a lattice with $D_4$ gauge structure, the Wilson loop around a closed path $\mathcal{C} = (x_1 \to x_2 \to \cdots \to x_n \to x_1)$ is*
+**Definition 13.13** (Discrete Wilson Loop). *On a lattice with a finite gauge group $G$, the Wilson loop around a closed path $\mathcal{C} = (x_1 \to x_2 \to \cdots \to x_n \to x_1)$ is*
 
 $$W[\mathcal{C}] = g_{x_1 x_2} \cdot g_{x_2 x_3} \cdots g_{x_n x_1}$$
 
-*where $g_{xy} \in D_4$ is the gauge field on the directed edge $x \to y$. The conjugacy class of $W[\mathcal{C}]$ is gauge-invariant.*
+*where $g_{xy} \in G$ is the gauge field on the directed edge $x \to y$. The conjugacy class of $W[\mathcal{C}]$ is gauge-invariant.*
 
 The Wilson loop is the discrete analogue of the holonomy. If $W[\mathcal{C}] = e$, the connection is flat on the loop: parallel transport around the closed path returns to the identity. If $W[\mathcal{C}] \neq e$, the connection has non-trivial curvature: parallel transport around the loop produces a net rotation of the normative state.
 
@@ -368,13 +370,13 @@ The Wilson loop is the discrete analogue of the holonomy. If $W[\mathcal{C}] = e
 
 $$W[\gamma_1, \gamma_2] = g(\gamma_1) \cdot g(\gamma_2)^{-1}$$
 
-where $g(\gamma)$ is the composite gate implemented by path $\gamma$. If $W = e$, the two orderings produce the same normative judgment; if $W \neq e$, they produce different judgments.
+where $g(\gamma)$ is the composite gate implemented by path $\gamma$. If $W = e$, the two orderings produce the same normative judgment; if $W \neq e$, they produce different judgments. The group element $W$ is not observed directly. The protocol estimates it from the response proportions $P^{(1)}_X$ and $P^{(2)}_X$ over the Hohfeldian positions $X$ under the two orders, as the overlap $\hat{W} = \sum_X \sqrt{P^{(1)}_X P^{(2)}_X}$ (the Bhattacharyya coefficient), which equals 1 when the two orders give the same distribution of judgments and falls below 1 as they diverge.
 
 ### 13.5.3 The Selectivity of Holonomy
 
 The results are summarised in the following table:
 
-| Scenario | Wilson Loop $W$ | $p$-value | Path Dependent? |
+| Scenario | Wilson loop estimate $\hat{W}$ | $p$-value | Path Dependent? |
 |---|---|---|---|
 | journalist | 0.659 | $< 10^{-9}$ | **Yes** |
 | teacher | 0.862 | $< 10^{-4}$ | **Yes** |
@@ -389,13 +391,13 @@ Combined: $\chi^2 = 72.14$, $df = 16$, $p < 10^{-8}$.
 
 The pattern is striking and theoretically informative. Path dependence is not universal --- it occurs in only 2 of 8 scenarios. But it is not absent --- the combined significance is overwhelming. The key variable is whether the path crosses *type boundaries* on the Hohfeldian square.
 
-**Definition 13.14** (Cross-Type Path). *A path through normative considerations is cross-type if the factors along the path point toward different vertices of the Hohfeldian square: factor A suggests Obligation while factor B suggests Liberty, or factor A suggests Claim while factor B suggests No-Claim.*
+**Definition 13.14** (Cross-Type Path). *A path through normative considerations is cross-type if the factors along the path point toward different vertices of the Hohfeldian square: for example, factor A suggests Obligation while factor B suggests Liberty, or factor A suggests Obligation while factor B suggests Claim.*
 
-**Definition 13.15** (Within-Type Path). *A path is within-type if all factors point toward the same vertex or toward the same correlative pair.*
+**Definition 13.15** (Within-Type Path). *A path is within-type if all factors point toward the same vertex.*
 
 The journalist scenario is cross-type: the truth-telling obligation (pointing toward $O$) conflicts with the protection obligation (pointing toward $C$ for a different party). The teacher scenario is cross-type: academic integrity (pointing toward $L$) conflicts with student welfare (pointing toward $O$). The remaining six scenarios are within-type: all factors point in the same normative direction.
 
-**Proposition 13.3** (Selective Path Dependence). *Non-trivial holonomy ($W \neq e$) occurs at cross-type boundaries on the Hohfeldian square and not at within-type boundaries. Specifically:*
+**Proposition 13.3** (Selective Path Dependence). [Withdrawn pending restatement under $V_4$, 2026-11-26: parts (i) and (ii) and the paragraph after them explain the selectivity by non-commuting elements of $D_4$, and in $V_4$ all gate elements commute. The observation recorded under *Evidence* stands.] *Non-trivial holonomy ($W \neq e$) occurs at cross-type boundaries on the Hohfeldian square and not at within-type boundaries. Specifically:*
 
 *(i) For within-type paths, the gate elements along the path commute (they lie in an abelian subgroup of $D_4$), and $W = e$.*
 
@@ -403,7 +405,7 @@ The journalist scenario is cross-type: the truth-telling obligation (pointing to
 
 *This selectivity is a structural prediction of the $D_4$ gauge theory: abelian subgroups ($\{e, r^2\}$, $\{e, s\}$, etc.) produce flat connections within their orbits, and curvature arises only where elements from different subgroups interact.*
 
-*Evidence.* The prediction is confirmed by the Protocol 2 data: 2/2 cross-type scenarios show significant path dependence ($p < 10^{-4}$); 0/6 within-type scenarios show significant path dependence. The combined $p < 10^{-8}$ rejects the null hypothesis that path dependence is absent.
+*Evidence.* The Protocol 2 data show the selectivity: 2/2 cross-type scenarios show significant path dependence ($p < 10^{-4}$); 0/6 within-type scenarios show significant path dependence. The combined $p < 10^{-8}$ rejects the null hypothesis that path dependence is absent.
 
 [Figure 13.2: Wilson loop results on the Hohfeldian square. Left: the 8 scenarios mapped to the square, with arrows indicating the direction of the conflicting factors. Cross-type scenarios (journalist, teacher) straddle type boundaries; within-type scenarios remain within a single quadrant or correlative pair. Right: Wilson loop values with 95% confidence intervals. Cross-type scenarios deviate significantly from 1 (trivial holonomy); within-type scenarios cluster near 1.]
 
@@ -411,7 +413,7 @@ The journalist scenario is cross-type: the truth-telling obligation (pointing to
 
 The Wilson loop results have a direct communicative interpretation. In a normative conversation --- a negotiation, a moral argument, a legal proceeding --- the order in which considerations are raised can change the outcome. This is not a bug in human moral reasoning. It is holonomy: the curvature of the normative manifold, visible when the path passes through regions where different types of obligation intersect.
 
-Consider the journalist scenario. A source's safety (Claim to protection) conflicts with the public interest (Obligation to report truthfully). Presenting protection first and public interest second produces a different normative judgment than the reverse order ($W = 0.659$, $p < 10^{-9}$). This is not irrationality. It is the consequence of parallel-transporting normative meaning through high curvature at a cross-type boundary on the Hohfeldian square. The non-abelian structure of $D_4$ means the order of boundary crossings matters, and the holonomy measures how much.
+Consider the journalist scenario. A source's safety (Claim to protection) conflicts with the public interest (Obligation to report truthfully). Presenting protection first and public interest second produces a different normative judgment than the reverse order ($\hat{W} = 0.659$, $p < 10^{-9}$). This is not irrationality. It is the consequence of parallel-transporting normative meaning through high curvature at a cross-type boundary on the Hohfeldian square. The order of boundary crossings matters, and the holonomy measures how much. The curvature is that of the continuous connection: the discrete group $V_4$ is abelian and does not produce it.
 
 **The introspective confirmation.** The SQND recursive self-probing experiments reported the phenomenological experience of holonomy:
 
@@ -454,11 +456,11 @@ The gauge-theoretic framework yields five specific consequences, each testable a
 
 **Consequence 2: Understanding is connection-dependent.** Two listeners can arrive at different interpretations of the same communicative act not because one is right and one is wrong, but because they use different connections (different interpretive frameworks). Proposition 13.2 shows that their discrepancy is a gauge transformation --- a re-description, resolvable in principle. This distinguishes "talking past each other" (fiber divergence, resolvable) from "genuine disagreement" (base-space divergence, not resolvable by re-description alone).
 
-**Consequence 3: Misunderstanding has geometry.** The holonomy of a communicative loop is determined by the curvature enclosed. This means misunderstandings are not random; they are structured by the geometry of the semantic region. High-curvature regions (complex pragmatics, conflicting obligations, ambiguous intentions) generate more holonomy than low-curvature regions (formulaic exchanges, clear obligations, unambiguous speech acts). The cuneiform results of Chapter 10 demonstrated this for translation ($\rho$ stratified by genre, $F = 142.7$, $p < 10^{-80}$). The SQND results demonstrate it for normative reasoning ($W$ stratified by cross-type vs. within-type, $p < 10^{-8}$).
+**Consequence 3: Misunderstanding has geometry.** The holonomy of a communicative loop is determined by the curvature enclosed. This means misunderstandings are not random; they are structured by the geometry of the semantic region. High-curvature regions (complex pragmatics, conflicting obligations, ambiguous intentions) generate more holonomy than low-curvature regions (formulaic exchanges, clear obligations, unambiguous speech acts). The cuneiform results of Chapter 10 demonstrated this for translation ($\rho$ stratified by genre, $F = 142.7$, $p < 10^{-80}$). The SQND results demonstrate it for normative reasoning ($\hat{W}$ stratified by cross-type vs. within-type, $p < 10^{-8}$).
 
-**Consequence 4: The gauge group constrains the possible misunderstandings.** Not every misunderstanding is possible. The gauge group $D_4$ has 8 elements, so there are exactly 8 distinct gauge transformations that can relate two descriptions of the same normative content. The possible "rotations" of normative meaning are constrained by the group structure: you can confuse Obligation with Claim (correlative exchange, $s$), or Obligation with Liberty (negation, $r^2$), or apply composed transformations ($sr$, $r^3$, etc.), but you cannot arrive at a normative state that is outside $\mathcal{H}$. The group structure limits the misunderstanding space, and this limitation is empirically testable.
+**Consequence 4: The gauge group constrains the possible misunderstandings.** Not every misunderstanding is possible. The gauge group $V_4$ has 4 elements, so there are exactly 4 distinct gauge transformations that can relate two descriptions of the same normative content. The possible "rotations" of normative meaning are constrained by the group structure: you can confuse Obligation with Claim (correlative exchange, $s$), or Obligation with Liberty (negation, $n$), or apply the composed transformation ($sn$), but you cannot arrive at a normative state that is outside $\mathcal{H}$. The group structure limits the misunderstanding space, and this limitation is empirically testable.
 
-**Consequence 5: Discrete gauge symmetry is natural in communication.** Physics accustomed us to continuous gauge groups --- $U(1)$, $SU(2)$, $SU(3)$. The SQND results demonstrate a *discrete* gauge group: $D_4$, a finite group of order 8. The discreteness is not an approximation to some underlying continuous symmetry; it is the exact structure, confirmed by the discrete gating results (no intermediate states) and the CHSH results (no quantum superpositions). This suggests that communicative meaning may be fundamentally discrete at the normative level --- a finite set of relational types, not a continuous manifold of degrees.
+**Consequence 5: Discrete gauge symmetry is natural in communication.** Physics accustomed us to continuous gauge groups --- $U(1)$, $SU(2)$, $SU(3)$. The SQND results point to a *discrete* gauge group: $V_4$, a finite group of order 4. The discreteness is not an approximation to some underlying continuous symmetry; it is the exact structure, confirmed by the discrete gating results (no intermediate states) and the CHSH results (no quantum superpositions). This suggests that communicative meaning may be fundamentally discrete at the normative level --- a finite set of relational types, not a continuous manifold of degrees.
 
 ### 13.6.3 The Formal Summary
 
@@ -470,11 +472,11 @@ We can now state the gauge theory of communicative acts as a self-contained theo
 
 *(ii) (Understanding as parallel transport.) Successful communication is parallel transport of meaning along a path $\gamma$ in $\mathcal{B}$, using the connection $\omega$ to determine the horizontal lift (Definition 13.6). Two listeners using different connections arrive at interpretations related by a gauge transformation (Proposition 13.2).*
 
-*(iii) (Holonomy as path dependence.) For normative communication, the gauge group is $D_4 \times U(1)_H$ (Definition 13.9). The Wilson loop around a closed path of normative considerations satisfies $W = e$ for within-type paths and $W \neq e$ for cross-type paths (Proposition 13.3), with combined significance $p < 10^{-8}$.*
+*(iii) (Holonomy as path dependence.) [Withdrawn pending restatement under $V_4$, 2026-11-26: the gauge group is posited as $V_4 \times U(1)_H$, and the Wilson-loop statement depends on Proposition 13.3.] For normative communication, the gauge group is $D_4 \times U(1)_H$ (Definition 13.9). The Wilson loop around a closed path of normative considerations satisfies $W = e$ for within-type paths and $W \neq e$ for cross-type paths (Proposition 13.3), with combined significance $p < 10^{-8}$.*
 
-*(iv) (Discreteness.) The $D_4$ factor acts via discrete semantic gates (Definition 13.10) that implement group elements through specific linguistic triggers. State transitions are step functions, not continuous rotations (Theorem 13.3). The CHSH parameter satisfies $|S| \leq 2$ for all tested configurations, ruling out quantum coherence.*
+*(iv) (Discreteness.) The $V_4$ factor acts via discrete semantic gates (Definition 13.10) that implement group elements through specific linguistic triggers. State transitions are step functions, not continuous rotations (Theorem 13.3). The CHSH parameter satisfies $|S| \leq 2$ for all tested configurations, ruling out quantum coherence.*
 
-*(v) (Generator asymmetry.) The reflection generator $s$ (correlative exchange) is a pure gauge transformation, acting exactly (100% symmetry) and immediately. The rotation generator $r$ (state transition) requires semantic triggers and acts probabilistically (Theorem 13.2). This asymmetry distinguishes perspective shifts (pure gauge) from normative changes (physical transitions).*
+*(v) (Generator asymmetry.) The generator $s$ (correlative exchange) is a pure gauge transformation, acting exactly (100% symmetry) and immediately. The generator $n$ (negation, the state transition) requires semantic triggers and acts probabilistically (Theorem 13.2). This asymmetry distinguishes perspective shifts (pure gauge) from normative changes (physical transitions).*
 
 ---
 
@@ -482,13 +484,13 @@ We can now state the gauge theory of communicative acts as a self-contained theo
 
 ### 13.7.1 Extending the Gauge Framework
 
-The $D_4 \times U(1)_H$ gauge theory was developed for and validated in normative communication. But the fiber bundle framework of Section 13.1 and the connection formalism of Section 13.2 apply to any communication system where content can be separated from form. The question for each domain is: *what is the gauge group?*
+The $V_4 \times U(1)_H$ gauge theory was developed for and tested in normative communication. But the fiber bundle framework of Section 13.1 and the connection formalism of Section 13.2 apply to any communication system where content can be separated from form. The question for each domain is: *what is the gauge group?*
 
-For propositional communication, the gauge group includes translation and paraphrase but not the Hohfeldian symmetries. For emotive communication, the group must preserve emotional content while allowing variation in intensity and cultural convention --- and its structure may be non-abelian if the order of emotional disclosures affects interpretation. For cetacean communication (Chapter 7), the gauge group is unknown, but if whale communication has normative content (territorial claims, social obligations within the clan), the $D_4$ structure may apply.
+For propositional communication, the gauge group includes translation and paraphrase but not the Hohfeldian symmetries. For emotive communication, the group must preserve emotional content while allowing variation in intensity and cultural convention --- and its structure may be non-abelian if the order of emotional disclosures affects interpretation. For cetacean communication (Chapter 7), the gauge group is unknown, but if whale communication has normative content (territorial claims, social obligations within the clan), the $V_4$ structure may apply.
 
 ### 13.7.2 The Hierarchy of Gauge Structure
 
-The book has traced an ascending hierarchy of geometric structure: *signal geometry* (Chapters 4--6), where SPD manifolds and persistent homology extract physical structure from acoustic signals without gauge structure; *content geometry* (Chapters 9--10), where Riemannian geometry on the content manifold $C$ models translation as parallel transport and translation loss as holonomy, using the canonical Levi-Civita connection; and *gauge geometry* (this chapter), where the full fiber bundle structure introduces a non-abelian gauge group governing the relationship between content and form. Each level subsumes and extends the previous. The connection in gauge geometry is no longer uniquely determined by the metric; it is an additional structure, corresponding to the interpretive framework used to separate meaning from expression.
+The book has traced an ascending hierarchy of geometric structure: *signal geometry* (Chapters 4--6), where SPD manifolds and persistent homology extract physical structure from acoustic signals without gauge structure; *content geometry* (Chapters 9--10), where Riemannian geometry on the content manifold $C$ models translation as parallel transport and translation loss as holonomy, using the canonical Levi-Civita connection; and *gauge geometry* (this chapter), where the full fiber bundle structure introduces a gauge group governing the relationship between content and form. Each level subsumes and extends the previous. The connection in gauge geometry is no longer uniquely determined by the metric; it is an additional structure, corresponding to the interpretive framework used to separate meaning from expression.
 
 ### 13.7.3 What Gauge Theory Cannot Do
 
@@ -496,7 +498,7 @@ Intellectual honesty requires stating the limitations. The gauge theory does not
 
 The theory does not resolve genuine disagreements about content. If two parties disagree about whether Alex owes Jordan assistance (a base-space question), no gauge transformation resolves the dispute. The gauge theory distinguishes this from cases where the parties agree on content but describe it differently (a fiber question). The distinction is valuable precisely because pre-theoretic discourse conflates the two cases.
 
-The $D_4$ identification is specific to Hohfeldian normative relations. The broader framework (fiber bundles, connections, holonomy) applies generally, but extending the gauge group identification to other domains requires new experiments. Finally, the SQND data were obtained from LLM evaluators. Whether the $D_4$ structure is a property of normative reasoning *as such* or of the specific system tested remains open. The cross-lingual BIP results --- obtained on human-authored texts spanning millennia --- provide indirect evidence for the former, but direct human experiments are needed.[^5]
+The $V_4$ identification is specific to Hohfeldian normative relations. The broader framework (fiber bundles, connections, holonomy) applies generally, but extending the gauge group identification to other domains requires new experiments. Finally, the SQND data were obtained from LLM evaluators. Whether the $V_4$ structure is a property of normative reasoning *as such* or of the specific system tested remains open. The cross-lingual BIP results --- obtained on human-authored texts spanning millennia --- provide indirect evidence for the former, but direct human experiments are needed.[^5]
 
 [^5]: The LLM data have the advantage of scale ($N = 3{,}110$) and control (exact replication, no memory carryover). Human experiments would provide ecological validity at the cost of sample size. The ideal programme combines both.
 
@@ -510,11 +512,11 @@ The framework is summarised in one sentence: **meaning is the gauge-invariant re
 
 This sentence has precise mathematical content. The communication fiber bundle $(\mathcal{E}, \pi, \mathcal{B}, F, G)$ separates total communicative acts ($\mathcal{E}$) into meaning ($\mathcal{B}$) and form ($F$). The gauge group $G$ acts on form while preserving meaning. The connection $\omega$ specifies how meaning evolves as context changes. The curvature $\Omega$ measures the path-dependence of understanding. The holonomy $\text{Hol}(\gamma)$ measures the accumulated distortion after traversal of a closed communicative loop.
 
-For normative communication, the gauge group is $D_4 \times U(1)_H$ --- the dihedral group of the Hohfeldian square, times a continuous phase for harm/benefit intensity. The $D_4$ structure is discrete, non-abelian, and classical. Its generators have asymmetric character: reflection ($s$) is a pure gauge transformation (perspective shift, exact), while rotation ($r$) is a physical transition (state change, gated). Wilson loops reveal non-trivial holonomy at cross-type boundaries ($p < 10^{-8}$) and trivial holonomy within types.
+For normative communication, the gauge group is posited as $V_4 \times U(1)_H$ --- the Klein four-group of the Hohfeldian square, times a continuous phase for harm/benefit intensity. The $V_4$ structure is discrete, abelian, and classical. Its generators have asymmetric character: the correlative exchange ($s$) is a pure gauge transformation (perspective shift, exact), while the negation ($n$) is a physical transition (state change, gated). The Wilson loop estimates show an order effect at cross-type boundaries ($p < 10^{-8}$) and none within types.
 
-These are not analogies. The fiber bundle is not a metaphor for communication; it is the mathematical structure that communication instantiates. The evidence comes from three independent sources: the cross-lingual BIP experiments (Chapter 11--12), which demonstrate gauge invariance of moral content across languages and centuries; the SQND experimental programme (Bond, 2026), which identifies the $D_4$ gauge group and validates its predictions; and the cuneiform translation analysis (Chapter 10), which demonstrates holonomy in the Riemannian setting.
+These are not analogies. The fiber bundle is not a metaphor for communication; it is the mathematical structure that communication instantiates. The evidence comes from three independent sources: the cross-lingual BIP experiments (Chapter 11--12), which demonstrate gauge invariance of moral content across languages and centuries; the SQND experimental programme (Bond, 2026), which tests the discrete gauge group and its predictions; and the cuneiform translation analysis (Chapter 10), which demonstrates holonomy in the Riemannian setting.
 
-The gauge theory of communicative acts does for meaning what Maxwell's equations did for electromagnetism: it identifies the invariant structure beneath the coordinate-dependent surface. Electric and magnetic fields depend on the observer's reference frame; the electromagnetic field tensor $F_{\mu\nu}$ does not. Surface linguistic forms depend on the language, register, and medium; meaning does not. The identification of the invariant structure is not the end of the inquiry --- it is the beginning. But it is a beginning grounded in geometry, validated by experiment, and rich with consequences.
+The gauge theory of communicative acts does for meaning what Maxwell's equations did for electromagnetism: it identifies the invariant structure beneath the coordinate-dependent surface. Electric and magnetic fields depend on the observer's reference frame; the electromagnetic field tensor $F_{\mu\nu}$ does not. Surface linguistic forms depend on the language, register, and medium; meaning does not. The identification of the invariant structure is not the end of the inquiry --- it is the beginning. But it is a beginning grounded in geometry, open to experiment, and rich with consequences.
 
 The next two chapters explore those consequences in the domain of communicative failure. Chapter 14 develops the four failure modes of communication as specific types of gauge violation. Chapter 15 proves the Scalar Irrecoverability Theorem for communication, showing that no scalar metric can capture what the gauge-theoretic framework preserves. Together, they complete the argument that began in Chapter 1: communication has geometric structure, scalar evaluation destroys it, and the gauge theory tells us exactly what is lost and why.
 

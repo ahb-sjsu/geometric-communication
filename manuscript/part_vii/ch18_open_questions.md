@@ -91,7 +91,7 @@ The Riemannian assumption is a useful approximation that enables the rich mathem
 - In regions of vagueness (non-Hausdorff topology)
 - For asymmetric understanding (Finsler structure)
 
-Whether these breakdowns are serious enough to require a change of formalism is an empirical question. The BIP experiments (Chapter 11) operate in a domain (moral reasoning) where ambiguity, vagueness, and asymmetry are all present, and the Riemannian framework produces meaningful results (44.5% F1, 100% correlative symmetry). This suggests that the Riemannian approximation is adequate for the *invariant core* of meaning, even if it fails at the *periphery* where ambiguity, vagueness, and asymmetry dominate.
+Whether these breakdowns are serious enough to require a change of formalism is an empirical question. The BIP experiments (Chapter 11) operate in a domain (moral reasoning) where ambiguity, vagueness, and asymmetry are all present, and the Riemannian framework produces meaningful results (44.5% F1, 87.6% correlative consistency). This suggests that the Riemannian approximation is adequate for the *invariant core* of meaning, even if it fails at the *periphery* where ambiguity, vagueness, and asymmetry dominate.
 
 A research programme that takes these challenges seriously would:
 
@@ -119,7 +119,7 @@ For Noether's theorem to produce a non-trivial conservation law, we need:
 
 1. **A Lagrangian.** A functional $\mathcal{L}[\phi, \partial\phi]$ on the fields $\phi$ of the communication system, whose stationary points are the "equations of motion" of communication. What are the fields? What is the Lagrangian?
 
-2. **A continuous symmetry.** The gauge group must be continuous (Lie group) for the standard Noether theorem to apply. But Lesson 1 of Chapter 17 established that the communication gauge group may be discrete ($D_4$). Discrete symmetries produce *topological* conservation laws (e.g., conservation of parity in quantum mechanics), not the differential conservation laws (continuity equations) that Noether's theorem yields.
+2. **A continuous symmetry.** The gauge group must be continuous (Lie group) for the standard Noether theorem to apply. But Lesson 1 of Chapter 17 argued that the communication gauge group may be discrete ($V_4$). Discrete symmetries produce *topological* conservation laws (e.g., conservation of parity in quantum mechanics), not the differential conservation laws (continuity equations) that Noether's theorem yields.
 
 3. **An independent definition of the conserved quantity.** We need to know what the conserved quantity *is* before invoking the theorem, or at least we need the theorem to predict a quantity that can be independently verified. "Meaning" is not independently defined; it is the very thing we are trying to formalise.
 
@@ -302,13 +302,13 @@ The Zipfian distribution of word frequencies --- observed universally in human l
 
 ### 18.7.1 What We Know
 
-The geometric theory of communication, as developed in this book, establishes the following:
+The geometric theory of communication, as developed in this book, claims the following:
 
 1. Communication has manifold structure ($M = S \times P \times C$) with metric, connection, and curvature.
 2. Scalar evaluation destroys this structure irreversibly, with severity proportional to the manifold's dimensionality and the fibre's topological complexity.
 3. Three complementary geometries (hyperbolic, Riemannian, topological) capture the hierarchical, covariance, and shape structure of communication, respectively.
 4. These geometries produce informative results across three biological kingdoms (cetacean, avian, human) and across 4,000 years of human history (cuneiform to modern English).
-5. The deepest communicative structure --- the gauge-invariant core of meaning --- is measurable, discrete ($D_4$), and preserved across languages and centuries.
+5. The deepest communicative structure --- the gauge-invariant core of meaning --- is measurable, discrete ($V_4$), and preserved across languages and centuries.
 
 ### 18.7.2 What We Do Not Know
 
@@ -324,7 +324,7 @@ The geometric theory of communication, as developed in this book, establishes th
 
 ### 18.7.3 The Asymmetry
 
-There is an asymmetry between these two lists. The "what we know" list consists of empirical results --- measurements, validated tools, confirmed predictions. The "what we do not know" list consists of theoretical questions --- conjectures, programmes, open problems. The asymmetry is deliberate. This book was written to establish empirical foundations, not to spin theoretical webs. The geometric framework earns its keep not by its elegance (though it is elegant) but by its empirical productivity: it finds structure that scalar methods miss, across domains that have nothing in common except the geometric analysis.
+There is an asymmetry between these two lists. The "what we know" list consists of empirical claims --- measurements, tools, and predictions checked against the data in hand. The "what we do not know" list consists of theoretical questions --- conjectures, programmes, open problems. The asymmetry is deliberate. This book was written to establish empirical foundations, not to spin theoretical webs. The geometric framework earns its keep not by its elegance (though it is elegant) but by its empirical productivity: it finds structure that scalar methods miss, across domains that have nothing in common except the geometric analysis.
 
 The open questions listed above are not problems to be solved by more mathematics. They are problems to be solved by more data, more experiments, and more engagement between the geometric framework and the empirical sciences of communication --- linguistics, bioacoustics, philology, cognitive science. The mathematics is a tool. The science is the destination.
 
@@ -338,6 +338,6 @@ The reading has begun. The trajectory continues.
 
 ---
 
-**Series cross-references.** Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Gauge invariance and Noether's theorem: GR Ch. 8. Hyperbolic embeddings and distortion: GM Ch. 4.6; this volume Ch. 5. Persistent homology and stability: GM Ch. 5; this volume Ch. 6. Parallel transport and holonomy: this volume Ch. 10. The $D_4$ group: GE Ch. 8; this volume Ch. 13. The Rosetta trajectory: this volume Ch. 1, 16.
+**Series cross-references.** Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Gauge invariance and Noether's theorem: GR Ch. 8. Hyperbolic embeddings and distortion: GM Ch. 4.6; this volume Ch. 5. Persistent homology and stability: GM Ch. 5; this volume Ch. 6. Parallel transport and holonomy: this volume Ch. 10. The $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. The Rosetta trajectory: this volume Ch. 1, 16.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*
