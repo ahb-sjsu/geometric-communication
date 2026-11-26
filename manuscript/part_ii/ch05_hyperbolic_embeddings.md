@@ -19,7 +19,7 @@ The central insight is simple to state and deep in its consequences. Trees---the
 
 ## 5.2 The Poincare Ball Model
 
-We work with the Poincare ball model of hyperbolic space, the most widely used model in machine learning applications.[^1] The development here is self-contained; readers seeking a fuller treatment may consult Appendix A or the exposition in *Geometric Methods* (Bond, 2026a, Ch. 4.6).
+We work with the Poincare ball model of hyperbolic space, the most widely used model in machine learning applications.[^1] The development here is self-contained; readers seeking a fuller treatment may consult Appendix A or the exposition in *Geometric Methods* (Bond, 2026a, Ch. 3).
 
 [^1]: Other models exist---the hyperboloid (Lorentz) model, the Klein model, the upper half-space model---each with computational advantages in specific settings. The Poincare ball is preferred here for its conformal property: angles in the ball match angles in the ambient Euclidean space, making visualisations directly interpretable.
 
@@ -392,7 +392,7 @@ The cuneiform case study in Section 5.6 is developed further in Chapter 9, which
 
 ### 5.9.4 To the Series
 
-The Poincare ball model appears throughout the Geometric Series as the preferred representation for hierarchical structure. In *Geometric Reasoning* (Ch. 14), it encodes the hierarchy of reasoning strategies (abstract heuristics near the origin, concrete rules near the boundary). In *Geometric Ethics* (Ch. 8), it encodes the hierarchy of normative concepts (abstract principles near the origin, specific duties near the boundary). In *Geometric Methods* (Ch. 4.6), the mathematical foundations are developed in full generality. This chapter instantiates the general framework for the specific domain of communication, where hierarchy is not merely one structural feature among many but the organising principle of every system we have examined.
+The Poincare ball model appears throughout the Geometric Series as the preferred representation for hierarchical structure. In *Geometric Reasoning* (Ch. 14), it encodes the hierarchy of reasoning strategies (abstract heuristics near the origin, concrete rules near the boundary). In *Geometric Methods* (Ch. 3), the mathematical foundations are developed. This chapter instantiates the general framework for the specific domain of communication, where hierarchy is not merely one structural feature among many but the organising principle of every system we have examined.
 
 ---
 

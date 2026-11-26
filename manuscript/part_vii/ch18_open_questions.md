@@ -342,6 +342,6 @@ The reading has begun. The trajectory continues.
 
 ---
 
-**Series cross-references.** Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Gauge invariance and Noether's theorem: GR Ch. 8. Hyperbolic embeddings and distortion: GM Ch. 4.6; this volume Ch. 5. Persistent homology and stability: GM Ch. 5; this volume Ch. 6. Parallel transport and holonomy: this volume Ch. 10. The $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. The Rosetta trajectory: this volume Ch. 1, 16.
+**Series cross-references.** Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Gauge invariance and Noether's theorem: GR Ch. 8. Hyperbolic embeddings and distortion: GM Ch. 3; this volume Ch. 5. Persistent homology and stability: GM Ch. 5; this volume Ch. 6. Parallel transport and holonomy: this volume Ch. 10. The $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. The Rosetta trajectory: this volume Ch. 1, 16.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*

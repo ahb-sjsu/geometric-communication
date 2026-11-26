@@ -119,7 +119,7 @@ This separation will become critical in Finding V (Section 7.6), where we show t
 
 A classification system tells you what a coda *is*. An adversarial analysis tells you what a coda is *not* --- and what it could become under perturbation. The distinction matters. Two coda types with identical classification accuracy may have radically different robustness profiles: one may be surrounded by a wide moat of acoustic space in which perturbation cannot change the classification, while the other may sit on a knife-edge where a small perturbation flips the decoder to a different type. The accuracy metric does not distinguish these cases. The geometry of the decision boundary does.
 
-This is a direct application of the adversarial robustness framework introduced in *Geometric Ethics* (Bond, 2026b, Ch. 22) and adapted here for cetacean communication. The core idea: do not just ask "how accurate is the decoder?" Ask "how *fragile* is the decoder, and where are the fracture lines?"
+This is a direct application of the adversarial robustness framework introduced in *Geometric Ethics* (Bond, 2026b, Ch. 18) and adapted here for cetacean communication. The core idea: do not just ask "how accurate is the decoder?" Ask "how *fragile* is the decoder, and where are the fracture lines?"
 
 ### 7.4.2 The Decoder Robustness Index
 
@@ -157,7 +157,7 @@ The scalar DRI aggregates $\omega$ values across all transform--intensity--signa
 
 $$\text{DRI} = 0.5 \cdot \bar{\omega} + 0.3 \cdot \omega_{75} + 0.2 \cdot \omega_{95}$$
 
-The weights (0.5/0.3/0.2) follow the Bond Index convention, emphasising tail behaviour --- the worst-case perturbations are more informative than the average case, because they expose structural vulnerabilities.
+The weights (0.5/0.3/0.2) are the default weights of the Model Robustness Index of *Geometric Methods* (Section 9.2.2), which its Section 10.5.1 carries over to the DRI, emphasising tail behaviour --- the worst-case perturbations are more informative than the average case, because they expose structural vulnerabilities.
 
 ![Figure 7.1](figures/ch07_fig1.svg)
 
@@ -195,7 +195,7 @@ All eight tested coda types (the most frequent in the dataset) remained well-sep
 
 [^4]: The full combinatorial space --- rhythm (18) $\times$ tempo (5) $\times$ rubato (3) $\times$ ornamentation (2) $= 540$ configurations --- would yield up to $\log_2(540) \approx 9.1$ bits if all features were independently decodable. The gap between our empirical 3.0-bit lower bound and the theoretical 9.1-bit ceiling quantifies the information carried by sub-rhythm features and represents a concrete target for future decoder development.
 
-The connection to the adversarial robustness framework from *Geometric Ethics* is direct. There, the Bond Index measured how robust an AI system's ethical judgements are to adversarial perturbation of the input. Here, the DRI measures how robust a coda decoder's classifications are to adversarial perturbation of the acoustic signal. The mathematical structure is identical: a perturbation space, a decision function, a boundary-crossing criterion, and a scalar index that aggregates vulnerability across the perturbation space. What changes is the domain. The fact that the same framework applies to AI ethics and whale communication is not a coincidence. It reflects the domain generality of the geometric approach: adversarial robustness is a property of any classification system defined on a metric space, regardless of what the space represents.
+The connection to the adversarial robustness framework from *Geometric Ethics* is direct. There, the Bond Index measures how much an AI system's ethical evaluation moves under declared re-descriptions of the input that should not change it (*Geometric Ethics*, Ch. 18, Requirement 3). Here, the DRI measures how robust a coda decoder's classifications are to adversarial perturbation of the acoustic signal. The mathematical structure is identical: a perturbation space, a decision function, a boundary-crossing criterion, and a scalar index that aggregates vulnerability across the perturbation space. What changes is the domain. The fact that the same framework applies to AI ethics and whale communication is not a coincidence. It reflects the domain generality of the geometric approach: adversarial robustness is a property of any classification system defined on a metric space, regardless of what the space represents.
 
 ---
 
@@ -353,6 +353,6 @@ The Rosetta trajectory begins here, with clicks in the Caribbean. It will pass t
 
 **Notes on data and reproducibility.** All analyses in this chapter are implemented in the `eris-ketos` Python package (v0.2.0; [PyPI](https://pypi.org/project/eris-ketos/), [GitHub](https://github.com/ahb-sjsu/eris-ketos)). The DSWP coda annotation dataset is available at the [Sharma et al. GitHub repository](https://github.com/pratyushasharma/sw-combinatoriality) under CC BY 4.0 licence. A self-contained Jupyter notebook reproducing all figures and statistical results is included in the eris-ketos repository (`notebooks/cetacean_geometric_analysis.py`, Jupytext percent format). The code is real, the data is public, and the results are reproducible.
 
-**Series cross-references.** Poincare ball model and distortion theorem: Ch. 5 of this volume; GM Ch. 3. Persistent homology and stability theorem: Ch. 6 of this volume; GM Ch. 5. Adversarial robustness framework: GE Ch. 22. Communication manifold $M = S \times P \times C$: Ch. 3 of this volume. The Rosetta trajectory: Ch. 1 and Ch. 16 of this volume.
+**Series cross-references.** Poincare ball model and distortion theorem: Ch. 5 of this volume; GM Ch. 3. Persistent homology and stability theorem: Ch. 6 of this volume; GM Ch. 5. Bond Index: GE Ch. 18; MRI and DRI: GM Ch. 9--10. Communication manifold $M = S \times P \times C$: Ch. 3 of this volume. The Rosetta trajectory: Ch. 1 and Ch. 16 of this volume.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*

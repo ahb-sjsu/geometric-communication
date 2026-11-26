@@ -361,7 +361,7 @@ The Bond Index quantifies the structural consistency of Hohfeldian classificatio
 
 $$\text{Bond Index} = \frac{\text{observed violations}}{\text{maximum possible violations}}$$
 
-A Bond Index of 0.0 indicates perfect correlative symmetry; 0.5 indicates random classification; values above 0.5 indicate systematic anti-correlation.
+A Bond Index of 0.0 indicates perfect correlative symmetry; random classification among the four positions scores about 0.75; a value of 1 means no pairing was the expected one.
 
 ### C.5.4 Structural Fuzzing Analysis
 

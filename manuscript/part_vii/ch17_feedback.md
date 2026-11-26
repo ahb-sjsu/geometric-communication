@@ -316,6 +316,6 @@ The next and final chapter of the book turns from what we have learned to what w
 
 ---
 
-**Series cross-references.** Gauge invariance: GR Ch. 8; this volume Ch. 13. Heuristic field formalism: GR Ch. 3; this volume Ch. 14. Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Hyperbolic embeddings: GR Ch. 14; GM Ch. 3; this volume Ch. 5, 9. $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. Adversarial robustness: GE Ch. 22; this volume Ch. 7, 14. Phase transitions and catastrophe theory: not yet treated in the series; proposed for future development in *Geometric Reasoning*, 2nd edition.
+**Series cross-references.** Gauge invariance: GR Ch. 8; this volume Ch. 13. Heuristic field formalism: GR Ch. 3; this volume Ch. 14. Scalar Irrecoverability Theorem: GR Ch. 13; this volume Ch. 15. Hyperbolic embeddings: GR Ch. 14; GM Ch. 3; this volume Ch. 5, 9. $V_4$ group (earlier drafts: $D_4$, withdrawn): GE Ch. 8; this volume Ch. 13. Bond Index: GE Ch. 18; MRI and DRI: GM Ch. 9--10; this volume Ch. 7, 14. Phase transitions and catastrophe theory: not yet treated in the series; proposed for future development in *Geometric Reasoning*, 2nd edition.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*

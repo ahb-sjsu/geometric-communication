@@ -317,7 +317,7 @@ The Bond Index quantifies deviation from Hohfeldian correlative symmetry:
 
 $$\text{Bd} = \frac{\text{observed correlative violations}}{\text{maximum possible violations}}$$
 
-A Bond Index of 0.0 indicates perfect correlative consistency (every Obligation is paired with a Right, every Liberty with a No-Right). A Bond Index of 0.5 indicates random pairing. The model achieves:
+A Bond Index of 0.0 indicates perfect correlative consistency (every Obligation is paired with a Right, every Liberty with a No-Right). Random answers among the four positions give the expected pairing one time in four, so random pairing scores about 0.75 (as *Geometric Ethics*, Chapter 17, corrected in its version 1.26). The model achieves:
 
 $$\text{Bd} = 0.1239$$
 
@@ -390,7 +390,7 @@ If moral structure is gauge-invariant, then AI alignment may be more tractable t
 
 The BIP architecture provides a prototype for how this might work. The adversarial disentanglement forces the model to attend to structural features (bonds) rather than surface features (language, genre, era). The Bond Index provides a quantitative test for whether a system's moral reasoning respects the correlative symmetry of the Hohfeldian structure. The perturbation ratio (structural/surface sensitivity) provides a test for gauge invariance: is the system responding to morally relevant features or to morally irrelevant ones?
 
-These tools convert the untestable claim "this AI system is ethical" into the testable claim "this AI system achieves Bond Index $< \tau$ with structural/surface ratio $> 2.0$." The convergence from arbitrary initial representations toward low Bond Index under invariance training provides a principled optimization objective that is culture-independent---not because it ignores cultural variation, but because it targets the structural invariants that all cultures share.
+These tools convert the untestable claim "this AI system is ethical" into the testable claim "this AI system achieves a Bond Index below a declared threshold with structural/surface ratio $> 2.0$." The convergence from arbitrary initial representations toward low Bond Index under invariance training provides a principled optimization objective that is culture-independent---not because it ignores cultural variation, but because it targets the structural invariants that all cultures share.
 
 The expanded eleven-language study reinforces this point. The same structural invariants emerge from Confucian, Buddhist, Abrahamic, and Western secular traditions. An alignment system built on these invariants would not privilege any single tradition; it would encode the relational geometry that all traditions instantiate. This is not cultural imperialism disguised as universalism. It is the empirical finding that certain features of moral reasoning---the deontic axis, correlative symmetry, discrete semantic gating---are shared across every tradition tested, and the engineering proposal that these features can serve as the foundation for culturally robust alignment.
 
@@ -400,7 +400,7 @@ The expanded eleven-language study reinforces this point. The same structural in
 
 ### 11.6.1 What the Experiment Does Not Show
 
-The BIP experiment demonstrates invariance of *relational* moral structure---the Hohfeldian quartet. It does not demonstrate invariance of *substantive* moral content. The experiment shows that the *grammar* of moral reasoning (who owes what to whom) is universal; it does not show that the *conclusions* (what one ought to do) are universal. The Talmud's answer to a property dispute and Dear Abby's answer may differ---but they are navigating the same relational space.
+The BIP experiment demonstrates invariance of *relational* moral structure---the Hohfeldian quartet. It does not demonstrate invariance of *substantive* moral content. The experiment is consistent with a *grammar* of moral reasoning (who owes what to whom) shared by these corpora, as the encoder represents them; it does not show that the *conclusions* (what one ought to do) are universal. The Talmud's answer to a property dispute and Dear Abby's answer may differ---but they are navigating the same relational space.
 
 This distinction is important for avoiding overclaiming. The experiment is consistent with both moral universalism (the same moral truths hold everywhere) and a weaker position that we call *structural universalism*: the relational framework within which moral reasoning operates is universal, even if the substantive conclusions reached within that framework vary across cultures.
 

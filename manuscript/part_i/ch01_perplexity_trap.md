@@ -163,7 +163,7 @@ These four structures are not independent luxuries. They are the mathematical su
 
 ## 1.4 The Scalar Irrecoverability Theorem
 
-The losses catalogued above are not merely inconvenient. They are mathematically irreversible. This is the content of the Scalar Irrecoverability Theorem, proved in *Geometric Reasoning* (Ch. 13) and here stated in its communication-specific form.
+The losses catalogued above are not merely inconvenient. They are mathematically irreversible. This is the content of the Scalar Irrecoverability Theorem, stated as a conditional theorem in *Geometric Reasoning*, Theorem 13.1 (Chapter 13; restated in that book's Section 10.7), and here stated in its communication-specific form.
 
 **Theorem 1.1 (Scalar Irrecoverability for Communication).** *Let $\mathbf{q} \in \mathbb{R}^d$ be the quality profile of a communicative act (or a system that produces communicative acts) across $d$ independent evaluation dimensions. For any scalar projection $\pi: \mathbb{R}^d \to \mathbb{R}$, there exist communicative acts $A$ and $B$ such that $\pi(\mathbf{q}_A) = \pi(\mathbf{q}_B)$ despite $A$ being strictly superior to $B$ on a substantive subset of the $d$ dimensions. The information destroyed by $\pi$ --- namely, the identity of which dimensions $A$ dominates and which $B$ dominates --- is not recoverable from the scalar values $\pi(\mathbf{q}_A)$ and $\pi(\mathbf{q}_B)$ alone.*
 
@@ -266,7 +266,7 @@ What we need is the framework to see it clearly. That framework begins, in the n
 
 ## Summary
 
-This chapter has argued that the standard evaluation apparatus for communication --- BLEU, perplexity, WER, classification accuracy, readability indices, sentiment scores --- systematically destroys the geometric structure of meaning. Each metric collapses a multi-dimensional quality profile into a scalar, and the collapse is irreversible: the Scalar Irrecoverability Theorem (*Geometric Reasoning*, Ch. 13) proves that no scalar projection can preserve the Pareto structure of the quality space. What is lost includes metric structure (continuous semantic distance), symmetry structure (meaning-preserving transformations), fiber structure (the separation of content from expression), and topological structure (the global shape of discourse and hierarchy).
+This chapter has argued that the standard evaluation apparatus for communication --- BLEU, perplexity, WER, classification accuracy, readability indices, sentiment scores --- systematically destroys the geometric structure of meaning. Each metric collapses a multi-dimensional quality profile into a scalar, and the collapse is irreversible: the Scalar Irrecoverability Theorem (*Geometric Reasoning*, Ch. 13) shows, for weighted composites of mutually Pareto-non-dominated profiles, that no such projection preserves the Pareto structure of the quality space. What is lost includes metric structure (continuous semantic distance), symmetry structure (meaning-preserving transformations), fiber structure (the separation of content from expression), and topological structure (the global shape of discourse and hierarchy).
 
 The costs are not theoretical. They manifest as translation systems that are fluent but unfaithful, language models with low perplexity and high hallucination, content moderation systems that cannot detect sarcasm or aspect structure, and an evaluation culture that creates the illusion of understanding through numbers that have been emptied of the structure they claim to measure.
 

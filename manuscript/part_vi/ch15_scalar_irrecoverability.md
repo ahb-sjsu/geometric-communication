@@ -13,7 +13,7 @@
 >
 > *We introduced this problem in Chapter 1 with the vodka translation. We formalized the manifold whose structure is at risk in Chapter 3. We demonstrated what geometry can recover in Chapters 4--13. Now we prove the theorem: for any scalar evaluation of a communicative act, the preimage of that scalar contains communicative acts that differ along every dimension the scalar discards. No post-hoc procedure can recover the lost dimensions. The compression is a one-way function.*
 >
-> *This is the communication-specific form of the Scalar Irrecoverability Theorem (Geometric Reasoning, Ch. 13). It is the most important negative result in this book, because it delimits what no amount of better data, better models, or better algorithms can achieve within the scalar paradigm. To recover the geometry of meaning, you must measure the geometry of meaning. There is no shortcut through scalars.*
+> *This is the communication-specific form of the Scalar Irrecoverability Theorem (Geometric Reasoning, Ch. 13; the level-set form below is that of Geometric Ethics, Theorem 15.1). It is the most important negative result in this book, because it delimits what no amount of better data, better models, or better algorithms can achieve within the scalar paradigm. To recover the geometry of meaning, you must measure the geometry of meaning. There is no shortcut through scalars.*
 
 ---
 
@@ -292,7 +292,7 @@ The irrecoverability theorem says: if you want the geometry of meaning, you must
 
 ## 15.7 The Broadest Claim
 
-Of all the domains treated in the Geometric series --- reasoning, ethics, law, method --- communication is the domain where scalar irrecoverability inflicts the greatest damage. A GDP number that discards distributional information has at least captured the central tendency of economic output. A QALY that discards trajectory information has at least captured the central tendency of health-adjusted life. But a BLEU score that discards meaning has lost the *purpose of communication itself*.
+Of all the domains the Geometric Series treats, communication is the domain where scalar irrecoverability inflicts the greatest damage. A GDP number that discards distributional information has at least captured the central tendency of economic output. A QALY that discards trajectory information has at least captured the central tendency of health-adjusted life. But a BLEU score that discards meaning has lost the *purpose of communication itself*.
 
 Communication exists to convey meaning. A metric that cannot represent meaning cannot evaluate communication. This is not a statement about the limitations of current technology. It is a statement about the mathematical structure of the problem. The communication manifold is high-dimensional, richly structured, and geometrically non-trivial. The meaning of a communicative act is a point on this manifold. A scalar evaluation is a projection from this manifold to a line. The projection destroys the structure that makes the manifold worth studying.
 

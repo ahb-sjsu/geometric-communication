@@ -429,7 +429,7 @@ The gauge invariance framework of Chapters 11--13 is the natural extension of th
 
 ### 10.8.4 To the Series
 
-The parallel transport interpretation of translation is an instance of the general principle developed in *Geometric Reasoning* (Ch. 4): any process that carries structured information between coordinate systems is parallel transport, and its failure modes are holonomy. In *Geometric Ethics* (Ch. 8), the same framework describes the transport of moral concepts across cultural contexts. In *Geometric Methods* (Ch. 4.6), the mathematical foundations are developed in full generality. This chapter instantiates the framework for the specific domain of interlingual translation, where the curvature of the semantic manifold has concrete empirical signatures (the translation loop residual) and the holonomy reduction has concrete engineering implementations (the hyperbolic attention bias).
+The parallel transport interpretation of translation is an instance of the general principle of parallel transport (*Geometric Ethics*, Section 4.6 and Ch. 10): any process that carries structured information between coordinate systems is parallel transport, and its failure modes are holonomy. In *Geometric Ethics* (Ch. 10), the same framework describes the transport of moral evaluations along paths in moral space. This chapter instantiates the framework for the specific domain of interlingual translation, where the curvature of the semantic manifold has concrete empirical signatures (the translation loop residual) and the holonomy reduction has concrete engineering implementations (the hyperbolic attention bias).
 
 ---
 

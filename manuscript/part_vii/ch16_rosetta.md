@@ -298,6 +298,6 @@ The framework is the contribution. The trajectory is the evidence.
 
 ---
 
-**Series cross-references.** Signal geometry: Ch. 4--6 of this volume; GM Ch. 4--5. Hyperbolic embeddings: Ch. 5 of this volume; GM Ch. 3. TDA: Ch. 6 of this volume; GM Ch. 5. SPD manifolds: Ch. 4 of this volume; GM Ch. 4.6. Parallel transport and holonomy: Ch. 10 of this volume; GR Ch. 4. Gauge invariance: Ch. 11--13 of this volume; GR Ch. 8. $V_4$ group (earlier drafts: $D_4$, withdrawn): Ch. 13 of this volume; GE Ch. 8. The Rosetta trajectory: introduced in Ch. 1, developed through Ch. 7--12, completed here.
+**Series cross-references.** Signal geometry: Ch. 4--6 of this volume; GM Ch. 4--5. Hyperbolic embeddings: Ch. 5 of this volume; GM Ch. 3. TDA: Ch. 6 of this volume; GM Ch. 5. SPD manifolds: Ch. 4 of this volume; GM Ch. 4.6. Parallel transport and holonomy: Ch. 10 of this volume; GE Ch. 10. Gauge invariance: Ch. 11--13 of this volume; GR Ch. 8. $V_4$ group (earlier drafts: $D_4$, withdrawn): Ch. 13 of this volume; GE Ch. 8. The Rosetta trajectory: introduced in Ch. 1, developed through Ch. 7--12, completed here.
 
 *GR = Geometric Reasoning. GE = Geometric Ethics. GM = Geometric Methods.*
